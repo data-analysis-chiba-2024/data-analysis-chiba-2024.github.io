@@ -1,0 +1,203 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+execute: 
+  echo: true
+---
+
+# Day 2: Git and GitHub
+
+2023-10-10
+
+## What is Git?
+
+- Git is **version control software**
+
+- You can think of it kind of like the "track comments" function in MS Word or Google Docs, but for code (plain text)
+
+## Why use Git?
+
+- To share code
+  - Important for **reproducibility**. Other people can't reproduce your analysis if they can't access your code
+
+- To have a history of all the things your tried in your analysis
+  - You can go back and see what you have changed. Especially important **when something breaks**.
+
+- To organize how you develop your code
+  - You will make comments about all your changes to your code ("commits"), so this forces you to think about **how** you are writing your code
+
+## What is GitHub?
+
+- An online tool for managing projects that use Git
+
+- Acts like a cloud backup tool for your code
+
+- Makes it easy to share code with others
+
+## Setup
+
+- You need to install git on your computer **and** set up an account on <https://github.com>
+
+## Instructions to install git
+
+- [Mac](https://git-scm.com/download/mac)
+  - May need to install [Homebrew](https://brew.sh/) first
+
+- [Windows](https://git-scm.com/download/win)
+
+- [Linux](https://git-scm.com/download/linux)
+
+## Setup GitHub account
+
+- Navigate to <https://github.com/> and follow the prompts
+
+## Setup GitHub authentication: SSH
+
+- What is SSH?
+   - **S**ecure **Sh**ell Protocol
+   - Authentication method that uses **public** and **private** keys (like a padlock and key)
+   - **public** key goes on GitHub
+   - **private** key stays on your computer
+
+(more detailed instructions available on the Software Carpentry [website](https://swcarpentry.github.io/git-novice/07-github.html#ssh-background-and-setup))
+
+## Check for existing keys
+
+- Enter this in your terminal (it lists files in a folder):
+
+```
+ls -al ~/.ssh
+```
+
+- If any of these files show up, you already have keys available that you can use to log into GitHub
+
+```
+id_rsa.pub
+id_ecdsa.pub
+id_ed25519.pub
+```
+
+## Create keys
+
+- If no such keys are already present, we need to create a private/public key pair.
+
+- Use this command (the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key):
+
+```
+ssh-keygen -t ed25519 -C "you@youremail.com"
+```
+
+(use your own email address)
+
+## Create keys (cont'd)
+
+- It will ask where you want you want to save the key. Use the default location.
+
+- Add a passphrase if you want (more secure, but you will have to enter it frequently).
+
+## Create keys (cont'd)
+
+- Then, you should see something like this:
+
+```
+Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub
+```
+
+This tells you the location of your **private** and **public** keys
+
+## Copy contents of public key
+
+- First, get the content of the public key:
+
+```
+cat ~/.ssh/id_ed25519.pub
+```
+
+It should include a long string of letters and numbers.
+
+Copy that exact line with command + c (mac) or control + c (Windows)
+
+## Add public key to GitHub
+
+- Go to <https://github.com>, click on your profile icon in the top right corner to see the drop-down menu
+- Click “Settings,” then “SSH and GPG keys”
+- Click the “New SSH key” button on the right side
+- Enter a name that you will remember (for example, "Joel's Laptop"), paste your SSH key into the field, and click “Add SSH key”
+
+## Check that it worked
+
+- Run this command to check that it worked
+
+```
+ssh -T git@github.com
+```
+
+Now, you can use git commands without providing a password every time
+
+## Introduce yourself to git
+
+You need to let git know your GitHub username and email address:
+
+``` bash
+git config --global user.name 'your_github_username'
+git config --global user.email 'your_email_adress'
+git config --global --list
+```
+
+## About repos
+
+- A 'repo' (short for repository) is a folder where you store all the code and other files needed for a project.
+
+**git tracks the content of a repo**
+
+## Remote and local repos
+
+- A **local** repo is just the project on your own computer
+
+- A **remote** repo is a copy of the repo online (on GitHub)
+  - Somewhat confusingly, the remote repo is typically referred to by the name `origin`
+
+## Cloning
+
+Sometimes, you want to download a repo that doesn't exist on your computer yet.
+
+- **Cloning** is copying an online repo to your computer
+
+## Pushing and pulling
+
+Once you have the repos set up, you need to keep them in sync.
+
+- You **push** changes from your local repo to the remote
+
+- You **pull** changes from the remote repo to your local one
+
+## Commits
+
+- A **commit** is a single change made to a repo that you have stored in git's history.
+
+There are two steps to making a commit.
+
+## Staging and committing
+
+A file that has been changed is not automatically added to git's history.
+
+- You need to **stage** the file (or part of the file) that you want to add to a particular commit
+
+- Next, you type a short message describing the change, the **commit message**
+
+- Finally, you **commit** the change to log it in git's history
+
+## The `.gitignore` file
+
+If there are any files you don't want git to track, you can ignore them by listing them in a special file called `.gitignore`.
+
+It is usually a good idea to ignore **raw data files** and **output files**. We only want to track code (in other words, the analysis iteself)
+
+## How this works in practice
+
+We will go through a typical git workflow together in class using RStudio.
+
+This is explained in the "Intro to Git" markdown file, which you will copy to your computer when you set up the demo repo.

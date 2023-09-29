@@ -1,0 +1,56 @@
+---
+title: "Reproducible Data Analysis"
+toc: false
+---
+
+## Slides
+
+- [Day 1: Introduction: Why code? Why reproducibility?](day1/index.qmd)
+
+- [Day 2: Git and GitHub](day2/index.qmd)
+
+- Day 3: Basic usage of R and RStudio
+
+<!-- [Day 3: Basic usage of R and RStudio](day3/index.qmd) -->
+
+- Day 4: Writing documents with Quarto
+
+<!-- [Day 4: Writing documents with Quarto](day4/index.qmd) -->
+
+- Day 5: Data loading and tidying with tidyverse
+
+<!-- [Day 5: Data loading and tidying with tidyverse](day5/index.qmd) -->
+
+- Day 6: Data visualization with ggplot2
+
+<!-- [Day 6: Data visualization with ggplot2](day6/index.qmd) -->
+
+- Day 7: Best practices for reproducible data analysis
+
+<!-- - [Day 7: Best practices for reproducible data analysis](day7/index.qmd -->
+
+- Day 8: Final presentation
+
+<!-- [Day 8: Final presentation](day8/index.qmd) -->
+
+## Important Deadlines
+
+- 2023-10-16 11:59PM: Day 2 homework due
+
+- 2023-10-23 11:59PM: Day 3 homework due
+
+- 2023-10-30 11:59PM: Day 4 homework due
+
+- 2023-11-06 11:59PM: Day 5 homework due
+
+- 2023-11-20 11:59: Final paper due
+
+- 2023-11-21: Final presentation (in class)
+
+## Office Hours
+
+By appointment, please send an email to <joelnitta@chiba-u.jp>
+
+## Syllabus
+
+[Syllabus in English](https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US)

@@ -1,0 +1,240 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+execute: 
+  echo: true
+---
+
+# Day 1: Introduction to "Reproducible Data Analysis"
+
+2023-10-03
+
+## Instructor: Joel Nitta
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Research topic 1: Ecology and evolution of **ferns**
+  - Also teach [Biodiversity and Japan](https://syllabus.gs.chiba-u.jp/2023/401001000000000/G15N945001/en_US)
+
+- Research topic 2: Development of software for **data science**
+
+- <https://www.joelnitta.com>
+:::
+
+::: {.column width="50%"}
+![](https://github.com/joelnitta/joelnitta-site/blob/master/static/media/headers/research_img2.jpg?raw=true){fig-alt="Image of Joel Nitta in field" height="450"}
+:::
+
+::::
+
+## Instructor: Joel Nitta
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Born and raised in California
+
+- Fourth generation Japanese-American
+
+- First came to Japan as high school exchange student
+:::
+
+::: {.column width="50%"}
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/California_in_United_States.svg/2880px-California_in_United_States.svg.png){fig-alt="Image of California map" width="100%" height="100%"}
+:::
+
+::::
+
+## Ice-breaker
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Answer the question: "Why are you interested in data analysis?"
+
+- Introduce yourself and discuss with your neighbor
+:::
+
+::: {.column width="50%"}
+
+![](https://farm4.staticflickr.com/3851/14762982307_9dbc2c46f5_o.jpg){fig-alt="Data analysis image" width="80%" height="80%"}
+
+:::
+
+::::
+
+::: {.small}
+https://www.odelama.com/data-analysis/
+:::
+
+## What is data analysis?
+
+- Obtaining **insight** from **data**
+
+- Important for **many careers** (academic and industry)
+
+## Why programming?
+
+Who has used Excel? Who has used a programming language?
+
+What are the **advantages** and **disadvantages** of each for data analysis?
+
+- Discuss with your neighbor
+
+## Why programming? 
+
+- Programming allows you to **record every step** of data analysis
+  - This means you can **repeat your analysis!**
+
+It takes some time to get used to, but eventually you will feel more comfortable with it because you can re-trace your steps and **have confidence** in your results.
+
+## Why reproducibility?
+
+**When** might you want to repeat an analysis? **Why?**
+
+- Discuss with your neighbor
+
+## Why reproducibility?
+
+- If new data comes in and you need to update an analysis
+
+- If you want to double-check your own results
+
+- If you want to repeat somebody else's analysis
+
+- **If you switch between different projects and can't remember exactly what you were doing**
+
+## Goals of this class
+
+The goal of this class is to learn the fundamentals of reproducible data analysis by **doing it yourself**.
+
+By the end of the course, you will be able to:
+
+- load, clean, and visualize data using R
+- track changes to code using Git and GitHub
+- write a reproducible report using Quarto
+
+## Expectations of this class
+
+- I expect you to **participate in discussions**
+
+- I expect you to **ask questions**
+
+## Language of this class
+
+- This class is **conducted in English**
+
+- But, you can ask questions in Japanese and I will explain in Japanese if needed
+
+## Homework assignments
+
+- There will be a **homework assignment** on **GitHub** for each class, starting next week.
+
+- You submit the assignment by making a **commit** in Git (I will explain more about this soon)
+
+## Final project
+
+- You will need to analyze a dataset of your own choosing for your final project, due 2023-11-20
+
+- The last homework assignment is due 2023-11-06, so you have at least 2 weeks to work on the final project
+
+## Schedule
+
+- Day 1, 2023-10-03
+  - Introduction
+
+- Day 2, 2023-10-10
+  - Git and GitHub
+
+- Day 3, 2023-10-17
+  - Basic usage of R and RStudio
+
+- Day 4, 2023-10-24
+  - Writing documents with Quarto
+
+## Schedule (cont'd)
+
+- Day 5, 2023-10-31 (Media Day)
+  - Data loading and tidying with tidyverse
+
+- Day 6, 2023-11-07
+  - Data visualization with ggplot2
+
+- Day 7, 2023-11-14
+  - Best practices for reproducible data analysis
+
+- Day 8, 2023-11-21
+  - Final presentation
+
+## Grades
+
+- In-class participation 25%
+- Homework 25%
+- Final report 30%
+- Final presentation 20%
+
+**No late submissions allowed** (exceptions may be made for medical emergencies)
+
+## Course website and slides
+
+- All slides (and other info) available at<br><https://data-analysis-chiba-2023.github.io/>
+
+## Moodle
+
+- **Assignments** (GitHub classroom repos) will be posted on Moodle
+
+- **Check Moodle every week**
+
+## Office hours
+
+By appointment: contact me at <joelnitta@chiba.u-jp>
+
+## Questions?
+
+## ChatGPT {.incremental}
+
+- Who has used ChatGPT before?
+
+- You may use ChatGPT for your homework and final project
+
+- But first you need to know **how to use it**
+
+## ChatGPT {.incremental}
+
+- ChatGPT **makes statistical predictions** about words based on training data (it does not "think")
+
+- ChatGPT is designed to produce sentences that **sound** as natural as possible
+
+- ChatGPT may **lie to you** or make up facts (called "hallucination"; this is especially common when it lacks adequate training data)
+
+## ChatGPT policies (DOs) {.incremental}
+
+- *Do* try by yourself first (without ChatGPT)
+
+- *Do* ask it **detailed**, **specific** questions (prompts)
+
+- *Do* **double-check** the results: does ChatGPT's code produce the expected result?
+
+- *Do* make sure you **understand** the code that ChatGPT provides
+
+## ChatGPT policies (DON'Ts) {.incremental}
+
+- *Don't* copy-paste directly from ChatGPT.
+  - Typing the code yourself will help you remember it and understand what you are doing. Copy-pasting text for a paper is plagiarism.
+
+- *Don't* submit an answer from ChatGPT without trying/checking it yourself first
+  - ChatGPT could very well be wrong!
+
+## Setting up Git
+
+We will follow instructions for [Day 2](../day2/#/setup) to set up Git
+
+## Setting up RStudio
+
+- [Install R](https://cran.r-project.org/)
+
+- [Install RStudio](https://posit.co/download/rstudio-desktop/)
