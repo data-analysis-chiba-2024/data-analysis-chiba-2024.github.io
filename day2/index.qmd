@@ -55,13 +55,13 @@ execute:
 
 ## Setup GitHub authentication: PAT
 
-A PAT is a "Personal Access Token". It is like a more secure password.
+A PAT is a "Personal Access Token". It is like an extra-secure password.
 
 There is another method for authentication called SSH, but it's a bit more complicated to set up. If you want to use SSH, see these [instructions](../appendix.html#setup-github-authentication-ssh).
 
 ## Create PAT on GitHub
 
-- Go to https://github.com/settings/tokens and click “Generate token”.
+- Go to https://github.com/settings/tokens
 
 Or, from R, do:
 
@@ -69,7 +69,7 @@ Or, from R, do:
 usethis::create_github_token()
 ```
 
-- Look over the scopes; “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().
+- Look over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used `create_github_token()`.
 
 - Click “Generate token”.
 
@@ -91,15 +91,15 @@ Done!
 
 - You then need to re-create a new one on GitHub and enter it again with `gitcreds::gitcreds_set()`.
 
-- Using the default expiration date is recommended for security
+- Using an expiration date is recommended for security
 
 ## Introduce yourself to git
 
 You need to let git know your GitHub username and email address:
 
 ``` bash
-git config --global user.name 'your_github_username'
-git config --global user.email 'your_email_adress'
+git config --global user.name "your_github_username"
+git config --global user.email "your_email_adress"
 git config --global --list
 ```
 
