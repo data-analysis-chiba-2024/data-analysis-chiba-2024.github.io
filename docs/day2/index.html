@@ -450,89 +450,47 @@
 <li>Navigate to <a href="https://github.com/" class="uri">https://github.com/</a> and follow the prompts</li>
 </ul>
 </section>
-<section id="setup-github-authentication-ssh" class="slide level2">
-<h2>Setup GitHub authentication: SSH</h2>
-<ul>
-<li>What is SSH?
-<ul>
-<li><strong>S</strong>ecure <strong>Sh</strong>ell Protocol</li>
-<li>Authentication method that uses <strong>public</strong> and <strong>private</strong> keys (like a padlock and key)</li>
-<li><strong>public</strong> key goes on GitHub</li>
-<li><strong>private</strong> key stays on your computer</li>
-</ul></li>
-</ul>
-<p>(more detailed instructions available on the Software Carpentry <a href="https://swcarpentry.github.io/git-novice/07-github.html#ssh-background-and-setup">website</a>)</p>
+<section id="setup-github-authentication-pat" class="slide level2">
+<h2>Setup GitHub authentication: PAT</h2>
+<p>A PAT is a “Personal Access Token”. It is like a more secure password.</p>
+<p>There is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these <a href="../appendix.html#setup-github-authentication-ssh">instructions</a>.</p>
 </section>
-<section id="check-for-existing-keys" class="slide level2">
-<h2>Check for existing keys</h2>
+<section id="create-pat-on-github" class="slide level2">
+<h2>Create PAT on GitHub</h2>
 <ul>
-<li>Enter this in your terminal (it lists files in a folder):</li>
+<li>Go to https://github.com/settings/tokens and click “Generate token”.</li>
 </ul>
-<pre><code>ls -al ~/.ssh</code></pre>
+<p>Or, from R, do:</p>
+<pre><code>usethis::create_github_token()</code></pre>
 <ul>
-<li>If any of these files show up, you already have keys available that you can use to log into GitHub</li>
-</ul>
-<pre><code>id_rsa.pub
-id_ecdsa.pub
-id_ed25519.pub</code></pre>
-</section>
-<section id="create-keys" class="slide level2">
-<h2>Create keys</h2>
-<ul>
-<li><p>If no such keys are already present, we need to create a private/public key pair.</p></li>
-<li><p>Use this command (the <code>-t</code> option specifies which type of algorithm to use and <code>-C</code> attaches a comment to the key):</p></li>
-</ul>
-<pre><code>ssh-keygen -t ed25519 -C "you@youremail.com"</code></pre>
-<p>(use your own email address)</p>
-</section>
-<section id="create-keys-contd" class="slide level2">
-<h2>Create keys (cont’d)</h2>
-<ul>
-<li><p>It will ask where you want you want to save the key. Use the default location.</p></li>
-<li><p>Add a passphrase if you want (more secure, but you will have to enter it frequently).</p></li>
+<li><p>Look over the scopes; “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().</p></li>
+<li><p>Click “Generate token”.</p></li>
 </ul>
 </section>
-<section id="create-keys-contd-1" class="slide level2">
-<h2>Create keys (cont’d)</h2>
+<section id="save-your-pat" class="slide level2">
+<h2>Save your PAT</h2>
 <ul>
-<li>Then, you should see something like this:</li>
+<li><p>Copy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.</p></li>
+<li><p>Install gitcreds in R with <code>install.packages("gitcreds")</code></p></li>
+<li><p>Next, run <code>gitcreds::gitcreds_set()</code>.</p></li>
+<li><p>Enter the PAT that you copied from GitHub. Now you can close the browser window.</p></li>
 </ul>
-<pre><code>Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub</code></pre>
-<p>This tells you the location of your <strong>private</strong> and <strong>public</strong> keys</p>
+<p>Done!</p>
 </section>
-<section id="copy-contents-of-public-key" class="slide level2">
-<h2>Copy contents of public key</h2>
+<section id="a-few-more-notes-about-pat" class="slide level2">
+<h2>A few more notes about PAT</h2>
 <ul>
-<li>First, get the content of the public key:</li>
+<li><p>Your PAT will expire (after 30 days by default).</p></li>
+<li><p>You then need to re-create a new one on GitHub and enter it again with <code>gitcreds::gitcreds_set()</code>.</p></li>
+<li><p>Using the default expiration date is recommended for security</p></li>
 </ul>
-<pre><code>cat ~/.ssh/id_ed25519.pub</code></pre>
-<p>It should include a long string of letters and numbers.</p>
-<p>Copy that exact line with command + c (mac) or control + c (Windows)</p>
-</section>
-<section id="add-public-key-to-github" class="slide level2">
-<h2>Add public key to GitHub</h2>
-<ul>
-<li>Go to <a href="https://github.com" class="uri">https://github.com</a>, click on your profile icon in the top right corner to see the drop-down menu</li>
-<li>Click “Settings,” then “SSH and GPG keys”</li>
-<li>Click the “New SSH key” button on the right side</li>
-<li>Enter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”</li>
-</ul>
-</section>
-<section id="check-that-it-worked" class="slide level2">
-<h2>Check that it worked</h2>
-<ul>
-<li>Run this command to check that it worked</li>
-</ul>
-<pre><code>ssh -T git@github.com</code></pre>
-<p>Now, you can use git commands without providing a password every time</p>
 </section>
 <section id="introduce-yourself-to-git" class="slide level2">
 <h2>Introduce yourself to git</h2>
 <p>You need to let git know your GitHub username and email address:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">'your_github_username'</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">'your_email_adress'</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">'your_github_username'</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">'your_email_adress'</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="about-repos" class="slide level2">
 <h2>About repos</h2>

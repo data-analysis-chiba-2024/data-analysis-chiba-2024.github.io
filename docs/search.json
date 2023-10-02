@@ -81,7 +81,7 @@
     "href": "day1/index.html#homework-assignments",
     "title": "Reproducible data analysis",
     "section": "Homework assignments",
-    "text": "Homework assignments\n\nThere will be a homework assignment on GitHub for each class, starting next week.\nYou submit the assignment by making a commit in Git (I will explain more about this soon)"
+    "text": "Homework assignments\n\nThere will be a homework assignment on GitHub for each class, starting next week.\nYou submit the assignment by making a commit in Git (more about this on Day 2)"
   },
   {
     "objectID": "day1/index.html#final-project",
@@ -397,5 +397,54 @@
     "title": "Reproducible Data Analysis",
     "section": "Syllabus](https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US)",
     "text": "Syllabus](https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US)"
+  },
+  {
+    "objectID": "day1/index.html#recommended-reading",
+    "href": "day1/index.html#recommended-reading",
+    "title": "Reproducible data analysis",
+    "section": "Recommended Reading",
+    "text": "Recommended Reading\n\nR for Data Science. https://r4ds.had.co.nz/\n\nAvailable in Japanese from Amazon or O’Reilly\n\nHappy Git with R. https://happygitwithr.com/\nIntroduction to Reproducible Publications with RStudio https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/index.html"
+  },
+  {
+    "objectID": "appendix.html",
+    "href": "appendix.html",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "appendix.html#setup-github-authentication-ssh",
+    "href": "appendix.html#setup-github-authentication-ssh",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-authentication-pat",
+    "href": "day2/index.html#setup-github-authentication-pat",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub authentication: PAT",
+    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like a more secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
+  },
+  {
+    "objectID": "day2/index.html#create-pat-on-github",
+    "href": "day2/index.html#create-pat-on-github",
+    "title": "Reproducible data analysis",
+    "section": "Create PAT on GitHub",
+    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens and click “Generate token”.\n\nOr, from R, do:\nusethis::create_github_token()\n\nLook over the scopes; “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+  },
+  {
+    "objectID": "day2/index.html#save-your-pat",
+    "href": "day2/index.html#save-your-pat",
+    "title": "Reproducible data analysis",
+    "section": "Save your PAT",
+    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
+  },
+  {
+    "objectID": "day2/index.html#a-few-more-notes-about-pat",
+    "href": "day2/index.html#a-few-more-notes-about-pat",
+    "title": "Reproducible data analysis",
+    "section": "A few more notes about PAT",
+    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing the default expiration date is recommended for security"
   }
 ]

@@ -136,11 +136,20 @@ By the end of the course, you will be able to:
 
 - But, you can ask questions in Japanese and I will explain in Japanese if needed
 
+## Recommended Reading
+
+- R for Data Science. <https://r4ds.had.co.nz/>
+  - Available in Japanese from [Amazon](https://www.amazon.co.jp/Rではじめるデータサイエンス-Hadley-Wickham/dp/487311814X) or [O'Reilly](https://www.oreilly.co.jp/books/9784873118147/)
+
+- Happy Git with R. <https://happygitwithr.com/>
+
+- Introduction to Reproducible Publications with RStudio <https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/index.html>
+
 ## Homework assignments
 
 - There will be a **homework assignment** on **GitHub** for each class, starting next week.
 
-- You submit the assignment by making a **commit** in Git (I will explain more about this soon)
+- You submit the assignment by making a **commit** in Git (more about this on Day 2)
 
 ## Final project
 
@@ -236,12 +245,12 @@ By appointment: contact me at <joelnitta@chiba.u-jp>
 - *Don't* submit an answer from ChatGPT without trying/checking it yourself first
   - ChatGPT could very well be wrong!
 
-## Setting up Git
-
-We will follow instructions for [Day 2](../day2/#/setup) to set up Git
-
 ## Setting up RStudio
 
 - [Install R](https://cran.r-project.org/)
 
 - [Install RStudio](https://posit.co/download/rstudio-desktop/)
+
+## Setting up Git
+
+We will follow instructions for [Day 2](../day2/#/setup-github-authentication-pat) to set up Git

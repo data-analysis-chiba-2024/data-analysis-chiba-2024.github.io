@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2023-10-03">
 
-<title>Reproducible data analysis - Reproducible Data Analysis</title>
+<title>Reproducible data analysis - Appendix</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,11 +83,11 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./appendix.html" rel="" target="">
+    <a class="nav-link active" href="./appendix.html" rel="" target="" aria-current="page">
  <span class="menu-text">Appendix</span></a>
   </li>  
 </ul>
@@ -106,7 +107,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reproducible Data Analysis</h1>
+<h1 class="title">Appendix</h1>
 </div>
 
 
@@ -114,6 +115,12 @@ ul.task-list li input[type="checkbox"] {
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 3, 2023</p>
+    </div>
+  </div>
   
     
   </div>
@@ -121,55 +128,76 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<section id="setup-github-authentication-ssh" class="level2">
+<h2 class="anchored" data-anchor-id="setup-github-authentication-ssh">Setup GitHub authentication: SSH</h2>
 <ul>
-<li><p><a href="./day1/index.html">Day 1: Introduction: Why code? Why reproducibility?</a></p></li>
-<li><p><a href="./day2/index.html">Day 2: Git and GitHub</a></p></li>
-<li><p>Day 3: Basic usage of R and RStudio</p></li>
-</ul>
-<!-- [Day 3: Basic usage of R and RStudio](day3/index.qmd) -->
+<li>What is SSH?
 <ul>
-<li>Day 4: Writing documents with Quarto</li>
+<li><strong>S</strong>ecure <strong>Sh</strong>ell Protocol</li>
+<li>Authentication method that uses <strong>public</strong> and <strong>private</strong> keys (like a padlock and key)</li>
+<li><strong>public</strong> key goes on GitHub</li>
+<li><strong>private</strong> key stays on your computer</li>
+</ul></li>
 </ul>
-<!-- [Day 4: Writing documents with Quarto](day4/index.qmd) -->
+<p>(more detailed instructions available on the Software Carpentry <a href="https://swcarpentry.github.io/git-novice/07-github.html#ssh-background-and-setup">website</a>)</p>
+<section id="check-for-existing-keys" class="level3">
+<h3 class="anchored" data-anchor-id="check-for-existing-keys">Check for existing keys</h3>
 <ul>
-<li>Day 5: Data loading and tidying with tidyverse</li>
+<li>Enter this in your terminal (it lists files in a folder):</li>
 </ul>
-<!-- [Day 5: Data loading and tidying with tidyverse](day5/index.qmd) -->
+<pre><code>ls -al ~/.ssh</code></pre>
 <ul>
-<li>Day 6: Data visualization with ggplot2</li>
+<li>If any of these files show up, you already have keys available that you can use to log into GitHub</li>
 </ul>
-<!-- [Day 6: Data visualization with ggplot2](day6/index.qmd) -->
-<ul>
-<li>Day 7: Best practices for reproducible data analysis</li>
-</ul>
-<!-- - [Day 7: Best practices for reproducible data analysis](day7/index.qmd -->
-<ul>
-<li>Day 8: Final presentation</li>
-</ul>
-<!-- [Day 8: Final presentation](day8/index.qmd) -->
+<pre><code>id_rsa.pub
+id_ecdsa.pub
+id_ed25519.pub</code></pre>
 </section>
-<section id="important-deadlines" class="level2">
-<h2 class="anchored" data-anchor-id="important-deadlines">Important Deadlines</h2>
+<section id="create-keys" class="level3">
+<h3 class="anchored" data-anchor-id="create-keys">Create keys</h3>
 <ul>
-<li><p>2023-10-16 11:59PM: Day 2 homework due</p></li>
-<li><p>2023-10-23 11:59PM: Day 3 homework due</p></li>
-<li><p>2023-10-30 11:59PM: Day 4 homework due</p></li>
-<li><p>2023-11-06 11:59PM: Day 5 homework due</p></li>
-<li><p>2023-11-20 11:59: Final paper due</p></li>
-<li><p>2023-11-21: Final presentation (in class)</p></li>
+<li><p>If no such keys are already present, we need to create a private/public key pair.</p></li>
+<li><p>Use this command (the <code>-t</code> option specifies which type of algorithm to use and <code>-C</code> attaches a comment to the key):</p></li>
+</ul>
+<pre><code>ssh-keygen -t ed25519 -C "you@youremail.com"</code></pre>
+<p>(use your own email address)</p>
+<ul>
+<li><p>It will ask where you want you want to save the key. Use the default location.</p></li>
+<li><p>Add a passphrase if you want (more secure, but you will have to enter it frequently).</p></li>
+<li><p>Then, you should see something like this:</p></li>
+</ul>
+<pre><code>Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
+Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub</code></pre>
+<p>This tells you the location of your <strong>private</strong> and <strong>public</strong> keys</p>
+</section>
+<section id="copy-contents-of-public-key" class="level3">
+<h3 class="anchored" data-anchor-id="copy-contents-of-public-key">Copy contents of public key</h3>
+<ul>
+<li>First, get the content of the public key:</li>
+</ul>
+<pre><code>cat ~/.ssh/id_ed25519.pub</code></pre>
+<p>It should include a long string of letters and numbers.</p>
+<p>Copy that exact line with command + c (mac) or control + c (Windows)</p>
+</section>
+<section id="add-public-key-to-github" class="level3">
+<h3 class="anchored" data-anchor-id="add-public-key-to-github">Add public key to GitHub</h3>
+<ul>
+<li>Go to <a href="https://github.com" class="uri">https://github.com</a>, click on your profile icon in the top right corner to see the drop-down menu</li>
+<li>Click “Settings,” then “SSH and GPG keys”</li>
+<li>Click the “New SSH key” button on the right side</li>
+<li>Enter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”</li>
 </ul>
 </section>
-<section id="office-hours" class="level2">
-<h2 class="anchored" data-anchor-id="office-hours">Office Hours</h2>
-<p>By appointment, please send an email to <a href="mailto:joelnitta@chiba-u.jp" class="email">joelnitta@chiba-u.jp</a></p>
-</section>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<p><a href="https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US">Syllabus in English</a></p>
+<section id="check-that-it-worked" class="level3">
+<h3 class="anchored" data-anchor-id="check-that-it-worked">Check that it worked</h3>
+<ul>
+<li>Run this command to check that it worked</li>
+</ul>
+<pre><code>ssh -T git@github.com</code></pre>
+<p>Now, you can use git commands without providing a password every time</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

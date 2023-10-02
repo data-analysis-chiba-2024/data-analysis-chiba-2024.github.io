@@ -53,89 +53,45 @@ execute:
 
 - Navigate to <https://github.com/> and follow the prompts
 
-## Setup GitHub authentication: SSH
+## Setup GitHub authentication: PAT
 
-- What is SSH?
-   - **S**ecure **Sh**ell Protocol
-   - Authentication method that uses **public** and **private** keys (like a padlock and key)
-   - **public** key goes on GitHub
-   - **private** key stays on your computer
+A PAT is a "Personal Access Token". It is like a more secure password.
 
-(more detailed instructions available on the Software Carpentry [website](https://swcarpentry.github.io/git-novice/07-github.html#ssh-background-and-setup))
+There is another method for authentication called SSH, but it's a bit more complicated to set up. If you want to use SSH, see these [instructions](../appendix.html#setup-github-authentication-ssh).
 
-## Check for existing keys
+## Create PAT on GitHub
 
-- Enter this in your terminal (it lists files in a folder):
+- Go to https://github.com/settings/tokens and click “Generate token”.
+
+Or, from R, do:
 
 ```
-ls -al ~/.ssh
+usethis::create_github_token()
 ```
 
-- If any of these files show up, you already have keys available that you can use to log into GitHub
+- Look over the scopes; “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().
 
-```
-id_rsa.pub
-id_ecdsa.pub
-id_ed25519.pub
-```
+- Click “Generate token”.
 
-## Create keys
+## Save your PAT
 
-- If no such keys are already present, we need to create a private/public key pair.
+- Copy the generated PAT to your clipboard. DON'T CLOSE THE BROWSER WINDOW YET.
 
-- Use this command (the `-t` option specifies which type of algorithm to use and `-C` attaches a comment to the key):
+- Install gitcreds in R with `install.packages("gitcreds")`
 
-```
-ssh-keygen -t ed25519 -C "you@youremail.com"
-```
+- Next, run `gitcreds::gitcreds_set()`.
 
-(use your own email address)
+- Enter the PAT that you copied from GitHub. Now you can close the browser window.
 
-## Create keys (cont'd)
+Done!
 
-- It will ask where you want you want to save the key. Use the default location.
+## A few more notes about PAT
 
-- Add a passphrase if you want (more secure, but you will have to enter it frequently).
+- Your PAT will expire (after 30 days by default).
 
-## Create keys (cont'd)
+- You then need to re-create a new one on GitHub and enter it again with `gitcreds::gitcreds_set()`.
 
-- Then, you should see something like this:
-
-```
-Your identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519
-Your public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub
-```
-
-This tells you the location of your **private** and **public** keys
-
-## Copy contents of public key
-
-- First, get the content of the public key:
-
-```
-cat ~/.ssh/id_ed25519.pub
-```
-
-It should include a long string of letters and numbers.
-
-Copy that exact line with command + c (mac) or control + c (Windows)
-
-## Add public key to GitHub
-
-- Go to <https://github.com>, click on your profile icon in the top right corner to see the drop-down menu
-- Click “Settings,” then “SSH and GPG keys”
-- Click the “New SSH key” button on the right side
-- Enter a name that you will remember (for example, "Joel's Laptop"), paste your SSH key into the field, and click “Add SSH key”
-
-## Check that it worked
-
-- Run this command to check that it worked
-
-```
-ssh -T git@github.com
-```
-
-Now, you can use git commands without providing a password every time
+- Using the default expiration date is recommended for security
 
 ## Introduce yourself to git
 
