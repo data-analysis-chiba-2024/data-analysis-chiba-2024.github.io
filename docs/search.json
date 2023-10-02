@@ -1,5 +1,187 @@
 [
   {
+    "objectID": "appendix.html",
+    "href": "appendix.html",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "appendix.html#setup-github-authentication-ssh",
+    "href": "appendix.html#setup-github-authentication-ssh",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducible Data Analysis",
+    "section": "",
+    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Reproducible Data Analysis",
+    "section": "",
+    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
+  },
+  {
+    "objectID": "index.html#important-deadlines",
+    "href": "index.html#important-deadlines",
+    "title": "Reproducible Data Analysis",
+    "section": "Important Deadlines",
+    "text": "Important Deadlines\n\n2023-10-16 11:59PM: Day 2 homework due\n2023-10-23 11:59PM: Day 3 homework due\n2023-10-30 11:59PM: Day 4 homework due\n2023-11-06 11:59PM: Day 5 homework due\n2023-11-20 11:59: Final paper due\n2023-11-21: Final presentation (in class)"
+  },
+  {
+    "objectID": "index.html#office-hours",
+    "href": "index.html#office-hours",
+    "title": "Reproducible Data Analysis",
+    "section": "Office Hours",
+    "text": "Office Hours\nBy appointment, please send an email to joelnitta@chiba-u.jp"
+  },
+  {
+    "objectID": "index.html#syllabus",
+    "href": "index.html#syllabus",
+    "title": "Reproducible Data Analysis",
+    "section": "Syllabus",
+    "text": "Syllabus\nSyllabus in English"
+  },
+  {
+    "objectID": "day2/index.html#what-is-git",
+    "href": "day2/index.html#what-is-git",
+    "title": "Reproducible data analysis",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
+  },
+  {
+    "objectID": "day2/index.html#why-use-git",
+    "href": "day2/index.html#why-use-git",
+    "title": "Reproducible data analysis",
+    "section": "Why use Git?",
+    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
+  },
+  {
+    "objectID": "day2/index.html#what-is-github",
+    "href": "day2/index.html#what-is-github",
+    "title": "Reproducible data analysis",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
+  },
+  {
+    "objectID": "day2/index.html#setup",
+    "href": "day2/index.html#setup",
+    "title": "Reproducible data analysis",
+    "section": "Setup",
+    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
+  },
+  {
+    "objectID": "day2/index.html#instructions-to-install-git",
+    "href": "day2/index.html#instructions-to-install-git",
+    "title": "Reproducible data analysis",
+    "section": "Instructions to install git",
+    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-account",
+    "href": "day2/index.html#setup-github-account",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub account",
+    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-authentication-pat",
+    "href": "day2/index.html#setup-github-authentication-pat",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub authentication: PAT",
+    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like an extra-secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
+  },
+  {
+    "objectID": "day2/index.html#create-pat-on-github",
+    "href": "day2/index.html#create-pat-on-github",
+    "title": "Reproducible data analysis",
+    "section": "Create PAT on GitHub",
+    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, do:\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+  },
+  {
+    "objectID": "day2/index.html#save-your-pat",
+    "href": "day2/index.html#save-your-pat",
+    "title": "Reproducible data analysis",
+    "section": "Save your PAT",
+    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
+  },
+  {
+    "objectID": "day2/index.html#a-few-more-notes-about-pat",
+    "href": "day2/index.html#a-few-more-notes-about-pat",
+    "title": "Reproducible data analysis",
+    "section": "A few more notes about PAT",
+    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
+  },
+  {
+    "objectID": "day2/index.html#introduce-yourself-to-git",
+    "href": "day2/index.html#introduce-yourself-to-git",
+    "title": "Reproducible data analysis",
+    "section": "Introduce yourself to git",
+    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name \"your_github_username\"\ngit config --global user.email \"your_email_adress\"\ngit config --global --list"
+  },
+  {
+    "objectID": "day2/index.html#about-repos",
+    "href": "day2/index.html#about-repos",
+    "title": "Reproducible data analysis",
+    "section": "About repos",
+    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
+  },
+  {
+    "objectID": "day2/index.html#remote-and-local-repos",
+    "href": "day2/index.html#remote-and-local-repos",
+    "title": "Reproducible data analysis",
+    "section": "Remote and local repos",
+    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
+  },
+  {
+    "objectID": "day2/index.html#cloning",
+    "href": "day2/index.html#cloning",
+    "title": "Reproducible data analysis",
+    "section": "Cloning",
+    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
+  },
+  {
+    "objectID": "day2/index.html#pushing-and-pulling",
+    "href": "day2/index.html#pushing-and-pulling",
+    "title": "Reproducible data analysis",
+    "section": "Pushing and pulling",
+    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
+  },
+  {
+    "objectID": "day2/index.html#commits",
+    "href": "day2/index.html#commits",
+    "title": "Reproducible data analysis",
+    "section": "Commits",
+    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
+  },
+  {
+    "objectID": "day2/index.html#staging-and-committing",
+    "href": "day2/index.html#staging-and-committing",
+    "title": "Reproducible data analysis",
+    "section": "Staging and committing",
+    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
+  },
+  {
+    "objectID": "day2/index.html#the-.gitignore-file",
+    "href": "day2/index.html#the-.gitignore-file",
+    "title": "Reproducible data analysis",
+    "section": "The .gitignore file",
+    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis iteself)"
+  },
+  {
+    "objectID": "day2/index.html#how-this-works-in-practice",
+    "href": "day2/index.html#how-this-works-in-practice",
+    "title": "Reproducible data analysis",
+    "section": "How this works in practice",
+    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
+  },
+  {
     "objectID": "day1/index.html#instructor-joel-nitta",
     "href": "day1/index.html#instructor-joel-nitta",
     "title": "Reproducible data analysis",
@@ -75,6 +257,13 @@
     "title": "Reproducible data analysis",
     "section": "Language of this class",
     "text": "Language of this class\n\nThis class is conducted in English\nBut, you can ask questions in Japanese and I will explain in Japanese if needed"
+  },
+  {
+    "objectID": "day1/index.html#recommended-reading",
+    "href": "day1/index.html#recommended-reading",
+    "title": "Reproducible data analysis",
+    "section": "Recommended Reading",
+    "text": "Recommended Reading\n\nR for Data Science. https://r4ds.had.co.nz/\n\nAvailable in Japanese from Amazon or O’Reilly\n\nHappy Git with R. https://happygitwithr.com/\nIntroduction to Reproducible Publications with RStudio https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/index.html"
   },
   {
     "objectID": "day1/index.html#homework-assignments",
@@ -168,13 +357,6 @@
     "text": "ChatGPT policies (DON’Ts)\n\nDon’t copy-paste directly from ChatGPT for your report.\n\nTyping the code yourself will help you remember it and understand what you are doing. Copy-pasting text for a paper is plagiarism.\n\nDon’t submit an answer from ChatGPT without trying/checking it yourself first\n\nChatGPT could very well be wrong!"
   },
   {
-    "objectID": "day1/index.html#setting-up-git",
-    "href": "day1/index.html#setting-up-git",
-    "title": "Reproducible data analysis",
-    "section": "Setting up Git",
-    "text": "Setting up Git\nWe will follow instructions for Day 2 to set up Git"
-  },
-  {
     "objectID": "day1/index.html#setting-up-rstudio",
     "href": "day1/index.html#setting-up-rstudio",
     "title": "Reproducible data analysis",
@@ -182,269 +364,10 @@
     "text": "Setting up RStudio\n\nInstall R\nInstall RStudio"
   },
   {
-    "objectID": "day2/index.html#what-is-git",
-    "href": "day2/index.html#what-is-git",
+    "objectID": "day1/index.html#setting-up-git",
+    "href": "day1/index.html#setting-up-git",
     "title": "Reproducible data analysis",
-    "section": "What is Git?",
-    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
-  },
-  {
-    "objectID": "day2/index.html#why-use-git",
-    "href": "day2/index.html#why-use-git",
-    "title": "Reproducible data analysis",
-    "section": "Why use Git?",
-    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
-  },
-  {
-    "objectID": "day2/index.html#what-is-github",
-    "href": "day2/index.html#what-is-github",
-    "title": "Reproducible data analysis",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
-  },
-  {
-    "objectID": "day2/index.html#setup",
-    "href": "day2/index.html#setup",
-    "title": "Reproducible data analysis",
-    "section": "Setup",
-    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
-  },
-  {
-    "objectID": "day2/index.html#instructions-to-install-git",
-    "href": "day2/index.html#instructions-to-install-git",
-    "title": "Reproducible data analysis",
-    "section": "Instructions to install git",
-    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
-  },
-  {
-    "objectID": "day2/index.html#setup-github-account",
-    "href": "day2/index.html#setup-github-account",
-    "title": "Reproducible data analysis",
-    "section": "Setup GitHub account",
-    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
-  },
-  {
-    "objectID": "day2/index.html#setup-github-authentication-ssh",
-    "href": "day2/index.html#setup-github-authentication-ssh",
-    "title": "Reproducible data analysis",
-    "section": "Setup GitHub authentication: SSH",
-    "text": "Setup GitHub authentication: SSH\n\nWhat is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)"
-  },
-  {
-    "objectID": "day2/index.html#check-for-existing-keys",
-    "href": "day2/index.html#check-for-existing-keys",
-    "title": "Reproducible data analysis",
-    "section": "Check for existing keys",
-    "text": "Check for existing keys\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub"
-  },
-  {
-    "objectID": "day2/index.html#create-keys",
-    "href": "day2/index.html#create-keys",
-    "title": "Reproducible data analysis",
-    "section": "Create keys",
-    "text": "Create keys\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)"
-  },
-  {
-    "objectID": "day2/index.html#create-keys-contd",
-    "href": "day2/index.html#create-keys-contd",
-    "title": "Reproducible data analysis",
-    "section": "Create keys (cont’d)",
-    "text": "Create keys (cont’d)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently)."
-  },
-  {
-    "objectID": "day2/index.html#create-keys-contd-1",
-    "href": "day2/index.html#create-keys-contd-1",
-    "title": "Reproducible data analysis",
-    "section": "Create keys (cont’d)",
-    "text": "Create keys (cont’d)\n\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys"
-  },
-  {
-    "objectID": "day2/index.html#copy-contents-of-public-key",
-    "href": "day2/index.html#copy-contents-of-public-key",
-    "title": "Reproducible data analysis",
-    "section": "Copy contents of public key",
-    "text": "Copy contents of public key\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)"
-  },
-  {
-    "objectID": "day2/index.html#add-public-key-to-github",
-    "href": "day2/index.html#add-public-key-to-github",
-    "title": "Reproducible data analysis",
-    "section": "Add public key to GitHub",
-    "text": "Add public key to GitHub\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”"
-  },
-  {
-    "objectID": "day2/index.html#check-that-it-worked",
-    "href": "day2/index.html#check-that-it-worked",
-    "title": "Reproducible data analysis",
-    "section": "Check that it worked",
-    "text": "Check that it worked\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
-  },
-  {
-    "objectID": "day2/index.html#introduce-yourself-to-git",
-    "href": "day2/index.html#introduce-yourself-to-git",
-    "title": "Reproducible data analysis",
-    "section": "Introduce yourself to git",
-    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name 'your_github_username'\ngit config --global user.email 'your_email_adress'\ngit config --global --list"
-  },
-  {
-    "objectID": "day2/index.html#about-repos",
-    "href": "day2/index.html#about-repos",
-    "title": "Reproducible data analysis",
-    "section": "About repos",
-    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
-  },
-  {
-    "objectID": "day2/index.html#remote-and-local-repos",
-    "href": "day2/index.html#remote-and-local-repos",
-    "title": "Reproducible data analysis",
-    "section": "Remote and local repos",
-    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
-  },
-  {
-    "objectID": "day2/index.html#cloning",
-    "href": "day2/index.html#cloning",
-    "title": "Reproducible data analysis",
-    "section": "Cloning",
-    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
-  },
-  {
-    "objectID": "day2/index.html#pushing-and-pulling",
-    "href": "day2/index.html#pushing-and-pulling",
-    "title": "Reproducible data analysis",
-    "section": "Pushing and pulling",
-    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
-  },
-  {
-    "objectID": "day2/index.html#commits",
-    "href": "day2/index.html#commits",
-    "title": "Reproducible data analysis",
-    "section": "Commits",
-    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
-  },
-  {
-    "objectID": "day2/index.html#staging-and-committing",
-    "href": "day2/index.html#staging-and-committing",
-    "title": "Reproducible data analysis",
-    "section": "Staging and committing",
-    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
-  },
-  {
-    "objectID": "day2/index.html#the-.gitignore-file",
-    "href": "day2/index.html#the-.gitignore-file",
-    "title": "Reproducible data analysis",
-    "section": "The .gitignore file",
-    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis iteself)"
-  },
-  {
-    "objectID": "day2/index.html#how-this-works-in-practice",
-    "href": "day2/index.html#how-this-works-in-practice",
-    "title": "Reproducible data analysis",
-    "section": "How this works in practice",
-    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducible Data Analysis",
-    "section": "",
-    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
-  },
-  {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
-    "title": "Reproducible Data Analysis",
-    "section": "",
-    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
-  },
-  {
-    "objectID": "index.html#important-deadlines",
-    "href": "index.html#important-deadlines",
-    "title": "Reproducible Data Analysis",
-    "section": "Important Deadlines",
-    "text": "Important Deadlines\n\n2023-10-16 11:59PM: Day 2 homework due\n2023-10-23 11:59PM: Day 3 homework due\n2023-10-30 11:59PM: Day 4 homework due\n2023-11-06 11:59PM: Day 5 homework due\n2023-11-20 11:59: Final paper due\n2023-11-21: Final presentation (in class)"
-  },
-  {
-    "objectID": "index.html#office-hours",
-    "href": "index.html#office-hours",
-    "title": "Reproducible Data Analysis",
-    "section": "Office Hours",
-    "text": "Office Hours\nBy appointment, please send an email to joelnitta@chiba-u.jp"
-  },
-  {
-    "objectID": "index.html#syllabus",
-    "href": "index.html#syllabus",
-    "title": "Reproducible Data Analysis",
-    "section": "Syllabus",
-    "text": "Syllabus\nSyllabus in English"
-  },
-  {
-    "objectID": "index.html#other-ino",
-    "href": "index.html#other-ino",
-    "title": "Reproducible Data Analysis",
-    "section": "Other ino",
-    "text": "Other ino\nBy appointment, please send an email to joelnitta@chiba-u.jp"
-  },
-  {
-    "objectID": "index.html#other-i",
-    "href": "index.html#other-i",
-    "title": "Reproducible Data Analysis",
-    "section": "Other i",
-    "text": "Other i\nBy appointment, please send an email to joelnitta@chiba-u.jp"
-  },
-  {
-    "objectID": "index.html#syllabushttpssyllabus.gs.chiba-u.jp2023101101101076000z011531301en_us",
-    "href": "index.html#syllabushttpssyllabus.gs.chiba-u.jp2023101101101076000z011531301en_us",
-    "title": "Reproducible Data Analysis",
-    "section": "Syllabus](https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US)",
-    "text": "Syllabus](https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US)"
-  },
-  {
-    "objectID": "day1/index.html#recommended-reading",
-    "href": "day1/index.html#recommended-reading",
-    "title": "Reproducible data analysis",
-    "section": "Recommended Reading",
-    "text": "Recommended Reading\n\nR for Data Science. https://r4ds.had.co.nz/\n\nAvailable in Japanese from Amazon or O’Reilly\n\nHappy Git with R. https://happygitwithr.com/\nIntroduction to Reproducible Publications with RStudio https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/index.html"
-  },
-  {
-    "objectID": "appendix.html",
-    "href": "appendix.html",
-    "title": "Appendix",
-    "section": "",
-    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
-  },
-  {
-    "objectID": "appendix.html#setup-github-authentication-ssh",
-    "href": "appendix.html#setup-github-authentication-ssh",
-    "title": "Appendix",
-    "section": "",
-    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
-  },
-  {
-    "objectID": "day2/index.html#setup-github-authentication-pat",
-    "href": "day2/index.html#setup-github-authentication-pat",
-    "title": "Reproducible data analysis",
-    "section": "Setup GitHub authentication: PAT",
-    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like a more secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
-  },
-  {
-    "objectID": "day2/index.html#create-pat-on-github",
-    "href": "day2/index.html#create-pat-on-github",
-    "title": "Reproducible data analysis",
-    "section": "Create PAT on GitHub",
-    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens and click “Generate token”.\n\nOr, from R, do:\nusethis::create_github_token()\n\nLook over the scopes; “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
-  },
-  {
-    "objectID": "day2/index.html#save-your-pat",
-    "href": "day2/index.html#save-your-pat",
-    "title": "Reproducible data analysis",
-    "section": "Save your PAT",
-    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
-  },
-  {
-    "objectID": "day2/index.html#a-few-more-notes-about-pat",
-    "href": "day2/index.html#a-few-more-notes-about-pat",
-    "title": "Reproducible data analysis",
-    "section": "A few more notes about PAT",
-    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing the default expiration date is recommended for security"
+    "section": "Setting up Git",
+    "text": "Setting up Git\nWe will follow instructions for Day 2 to set up Git"
   }
 ]
