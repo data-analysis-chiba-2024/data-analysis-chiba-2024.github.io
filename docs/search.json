@@ -25,7 +25,7 @@
     "href": "day1/index.html#what-is-data-analysis",
     "title": "Reproducible data analysis",
     "section": "What is data analysis?",
-    "text": "What is data analysis?\n\nObtaining insight from data\nImportant for many careers (academic and industry)"
+    "text": "What is data analysis?\n\nObtaining insight from data\nImportant for many careers (academic and industry)\n\n\nEmployment of data scientists is projected to grow 35% from 2022 to 2032, much faster than the average for all occupations.\n\n\nhttps://www.bls.gov/ooh/math/data-scientists.htm"
   },
   {
     "objectID": "day1/index.html#why-programming",
@@ -158,14 +158,14 @@
     "href": "day1/index.html#chatgpt-policies-dos",
     "title": "Reproducible data analysis",
     "section": "ChatGPT policies (DOs)",
-    "text": "ChatGPT policies (DOs)\n\nDo try by yourself first (without ChatGPT)\nDo ask it detailed, specific questions (prompts)\nDo double-check the results: does ChatGPT’s code produce the expected result?\nDo make sure you understand the code that ChatGPT provides"
+    "text": "ChatGPT policies (DOs)\n\nDo try by yourself first (without ChatGPT)\nDo ask it detailed, specific questions (prompts)\n\nhttps://www.promptingguide.ai/\n\nDo double-check the results: does ChatGPT’s code produce the expected result?\nDo make sure you understand the code that ChatGPT provides"
   },
   {
     "objectID": "day1/index.html#chatgpt-policies-donts",
     "href": "day1/index.html#chatgpt-policies-donts",
     "title": "Reproducible data analysis",
     "section": "ChatGPT policies (DON’Ts)",
-    "text": "ChatGPT policies (DON’Ts)\n\nDon’t copy-paste directly from ChatGPT.\n\nTyping the code yourself will help you remember it and understand what you are doing. Copy-pasting text for a paper is plagiarism.\n\nDon’t submit an answer from ChatGPT without trying/checking it yourself first\n\nChatGPT could very well be wrong!"
+    "text": "ChatGPT policies (DON’Ts)\n\nDon’t copy-paste directly from ChatGPT for your report.\n\nTyping the code yourself will help you remember it and understand what you are doing. Copy-pasting text for a paper is plagiarism.\n\nDon’t submit an answer from ChatGPT without trying/checking it yourself first\n\nChatGPT could very well be wrong!"
   },
   {
     "objectID": "day1/index.html#setting-up-git",
@@ -340,7 +340,7 @@
     "href": "day2/index.html#how-this-works-in-practice",
     "title": "Reproducible data analysis",
     "section": "How this works in practice",
-    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you set up the demo repo."
+    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
   },
   {
     "objectID": "index.html",
