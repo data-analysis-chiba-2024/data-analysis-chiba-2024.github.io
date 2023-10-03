@@ -213,6 +213,7 @@ By appointment: contact me at <joelnitta@chiba.u-jp>
 ## ChatGPT {.incremental}
 
 - Who has used ChatGPT before?
+  - <https://chat.openai.com/>
 
 - You may use ChatGPT for your homework and final project
 
