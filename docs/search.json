@@ -28,6 +28,13 @@
     "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
   },
   {
+    "objectID": "index.html#materials",
+    "href": "index.html#materials",
+    "title": "Reproducible Data Analysis",
+    "section": "Materials",
+    "text": "Materials\n\nDay 2: Git and GitHub"
+  },
+  {
     "objectID": "index.html#important-deadlines",
     "href": "index.html#important-deadlines",
     "title": "Reproducible Data Analysis",

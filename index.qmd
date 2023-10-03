@@ -33,6 +33,10 @@ toc: false
 
 <!-- [Day 8: Final presentation](day8/index.qmd) -->
 
+## Materials
+
+- [Day 2: Git and GitHub](https://github.com/data-analysis-chiba-2023/day02-git)
+
 ## Important Deadlines
 
 - 2023-10-16 11:59PM: Day 2 homework due
