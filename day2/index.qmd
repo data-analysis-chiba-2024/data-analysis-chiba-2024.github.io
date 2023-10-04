@@ -63,7 +63,7 @@ There is another method for authentication called SSH, but it's a bit more compl
 
 - Go to https://github.com/settings/tokens
 
-Or, from R, do:
+Or, from R, first install `usethis` with `install.packages("usethis")`, then do
 
 ```
 usethis::create_github_token()

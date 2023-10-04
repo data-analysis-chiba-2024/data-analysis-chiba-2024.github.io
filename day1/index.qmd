@@ -254,4 +254,4 @@ By appointment: contact me at <joelnitta@chiba.u-jp>
 
 ## Setting up Git
 
-We will follow instructions for [Day 2](../day2/#/setup-github-authentication-pat) to set up Git
+We will follow instructions for [Day 2](../day2/#/setup) to set up Git

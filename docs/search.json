@@ -109,7 +109,7 @@
     "href": "day2/index.html#create-pat-on-github",
     "title": "Reproducible data analysis",
     "section": "Create PAT on GitHub",
-    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, do:\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, first install usethis with install.packages(\"usethis\"), then do\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
   },
   {
     "objectID": "day2/index.html#save-your-pat",
