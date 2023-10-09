@@ -103,6 +103,18 @@ git config --global user.email "your_email_adress"
 git config --global --list
 ```
 
+## Change some default settings
+
+- Git can allow you to have multiple versions of your code at the same time.
+
+- These are called "branches".
+
+- Tell git to use the name "main" for the main branch:
+
+```bash
+git config --global init.defaultBranch main
+```
+
 ## About repos
 
 - A 'repo' (short for repository) is a folder where you store all the code and other files needed for a project.

@@ -397,5 +397,12 @@
     "title": "Reproducible data analysis",
     "section": "About markdown",
     "text": "About markdown\n\nYou will use markdown to write your final report and for your homework assignments\nTake another look at the “Intro to Git” markdown file to see how it is formatted (compare ‘preview’ and ‘code’ views)"
+  },
+  {
+    "objectID": "day2/index.html#change-some-default-settings",
+    "href": "day2/index.html#change-some-default-settings",
+    "title": "Reproducible data analysis",
+    "section": "Change some default settings",
+    "text": "Change some default settings\n\nGit can allow you to have multiple versions of your code at the same time.\nThese are called “branches”.\nTell git to use the name “main” for the main branch:\n\ngit config --global init.defaultBranch main"
   }
 ]
