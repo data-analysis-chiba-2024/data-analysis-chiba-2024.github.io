@@ -150,7 +150,7 @@ A file that has been changed is not automatically added to git's history.
 
 If there are any files you don't want git to track, you can ignore them by listing them in a special file called `.gitignore`.
 
-It is usually a good idea to ignore **raw data files** and **output files**. We only want to track code (in other words, the analysis iteself)
+It is usually a good idea to ignore **raw data files** and **output files**. We only want to track code (in other words, the analysis itself)
 
 ## How this works in practice
 

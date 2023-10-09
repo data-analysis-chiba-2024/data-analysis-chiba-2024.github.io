@@ -232,7 +232,7 @@ By appointment: contact me at <joelnitta@chiba.u-jp>
 - *Do* try by yourself first (without ChatGPT)
 
 - *Do* ask it **detailed**, **specific** questions (prompts)
-  -  <https://www.promptingguide.ai/>
+  -  <https://www.promptingguide.ai/> ([日本語](https://www.promptingguide.ai/jp))
 
 - *Do* **double-check** the results: does ChatGPT's code produce the expected result?
 

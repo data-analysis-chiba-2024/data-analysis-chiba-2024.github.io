@@ -179,7 +179,7 @@
     "href": "day2/index.html#the-.gitignore-file",
     "title": "Reproducible data analysis",
     "section": "The .gitignore file",
-    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis iteself)"
+    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis itself)"
   },
   {
     "objectID": "day2/index.html#how-this-works-in-practice",
@@ -354,7 +354,7 @@
     "href": "day1/index.html#chatgpt-policies-dos",
     "title": "Reproducible data analysis",
     "section": "ChatGPT policies (DOs)",
-    "text": "ChatGPT policies (DOs)\n\nDo try by yourself first (without ChatGPT)\nDo ask it detailed, specific questions (prompts)\n\nhttps://www.promptingguide.ai/\n\nDo double-check the results: does ChatGPT’s code produce the expected result?\nDo make sure you understand the code that ChatGPT provides"
+    "text": "ChatGPT policies (DOs)\n\nDo try by yourself first (without ChatGPT)\nDo ask it detailed, specific questions (prompts)\n\nhttps://www.promptingguide.ai/ (日本語)\n\nDo double-check the results: does ChatGPT’s code produce the expected result?\nDo make sure you understand the code that ChatGPT provides"
   },
   {
     "objectID": "day1/index.html#chatgpt-policies-donts",
@@ -376,5 +376,26 @@
     "title": "Reproducible data analysis",
     "section": "Setting up Git",
     "text": "Setting up Git\nWe will follow instructions for Day 2 to set up Git"
+  },
+  {
+    "objectID": "day2/index.html#about-markdown",
+    "href": "day2/index.html#about-markdown",
+    "title": "Reproducible data analysis",
+    "section": "About markdown",
+    "text": "About markdown\n\n‘markdown’ is a language for text files that defines how the text should be formatted in a web-browser\nMarkdown is like a simplified version of HTML\nFiles that use markdown have the .md extension"
+  },
+  {
+    "objectID": "day2/index.html#about-markdown-1",
+    "href": "day2/index.html#about-markdown-1",
+    "title": "Reproducible data analysis",
+    "section": "About markdown",
+    "text": "About markdown\nFor example, to write text in bold, you would type this in the markdown file:\nThis is **important**\n… which will appear like this in a web-browser:\nThis is important"
+  },
+  {
+    "objectID": "day2/index.html#about-markdown-2",
+    "href": "day2/index.html#about-markdown-2",
+    "title": "Reproducible data analysis",
+    "section": "About markdown",
+    "text": "About markdown\n\nYou will use markdown to write your final report and for your homework assignments\nTake another look at the “Intro to Git” markdown file to see how it is formatted (compare ‘preview’ and ‘code’ views)"
   }
 ]
