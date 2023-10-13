@@ -1,0 +1,509 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+execute: 
+  echo: true
+---
+
+# Day 3: Basic usage of R and RStudio
+
+2023-10-17
+
+## Why use a programming language?
+
+- Programming makes your analysis **reproducible**, because you have an **exact, written record** of what you have done
+
+## What is reproducibility?
+
+- The ability for other people (including your future self!) to **reproduce** your analysis results
+  - Gives you **confidence** in your results
+  - Makes it easier to switch between projects
+
+## Why learn R?
+
+- R is free
+- R is extensible
+- R produces high-quality graphics
+- R has a large and welcoming community
+
+## R vs. RStudio
+
+- **R** is the programming language
+
+- **RStudio** is software to use R and write R code
+
+- We will always use R through RStudio! (don't click on the icon for R)
+
+---
+
+![](../images/r_vs_rstudio.png)
+
+## Introduction to RStudio
+
+- We will start by navigating RStudio
+
+- There are four main **panels**
+  - Source (where you write your code)
+  - Environment (lists the objects in your R session)
+  - R Console (where you talk to R)
+  - Files and Plots (shows the files in your project, and any plots you make)
+
+---
+
+![](../images/rstudio.png)
+
+---
+
+![](../images/rstudio_labeled.png)
+
+## Projects
+
+- An R **Project** is a folder that contains all the files you need for a particular data analysis project
+  - Basically the same thing as a **repo** (if you are using git)
+
+- Projects help **organize code and files** so we don't get lost
+
+## Create a new project
+
+- So far, we have only **cloned** projects from GitHub
+
+- Today you will create a new project **on your computer**
+
+## Create a new project
+
+- In RStudio, click `File` ➡︎ `New Project` ➡︎ `New Directory` ➡︎ `New Project` (again)
+  - Enter the **name** of the project (folder) and **where** to put it
+  - I recommend putting it somewhere **easy to find**
+
+- Let's put call this project `day03-practice` and put it in the `data-analysis-course` folder on the Desktop
+
+- Click "Create a git repository", since we are using git
+
+---
+
+![](../images/new-project.png)
+
+## Create a new project
+
+- RStudio will restart, and you will see in the File pane that we are located in the new project
+
+- RStudio has created two files automatically, `day03-practice.Rproj` and `.gitignore`
+  - Commit these files with the commit message "Initial commit" (or whatever you want, but that is often used as a first commit message for a new project)
+
+- Now we are ready to start using R!
+
+---
+
+![](../images/new-project-day03-practice.png)
+
+## R as a calculator
+
+- You can execute R code to calculate numbers directly in the console by typing the calculation then pressing "Enter"
+
+- Try something like this:
+
+```{r}
+2 + 2
+```
+
+## R as a calculator
+
+```{r}
+5 * 10
+2 / 3
+(2 + 1)^2
+```
+
+Congratulations! You are now an R programmer!
+
+## Objects (variables)
+
+- R can do much more than act like a calculator
+
+- One very useful thing is the ability to **store values** in variables, often called **"objects"** in R
+
+- We **assign** values to objects using the arrow symbol: `<-`
+
+```{r}
+x <- 2 + 2
+```
+
+. . .
+
+However, R does not show you the value of `x` when you assign it
+
+## Objects (variables)
+
+To check the value of `x`, type `x` in the console and press "Enter"
+
+```{r}
+x
+```
+
+The value of `x` is also shown in the Environment panel (top-right panel)
+
+## Objects (variables)
+
+Now that we have saved a value to `x`, we can do additional calculations with it:
+
+```{r}
+x * 10
+```
+
+## Objects (variables)
+
+We can then use that code to build a new object:
+```{r}
+y <- x * 10
+y
+```
+
+## Objects (variables)
+
+But notice that the objects don't "react" to each other:
+
+```{r}
+x <- 5
+# What is value of x?
+x
+```
+
+. . .
+
+```{r}
+# What is the value of y? (remember, y <- x * 10)
+```
+
+. . .
+
+```{r}
+y
+```
+
+## Workspace settings and using the .Rproj file
+
+- Before continuing, we need to change some of the default settings in R
+
+- I'll also demonstrate how to use the `.Rproj` file to open a project
+
+- Quit RStudio (we will open it again soon) by clicking `File` ➡︎ `Quit Session`
+
+## Use the .Rproj file to open the project
+
+- Open your project by navigating to `data-analysis-course/day03-practice` on your Desktop and clicking on `day03-practice.Rproj`.
+
+---
+
+![](../images/rproj-location.png)
+
+## Change Workspace settings
+
+- What do you see in RStudio when you open your project?
+
+---
+
+![](../images/workspace-vars-show.png)
+
+## Change Workspace settings
+
+- Notice in the "Environment" pane (upper-right) that `x` and `y` are **still there**, even though the code that we typed last time is gone!
+  - In other words, **we don't know how we got `x` and `y`**
+  - This is **bad for reproducibility**!
+
+## Change Workspace settings
+
+- The contents of the R session (the "environment") should only show what we have done using code **during that session**
+  - We will change the default settings to avoid this behavior
+
+## Change Workspace settings 
+
+- Click on `Tools` ➡︎ `Global Options`
+  - **Uncheck** "Restore .RData into workspace at startup"
+  - Select "Never" for "Save workspace to .RData on exit"
+  - Click "OK"
+
+- You can also delete the `.RData` file, which is where those data were stored
+
+---
+
+![](../images/settings_change.png)
+
+## Saving code
+
+- So far, we have only typed code directly into R
+
+. . .
+
+- It is much more useful to **save** your code in a file (called a **"script"**) so that you can run it again without typing everything all over again
+
+## Saving code
+
+- Click `File` ➡︎ `New File` ➡︎ `R Script`
+
+- Click the disk icon or `File` ➡︎ `Save As...` to give your file a name (let's say, "`practice.R`") and save it.
+
+## Running code from a file
+
+- Type the same code as before in your new file: `x <- 2 + 2` and hit the "Enter" key
+
+::: {.incremental}
+
+- Notice that **R does not run the code**, since this is the file editing pane, not the R console
+
+- We need to **send the code to the console** (that is, send it to R)
+
+:::
+
+## Running code from a file
+
+- One way to do this is to copy-and-paste it. But that is annoying.
+
+- The better way is to use the keyboard shortcut: control (Window) or command (Mac) + the enter key. Try it!
+
+- You can also either press the "Run" button in RStudio to run one line at a time, or the "Source" button to run all of the contents of your script
+
+## Comments
+
+- In addition to the actual code, it is very useful to include notes in your script so you can remember **why** you did things
+
+- These notes are called "comments"
+
+- You write a comment by starting with `#`. Anything after that will be ignored by R
+
+## Comments
+
+```{r}
+# This is a comment.
+# Let's use R like a calculator:
+22 / 7
+```
+
+## Functions and arguments
+
+::: {.incremental}
+
+- The next step in our R journey is to learn about **functions**
+
+- A **function** takes **input**, does something to it, and returns **output**
+
+- For example, let's try using the `round` function, which rounds numbers
+
+:::
+
+## Functions and arguments
+
+- The input to the function is indicated by using parentheses, like this:
+
+```
+function_name(input)
+```
+
+- Try it with `round`:
+
+```{r}
+round(3.142857)
+```
+
+## Functions and arguments
+
+- In addition to the input, functions also have various settings, which are called "arguments"
+
+. . .
+
+- For example, say we want to round to greater precision. We can use the `digits` argument to round to 3 digits.
+
+```{r}
+round(3.142857, digits = 3)
+```
+
+## Functions and arguments
+
+- R will recognize the **input** and **arguments** by their **order**, so you don't actually have to specify the argument name (this can save you some typing):
+
+```{r}
+round(3.142857, 3)
+```
+
+- But you need to remember the order yourself! If you aren't sure, it's always better to be explicit and include the argument name
+
+## Getting help
+
+- This is all fine if you already know everything about what the function does, but **nobody knows everything about R!**
+
+- To see the settings (arguments) of a function, type a question mark followed by the name of the function, like this: `?round`
+
+- A description will appear in the help panel on the lower left.
+
+## Getting help
+
+- Googling or asking ChatGPT* are also OK
+
+- *but always be sure to check what ChatGPT tells you!
+
+## Vectors
+
+- So far, we have been doing calculations on one value at a time. But we want to be able to **calculate many things at once**.
+
+- We can do that with **vectors**, which are a **series of values**
+
+- You make a vector with the `c()` function
+  - (from now on I will always refer to functions by their name plus the parentheses, since you always need them to actually use the function)
+
+## Vectors
+
+```{r}
+# Create a vector of numbers (a "numeric vector")
+numbers <- c(1, 2, 3, 4, 5)
+numbers
+```
+
+## Vectors
+
+We can now do use the vector as input. Say we want to double each of the numbers:
+
+```{r}
+numbers * 2
+```
+
+...or obtain their mean value:
+
+```{r}
+mean(numbers)
+```
+
+- Almost everything you do in R relies on **objects**, **functions**, and **vectors**
+
+## Data types
+
+- Vectors have a rule: each item (called an "element") of the vector must be of the same **data type**
+
+- The basic data types in R include:
+  - Numeric (numbers, also confusingly called `"double"`)
+  - Character (words)
+  - Logical (`TRUE` or `FALSE`)
+
+## Data types
+
+```{r}
+# A numeric vector:
+c(1, 2, 3)
+
+# A character vector:
+c("banana", "orange", "apple")
+
+# A logical vector:
+c(TRUE, FALSE, TRUE)
+```
+
+## Data types
+
+We can check the type of the vector using the `typof()` function.
+
+```{r}
+nums <- c(1, 2, 3)
+typeof(nums)
+
+fruit <- c("banana", "orange", "apple")
+typeof(fruit)
+
+tf <- c(TRUE, FALSE, TRUE)
+typeof(tf)
+```
+
+## Data types
+
+- What do you think happens if you try to combine data of different types?
+
+- Try it!
+
+```{r}
+#| eval: false
+mixed <- c(1, 2, "banana", "orange")
+```
+
+## Data types
+
+```{r}
+mixed <- c(1, 2, "banana", "orange")
+mixed
+typeof(mixed)
+```
+
+. . . 
+
+- The `numeric` data and the `character` data were **all forced to be character** (even though `"1"` may look like a number, the quotation marks show you that it is stored as a character)
+
+## Comparisons
+
+- We will finish by demonstrating a very useful thing in programming: comparing values
+
+- The comparison symbols are:
+  - `>` greater than
+  - `<` less than
+  - `==` equals (**be careful!** use two equals signs, not one)
+  - `!=` not equal
+
+## Comparisons
+
+- The comparisons will return a **logical vector**:
+
+```{r}
+# Here are some ages of people
+ages <- c(21, 8, 40)
+
+# Which of these people are adults?
+ages > 20
+```
+
+## Subsetting
+
+- The reason that comparisons are so useful is that you can use them for **subsetting**, that is, to narrow down the data
+
+- You perform subsetting with square brackets, `[]`
+
+## Subsetting
+
+- Here we obtain the **second** value of the vector:
+
+```{r}
+ages[2]
+```
+
+## Subsetting
+
+- Or we could obtain the first and second values:
+
+```{r}
+ages[c(1, 2)]
+```
+
+
+## Subsetting
+
+- Or we could use the comparison to narrow it down to only adults:
+
+```{r}
+ages[ages > 20]
+```
+
+. . .
+
+- This last usage in particular is very helpful for working with data, which will do starting next week!
+
+## Homework
+
+- Go to Moodle, click on `Day 3 Homework` and click on the link to accept the assignment
+
+- Clone the repo to your `data-analysis-course` on your Desktop, like we did last time
+
+## Homework
+
+- Edit the `day03-homework.R` file to answer the questions.
+
+- Make sure to **run the code**. Your R code should not have any errors!
+
+- Commit your changes as you work on your homework, and push them to the remote
+
+- Submit the URL for the remote as your answer on Moodle
