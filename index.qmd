@@ -33,13 +33,15 @@ toc: false
 
 ## Materials
 
-- [Day 2: Git and GitHub](https://github.com/data-analysis-chiba-2023/day02-git)
+- [Day 2: Git and GitHub](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/day02_intro_to_git.md)
+
+- [Day 3: R and RStudio](https://github.com/data-analysis-chiba-2023/day03-r/blob/main/day03_intro_to_r.md)
 
 ## Important Deadlines
 
-- 2023-10-16 11:59PM: Day 2 homework due
+- 2023-10-16 11:59PM: [Day 2 homework](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/git_facts.md) due
 
-- 2023-10-23 11:59PM: Day 3 homework due
+- 2023-10-23 11:59PM: [Day 3 homework](https://github.com/data-analysis-chiba-2023/day03-r/blob/main/day03_homework.R) due
 
 - 2023-10-30 11:59PM: Day 4 homework due
 
