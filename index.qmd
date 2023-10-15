@@ -9,9 +9,7 @@ toc: false
 
 - [Day 2: Git and GitHub](day2/index.qmd)
 
-- Day 3: Basic usage of R and RStudio
-
-<!-- [Day 3: Basic usage of R and RStudio](day3/index.qmd) -->
+- [Day 3: Basic usage of R and RStudio](day3/index.qmd)
 
 - Day 4: Writing documents with Quarto
 

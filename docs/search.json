@@ -18,14 +18,14 @@
     "href": "index.html",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
+    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
   },
   {
     "objectID": "index.html#slides",
     "href": "index.html#slides",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\n\n\n\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
+    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\nDay 4: Writing documents with Quarto\n\n\n\nDay 5: Data loading and tidying with tidyverse\n\n\n\nDay 6: Data visualization with ggplot2\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
   },
   {
     "objectID": "index.html#materials",
@@ -774,6 +774,13 @@
     "href": "day3/index.html#homework-1",
     "title": "Reproducible data analysis",
     "section": "Homework",
-    "text": "Homework\n\nEdit the day03-homework.R file to answer the questions.\nMake sure to run the code. Your R code should not have any errors!\nCommit your changes as you work on your homework, and push them to the remote\nSubmit the URL for the remote as your answer on Moodle"
+    "text": "Homework\n\nEdit the day03_homework.R file to answer the questions.\nMake sure to run the code. Your R code should not have any errors!\nCommit your changes as you work on your homework, and push them to the remote\nSubmit the URL for the remote as your answer on Moodle"
+  },
+  {
+    "objectID": "working/notes.html",
+    "href": "working/notes.html",
+    "title": "Reproducible data analysis",
+    "section": "",
+    "text": "Organizing your working directory\nUsing a consistent folder structure across your projects will help keep things organized, and will help you to find/file things in the future. This can be especially helpful when you have multiple projects. In general, you may create directories (folders) for scripts, data, and documents.\n\ndata_raw/ & data/ Use these folders to store raw data and intermediate datasets you may create for the need of a particular analysis. For the sake of transparency and provenance, you should always keep a copy of your raw data accessible and do as much of your data cleanup and preprocessing programmatically (i.e., with scripts, rather than manually) as possible. Separating raw data from processed data is also a good idea.\ndocuments/ Keep outlines, drafts, and other text here.\nR/ Keep your R scripts here.\nAdditional (sub)directories depending on your project needs.\nUnder the Files tab on the right of the screen, click on New Folder and create a folder named R within your newly created project.\n\nYour working directory should now look like this:\n\n\n\nHow it should look like at the beginning of this lesson"
   }
 ]

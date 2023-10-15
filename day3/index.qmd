@@ -500,7 +500,7 @@ ages[ages > 20]
 
 ## Homework
 
-- Edit the `day03-homework.R` file to answer the questions.
+- Edit the `day03_homework.R` file to answer the questions.
 
 - Make sure to **run the code**. Your R code should not have any errors!
 
