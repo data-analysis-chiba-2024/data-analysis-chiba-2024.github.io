@@ -3,6 +3,7 @@ format:
   revealjs:
     incremental: false
     css: ../styles.css
+    theme: ../theme.scss
 execute: 
   echo: true
 ---
@@ -162,7 +163,7 @@ y
 
 ## Objects (variables)
 
-But notice that the objects don't "react" to each other:
+But notice that the objects don't "react" to each other (in other words, assigning a value to one object does not change the values of other objects):
 
 ```{r}
 x <- 5
@@ -173,7 +174,8 @@ x
 . . .
 
 ```{r}
-# What is the value of y? (remember, y <- x * 10)
+# What is the value of y?
+# (remember, y <- x * 10)
 ```
 
 . . .
@@ -354,7 +356,8 @@ round(3.142857, 3)
 ## Vectors
 
 ```{r}
-# Create a vector of numbers (a "numeric vector")
+# Create a vector of numbers
+# (a "numeric vector")
 numbers <- c(1, 2, 3, 4, 5)
 numbers
 ```
@@ -479,10 +482,28 @@ ages[2]
 ages[c(1, 2)]
 ```
 
+## Subsetting
+
+- Or we can use a logical vector to indicate which values to keep:
+
+```{r}
+ages[c(TRUE, TRUE, FALSE)]
+```
 
 ## Subsetting
 
-- Or we could use the comparison to narrow it down to only adults:
+- However, you typically don't type such logical vectors by hand
+
+- It is more useful to **subset by using the output of a comparison**
+
+- For example, let's subset to only ages of adults. Recall how we set up that comparison:
+```{r}
+ages > 20
+```
+
+## Subsetting
+
+- Now, use that code to subset the values:
 
 ```{r}
 ages[ages > 20]
@@ -490,7 +511,7 @@ ages[ages > 20]
 
 . . .
 
-- This last usage in particular is very helpful for working with data, which will do starting next week!
+- This kind of subsetting is very helpful for working with data, which will do starting next week!
 
 ## Homework
 
@@ -507,3 +528,13 @@ ages[ages > 20]
 - Commit your changes as you work on your homework, and push them to the remote
 
 - Submit the URL for the remote as your answer on Moodle
+
+## Homework and ChatGPT
+
+- I provide homework to give you a chance to **think** and **learn**
+
+- ChatGPT can answer all of homework questions instantly and perfectly, and **I can't tell if you used it or not**
+
+- But if you only use ChatGPT, **you will not learn anything**
+
+- Please think about **why** you are taking this class (and **why** you are paying money to attend Chiba U): do you just want a grade, or do you want to learn? **It is up to you.**

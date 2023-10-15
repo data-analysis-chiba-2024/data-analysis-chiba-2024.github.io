@@ -550,7 +550,7 @@
     "href": "day3/index.html#objects-variables-4",
     "title": "Reproducible data analysis",
     "section": "Objects (variables)",
-    "text": "Objects (variables)\nBut notice that the objects don’t “react” to each other:\n\nx &lt;- 5\n# What is value of x?\nx\n\n[1] 5\n\n\n\n\n# What is the value of y? (remember, y &lt;- x * 10)\n\n\n\n\ny\n\n[1] 40"
+    "text": "Objects (variables)\nBut notice that the objects don’t “react” to each other (in other words, assigning a value to one object does not change the values of other objects):\n\nx &lt;- 5\n# What is value of x?\nx\n\n[1] 5\n\n\n\n\n# What is the value of y?\n# (remember, y &lt;- x * 10)\n\n\n\n\ny\n\n[1] 40"
   },
   {
     "objectID": "day3/index.html#objects-variables-5",
@@ -655,7 +655,7 @@
     "href": "day3/index.html#vectors-1",
     "title": "Reproducible data analysis",
     "section": "Vectors",
-    "text": "Vectors\n\n# Create a vector of numbers (a \"numeric vector\")\nnumbers &lt;- c(1, 2, 3, 4, 5)\nnumbers\n\n[1] 1 2 3 4 5"
+    "text": "Vectors\n\n# Create a vector of numbers\n# (a \"numeric vector\")\nnumbers &lt;- c(1, 2, 3, 4, 5)\nnumbers\n\n[1] 1 2 3 4 5"
   },
   {
     "objectID": "day3/index.html#vectors-2",
@@ -746,7 +746,7 @@
     "href": "day3/index.html#subsetting-3",
     "title": "Reproducible data analysis",
     "section": "Subsetting",
-    "text": "Subsetting\n\nOr we could use the comparison to narrow it down to only adults:\n\n\nages[ages &gt; 20]\n\n[1] 21 40\n\n\n\n\nThis last usage in particular is very helpful for working with data, which will do starting next week!"
+    "text": "Subsetting\n\nOr we can use a logical vector to indicate which values to keep:\n\n\nages[c(TRUE, TRUE, FALSE)]\n\n[1] 21  8"
   },
   {
     "objectID": "day3/index.html#change-workspace-settings-3",
@@ -782,5 +782,26 @@
     "title": "Reproducible data analysis",
     "section": "",
     "text": "Organizing your working directory\nUsing a consistent folder structure across your projects will help keep things organized, and will help you to find/file things in the future. This can be especially helpful when you have multiple projects. In general, you may create directories (folders) for scripts, data, and documents.\n\ndata_raw/ & data/ Use these folders to store raw data and intermediate datasets you may create for the need of a particular analysis. For the sake of transparency and provenance, you should always keep a copy of your raw data accessible and do as much of your data cleanup and preprocessing programmatically (i.e., with scripts, rather than manually) as possible. Separating raw data from processed data is also a good idea.\ndocuments/ Keep outlines, drafts, and other text here.\nR/ Keep your R scripts here.\nAdditional (sub)directories depending on your project needs.\nUnder the Files tab on the right of the screen, click on New Folder and create a folder named R within your newly created project.\n\nYour working directory should now look like this:\n\n\n\nHow it should look like at the beginning of this lesson"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-4",
+    "href": "day3/index.html#subsetting-4",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nHowever, you typically don’t type such logical vectors by hand\nIt is more useful to subset by using the output of a comparison\nFor example, let’s subset to only ages of adults. Recall how we set up that comparison:\n\n\nages &gt; 20\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-5",
+    "href": "day3/index.html#subsetting-5",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nNow, use that code to subset the values:\n\n\nages[ages &gt; 20]\n\n[1] 21 40\n\n\n\n\nThis kind of subsetting is very helpful for working with data, which will do starting next week!"
+  },
+  {
+    "objectID": "day3/index.html#homework-and-chatgpt",
+    "href": "day3/index.html#homework-and-chatgpt",
+    "title": "Reproducible data analysis",
+    "section": "Homework and ChatGPT",
+    "text": "Homework and ChatGPT\n\nI provide homework to give you a chance to think and learn\nChatGPT can answer all of homework questions instantly and perfectly, and I can’t tell if you used it or not\nBut if you only use ChatGPT, you will not learn anything\nPlease think about why you are taking this class (and why you are paying money to attend Chiba U): do you just want a grade, or do you want to learn? It is up to you."
   }
 ]
