@@ -12,6 +12,20 @@ execute:
 
 2023-10-17
 
+## Announcements
+
+- Be sure to submit your homework **on Moodle** (paste the URL of your git repo)
+
+---
+
+![](../images/moodle-hw-submit.png)
+
+## Announcements
+
+- Schedule change
+  - Old: Day 4 Quarto, Day 5 Tidyverse (media day), Day 6 Visualization
+  - **New**: Day 4 Tidyverse, Day 5 Visualization (media day), Day 6 Quarto
+
 ## Why use a programming language?
 
 - Programming makes your analysis **reproducible**, because you have an **exact, written record** of what you have done

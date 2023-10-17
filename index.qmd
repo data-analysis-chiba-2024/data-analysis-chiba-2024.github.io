@@ -11,15 +11,15 @@ toc: false
 
 - [Day 3: Basic usage of R and RStudio](day3/index.qmd)
 
-- Day 4: Writing documents with Quarto
+- Day 4: Data loading and tidying with tidyverse
 
 <!-- [Day 4: Writing documents with Quarto](day4/index.qmd) -->
 
-- Day 5: Data loading and tidying with tidyverse
+- Day 5: Data visualization with ggplot2
 
 <!-- [Day 5: Data loading and tidying with tidyverse](day5/index.qmd) -->
 
-- Day 6: Data visualization with ggplot2
+- Day 6: Writing documents with Quarto
 
 <!-- [Day 6: Data visualization with ggplot2](day6/index.qmd) -->
 
