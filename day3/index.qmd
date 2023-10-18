@@ -547,7 +547,7 @@ ages[ages > 20]
 
 - I provide homework to give you a chance to **think** and **learn**
 
-- ChatGPT can answer all of homework questions instantly and perfectly, and **I can't tell if you used it or not**
+- For basic R homework, ChatGPT can answer all of the questions instantly, and **I can't tell if you used it or not**
 
 - But if you only use ChatGPT, **you will not learn anything**
 

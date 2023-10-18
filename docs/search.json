@@ -1,199 +1,122 @@
 [
   {
-    "objectID": "appendix.html",
-    "href": "appendix.html",
-    "title": "Appendix",
-    "section": "",
-    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
-  },
-  {
-    "objectID": "appendix.html#setup-github-authentication-ssh",
-    "href": "appendix.html#setup-github-authentication-ssh",
-    "title": "Appendix",
-    "section": "",
-    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Reproducible Data Analysis",
-    "section": "",
-    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\nDay 4: Data loading and tidying with tidyverse\n\n\n\nDay 5: Data visualization with ggplot2\n\n\n\nDay 6: Writing documents with Quarto\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
-  },
-  {
-    "objectID": "index.html#slides",
-    "href": "index.html#slides",
-    "title": "Reproducible Data Analysis",
-    "section": "",
-    "text": "Day 1: Introduction: Why code? Why reproducibility?\nDay 2: Git and GitHub\nDay 3: Basic usage of R and RStudio\nDay 4: Data loading and tidying with tidyverse\n\n\n\nDay 5: Data visualization with ggplot2\n\n\n\nDay 6: Writing documents with Quarto\n\n\n\nDay 7: Best practices for reproducible data analysis\n\n\n\nDay 8: Final presentation"
-  },
-  {
-    "objectID": "index.html#materials",
-    "href": "index.html#materials",
-    "title": "Reproducible Data Analysis",
-    "section": "Materials",
-    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio"
-  },
-  {
-    "objectID": "index.html#important-deadlines",
-    "href": "index.html#important-deadlines",
-    "title": "Reproducible Data Analysis",
-    "section": "Important Deadlines",
-    "text": "Important Deadlines\n\n2023-10-16 11:59PM: Day 2 homework due\n2023-10-23 11:59PM: Day 3 homework due\n2023-10-30 11:59PM: Day 4 homework due\n2023-11-06 11:59PM: Day 5 homework due\n2023-11-20 11:59: Final paper due\n2023-11-21: Final presentation (in class)"
-  },
-  {
-    "objectID": "index.html#office-hours",
-    "href": "index.html#office-hours",
-    "title": "Reproducible Data Analysis",
-    "section": "Office Hours",
-    "text": "Office Hours\nBy appointment, please send an email to joelnitta@chiba-u.jp"
-  },
-  {
-    "objectID": "index.html#syllabus",
-    "href": "index.html#syllabus",
-    "title": "Reproducible Data Analysis",
-    "section": "Syllabus",
-    "text": "Syllabus\nSyllabus in English"
-  },
-  {
-    "objectID": "day2/index.html#what-is-git",
-    "href": "day2/index.html#what-is-git",
+    "objectID": "day4/index.html#refresher-vectors",
+    "href": "day4/index.html#refresher-vectors",
     "title": "Reproducible data analysis",
-    "section": "What is Git?",
-    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
+    "section": "Refresher: vectors",
+    "text": "Refresher: vectors\n\nRecall that a vector is a series of values that are all the same type\n\n\n# A numeric vector:\nc(1, 2, 3)\n\n[1] 1 2 3\n\n# A character vector:\nc(\"banana\", \"orange\", \"apple\")\n\n[1] \"banana\" \"orange\" \"apple\" \n\n# A logical vector:\nc(TRUE, FALSE, TRUE)\n\n[1]  TRUE FALSE  TRUE"
   },
   {
-    "objectID": "day2/index.html#why-use-git",
-    "href": "day2/index.html#why-use-git",
+    "objectID": "day4/index.html#about-dataframes",
+    "href": "day4/index.html#about-dataframes",
     "title": "Reproducible data analysis",
-    "section": "Why use Git?",
-    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
+    "section": "About dataframes",
+    "text": "About dataframes\n\nA dataframe is a collection of vectors\n\nbasically like a spreadsheet in Excel\n\n\n\n\n\nToday we will learn to load and clean (to “tidy” or “wrangle”) dataframes"
   },
   {
-    "objectID": "day2/index.html#what-is-github",
-    "href": "day2/index.html#what-is-github",
+    "objectID": "day4/index.html#set-up-project",
+    "href": "day4/index.html#set-up-project",
     "title": "Reproducible data analysis",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
+    "section": "Set up project",
+    "text": "Set up project\n\nCreate a new project called day04-practice in the data-analysis-course folder on your Desktop\nInside that project, create a folder called data_raw to store raw data\n\nYou should never edit raw data directly (treat it as read-only)"
   },
   {
-    "objectID": "day2/index.html#setup",
-    "href": "day2/index.html#setup",
+    "objectID": "day4/index.html#set-up-project-1",
+    "href": "day4/index.html#set-up-project-1",
     "title": "Reproducible data analysis",
-    "section": "Setup",
-    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
+    "section": "Set up project",
+    "text": "Set up project\n\nDownload the gapminder.csv file from this link, and put it in data_raw\n\nhttps://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0"
   },
   {
-    "objectID": "day2/index.html#instructions-to-install-git",
-    "href": "day2/index.html#instructions-to-install-git",
+    "objectID": "day4/index.html#install-tidyverse",
+    "href": "day4/index.html#install-tidyverse",
     "title": "Reproducible data analysis",
-    "section": "Instructions to install git",
-    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
+    "section": "Install tidyverse",
+    "text": "Install tidyverse\n\nWe will use the tidyverse set of packages for data loading and cleaning\nInstall tidyverse using install.packages() as usual:\n\n\ninstall.packages(\"tidyverse\")"
   },
   {
-    "objectID": "day2/index.html#setup-github-account",
-    "href": "day2/index.html#setup-github-account",
+    "objectID": "day4/index.html#install-tidyverse-1",
+    "href": "day4/index.html#install-tidyverse-1",
     "title": "Reproducible data analysis",
-    "section": "Setup GitHub account",
-    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
+    "section": "Install tidyverse",
+    "text": "Install tidyverse\n\nThen load it using library() as usual:\n\n\nlibrary(tidyverse)\n\n\nNote that tidyverse actually includes multiple packages (dplyr, tidyr, readr, etc.)\n\nThese are all packages that are useful for loading and cleaning data"
   },
   {
-    "objectID": "day2/index.html#setup-github-authentication-pat",
-    "href": "day2/index.html#setup-github-authentication-pat",
+    "objectID": "day4/index.html#about-data-cleaning-tidying",
+    "href": "day4/index.html#about-data-cleaning-tidying",
     "title": "Reproducible data analysis",
-    "section": "Setup GitHub authentication: PAT",
-    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like an extra-secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
+    "section": "About data cleaning (“tidying”)",
+    "text": "About data cleaning (“tidying”)\n\nData often come to us in a form that is not suitable for analysis\nData cleaning (or “tidying”, or “wrangling”) is the process of re-formatting the data so it can be analyzed"
   },
   {
-    "objectID": "day2/index.html#create-pat-on-github",
-    "href": "day2/index.html#create-pat-on-github",
+    "objectID": "day4/index.html#about-exploratory-data-analysis-eda",
+    "href": "day4/index.html#about-exploratory-data-analysis-eda",
     "title": "Reproducible data analysis",
-    "section": "Create PAT on GitHub",
-    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, first install usethis with install.packages(\"usethis\"), then do\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+    "section": "About Exploratory Data Analysis (EDA)",
+    "text": "About Exploratory Data Analysis (EDA)\n\nExploratory Data Analysis (EDA) is the process of getting to know a dataset\n\nHow are the data structured?\nWhat variables are present in the data?\nAre there any missing data?\nWhat are some likely relationships between variables?"
   },
   {
-    "objectID": "day2/index.html#save-your-pat",
-    "href": "day2/index.html#save-your-pat",
+    "objectID": "day4/index.html#about-exploratory-data-analysis-eda-1",
+    "href": "day4/index.html#about-exploratory-data-analysis-eda-1",
     "title": "Reproducible data analysis",
-    "section": "Save your PAT",
-    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
+    "section": "About Exploratory Data Analysis (EDA)",
+    "text": "About Exploratory Data Analysis (EDA)\n\nEDA is a key step in data science\nEDA and data tidying are often done together\n\nAnother important part of EDA is data visualization, which we will cover next week"
   },
   {
-    "objectID": "day2/index.html#a-few-more-notes-about-pat",
-    "href": "day2/index.html#a-few-more-notes-about-pat",
+    "objectID": "day4/index.html#load-data",
+    "href": "day4/index.html#load-data",
     "title": "Reproducible data analysis",
-    "section": "A few more notes about PAT",
-    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
+    "section": "Load data",
+    "text": "Load data\n\nUse the read_csv() function to load a spreadsheet as a dataframe\n\nThere are other functions for other file formats like .xls, .xlsx, .tsv, etc.\n\n\n\n\ngapminder &lt;- read_csv(\"data_raw/gapminder.csv\")"
   },
   {
-    "objectID": "day2/index.html#introduce-yourself-to-git",
-    "href": "day2/index.html#introduce-yourself-to-git",
+    "objectID": "day4/index.html#print-out-the-data",
+    "href": "day4/index.html#print-out-the-data",
     "title": "Reproducible data analysis",
-    "section": "Introduce yourself to git",
-    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name \"your_github_username\"\ngit config --global user.email \"your_email_adress\"\ngit config --global --list"
+    "section": "Print out the data",
+    "text": "Print out the data\n\nInspect the data just like any other object (variable) in R: type the name of the object into the console:\n\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\nNotice that R tells us the number of rows and columns, as well as the data type of each column\n\nThe tidyverse package refers to dataframes as “tibbles”"
   },
   {
-    "objectID": "day2/index.html#change-some-default-settings",
-    "href": "day2/index.html#change-some-default-settings",
+    "objectID": "day4/index.html#what-is-this-dataset-about",
+    "href": "day4/index.html#what-is-this-dataset-about",
     "title": "Reproducible data analysis",
-    "section": "Change some default settings",
-    "text": "Change some default settings\n\nGit can allow you to have multiple versions of your code at the same time.\nThese are called “branches”.\nTell git to use the name “main” for the main branch:\n\ngit config --global init.defaultBranch main"
+    "section": "What is this dataset about?",
+    "text": "What is this dataset about?\n\nWhat do you think this dataset is about?\nWhat do you think the columns mean?"
   },
   {
-    "objectID": "day2/index.html#about-repos",
-    "href": "day2/index.html#about-repos",
+    "objectID": "day4/index.html#gapminder",
+    "href": "day4/index.html#gapminder",
     "title": "Reproducible data analysis",
-    "section": "About repos",
-    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
+    "section": "Gapminder",
+    "text": "Gapminder\n\nThis is a dataset of economic statistics from various countries over time, from https://gapminder.org\nThe meaning of some columns is obvious (country, continent, year), but not others\n\npop: Population\nlifeExp: Life expectancy (寿命)\ngdpPercap: GDP per capita (一人当たりの国内総生産)"
   },
   {
-    "objectID": "day2/index.html#remote-and-local-repos",
-    "href": "day2/index.html#remote-and-local-repos",
+    "objectID": "day4/index.html#get-a-summary-of-the-data",
+    "href": "day4/index.html#get-a-summary-of-the-data",
     "title": "Reproducible data analysis",
-    "section": "Remote and local repos",
-    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
+    "section": "Get a summary of the data",
+    "text": "Get a summary of the data\n\nWe can get a summary of the data with the summary() function:\n\n\n\nsummary(gapminder)\n\n   country           continent              year         lifeExp           pop              gdpPercap       \n Length:1704        Length:1704        Min.   :1952   Min.   :23.60   Min.   :6.001e+04   Min.   :   241.2  \n Class :character   Class :character   1st Qu.:1966   1st Qu.:48.20   1st Qu.:2.794e+06   1st Qu.:  1202.1  \n Mode  :character   Mode  :character   Median :1980   Median :60.71   Median :7.024e+06   Median :  3531.8  \n                                       Mean   :1980   Mean   :59.47   Mean   :2.960e+07   Mean   :  7215.3  \n                                       3rd Qu.:1993   3rd Qu.:70.85   3rd Qu.:1.959e+07   3rd Qu.:  9325.5  \n                                       Max.   :2007   Max.   :82.60   Max.   :1.319e+09   Max.   :113523.1  \n\n\n\n\nNote the range of years (only up to 2007)"
   },
   {
-    "objectID": "day2/index.html#cloning",
-    "href": "day2/index.html#cloning",
+    "objectID": "day4/index.html#sort-the-data",
+    "href": "day4/index.html#sort-the-data",
     "title": "Reproducible data analysis",
-    "section": "Cloning",
-    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
+    "section": "Sort the data",
+    "text": "Sort the data\n\nWe can sort the data using the arrange() function\n\nProvide the name of the dataset, then the column you wish to sort by\n\n\n\n\n# Sort the data by population (smallest to biggest)\narrange(gapminder, pop)\n\n# A tibble: 1,704 × 6\n   country               continent  year lifeExp   pop gdpPercap\n   &lt;chr&gt;                 &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n 1 Sao Tome and Principe Africa     1952    46.5 60011      880.\n 2 Sao Tome and Principe Africa     1957    48.9 61325      861.\n 3 Djibouti              Africa     1952    34.8 63149     2670.\n 4 Sao Tome and Principe Africa     1962    51.9 65345     1072.\n 5 Sao Tome and Principe Africa     1967    54.4 70787     1385.\n 6 Djibouti              Africa     1957    37.3 71851     2865.\n 7 Sao Tome and Principe Africa     1972    56.5 76595     1533.\n 8 Sao Tome and Principe Africa     1977    58.6 86796     1738.\n 9 Djibouti              Africa     1962    39.7 89898     3021.\n10 Sao Tome and Principe Africa     1982    60.4 98593     1890.\n# ℹ 1,694 more rows"
   },
   {
-    "objectID": "day2/index.html#pushing-and-pulling",
-    "href": "day2/index.html#pushing-and-pulling",
+    "objectID": "day4/index.html#sort-the-data-1",
+    "href": "day4/index.html#sort-the-data-1",
     "title": "Reproducible data analysis",
-    "section": "Pushing and pulling",
-    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
+    "section": "Sort the data",
+    "text": "Sort the data\n\nThe default setting is to sort from small to large\n\nTo sort in the reverse (descending) direction, use desc()\n\n\n\n\n# Sort the data by population (biggest to smallest)\narrange(gapminder, desc(pop))\n\n# A tibble: 1,704 × 6\n   country continent  year lifeExp        pop gdpPercap\n   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;\n 1 China   Asia       2007    73.0 1318683096     4959.\n 2 China   Asia       2002    72.0 1280400000     3119.\n 3 China   Asia       1997    70.4 1230075000     2289.\n 4 China   Asia       1992    68.7 1164970000     1656.\n 5 India   Asia       2007    64.7 1110396331     2452.\n 6 China   Asia       1987    67.3 1084035000     1379.\n 7 India   Asia       2002    62.9 1034172547     1747.\n 8 China   Asia       1982    65.5 1000281000      962.\n 9 India   Asia       1997    61.8  959000000     1459.\n10 China   Asia       1977    64.0  943455000      741.\n# ℹ 1,694 more rows"
   },
   {
-    "objectID": "day2/index.html#commits",
-    "href": "day2/index.html#commits",
+    "objectID": "day4/index.html#sort-the-data-2",
+    "href": "day4/index.html#sort-the-data-2",
     "title": "Reproducible data analysis",
-    "section": "Commits",
-    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
-  },
-  {
-    "objectID": "day2/index.html#staging-and-committing",
-    "href": "day2/index.html#staging-and-committing",
-    "title": "Reproducible data analysis",
-    "section": "Staging and committing",
-    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
-  },
-  {
-    "objectID": "day2/index.html#the-.gitignore-file",
-    "href": "day2/index.html#the-.gitignore-file",
-    "title": "Reproducible data analysis",
-    "section": "The .gitignore file",
-    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis itself)"
-  },
-  {
-    "objectID": "day2/index.html#how-this-works-in-practice",
-    "href": "day2/index.html#how-this-works-in-practice",
-    "title": "Reproducible data analysis",
-    "section": "How this works in practice",
-    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
+    "section": "Sort the data",
+    "text": "Sort the data\n\nYou can sort on multiple columns\n\nTies will be sorted by the next column\n\n\n\n\n# Sort the data by year, then country\narrange(gapminder, year, country)\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Albania     Europe     1952    55.2  1282697     1601.\n 3 Algeria     Africa     1952    43.1  9279525     2449.\n 4 Angola      Africa     1952    30.0  4232095     3521.\n 5 Argentina   Americas   1952    62.5 17876956     5911.\n 6 Australia   Oceania    1952    69.1  8691212    10040.\n 7 Austria     Europe     1952    66.8  6927772     6137.\n 8 Bahrain     Asia       1952    50.9   120447     9867.\n 9 Bangladesh  Asia       1952    37.5 46886859      684.\n10 Belgium     Europe     1952    68    8730405     8343.\n# ℹ 1,694 more rows"
   },
   {
     "objectID": "day3/index.html#announcements",
@@ -578,14 +501,182 @@
     "href": "day3/index.html#homework-and-chatgpt",
     "title": "Reproducible data analysis",
     "section": "Homework and ChatGPT",
-    "text": "Homework and ChatGPT\n\nI provide homework to give you a chance to think and learn\nChatGPT can answer all of homework questions instantly and perfectly, and I can’t tell if you used it or not\nBut if you only use ChatGPT, you will not learn anything\nPlease think about why you are taking this class (and why you are paying money to attend Chiba U): do you just want a grade, or do you want to learn? It is up to you."
+    "text": "Homework and ChatGPT\n\nI provide homework to give you a chance to think and learn\nFor basic R homework, ChatGPT can answer all of the questions instantly, and I can’t tell if you used it or not\nBut if you only use ChatGPT, you will not learn anything\nPlease think about why you are taking this class (and why you are paying money to attend Chiba U): do you just want a grade, or do you want to learn? It is up to you."
   },
   {
-    "objectID": "working/notes.html",
-    "href": "working/notes.html",
+    "objectID": "day2/index.html#what-is-git",
+    "href": "day2/index.html#what-is-git",
     "title": "Reproducible data analysis",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
+  },
+  {
+    "objectID": "day2/index.html#why-use-git",
+    "href": "day2/index.html#why-use-git",
+    "title": "Reproducible data analysis",
+    "section": "Why use Git?",
+    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
+  },
+  {
+    "objectID": "day2/index.html#what-is-github",
+    "href": "day2/index.html#what-is-github",
+    "title": "Reproducible data analysis",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
+  },
+  {
+    "objectID": "day2/index.html#setup",
+    "href": "day2/index.html#setup",
+    "title": "Reproducible data analysis",
+    "section": "Setup",
+    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
+  },
+  {
+    "objectID": "day2/index.html#instructions-to-install-git",
+    "href": "day2/index.html#instructions-to-install-git",
+    "title": "Reproducible data analysis",
+    "section": "Instructions to install git",
+    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-account",
+    "href": "day2/index.html#setup-github-account",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub account",
+    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-authentication-pat",
+    "href": "day2/index.html#setup-github-authentication-pat",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub authentication: PAT",
+    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like an extra-secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
+  },
+  {
+    "objectID": "day2/index.html#create-pat-on-github",
+    "href": "day2/index.html#create-pat-on-github",
+    "title": "Reproducible data analysis",
+    "section": "Create PAT on GitHub",
+    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, first install usethis with install.packages(\"usethis\"), then do\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+  },
+  {
+    "objectID": "day2/index.html#save-your-pat",
+    "href": "day2/index.html#save-your-pat",
+    "title": "Reproducible data analysis",
+    "section": "Save your PAT",
+    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
+  },
+  {
+    "objectID": "day2/index.html#a-few-more-notes-about-pat",
+    "href": "day2/index.html#a-few-more-notes-about-pat",
+    "title": "Reproducible data analysis",
+    "section": "A few more notes about PAT",
+    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
+  },
+  {
+    "objectID": "day2/index.html#introduce-yourself-to-git",
+    "href": "day2/index.html#introduce-yourself-to-git",
+    "title": "Reproducible data analysis",
+    "section": "Introduce yourself to git",
+    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name \"your_github_username\"\ngit config --global user.email \"your_email_adress\"\ngit config --global --list"
+  },
+  {
+    "objectID": "day2/index.html#change-some-default-settings",
+    "href": "day2/index.html#change-some-default-settings",
+    "title": "Reproducible data analysis",
+    "section": "Change some default settings",
+    "text": "Change some default settings\n\nGit can allow you to have multiple versions of your code at the same time.\nThese are called “branches”.\nTell git to use the name “main” for the main branch:\n\ngit config --global init.defaultBranch main"
+  },
+  {
+    "objectID": "day2/index.html#about-repos",
+    "href": "day2/index.html#about-repos",
+    "title": "Reproducible data analysis",
+    "section": "About repos",
+    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
+  },
+  {
+    "objectID": "day2/index.html#remote-and-local-repos",
+    "href": "day2/index.html#remote-and-local-repos",
+    "title": "Reproducible data analysis",
+    "section": "Remote and local repos",
+    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
+  },
+  {
+    "objectID": "day2/index.html#cloning",
+    "href": "day2/index.html#cloning",
+    "title": "Reproducible data analysis",
+    "section": "Cloning",
+    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
+  },
+  {
+    "objectID": "day2/index.html#pushing-and-pulling",
+    "href": "day2/index.html#pushing-and-pulling",
+    "title": "Reproducible data analysis",
+    "section": "Pushing and pulling",
+    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
+  },
+  {
+    "objectID": "day2/index.html#commits",
+    "href": "day2/index.html#commits",
+    "title": "Reproducible data analysis",
+    "section": "Commits",
+    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
+  },
+  {
+    "objectID": "day2/index.html#staging-and-committing",
+    "href": "day2/index.html#staging-and-committing",
+    "title": "Reproducible data analysis",
+    "section": "Staging and committing",
+    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
+  },
+  {
+    "objectID": "day2/index.html#the-.gitignore-file",
+    "href": "day2/index.html#the-.gitignore-file",
+    "title": "Reproducible data analysis",
+    "section": "The .gitignore file",
+    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis itself)"
+  },
+  {
+    "objectID": "day2/index.html#how-this-works-in-practice",
+    "href": "day2/index.html#how-this-works-in-practice",
+    "title": "Reproducible data analysis",
+    "section": "How this works in practice",
+    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Organizing your working directory\nUsing a consistent folder structure across your projects will help keep things organized, and will help you to find/file things in the future. This can be especially helpful when you have multiple projects. In general, you may create directories (folders) for scripts, data, and documents.\n\ndata_raw/ & data/ Use these folders to store raw data and intermediate datasets you may create for the need of a particular analysis. For the sake of transparency and provenance, you should always keep a copy of your raw data accessible and do as much of your data cleanup and preprocessing programmatically (i.e., with scripts, rather than manually) as possible. Separating raw data from processed data is also a good idea.\ndocuments/ Keep outlines, drafts, and other text here.\nR/ Keep your R scripts here.\nAdditional (sub)directories depending on your project needs.\nUnder the Files tab on the right of the screen, click on New Folder and create a folder named R within your newly created project.\n\nYour working directory should now look like this:\n\n\n\nHow it should look like at the beginning of this lesson"
+    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\n\n\n\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
+  },
+  {
+    "objectID": "index.html#materials",
+    "href": "index.html#materials",
+    "title": "Reproducible Data Analysis",
+    "section": "Materials",
+    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio"
+  },
+  {
+    "objectID": "index.html#important-deadlines",
+    "href": "index.html#important-deadlines",
+    "title": "Reproducible Data Analysis",
+    "section": "Important Deadlines",
+    "text": "Important Deadlines\n\n2023-10-16 11:59PM: Day 2 homework due\n2023-10-23 11:59PM: Day 3 homework due\n2023-10-30 11:59PM: Day 4 homework due\n2023-11-06 11:59PM: Day 5 homework due\n2023-11-20 11:59: Final paper due\n2023-11-21: Final presentation (in class)"
+  },
+  {
+    "objectID": "index.html#office-hours",
+    "href": "index.html#office-hours",
+    "title": "Reproducible Data Analysis",
+    "section": "Office Hours",
+    "text": "Office Hours\nBy appointment, please send an email to joelnitta@chiba-u.jp"
+  },
+  {
+    "objectID": "index.html#syllabus",
+    "href": "index.html#syllabus",
+    "title": "Reproducible Data Analysis",
+    "section": "Syllabus",
+    "text": "Syllabus\nSyllabus in English"
   },
   {
     "objectID": "day1/index.html#instructor-joel-nitta",
@@ -775,5 +866,12 @@
     "title": "Reproducible data analysis",
     "section": "Setting up Git",
     "text": "Setting up Git\nWe will follow instructions for Day 2 to set up Git"
+  },
+  {
+    "objectID": "appendix.html",
+    "href": "appendix.html",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
   }
 ]

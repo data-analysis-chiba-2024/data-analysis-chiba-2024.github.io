@@ -1,0 +1,203 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+    theme: ../theme.scss
+execute: 
+  echo: true
+---
+
+# Day 4: Data loading and tidying with tidyverse
+
+2023-10-24
+
+## Refresher: vectors
+
+- Recall that a **vector** is a **series of values** that are all the same **type**
+
+```{r}
+# A numeric vector:
+c(1, 2, 3)
+
+# A character vector:
+c("banana", "orange", "apple")
+
+# A logical vector:
+c(TRUE, FALSE, TRUE)
+```
+
+## About dataframes
+
+- A **dataframe** is a **collection of vectors**
+  - basically like a **spreadsheet** in Excel
+
+![](../images/dataframe.png){fig-alt="Image of a data frame" height="400"}
+
+. . .
+
+- Today we will learn to **load** and **clean** (to "tidy" or "wrangle") dataframes
+
+## Set up project
+
+- Create a new project called `day04-practice` in the `data-analysis-course` folder on your Desktop
+
+- Inside that project, create a folder called `data_raw` to store raw data
+  - You should **never edit raw data directly** (treat it as read-only)
+
+## Set up project
+
+- Download the `gapminder.csv` file from this link, and put it in `data_raw`
+  - <https://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0>
+
+## Install `tidyverse`
+
+- We will use the `tidyverse` set of packages for data loading and cleaning
+
+- Install `tidyverse` using `install.packages()` as usual:
+
+```{r}
+#| eval: false
+install.packages("tidyverse")
+```
+
+## Install `tidyverse`
+
+- Then load it using `library()` as usual:
+
+```{r}
+library(tidyverse)
+```
+
+- Note that `tidyverse` actually includes **multiple** packages (`dplyr`, `tidyr`, `readr`, etc.)
+  - These are all packages that are useful for **loading** and **cleaning** data
+
+## About data cleaning ("tidying")
+
+- Data often come to us in a form that is not suitable for analysis
+
+- Data cleaning (or "tidying", or "wrangling") is the process of re-formatting the data so it can be analyzed
+
+---
+
+![Image by Allison Horst](https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png){fig-alt="data wrangling monsters"}
+
+## About Exploratory Data Analysis (EDA)
+
+- Exploratory Data Analysis (**EDA**) is the process of **getting to know a dataset**
+  - How are the data structured?
+  - What variables are present in the data?
+  - Are there any missing data?
+  - What are some likely relationships between variables?
+
+## About Exploratory Data Analysis (EDA)
+
+- EDA is a **key step** in data science
+
+- EDA and data tidying are often done **together**
+  - Another important part of EDA is data **visualization**, which we will cover next week
+
+## Load data
+
+- Use the `read_csv()` function to load a spreadsheet as a dataframe
+  - There are other functions for other file formats like `.xls`, `.xlsx`, `.tsv`, etc.
+
+::: {.medium}
+
+```{r}
+#| echo: false
+gapminder <- read_csv(here::here("day4/data_raw/gapminder.csv"))
+```
+
+```{r}
+#| eval: false
+gapminder <- read_csv("data_raw/gapminder.csv")
+```
+
+:::
+
+## Print out the data
+
+- Inspect the data just like any other object (variable) in R: type the name of the object into the console:
+
+::: {.medsmall}
+
+```{r}
+gapminder
+```
+
+:::
+
+- Notice that R tells us the number of **rows** and **columns**, as well as the **data type** of each column
+  - The tidyverse package refers to dataframes as "tibbles"
+
+## What is this dataset about?
+
+- What do you think this dataset is about?
+
+- What do you think the columns mean?
+
+## Gapminder
+
+- This is a dataset of economic statistics from various countries over time, from <https://gapminder.org>
+
+- The meaning of some columns is obvious (`country`, `continent`, `year`), but not others
+  - `pop`: Population
+  - `lifeExp`: Life expectancy (寿命)
+  - `gdpPercap`: GDP per capita (一人当たりの国内総生産)
+
+## Get a summary of the data
+
+- We can get a summary of the data with the `summary()` function:
+
+::: {.small}
+
+```{r}
+summary(gapminder)
+```
+
+:::
+
+- Note the range of years (only up to 2007)
+
+## Sort the data
+
+- We can sort the data using the `arrange()` function
+  - Provide the name of the dataset, then the column you wish to sort by
+
+::: {.medsmall}
+
+```{r}
+# Sort the data by population (smallest to biggest)
+arrange(gapminder, pop)
+```
+
+:::
+
+## Sort the data
+
+- The default setting is to sort from **small** to **large**
+  - To sort in the reverse (**descending**) direction, use `desc()`
+
+::: {.medsmall}
+
+```{r}
+# Sort the data by population (biggest to smallest)
+arrange(gapminder, desc(pop))
+```
+
+:::
+
+## Sort the data
+
+- You can sort on multiple columns
+  - Ties will be sorted by the next column
+
+::: {.medsmall}
+
+```{r}
+# Sort the data by year, then country
+arrange(gapminder, year, country)
+```
+
+:::

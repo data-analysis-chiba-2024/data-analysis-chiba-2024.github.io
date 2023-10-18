@@ -390,173 +390,306 @@
 
 
 <section>
-<section id="day-2-git-and-github" class="title-slide slide level1 center">
-<h1>Day 2: Git and GitHub</h1>
-<p>2023-10-10</p>
+<section id="day-4-data-loading-and-tidying-with-tidyverse" class="title-slide slide level1 center">
+<h1>Day 4: Data loading and tidying with tidyverse</h1>
+<p>2023-10-24</p>
 </section>
-<section id="what-is-git" class="slide level2">
-<h2>What is Git?</h2>
+<section id="refresher-vectors" class="slide level2">
+<h2>Refresher: vectors</h2>
 <ul>
-<li><p>Git is <strong>version control software</strong></p></li>
-<li><p>You can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)</p></li>
+<li>Recall that a <strong>vector</strong> is a <strong>series of values</strong> that are all the same <strong>type</strong></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># A numeric vector:</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1 2 3</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="co"># A character vector:</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">c</span>(<span class="st">"banana"</span>, <span class="st">"orange"</span>, <span class="st">"apple"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "banana" "orange" "apple" </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># A logical vector:</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE</code></pre>
+</div>
+</div>
 </section>
-<section id="why-use-git" class="slide level2">
-<h2>Why use Git?</h2>
+<section id="about-dataframes" class="slide level2">
+<h2>About dataframes</h2>
 <ul>
-<li>To share code
+<li>A <strong>dataframe</strong> is a <strong>collection of vectors</strong>
 <ul>
-<li>Important for <strong>reproducibility</strong>. Other people can’t reproduce your analysis if they can’t access your code</li>
+<li>basically like a <strong>spreadsheet</strong> in Excel</li>
 </ul></li>
-<li>To have a history of all the things your tried in your analysis
-<ul>
-<li>You can go back and see what you have changed. Especially important <strong>when something breaks</strong>.</li>
-</ul></li>
-<li>To organize how you develop your code
-<ul>
-<li>You will make comments about all your changes to your code (“commits”), so this forces you to think about <strong>how</strong> you are writing your code</li>
-</ul></li>
 </ul>
-</section>
-<section id="what-is-github" class="slide level2">
-<h2>What is GitHub?</h2>
+<p><img data-src="../images/dataframe.png" alt="Image of a data frame" height="400"></p>
+<div class="fragment">
 <ul>
-<li><p>An online tool for managing projects that use Git</p></li>
-<li><p>Acts like a cloud backup tool for your code</p></li>
-<li><p>Makes it easy to share code with others</p></li>
+<li>Today we will learn to <strong>load</strong> and <strong>clean</strong> (to “tidy” or “wrangle”) dataframes</li>
 </ul>
+</div>
 </section>
-<section id="setup" class="slide level2">
-<h2>Setup</h2>
+<section id="set-up-project" class="slide level2">
+<h2>Set up project</h2>
 <ul>
-<li>You need to install git on your computer <strong>and</strong> set up an account on <a href="https://github.com" class="uri">https://github.com</a></li>
-</ul>
-</section>
-<section id="instructions-to-install-git" class="slide level2">
-<h2>Instructions to install git</h2>
+<li><p>Create a new project called <code>day04-practice</code> in the <code>data-analysis-course</code> folder on your Desktop</p></li>
+<li><p>Inside that project, create a folder called <code>data_raw</code> to store raw data</p>
 <ul>
-<li><p><a href="https://git-scm.com/download/mac">Mac</a></p>
-<ul>
-<li>May need to install <a href="https://brew.sh/">Homebrew</a> first</li>
-</ul></li>
-<li><p><a href="https://git-scm.com/download/win">Windows</a></p></li>
-<li><p><a href="https://git-scm.com/download/linux">Linux</a></p></li>
-</ul>
-</section>
-<section id="setup-github-account" class="slide level2">
-<h2>Setup GitHub account</h2>
-<ul>
-<li>Navigate to <a href="https://github.com/" class="uri">https://github.com/</a> and follow the prompts</li>
-</ul>
-</section>
-<section id="setup-github-authentication-pat" class="slide level2">
-<h2>Setup GitHub authentication: PAT</h2>
-<p>A PAT is a “Personal Access Token”. It is like an extra-secure password.</p>
-<p>There is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these <a href="../appendix.html#setup-github-authentication-ssh">instructions</a>.</p>
-</section>
-<section id="create-pat-on-github" class="slide level2">
-<h2>Create PAT on GitHub</h2>
-<ul>
-<li>Go to https://github.com/settings/tokens</li>
-</ul>
-<p>Or, from R, first install <code>usethis</code> with <code>install.packages("usethis")</code>, then do</p>
-<pre><code>usethis::create_github_token()</code></pre>
-<ul>
-<li><p>Look over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used <code>create_github_token()</code>.</p></li>
-<li><p>Click “Generate token”.</p></li>
-</ul>
-</section>
-<section id="save-your-pat" class="slide level2">
-<h2>Save your PAT</h2>
-<ul>
-<li><p>Copy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.</p></li>
-<li><p>Install gitcreds in R with <code>install.packages("gitcreds")</code></p></li>
-<li><p>Next, run <code>gitcreds::gitcreds_set()</code>.</p></li>
-<li><p>Enter the PAT that you copied from GitHub. Now you can close the browser window.</p></li>
-</ul>
-<p>Done!</p>
-</section>
-<section id="a-few-more-notes-about-pat" class="slide level2">
-<h2>A few more notes about PAT</h2>
-<ul>
-<li><p>Your PAT will expire (after 30 days by default).</p></li>
-<li><p>You then need to re-create a new one on GitHub and enter it again with <code>gitcreds::gitcreds_set()</code>.</p></li>
-<li><p>Using an expiration date is recommended for security</p></li>
-</ul>
-</section>
-<section id="introduce-yourself-to-git" class="slide level2">
-<h2>Introduce yourself to git</h2>
-<p>You need to let git know your GitHub username and email address:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">git</span> config <span class="at">--global</span> user.name <span class="st">"your_github_username"</span></span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">git</span> config <span class="at">--global</span> user.email <span class="st">"your_email_adress"</span></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">git</span> config <span class="at">--global</span> <span class="at">--list</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="change-some-default-settings" class="slide level2">
-<h2>Change some default settings</h2>
-<ul>
-<li><p>Git can allow you to have multiple versions of your code at the same time.</p></li>
-<li><p>These are called “branches”.</p></li>
-<li><p>Tell git to use the name “main” for the main branch:</p></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">git</span> config <span class="at">--global</span> init.defaultBranch main</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="about-repos" class="slide level2">
-<h2>About repos</h2>
-<ul>
-<li>A ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.</li>
-</ul>
-<p><strong>git tracks the content of a repo</strong></p>
-</section>
-<section id="remote-and-local-repos" class="slide level2">
-<h2>Remote and local repos</h2>
-<ul>
-<li><p>A <strong>local</strong> repo is just the project on your own computer</p></li>
-<li><p>A <strong>remote</strong> repo is a copy of the repo online (on GitHub)</p>
-<ul>
-<li>Somewhat confusingly, the remote repo is typically referred to by the name <code>origin</code></li>
+<li>You should <strong>never edit raw data directly</strong> (treat it as read-only)</li>
 </ul></li>
 </ul>
 </section>
-<section id="cloning" class="slide level2">
-<h2>Cloning</h2>
-<p>Sometimes, you want to download a repo that doesn’t exist on your computer yet.</p>
+<section id="set-up-project-1" class="slide level2">
+<h2>Set up project</h2>
 <ul>
-<li><strong>Cloning</strong> is copying an online repo to your computer</li>
+<li>Download the <code>gapminder.csv</code> file from this link, and put it in <code>data_raw</code>
+<ul>
+<li><a href="https://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0" class="uri">https://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0</a></li>
+</ul></li>
 </ul>
 </section>
-<section id="pushing-and-pulling" class="slide level2">
-<h2>Pushing and pulling</h2>
-<p>Once you have the repos set up, you need to keep them in sync.</p>
+<section id="install-tidyverse" class="slide level2">
+<h2>Install <code>tidyverse</code></h2>
 <ul>
-<li><p>You <strong>push</strong> changes from your local repo to the remote</p></li>
-<li><p>You <strong>pull</strong> changes from the remote repo to your local one</p></li>
+<li><p>We will use the <code>tidyverse</code> set of packages for data loading and cleaning</p></li>
+<li><p>Install <code>tidyverse</code> using <code>install.packages()</code> as usual:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="install-tidyverse-1" class="slide level2">
+<h2>Install <code>tidyverse</code></h2>
+<ul>
+<li>Then load it using <code>library()</code> as usual:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Note that <code>tidyverse</code> actually includes <strong>multiple</strong> packages (<code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, etc.)
+<ul>
+<li>These are all packages that are useful for <strong>loading</strong> and <strong>cleaning</strong> data</li>
+</ul></li>
 </ul>
 </section>
-<section id="commits" class="slide level2">
-<h2>Commits</h2>
+<section id="about-data-cleaning-tidying" class="slide level2">
+<h2>About data cleaning (“tidying”)</h2>
 <ul>
-<li>A <strong>commit</strong> is a single change made to a repo that you have stored in git’s history.</li>
-</ul>
-<p>There are two steps to making a commit.</p>
-</section>
-<section id="staging-and-committing" class="slide level2">
-<h2>Staging and committing</h2>
-<p>A file that has been changed is not automatically added to git’s history.</p>
-<ul>
-<li><p>You need to <strong>stage</strong> the file (or part of the file) that you want to add to a particular commit</p></li>
-<li><p>Next, you type a short message describing the change, the <strong>commit message</strong></p></li>
-<li><p>Finally, you <strong>commit</strong> the change to log it in git’s history</p></li>
+<li><p>Data often come to us in a form that is not suitable for analysis</p></li>
+<li><p>Data cleaning (or “tidying”, or “wrangling”) is the process of re-formatting the data so it can be analyzed</p></li>
 </ul>
 </section>
-<section id="the-.gitignore-file" class="slide level2">
-<h2>The <code>.gitignore</code> file</h2>
-<p>If there are any files you don’t want git to track, you can ignore them by listing them in a special file called <code>.gitignore</code>.</p>
-<p>It is usually a good idea to ignore <strong>raw data files</strong> and <strong>output files</strong>. We only want to track code (in other words, the analysis itself)</p>
+<section class="slide level2">
+
+
+<img data-src="https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png" alt="data wrangling monsters" class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
+<section id="about-exploratory-data-analysis-eda" class="slide level2">
+<h2>About Exploratory Data Analysis (EDA)</h2>
+<ul>
+<li>Exploratory Data Analysis (<strong>EDA</strong>) is the process of <strong>getting to know a dataset</strong>
+<ul>
+<li>How are the data structured?</li>
+<li>What variables are present in the data?</li>
+<li>Are there any missing data?</li>
+<li>What are some likely relationships between variables?</li>
+</ul></li>
+</ul>
 </section>
-<section id="how-this-works-in-practice" class="slide level2">
-<h2>How this works in practice</h2>
-<p>We will go through a typical git workflow together in class using RStudio.</p>
-<p>This is explained in the <a href="https://github.com/data-analysis-chiba-2023/day02-git/blob/main/day02_intro_to_git.md">“Intro to Git” markdown file</a>, which you will copy to your computer when you clone the <a href="https://github.com/data-analysis-chiba-2023/day02-git/">Day 2 repo</a>.</p>
+<section id="about-exploratory-data-analysis-eda-1" class="slide level2">
+<h2>About Exploratory Data Analysis (EDA)</h2>
+<ul>
+<li><p>EDA is a <strong>key step</strong> in data science</p></li>
+<li><p>EDA and data tidying are often done <strong>together</strong></p>
+<ul>
+<li>Another important part of EDA is data <strong>visualization</strong>, which we will cover next week</li>
+</ul></li>
+</ul>
+</section>
+<section id="load-data" class="slide level2">
+<h2>Load data</h2>
+<ul>
+<li>Use the <code>read_csv()</code> function to load a spreadsheet as a dataframe
+<ul>
+<li>There are other functions for other file formats like <code>.xls</code>, <code>.xlsx</code>, <code>.tsv</code>, etc.</li>
+</ul></li>
+</ul>
+<div class="medium">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>gapminder <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data_raw/gapminder.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="print-out-the-data" class="slide level2">
+<h2>Print out the data</h2>
+<ul>
+<li>Inspect the data just like any other object (variable) in R: type the name of the object into the console:</li>
+</ul>
+<div class="medsmall">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>gapminder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Afghanistan Asia       1957    30.3  9240934      821.
+ 3 Afghanistan Asia       1962    32.0 10267083      853.
+ 4 Afghanistan Asia       1967    34.0 11537966      836.
+ 5 Afghanistan Asia       1972    36.1 13079460      740.
+ 6 Afghanistan Asia       1977    38.4 14880372      786.
+ 7 Afghanistan Asia       1982    39.9 12881816      978.
+ 8 Afghanistan Asia       1987    40.8 13867957      852.
+ 9 Afghanistan Asia       1992    41.7 16317921      649.
+10 Afghanistan Asia       1997    41.8 22227415      635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li>Notice that R tells us the number of <strong>rows</strong> and <strong>columns</strong>, as well as the <strong>data type</strong> of each column
+<ul>
+<li>The tidyverse package refers to dataframes as “tibbles”</li>
+</ul></li>
+</ul>
+</section>
+<section id="what-is-this-dataset-about" class="slide level2">
+<h2>What is this dataset about?</h2>
+<ul>
+<li><p>What do you think this dataset is about?</p></li>
+<li><p>What do you think the columns mean?</p></li>
+</ul>
+</section>
+<section id="gapminder" class="slide level2">
+<h2>Gapminder</h2>
+<ul>
+<li><p>This is a dataset of economic statistics from various countries over time, from <a href="https://gapminder.org" class="uri">https://gapminder.org</a></p></li>
+<li><p>The meaning of some columns is obvious (<code>country</code>, <code>continent</code>, <code>year</code>), but not others</p>
+<ul>
+<li><code>pop</code>: Population</li>
+<li><code>lifeExp</code>: Life expectancy (寿命)</li>
+<li><code>gdpPercap</code>: GDP per capita (一人当たりの国内総生産)</li>
+</ul></li>
+</ul>
+</section>
+<section id="get-a-summary-of-the-data" class="slide level2">
+<h2>Get a summary of the data</h2>
+<ul>
+<li>We can get a summary of the data with the <code>summary()</code> function:</li>
+</ul>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">summary</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   country           continent              year         lifeExp           pop              gdpPercap       
+ Length:1704        Length:1704        Min.   :1952   Min.   :23.60   Min.   :6.001e+04   Min.   :   241.2  
+ Class :character   Class :character   1st Qu.:1966   1st Qu.:48.20   1st Qu.:2.794e+06   1st Qu.:  1202.1  
+ Mode  :character   Mode  :character   Median :1980   Median :60.71   Median :7.024e+06   Median :  3531.8  
+                                       Mean   :1980   Mean   :59.47   Mean   :2.960e+07   Mean   :  7215.3  
+                                       3rd Qu.:1993   3rd Qu.:70.85   3rd Qu.:1.959e+07   3rd Qu.:  9325.5  
+                                       Max.   :2007   Max.   :82.60   Max.   :1.319e+09   Max.   :113523.1  </code></pre>
+</div>
+</div>
+</div>
+<ul>
+<li>Note the range of years (only up to 2007)</li>
+</ul>
+</section>
+<section id="sort-the-data" class="slide level2">
+<h2>Sort the data</h2>
+<ul>
+<li>We can sort the data using the <code>arrange()</code> function
+<ul>
+<li>Provide the name of the dataset, then the column you wish to sort by</li>
+</ul></li>
+</ul>
+<div class="medsmall">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Sort the data by population (smallest to biggest)</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">arrange</span>(gapminder, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country               continent  year lifeExp   pop gdpPercap
+   &lt;chr&gt;                 &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Sao Tome and Principe Africa     1952    46.5 60011      880.
+ 2 Sao Tome and Principe Africa     1957    48.9 61325      861.
+ 3 Djibouti              Africa     1952    34.8 63149     2670.
+ 4 Sao Tome and Principe Africa     1962    51.9 65345     1072.
+ 5 Sao Tome and Principe Africa     1967    54.4 70787     1385.
+ 6 Djibouti              Africa     1957    37.3 71851     2865.
+ 7 Sao Tome and Principe Africa     1972    56.5 76595     1533.
+ 8 Sao Tome and Principe Africa     1977    58.6 86796     1738.
+ 9 Djibouti              Africa     1962    39.7 89898     3021.
+10 Sao Tome and Principe Africa     1982    60.4 98593     1890.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="sort-the-data-1" class="slide level2">
+<h2>Sort the data</h2>
+<ul>
+<li>The default setting is to sort from <strong>small</strong> to <strong>large</strong>
+<ul>
+<li>To sort in the reverse (<strong>descending</strong>) direction, use <code>desc()</code></li>
+</ul></li>
+</ul>
+<div class="medsmall">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Sort the data by population (biggest to smallest)</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">arrange</span>(gapminder, <span class="fu">desc</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country continent  year lifeExp        pop gdpPercap
+   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
+ 1 China   Asia       2007    73.0 1318683096     4959.
+ 2 China   Asia       2002    72.0 1280400000     3119.
+ 3 China   Asia       1997    70.4 1230075000     2289.
+ 4 China   Asia       1992    68.7 1164970000     1656.
+ 5 India   Asia       2007    64.7 1110396331     2452.
+ 6 China   Asia       1987    67.3 1084035000     1379.
+ 7 India   Asia       2002    62.9 1034172547     1747.
+ 8 China   Asia       1982    65.5 1000281000      962.
+ 9 India   Asia       1997    61.8  959000000     1459.
+10 China   Asia       1977    64.0  943455000      741.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="sort-the-data-2" class="slide level2">
+<h2>Sort the data</h2>
+<ul>
+<li>You can sort on multiple columns
+<ul>
+<li>Ties will be sorted by the next column</li>
+</ul></li>
+</ul>
+<div class="medsmall">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Sort the data by year, then country</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">arrange</span>(gapminder, year, country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Albania     Europe     1952    55.2  1282697     1601.
+ 3 Algeria     Africa     1952    43.1  9279525     2449.
+ 4 Angola      Africa     1952    30.0  4232095     3521.
+ 5 Argentina   Americas   1952    62.5 17876956     5911.
+ 6 Australia   Oceania    1952    69.1  8691212    10040.
+ 7 Austria     Europe     1952    66.8  6927772     6137.
+ 8 Bahrain     Asia       1952    50.9   120447     9867.
+ 9 Bangladesh  Asia       1952    37.5 46886859      684.
+10 Belgium     Europe     1952    68    8730405     8343.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</div>
 
 <div class="footer footer-default">
 
@@ -773,6 +906,44 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

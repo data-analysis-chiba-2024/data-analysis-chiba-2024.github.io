@@ -5,31 +5,29 @@ toc: false
 
 ## Slides
 
-- [Day 1: Introduction: Why code? Why reproducibility?](day1/index.qmd)
+- [Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?](day1/index.qmd)
 
-- [Day 2: Git and GitHub](day2/index.qmd)
+- [Day 2 (2023-10-10): Git and GitHub](day2/index.qmd)
 
-- [Day 3: Basic usage of R and RStudio](day3/index.qmd)
+- [Day 3 (2023-10-17): Basic usage of R and RStudio](day3/index.qmd)
 
-- Day 4: Data loading and tidying with tidyverse
+- [Day 4 (2023-10-24): Data loading and tidying with tidyverse](day4/index.qmd)
 
-<!-- [Day 4: Writing documents with Quarto](day4/index.qmd) -->
+- Day 5 (Media Day): Data visualization with ggplot2
 
-- Day 5: Data visualization with ggplot2
+<!-- [Day 5 (Media Day): Data visualization with ggplot2](day5/index.qmd) -->
 
-<!-- [Day 5: Data loading and tidying with tidyverse](day5/index.qmd) -->
+- Day 6 (2023-11-07): Writing documents with Quarto
 
-- Day 6: Writing documents with Quarto
+<!-- [Day 6 (2023-11-07): Writing documents with Quarto](day6/index.qmd) -->
 
-<!-- [Day 6: Data visualization with ggplot2](day6/index.qmd) -->
+- Day 7 (2023-11-14): Best practices for reproducible data analysis
 
-- Day 7: Best practices for reproducible data analysis
+<!-- - [Day 7 (2023-11-14): Best practices for reproducible data analysis](day7/index.qmd -->
 
-<!-- - [Day 7: Best practices for reproducible data analysis](day7/index.qmd -->
+- Day 8 (2023-11-21): Final presentation
 
-- Day 8: Final presentation
-
-<!-- [Day 8: Final presentation](day8/index.qmd) -->
+<!-- [Day 8 (2023-11-21): Final presentation](day8/index.qmd) -->
 
 ## Materials
 
