@@ -433,6 +433,17 @@
 </ul>
 </div>
 </section>
+<section id="about-data-cleaning-tidying" class="slide level2">
+<h2>About data cleaning (“tidying”)</h2>
+<ul>
+<li><p>Data often come to us in a form that is not suitable for analysis</p></li>
+<li><p>Data cleaning (or “tidying”, or “wrangling”) is the process of re-formatting the data so it can be analyzed</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+
+<img data-src="https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png" alt="data wrangling monsters" class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
 <section id="set-up-project" class="slide level2">
 <h2>Set up project</h2>
 <ul>
@@ -452,61 +463,54 @@
 </ul></li>
 </ul>
 </section>
+<section id="about-r-packages" class="slide level2">
+<h2>About R Packages</h2>
+<ul>
+<li><p>The functions we have used so far are included in R (called “Base R”)</p></li>
+<li><p>But sometimes we need to do something that is not available in Base R</p></li>
+<li><p><strong>Packages</strong> are collections of code that <strong>extend the functionality</strong> of R</p>
+<ul>
+<li>There are nearly 200,000 packages currently available!</li>
+</ul></li>
+<li><p>Packages can be installed with the <code>install.packages()</code> function</p></li>
+</ul>
+</section>
 <section id="install-tidyverse" class="slide level2">
 <h2>Install <code>tidyverse</code></h2>
 <ul>
-<li><p>We will use the <code>tidyverse</code> set of packages for data loading and cleaning</p></li>
-<li><p>Install <code>tidyverse</code> using <code>install.packages()</code> as usual:</p></li>
+<li><p>Today we will use the <code>tidyverse</code> set of packages for <strong>data loading</strong> and <strong>cleaning</strong></p></li>
+<li><p>Install <code>tidyverse</code> using <code>install.packages()</code>:</p></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="install-tidyverse-1" class="slide level2">
-<h2>Install <code>tidyverse</code></h2>
+<section id="loading-packages" class="slide level2">
+<h2>Loading packages</h2>
 <ul>
-<li>Then load it using <code>library()</code> as usual:</li>
+<li><p>The <code>install.packages()</code> function <strong>downloads</strong> the package to your computer</p>
+<ul>
+<li>You only need to do this once per package (or when you want to update the package)</li>
+</ul></li>
+<li><p>But R isn’t able to use the package yet</p></li>
+<li><p>The <code>library()</code> function tells R to <strong>load</strong> a package so that we can use it</p></li>
+</ul>
+</section>
+<section id="load-tidyverse" class="slide level2">
+<h2>Load <code>tidyverse</code></h2>
+<ul>
+<li>Let’s load the <code>tidyverse</code> package with <code>library()</code>
+<ul>
+<li>Note that you don’t need to use quotation marks for the package name</li>
+</ul></li>
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li>Note that <code>tidyverse</code> actually includes <strong>multiple</strong> packages (<code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, etc.)
+<li><code>tidyverse</code> actually includes <strong>multiple</strong> packages (<code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, etc.)
 <ul>
 <li>These are all packages that are useful for <strong>loading</strong> and <strong>cleaning</strong> data</li>
-</ul></li>
-</ul>
-</section>
-<section id="about-data-cleaning-tidying" class="slide level2">
-<h2>About data cleaning (“tidying”)</h2>
-<ul>
-<li><p>Data often come to us in a form that is not suitable for analysis</p></li>
-<li><p>Data cleaning (or “tidying”, or “wrangling”) is the process of re-formatting the data so it can be analyzed</p></li>
-</ul>
-</section>
-<section class="slide level2">
-
-
-<img data-src="https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png" alt="data wrangling monsters" class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
-<section id="about-exploratory-data-analysis-eda" class="slide level2">
-<h2>About Exploratory Data Analysis (EDA)</h2>
-<ul>
-<li>Exploratory Data Analysis (<strong>EDA</strong>) is the process of <strong>getting to know a dataset</strong>
-<ul>
-<li>How are the data structured?</li>
-<li>What variables are present in the data?</li>
-<li>Are there any missing data?</li>
-<li>What are some likely relationships between variables?</li>
-</ul></li>
-</ul>
-</section>
-<section id="about-exploratory-data-analysis-eda-1" class="slide level2">
-<h2>About Exploratory Data Analysis (EDA)</h2>
-<ul>
-<li><p>EDA is a <strong>key step</strong> in data science</p></li>
-<li><p>EDA and data tidying are often done <strong>together</strong></p>
-<ul>
-<li>Another important part of EDA is data <strong>visualization</strong>, which we will cover next week</li>
 </ul></li>
 </ul>
 </section>
@@ -576,48 +580,18 @@
 </ul></li>
 </ul>
 </section>
-<section id="get-a-summary-of-the-data" class="slide level2">
-<h2>Get a summary of the data</h2>
-<ul>
-<li>We can get a summary of the data with the <code>summary()</code> function:</li>
-</ul>
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">summary</span>(gapminder)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   country           continent              year         lifeExp     
- Length:1704        Length:1704        Min.   :1952   Min.   :23.60  
- Class :character   Class :character   1st Qu.:1966   1st Qu.:48.20  
- Mode  :character   Mode  :character   Median :1980   Median :60.71  
-                                       Mean   :1980   Mean   :59.47  
-                                       3rd Qu.:1993   3rd Qu.:70.85  
-                                       Max.   :2007   Max.   :82.60  
-      pop              gdpPercap       
- Min.   :6.001e+04   Min.   :   241.2  
- 1st Qu.:2.794e+06   1st Qu.:  1202.1  
- Median :7.024e+06   Median :  3531.8  
- Mean   :2.960e+07   Mean   :  7215.3  
- 3rd Qu.:1.959e+07   3rd Qu.:  9325.5  
- Max.   :1.319e+09   Max.   :113523.1  </code></pre>
-</div>
-</div>
-</div>
-<ul>
-<li>Note the range of years (only up to 2007)</li>
-</ul>
-</section>
 <section id="sort-the-data" class="slide level2">
 <h2>Sort the data</h2>
 <ul>
 <li>We can sort the data using the <code>arrange()</code> function
 <ul>
-<li>Provide the name of the dataset, then the column you wish to sort by</li>
+<li>First provide the <strong>name of the dataframe</strong>, then the <strong>column</strong> you wish to sort by</li>
 </ul></li>
 </ul>
 <div class="medsmall">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Sort the data by population (smallest to biggest)</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">arrange</span>(gapminder, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Sort the data by population (smallest to biggest)</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">arrange</span>(gapminder, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
    country               continent  year lifeExp   pop gdpPercap
@@ -647,8 +621,8 @@
 </ul>
 <div class="medsmall">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Sort the data by population (biggest to smallest)</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">arrange</span>(gapminder, <span class="fu">desc</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Sort the data by population (biggest to smallest)</span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">arrange</span>(gapminder, <span class="fu">desc</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
    country continent  year lifeExp        pop gdpPercap
@@ -678,8 +652,8 @@
 </ul>
 <div class="medsmall">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="co"># Sort the data by year, then country</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">arrange</span>(gapminder, year, country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Sort the data by year, then country</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">arrange</span>(gapminder, year, country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
    country     continent  year lifeExp      pop gdpPercap
@@ -698,6 +672,183 @@
 </div>
 </div>
 </div>
+</section>
+<section id="challenge" class="slide level2">
+<h2>Challenge</h2>
+<ul>
+<li><p>Sort the data by <strong>year</strong>, first going from smallest to biggest, then from biggest to smallest.</p></li>
+<li><p>What is the <strong>earliest</strong> year in the data?</p></li>
+<li><p>What is the <strong>latest</strong> year in the data?</p></li>
+</ul>
+</section>
+<section id="selecting-columns" class="slide level2">
+<h2>Selecting columns</h2>
+<ul>
+<li><p>Sometimes, we are only interested in <strong>part</strong> of the data</p></li>
+<li><p>We can use the <code>select()</code> function to keep only the data we are interested in (for example: year, country and GDP per capita):</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">select</span>(gapminder, year, country, gdpPercap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 3
+    year country     gdpPercap
+   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;
+ 1  1952 Afghanistan      779.
+ 2  1957 Afghanistan      821.
+ 3  1962 Afghanistan      853.
+ 4  1967 Afghanistan      836.
+ 5  1972 Afghanistan      740.
+ 6  1977 Afghanistan      786.
+ 7  1982 Afghanistan      978.
+ 8  1987 Afghanistan      852.
+ 9  1992 Afghanistan      649.
+10  1997 Afghanistan      635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="saving-your-output" class="slide level2">
+<h2>Saving your output</h2>
+<ul>
+<li>Notice that although we have used several functions, <code>gapminder</code> is still the same:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>gapminder</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Afghanistan Asia       1957    30.3  9240934      821.
+ 3 Afghanistan Asia       1962    32.0 10267083      853.
+ 4 Afghanistan Asia       1967    34.0 11537966      836.
+ 5 Afghanistan Asia       1972    36.1 13079460      740.
+ 6 Afghanistan Asia       1977    38.4 14880372      786.
+ 7 Afghanistan Asia       1982    39.9 12881816      978.
+ 8 Afghanistan Asia       1987    40.8 13867957      852.
+ 9 Afghanistan Asia       1992    41.7 16317921      649.
+10 Afghanistan Asia       1997    41.8 22227415      635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="saving-your-output-1" class="slide level2">
+<h2>Saving your output</h2>
+<ul>
+<li><p>This is because we have not saved any of the output</p></li>
+<li><p>To do that, you need to create a new object with <code>&lt;-</code></p>
+<ul>
+<li>You can call the object whatever you want, but use a name that is easy to remember</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>gapminder_gdp <span class="ot">&lt;-</span> <span class="fu">select</span>(gapminder, year, country, gdpPercap)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="challenge-1" class="slide level2">
+<h2>Challenge</h2>
+<ul>
+<li>Select only year, country, and population, then sort the data by population</li>
+</ul>
+</section>
+<section id="about-pipes" class="slide level2">
+<h2>About pipes</h2>
+<ul>
+<li><p>During the last challenge, you needed to save the output of the <code>select()</code> function, then use it as input into the <code>arrange()</code> function</p></li>
+<li><p>There is a simpler way to do this, called the “pipe”</p></li>
+<li><p>The pipe is written like this: “<code>%&gt;%</code>”</p>
+<ul>
+<li>Newer versions of R also let you write it like this: “<code>|&gt;</code>”</li>
+</ul></li>
+</ul>
+</section>
+<section id="about-pipes-1" class="slide level2">
+<h2>About pipes</h2>
+<ul>
+<li><p>The pipe takes the output from one function and passes it to the input of the next function</p></li>
+<li><p>You can think of it as saying “and then”</p>
+<ul>
+<li>Do this <strong>and then</strong> do this, <strong>and then</strong> do this…</li>
+</ul></li>
+</ul>
+</section>
+<section id="about-pipes-2" class="slide level2">
+<h2>About pipes</h2>
+<p>We can even use the pipe just with one function: - Read this as “start with <code>gapminder</code> <strong>and then</strong> select only year, country, and population”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, country, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 3
+    year country          pop
+   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
+ 1  1952 Afghanistan  8425333
+ 2  1957 Afghanistan  9240934
+ 3  1962 Afghanistan 10267083
+ 4  1967 Afghanistan 11537966
+ 5  1972 Afghanistan 13079460
+ 6  1977 Afghanistan 14880372
+ 7  1982 Afghanistan 12881816
+ 8  1987 Afghanistan 13867957
+ 9  1992 Afghanistan 16317921
+10  1997 Afghanistan 22227415
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="about-pipes-3" class="slide level2">
+<h2>About pipes</h2>
+<p>This becomes very useful when we want to do <strong>multiple steps</strong> - Read this as “start with <code>gapminder</code>, <strong>and then</strong> select only year, country, and population, <strong>and then</strong> arrange by year,”</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, country, pop) <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 3
+    year country          pop
+   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
+ 1  1952 Afghanistan  8425333
+ 2  1952 Albania      1282697
+ 3  1952 Algeria      9279525
+ 4  1952 Angola       4232095
+ 5  1952 Argentina   17876956
+ 6  1952 Australia    8691212
+ 7  1952 Austria      6927772
+ 8  1952 Bahrain       120447
+ 9  1952 Bangladesh  46886859
+10  1952 Belgium      8730405
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="about-pipes-4" class="slide level2">
+<h2>About pipes</h2>
+<p>We can make it easier to read by putting each step on its own line - R doesn’t care about spaces or extra lines</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">select</span>(year, country, pop) <span class="sc">%&gt;%</span></span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">arrange</span>(year)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 3
+    year country          pop
+   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;
+ 1  1952 Afghanistan  8425333
+ 2  1952 Albania      1282697
+ 3  1952 Algeria      9279525
+ 4  1952 Angola       4232095
+ 5  1952 Argentina   17876956
+ 6  1952 Australia    8691212
+ 7  1952 Austria      6927772
+ 8  1952 Bahrain       120447
+ 9  1952 Bangladesh  46886859
+10  1952 Belgium      8730405
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="about-pipes-5" class="slide level2">
+<h2>About pipes</h2>
+<ul>
+<li><p>This way, <strong>you don’t have to save each intermediate step</strong></p></li>
+<li><p>This is a very useful way to manipulate data</p></li>
+</ul>
 
 <div class="footer footer-default">
 

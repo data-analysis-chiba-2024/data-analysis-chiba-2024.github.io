@@ -32,7 +32,7 @@
     "href": "day4/index.html#install-tidyverse",
     "title": "Reproducible data analysis",
     "section": "Install tidyverse",
-    "text": "Install tidyverse\n\nWe will use the tidyverse set of packages for data loading and cleaning\nInstall tidyverse using install.packages() as usual:\n\n\ninstall.packages(\"tidyverse\")"
+    "text": "Install tidyverse\n\nToday we will use the tidyverse set of packages for data loading and cleaning\nInstall tidyverse using install.packages():\n\n\ninstall.packages(\"tidyverse\")"
   },
   {
     "objectID": "day4/index.html#install-tidyverse-1",
@@ -102,7 +102,7 @@
     "href": "day4/index.html#sort-the-data",
     "title": "Reproducible data analysis",
     "section": "Sort the data",
-    "text": "Sort the data\n\nWe can sort the data using the arrange() function\n\nProvide the name of the dataset, then the column you wish to sort by\n\n\n\n\n# Sort the data by population (smallest to biggest)\narrange(gapminder, pop)\n\n# A tibble: 1,704 × 6\n   country               continent  year lifeExp   pop gdpPercap\n   &lt;chr&gt;                 &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n 1 Sao Tome and Principe Africa     1952    46.5 60011      880.\n 2 Sao Tome and Principe Africa     1957    48.9 61325      861.\n 3 Djibouti              Africa     1952    34.8 63149     2670.\n 4 Sao Tome and Principe Africa     1962    51.9 65345     1072.\n 5 Sao Tome and Principe Africa     1967    54.4 70787     1385.\n 6 Djibouti              Africa     1957    37.3 71851     2865.\n 7 Sao Tome and Principe Africa     1972    56.5 76595     1533.\n 8 Sao Tome and Principe Africa     1977    58.6 86796     1738.\n 9 Djibouti              Africa     1962    39.7 89898     3021.\n10 Sao Tome and Principe Africa     1982    60.4 98593     1890.\n# ℹ 1,694 more rows"
+    "text": "Sort the data\n\nWe can sort the data using the arrange() function\n\nFirst provide the name of the dataframe, then the column you wish to sort by\n\n\n\n\n# Sort the data by population (smallest to biggest)\narrange(gapminder, pop)\n\n# A tibble: 1,704 × 6\n   country               continent  year lifeExp   pop gdpPercap\n   &lt;chr&gt;                 &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n 1 Sao Tome and Principe Africa     1952    46.5 60011      880.\n 2 Sao Tome and Principe Africa     1957    48.9 61325      861.\n 3 Djibouti              Africa     1952    34.8 63149     2670.\n 4 Sao Tome and Principe Africa     1962    51.9 65345     1072.\n 5 Sao Tome and Principe Africa     1967    54.4 70787     1385.\n 6 Djibouti              Africa     1957    37.3 71851     2865.\n 7 Sao Tome and Principe Africa     1972    56.5 76595     1533.\n 8 Sao Tome and Principe Africa     1977    58.6 86796     1738.\n 9 Djibouti              Africa     1962    39.7 89898     3021.\n10 Sao Tome and Principe Africa     1982    60.4 98593     1890.\n# ℹ 1,694 more rows"
   },
   {
     "objectID": "day4/index.html#sort-the-data-1",
@@ -873,5 +873,103 @@
     "title": "Appendix",
     "section": "",
     "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "day4/index.html#about-r-packages",
+    "href": "day4/index.html#about-r-packages",
+    "title": "Reproducible data analysis",
+    "section": "About R Packages",
+    "text": "About R Packages\n\nThe functions we have used so far are included in R (called “Base R”)\nBut sometimes we need to do something that is not available in Base R\nPackages are collections of code that extend the functionality of R\n\nThere are nearly 200,000 packages currently available!\n\nPackages can be installed with the install.packages() function"
+  },
+  {
+    "objectID": "day4/index.html#loading-packages",
+    "href": "day4/index.html#loading-packages",
+    "title": "Reproducible data analysis",
+    "section": "Loading packages",
+    "text": "Loading packages\n\nThe install.packages() function downloads the package to your computer\n\nYou only need to do this once per package (or when you want to update the package)\n\nBut R isn’t able to use the package yet\nThe library() function tells R to load a package so that we can use it"
+  },
+  {
+    "objectID": "day4/index.html#load-tidyverse",
+    "href": "day4/index.html#load-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\n\n\n\nlibrary(tidyverse)\n\n\ntidyverse actually includes multiple packages (dplyr, tidyr, readr, etc.)\n\nThese are all packages that are useful for loading and cleaning data"
+  },
+  {
+    "objectID": "day4/index.html#challenge",
+    "href": "day4/index.html#challenge",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nSort the data by year, first going from smallest to biggest, then from biggest to smallest.\nWhat is the earliest year in the data?\nWhat is the latest year in the data?"
+  },
+  {
+    "objectID": "day4/index.html#selecting-columns",
+    "href": "day4/index.html#selecting-columns",
+    "title": "Reproducible data analysis",
+    "section": "Selecting columns",
+    "text": "Selecting columns\n\nSometimes, we are only interested in part of the data\nWe can use the select() function to keep only the data we are interested in (for example: year, country and GDP per capita):\n\n\nselect(gapminder, year, country, gdpPercap)\n\n# A tibble: 1,704 × 3\n    year country     gdpPercap\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1  1952 Afghanistan      779.\n 2  1957 Afghanistan      821.\n 3  1962 Afghanistan      853.\n 4  1967 Afghanistan      836.\n 5  1972 Afghanistan      740.\n 6  1977 Afghanistan      786.\n 7  1982 Afghanistan      978.\n 8  1987 Afghanistan      852.\n 9  1992 Afghanistan      649.\n10  1997 Afghanistan      635.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#saving-your-output",
+    "href": "day4/index.html#saving-your-output",
+    "title": "Reproducible data analysis",
+    "section": "Saving your output",
+    "text": "Saving your output\n\nNotice that although we have used several functions, gapminder is still the same:\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#saving-your-output-1",
+    "href": "day4/index.html#saving-your-output-1",
+    "title": "Reproducible data analysis",
+    "section": "Saving your output",
+    "text": "Saving your output\n\nThis is because we have not saved any of the output\nTo do that, you need to create a new object with &lt;-\n\nYou can call the object whatever you want, but use a name that is easy to remember\n\n\n\ngapminder_gdp &lt;- select(gapminder, year, country, gdpPercap)"
+  },
+  {
+    "objectID": "day4/index.html#challenge-1",
+    "href": "day4/index.html#challenge-1",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nSelect only year, country, and population, then sort the data by population"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes",
+    "href": "day4/index.html#about-pipes",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nDuring the last challenge, you needed to save the output of the select() function, then use it as input into the arrange() function\nThere is a simpler way to do this, called the “pipe”\nThe pipe is written like this: “%&gt;%”\n\nNewer versions of R also let you write it like this: “|&gt;”"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-1",
+    "href": "day4/index.html#about-pipes-1",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThe pipe takes the output from one function and passes it to the input of the next function\nYou can think of it as saying “and then”\n\nDo this and then do this, and then do this…"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-2",
+    "href": "day4/index.html#about-pipes-2",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\nWe can even use the pipe just with one function: - Read this as “start with gapminder and then select only year, country, and population”\n\ngapminder %&gt;% select(year, country, pop)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1957 Afghanistan  9240934\n 3  1962 Afghanistan 10267083\n 4  1967 Afghanistan 11537966\n 5  1972 Afghanistan 13079460\n 6  1977 Afghanistan 14880372\n 7  1982 Afghanistan 12881816\n 8  1987 Afghanistan 13867957\n 9  1992 Afghanistan 16317921\n10  1997 Afghanistan 22227415\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-3",
+    "href": "day4/index.html#about-pipes-3",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\nThis becomes very useful when we want to do multiple steps - Read this as “start with gapminder, and then select only year, country, and population, and then arrange by year,”\n\ngapminder %&gt;% select(year, country, pop) %&gt;% arrange(year)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1952 Albania      1282697\n 3  1952 Algeria      9279525\n 4  1952 Angola       4232095\n 5  1952 Argentina   17876956\n 6  1952 Australia    8691212\n 7  1952 Austria      6927772\n 8  1952 Bahrain       120447\n 9  1952 Bangladesh  46886859\n10  1952 Belgium      8730405\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-4",
+    "href": "day4/index.html#about-pipes-4",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\nWe can make it easier to read by putting each step on its own line - R doesn’t care about spaces or extra lines\n\ngapminder %&gt;%\n  select(year, country, pop) %&gt;%\n  arrange(year)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1952 Albania      1282697\n 3  1952 Algeria      9279525\n 4  1952 Angola       4232095\n 5  1952 Argentina   17876956\n 6  1952 Australia    8691212\n 7  1952 Austria      6927772\n 8  1952 Bahrain       120447\n 9  1952 Bangladesh  46886859\n10  1952 Belgium      8730405\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-5",
+    "href": "day4/index.html#about-pipes-5",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThis way, you don’t have to save each intermediate step\nThis is a very useful way to manipulate data"
   }
 ]

@@ -38,6 +38,20 @@ c(TRUE, FALSE, TRUE)
 
 - Today we will learn to **load** and **clean** (to "tidy" or "wrangle") dataframes
 
+## About data cleaning ("tidying")
+
+- Data often come to us in a form that is not suitable for analysis
+
+- Data cleaning (or "tidying", or "wrangling") is the process of re-formatting the data so it can be analyzed
+
+---
+
+![Getty Images](https://media.istockphoto.com/id/172342607/photo/cattle-drive.jpg?s=612x612&w=0&k=20&c=Fz--vTqe2gMWKxbHvgdLCgfUveH_Y3-k0js5H1m9Snc=)
+
+---
+
+![Image by Allison Horst](https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png){fig-alt="data wrangling monsters"}
+
 ## Set up project
 
 - Create a new project called `day04-practice` in the `data-analysis-course` folder on your Desktop
@@ -50,52 +64,46 @@ c(TRUE, FALSE, TRUE)
 - Download the `gapminder.csv` file from this link, and put it in `data_raw`
   - <https://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0>
 
+## About R Packages
+
+- The functions we have used so far are included in R (called "Base R")
+
+- But sometimes we need to do something that is not available in Base R
+
+- **Packages** are collections of code that **extend the functionality** of R
+  - There are nearly 200,000 packages currently available!
+
 ## Install `tidyverse`
 
-- We will use the `tidyverse` set of packages for data loading and cleaning
+- Today we will use the `tidyverse` set of packages for **data loading** and **cleaning**
 
-- Install `tidyverse` using `install.packages()` as usual:
+- Install `tidyverse` using `install.packages()`:
 
 ```{r}
 #| eval: false
 install.packages("tidyverse")
 ```
 
-## Install `tidyverse`
+## Loading packages
 
-- Then load it using `library()` as usual:
+- The `install.packages()` function **downloads** the package to your computer
+  - You only need to do this once per package (or when you want to update the package)
+
+- But R isn't able to use the package yet
+
+- The `library()` function tells R to **load** a package so that we can use it
+
+## Load `tidyverse`
+
+- Let's load the `tidyverse` package with `library()`
+  - Note that you don't need to use quotation marks for the package name
 
 ```{r}
 library(tidyverse)
 ```
 
-- Note that `tidyverse` actually includes **multiple** packages (`dplyr`, `tidyr`, `readr`, etc.)
+- `tidyverse` actually includes **multiple** packages (`dplyr`, `tidyr`, `readr`, etc.)
   - These are all packages that are useful for **loading** and **cleaning** data
-
-## About data cleaning ("tidying")
-
-- Data often come to us in a form that is not suitable for analysis
-
-- Data cleaning (or "tidying", or "wrangling") is the process of re-formatting the data so it can be analyzed
-
----
-
-![Image by Allison Horst](https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png){fig-alt="data wrangling monsters"}
-
-## About Exploratory Data Analysis (EDA)
-
-- Exploratory Data Analysis (**EDA**) is the process of **getting to know a dataset**
-  - How are the data structured?
-  - What variables are present in the data?
-  - Are there any missing data?
-  - What are some likely relationships between variables?
-
-## About Exploratory Data Analysis (EDA)
-
-- EDA is a **key step** in data science
-
-- EDA and data tidying are often done **together**
-  - Another important part of EDA is data **visualization**, which we will cover next week
 
 ## Load data
 
@@ -146,24 +154,10 @@ gapminder
   - `lifeExp`: Life expectancy (寿命)
   - `gdpPercap`: GDP per capita (一人当たりの国内総生産)
 
-## Get a summary of the data
-
-- We can get a summary of the data with the `summary()` function:
-
-::: {.small}
-
-```{r}
-summary(gapminder)
-```
-
-:::
-
-- Note the range of years (only up to 2007)
-
 ## Sort the data
 
 - We can sort the data using the `arrange()` function
-  - Provide the name of the dataset, then the column you wish to sort by
+  - First provide the **name of the dataframe**, then the **column** you wish to sort by
 
 ::: {.medsmall}
 
@@ -201,3 +195,95 @@ arrange(gapminder, year, country)
 ```
 
 :::
+
+## Challenge
+
+- Sort the data by **year**, first going from smallest to biggest, then from biggest to smallest.
+
+- What is the **earliest** year in the data?
+
+- What is the **latest** year in the data?
+
+## Selecting columns
+
+- Sometimes, we are only interested in **part** of the data
+
+- We can use the `select()` function to keep only the data we are interested in (for example: year, country and GDP per capita):
+
+```{r}
+select(gapminder, year, country, gdpPercap)
+```
+
+## Saving your output
+
+- Notice that although we have used several functions, `gapminder` is still the same:
+
+```{r}
+gapminder
+```
+
+## Saving your output
+
+- This is because we have not saved any of the output
+
+- To do that, you need to create a new object with `<-`
+  - You can call the object whatever you want, but use a name that is easy to remember
+
+```{r}
+gapminder_gdp <- select(gapminder, year, country, gdpPercap)
+```
+
+## Challenge
+
+- **Select** only year, country, and population, then **sort** the data by population
+
+## About pipes
+
+- During the last challenge, you needed to save the output of the `select()` function, then use it as input into the `arrange()` function
+
+- There is a simpler way to do this, called the "pipe"
+
+- The pipe is written like this: `%>%`
+  - Newer versions of R also let you write it like this: `|>`
+
+## About pipes
+
+- The pipe takes the output from one function and passes it to the input of the next function
+
+- You can think of it as saying "and then"
+  - Do this **and then** do this, **and then** do this...
+
+## About pipes
+
+- We can even use the pipe just with one function:
+  - Read this as "start with `gapminder` **and then** select only year, country, and population"
+
+```{r}
+gapminder %>% select(year, country, pop)
+```
+
+## About pipes
+
+This becomes very useful when we want to do **multiple steps**
+  - Read this as "start with `gapminder`, **and then** select only year, country, and population, **and then** arrange by year,"
+
+```{r}
+gapminder %>% select(year, country, pop) %>% arrange(year)
+```
+
+## About pipes
+
+- We can make it easier to read by putting each step on its own line
+  - R doesn't care about spaces or extra lines
+
+```{r}
+gapminder %>%
+  select(year, country, pop) %>%
+  arrange(year)
+```
+
+## About pipes
+
+- This way, **you don't have to save each intermediate step**
+
+- This is a very useful way to manipulate data
