@@ -136,6 +136,8 @@ gapminder
 
 :::
 
+## Print out the data
+
 - Notice that R tells us the number of **rows** and **columns**, as well as the **data type** of each column
   - The tidyverse package refers to dataframes as "tibbles"
 
@@ -154,21 +156,29 @@ gapminder
   - `lifeExp`: Life expectancy (寿命)
   - `gdpPercap`: GDP per capita (一人当たりの国内総生産)
 
-## Sort the data
+## Sort data with `arrange()`
 
 - We can sort the data using the `arrange()` function
   - First provide the **name of the dataframe**, then the **column** you wish to sort by
 
+```{r}
+#| eval: false
+arrange(gapminder, pop)
+```
+
+
+## Sort data with `arrange()`
+
 ::: {.medsmall}
 
 ```{r}
-# Sort the data by population (smallest to biggest)
-arrange(gapminder, pop)
+#| echo: false
+arrange(gapminder, lifeExp)
 ```
 
 :::
 
-## Sort the data
+## Sort data with `arrange()`
 
 - The default setting is to sort from **small** to **large**
   - To sort in the reverse (**descending**) direction, use `desc()`
@@ -176,22 +186,20 @@ arrange(gapminder, pop)
 ::: {.medsmall}
 
 ```{r}
-# Sort the data by population (biggest to smallest)
-arrange(gapminder, desc(pop))
+arrange(gapminder, desc(lifeExp))
 ```
 
 :::
 
-## Sort the data
+## Sort data with `arrange()`
 
-- You can sort on multiple columns
+- You can sort on **multiple** columns
   - Ties will be sorted by the next column
 
 ::: {.medsmall}
 
 ```{r}
-# Sort the data by year, then country
-arrange(gapminder, year, country)
+arrange(gapminder, continent, lifeExp)
 ```
 
 :::
@@ -204,7 +212,7 @@ arrange(gapminder, year, country)
 
 - What is the **latest** year in the data?
 
-## Selecting columns
+## Select columns with `select()`
 
 - Sometimes, we are only interested in **part** of the data
 
@@ -216,7 +224,7 @@ select(gapminder, year, country, gdpPercap)
 
 ## Saving your output
 
-- Notice that although we have used several functions, `gapminder` is still the same:
+- Notice that although we have used several functions, `gapminder` is gstill the same:
 
 ```{r}
 gapminder
@@ -287,3 +295,86 @@ gapminder %>%
 - This way, **you don't have to save each intermediate step**
 
 - This is a very useful way to manipulate data
+
+- I will now use the pipe for the rest of the lesson
+
+## Subset rows with `filter()`
+
+- Use the `filter()` function to only keep rows that **meet a certain condition**
+
+- For example, let's only keep the data in Europe:
+
+```{r}
+gapminder %>% filter(continent == "Europe")
+```
+
+## Challenge
+
+Using the pipe and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns.
+
+## Modify data with `mutate()`
+
+- Use the `mutate()` function to modify data
+
+- For example, we could change the units of population to millions of people:
+
+```{r}
+gapminder %>% mutate(pop = pop/1000000)
+```
+
+## Modify data with `mutate()`
+
+- If we provide a new column name, that column will be added
+
+```{r}
+gapminder %>% mutate(pop_mil = pop/1000000)
+```
+
+## Challenge
+
+- The `gdpPercap` column stands for Gross Domestic Product (GDP) per capita (per person)
+
+- Calculate the **total** GDP using `mutate()`
+  - hint: You need to use both the `pop` and `gdpPercap` columns
+
+## Calculate summary statistics with `summarize()`
+
+- For example, let's calculate the overall mean population:
+
+```{r}
+gapminder %>% summarize(mean_pop = mean(pop))
+```
+
+## Calculate summary statistics with `summarize()`
+
+- Another example: the total population over all the data:
+
+```{r}
+gapminder %>% summarize(total = sum(pop))
+```
+
+## Use `group_by()` to do calculations per group
+
+- However, it is often more useful to calculate such summary statistics for **particular groups**
+
+- To do this, first specify the groups with `group_by()`:
+
+```{r}
+gapminder %>% group_by(continent)
+```
+
+## Use `group_by()` to do calculations per group
+
+- Next, use `summarize()` to calculate the summary statistic:
+
+```{r}
+gapminder %>%
+  group_by(continent) %>%
+  summarize(mean_pop = mean(pop))
+```
+
+## Difference between `mutate()` and `summarize()`
+
+- `mutate()` calculates a new column (or over-writes an existing one) and **keeps the number of rows the same**
+
+- `summarize()` calculates a new column and **decreases the number of rows**

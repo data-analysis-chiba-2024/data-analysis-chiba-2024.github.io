@@ -74,7 +74,7 @@
     "href": "day4/index.html#print-out-the-data",
     "title": "Reproducible data analysis",
     "section": "Print out the data",
-    "text": "Print out the data\n\nInspect the data just like any other object (variable) in R: type the name of the object into the console:\n\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows\n\n\n\n\nNotice that R tells us the number of rows and columns, as well as the data type of each column\n\nThe tidyverse package refers to dataframes as “tibbles”"
+    "text": "Print out the data\n\nInspect the data just like any other object (variable) in R: type the name of the object into the console:\n\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows"
   },
   {
     "objectID": "day4/index.html#what-is-this-dataset-about",
@@ -879,7 +879,7 @@
     "href": "day4/index.html#about-r-packages",
     "title": "Reproducible data analysis",
     "section": "About R Packages",
-    "text": "About R Packages\n\nThe functions we have used so far are included in R (called “Base R”)\nBut sometimes we need to do something that is not available in Base R\nPackages are collections of code that extend the functionality of R\n\nThere are nearly 200,000 packages currently available!\n\nPackages can be installed with the install.packages() function"
+    "text": "About R Packages\n\nThe functions we have used so far are included in R (called “Base R”)\nBut sometimes we need to do something that is not available in Base R\nPackages are collections of code that extend the functionality of R\n\nThere are nearly 200,000 packages currently available!"
   },
   {
     "objectID": "day4/index.html#loading-packages",
@@ -935,7 +935,7 @@
     "href": "day4/index.html#about-pipes",
     "title": "Reproducible data analysis",
     "section": "About pipes",
-    "text": "About pipes\n\nDuring the last challenge, you needed to save the output of the select() function, then use it as input into the arrange() function\nThere is a simpler way to do this, called the “pipe”\nThe pipe is written like this: “%&gt;%”\n\nNewer versions of R also let you write it like this: “|&gt;”"
+    "text": "About pipes\n\nDuring the last challenge, you needed to save the output of the select() function, then use it as input into the arrange() function\nThere is a simpler way to do this, called the “pipe”\nThe pipe is written like this: %&gt;%\n\nNewer versions of R also let you write it like this: |&gt;"
   },
   {
     "objectID": "day4/index.html#about-pipes-1",
@@ -949,7 +949,7 @@
     "href": "day4/index.html#about-pipes-2",
     "title": "Reproducible data analysis",
     "section": "About pipes",
-    "text": "About pipes\nWe can even use the pipe just with one function: - Read this as “start with gapminder and then select only year, country, and population”\n\ngapminder %&gt;% select(year, country, pop)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1957 Afghanistan  9240934\n 3  1962 Afghanistan 10267083\n 4  1967 Afghanistan 11537966\n 5  1972 Afghanistan 13079460\n 6  1977 Afghanistan 14880372\n 7  1982 Afghanistan 12881816\n 8  1987 Afghanistan 13867957\n 9  1992 Afghanistan 16317921\n10  1997 Afghanistan 22227415\n# ℹ 1,694 more rows"
+    "text": "About pipes\n\nWe can even use the pipe just with one function:\n\nRead this as “start with gapminder and then select only year, country, and population”\n\n\n\ngapminder %&gt;% select(year, country, pop)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1957 Afghanistan  9240934\n 3  1962 Afghanistan 10267083\n 4  1967 Afghanistan 11537966\n 5  1972 Afghanistan 13079460\n 6  1977 Afghanistan 14880372\n 7  1982 Afghanistan 12881816\n 8  1987 Afghanistan 13867957\n 9  1992 Afghanistan 16317921\n10  1997 Afghanistan 22227415\n# ℹ 1,694 more rows"
   },
   {
     "objectID": "day4/index.html#about-pipes-3",
@@ -963,13 +963,125 @@
     "href": "day4/index.html#about-pipes-4",
     "title": "Reproducible data analysis",
     "section": "About pipes",
-    "text": "About pipes\nWe can make it easier to read by putting each step on its own line - R doesn’t care about spaces or extra lines\n\ngapminder %&gt;%\n  select(year, country, pop) %&gt;%\n  arrange(year)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1952 Albania      1282697\n 3  1952 Algeria      9279525\n 4  1952 Angola       4232095\n 5  1952 Argentina   17876956\n 6  1952 Australia    8691212\n 7  1952 Austria      6927772\n 8  1952 Bahrain       120447\n 9  1952 Bangladesh  46886859\n10  1952 Belgium      8730405\n# ℹ 1,694 more rows"
+    "text": "About pipes\n\nWe can make it easier to read by putting each step on its own line\n\nR doesn’t care about spaces or extra lines\n\n\n\ngapminder %&gt;%\n  select(year, country, pop) %&gt;%\n  arrange(year)\n\n# A tibble: 1,704 × 3\n    year country          pop\n   &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n 1  1952 Afghanistan  8425333\n 2  1952 Albania      1282697\n 3  1952 Algeria      9279525\n 4  1952 Angola       4232095\n 5  1952 Argentina   17876956\n 6  1952 Australia    8691212\n 7  1952 Austria      6927772\n 8  1952 Bahrain       120447\n 9  1952 Bangladesh  46886859\n10  1952 Belgium      8730405\n# ℹ 1,694 more rows"
   },
   {
     "objectID": "day4/index.html#about-pipes-5",
     "href": "day4/index.html#about-pipes-5",
     "title": "Reproducible data analysis",
     "section": "About pipes",
-    "text": "About pipes\n\nThis way, you don’t have to save each intermediate step\nThis is a very useful way to manipulate data"
+    "text": "About pipes\n\nThis way, you don’t have to save each intermediate step\nThis is a very useful way to manipulate data\nI will now use the pipe for the rest of the lesson"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange",
+    "href": "day4/index.html#sort-data-with-arrange",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nWe can sort the data using the arrange() function\n\nFirst provide the name of the dataframe, then the column you wish to sort by\n\n\n\narrange(gapminder, pop)"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-1",
+    "href": "day4/index.html#sort-data-with-arrange-1",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\n\n\n# A tibble: 1,704 × 6\n   country      continent  year lifeExp     pop gdpPercap\n   &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n 1 Rwanda       Africa     1992    23.6 7290203      737.\n 2 Afghanistan  Asia       1952    28.8 8425333      779.\n 3 Gambia       Africa     1952    30    284320      485.\n 4 Angola       Africa     1952    30.0 4232095     3521.\n 5 Sierra Leone Africa     1952    30.3 2143249      880.\n 6 Afghanistan  Asia       1957    30.3 9240934      821.\n 7 Cambodia     Asia       1977    31.2 6978607      525.\n 8 Mozambique   Africa     1952    31.3 6446316      469.\n 9 Sierra Leone Africa     1957    31.6 2295678     1004.\n10 Burkina Faso Africa     1952    32.0 4469979      543.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-2",
+    "href": "day4/index.html#sort-data-with-arrange-2",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nThe default setting is to sort from small to large\n\nTo sort in the reverse (descending) direction, use desc()\n\n\n\n\narrange(gapminder, desc(lifeExp))\n\n# A tibble: 1,704 × 6\n   country          continent  year lifeExp       pop gdpPercap\n   &lt;chr&gt;            &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n 1 Japan            Asia       2007    82.6 127467972    31656.\n 2 Hong Kong, China Asia       2007    82.2   6980412    39725.\n 3 Japan            Asia       2002    82   127065841    28605.\n 4 Iceland          Europe     2007    81.8    301931    36181.\n 5 Switzerland      Europe     2007    81.7   7554661    37506.\n 6 Hong Kong, China Asia       2002    81.5   6762476    30209.\n 7 Australia        Oceania    2007    81.2  20434176    34435.\n 8 Spain            Europe     2007    80.9  40448191    28821.\n 9 Sweden           Europe     2007    80.9   9031088    33860.\n10 Israel           Asia       2007    80.7   6426679    25523.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#select-columns-with-select",
+    "href": "day4/index.html#select-columns-with-select",
+    "title": "Reproducible data analysis",
+    "section": "Select columns with select()",
+    "text": "Select columns with select()\n\nSometimes, we are only interested in part of the data\nWe can use the select() function to keep only the data we are interested in (for example: year, country and GDP per capita):\n\n\nselect(gapminder, year, country, gdpPercap)\n\n# A tibble: 1,704 × 3\n    year country     gdpPercap\n   &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n 1  1952 Afghanistan      779.\n 2  1957 Afghanistan      821.\n 3  1962 Afghanistan      853.\n 4  1967 Afghanistan      836.\n 5  1972 Afghanistan      740.\n 6  1977 Afghanistan      786.\n 7  1982 Afghanistan      978.\n 8  1987 Afghanistan      852.\n 9  1992 Afghanistan      649.\n10  1997 Afghanistan      635.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#subset-rows-with-filter",
+    "href": "day4/index.html#subset-rows-with-filter",
+    "title": "Reproducible data analysis",
+    "section": "Subset rows with filter()",
+    "text": "Subset rows with filter()\n\nUse the filter() function to only keep rows that meet a certain condition\nFor example, let’s only keep the data in Europe:\n\n\ngapminder %&gt;% filter(continent == \"Europe\")\n\n# A tibble: 360 × 6\n   country continent  year lifeExp     pop gdpPercap\n   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n 1 Albania Europe     1952    55.2 1282697     1601.\n 2 Albania Europe     1957    59.3 1476505     1942.\n 3 Albania Europe     1962    64.8 1728137     2313.\n 4 Albania Europe     1967    66.2 1984060     2760.\n 5 Albania Europe     1972    67.7 2263554     3313.\n 6 Albania Europe     1977    68.9 2509048     3533.\n 7 Albania Europe     1982    70.4 2780097     3631.\n 8 Albania Europe     1987    72   3075321     3739.\n 9 Albania Europe     1992    71.6 3326498     2497.\n10 Albania Europe     1997    73.0 3428038     3193.\n# ℹ 350 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge-2",
+    "href": "day4/index.html#challenge-2",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\nUsing the pipe and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns."
+  },
+  {
+    "objectID": "day4/index.html#modify-data-with-mutate",
+    "href": "day4/index.html#modify-data-with-mutate",
+    "title": "Reproducible data analysis",
+    "section": "Modify data with mutate()",
+    "text": "Modify data with mutate()\n\nUse the mutate() function to modify data\nFor example, we could change the units of population to millions of people:\n\n\ngapminder %&gt;% mutate(pop = pop/1000000)\n\n# A tibble: 1,704 × 6\n   country     continent  year lifeExp   pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8.43      779.\n 2 Afghanistan Asia       1957    30.3  9.24      821.\n 3 Afghanistan Asia       1962    32.0 10.3       853.\n 4 Afghanistan Asia       1967    34.0 11.5       836.\n 5 Afghanistan Asia       1972    36.1 13.1       740.\n 6 Afghanistan Asia       1977    38.4 14.9       786.\n 7 Afghanistan Asia       1982    39.9 12.9       978.\n 8 Afghanistan Asia       1987    40.8 13.9       852.\n 9 Afghanistan Asia       1992    41.7 16.3       649.\n10 Afghanistan Asia       1997    41.8 22.2       635.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#modify-data-with-mutate-1",
+    "href": "day4/index.html#modify-data-with-mutate-1",
+    "title": "Reproducible data analysis",
+    "section": "Modify data with mutate()",
+    "text": "Modify data with mutate()\n\nIf we provide a new column name, that column will be added\n\n\ngapminder %&gt;% mutate(pop_mil = pop/1000000)\n\n# A tibble: 1,704 × 7\n   country     continent  year lifeExp      pop gdpPercap pop_mil\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.    8.43\n 2 Afghanistan Asia       1957    30.3  9240934      821.    9.24\n 3 Afghanistan Asia       1962    32.0 10267083      853.   10.3 \n 4 Afghanistan Asia       1967    34.0 11537966      836.   11.5 \n 5 Afghanistan Asia       1972    36.1 13079460      740.   13.1 \n 6 Afghanistan Asia       1977    38.4 14880372      786.   14.9 \n 7 Afghanistan Asia       1982    39.9 12881816      978.   12.9 \n 8 Afghanistan Asia       1987    40.8 13867957      852.   13.9 \n 9 Afghanistan Asia       1992    41.7 16317921      649.   16.3 \n10 Afghanistan Asia       1997    41.8 22227415      635.   22.2 \n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge-3",
+    "href": "day4/index.html#challenge-3",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nThe gdpPercap column stands for Gross Domestic Product (GDP) per capita (per person)\nCalculate the total GDP using mutate()\n\nhint: You need to use both the pop and gdpPercap columns"
+  },
+  {
+    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize",
+    "href": "day4/index.html#calculate-summary-statistics-with-summarize",
+    "title": "Reproducible data analysis",
+    "section": "Calculate summary statistics with summarize()",
+    "text": "Calculate summary statistics with summarize()\n\nFor example, let’s calculate the overall mean population:\n\n\ngapminder %&gt;% summarize(mean_pop = mean(pop))\n\n# A tibble: 1 × 1\n   mean_pop\n      &lt;dbl&gt;\n1 29601212."
+  },
+  {
+    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize-1",
+    "href": "day4/index.html#calculate-summary-statistics-with-summarize-1",
+    "title": "Reproducible data analysis",
+    "section": "Calculate summary statistics with summarize()",
+    "text": "Calculate summary statistics with summarize()\n\nAnother example: the total population over all the data:\n\n\ngapminder %&gt;% summarize(total = sum(pop))\n\n# A tibble: 1 × 1\n        total\n        &lt;dbl&gt;\n1 50440465801"
+  },
+  {
+    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group",
+    "href": "day4/index.html#use-group_by-to-do-calculations-per-group",
+    "title": "Reproducible data analysis",
+    "section": "Use group_by() to do calculations per group",
+    "text": "Use group_by() to do calculations per group\n\nHowever, it is often more useful to calculate such summary statistics for particular groups\nTo do this, first specify the groups with group_by():\n\n\ngapminder %&gt;% group_by(continent)\n\n# A tibble: 1,704 × 6\n# Groups:   continent [5]\n   country     continent  year lifeExp      pop gdpPercap\n   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n 1 Afghanistan Asia       1952    28.8  8425333      779.\n 2 Afghanistan Asia       1957    30.3  9240934      821.\n 3 Afghanistan Asia       1962    32.0 10267083      853.\n 4 Afghanistan Asia       1967    34.0 11537966      836.\n 5 Afghanistan Asia       1972    36.1 13079460      740.\n 6 Afghanistan Asia       1977    38.4 14880372      786.\n 7 Afghanistan Asia       1982    39.9 12881816      978.\n 8 Afghanistan Asia       1987    40.8 13867957      852.\n 9 Afghanistan Asia       1992    41.7 16317921      649.\n10 Afghanistan Asia       1997    41.8 22227415      635.\n# ℹ 1,694 more rows"
+  },
+  {
+    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
+    "href": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
+    "title": "Reproducible data analysis",
+    "section": "Use group_by() to do calculations per group",
+    "text": "Use group_by() to do calculations per group\n\nNext, use summarize() to calculate the summary statistic:\n\n\ngapminder %&gt;%\n  group_by(continent) %&gt;%\n  summarize(mean_pop = mean(pop))\n\n# A tibble: 5 × 2\n  continent  mean_pop\n  &lt;chr&gt;         &lt;dbl&gt;\n1 Africa     9916003.\n2 Americas  24504795.\n3 Asia      77038722.\n4 Europe    17169765.\n5 Oceania    8874672."
+  },
+  {
+    "objectID": "day4/index.html#difference-between-mutate-and-summarize",
+    "href": "day4/index.html#difference-between-mutate-and-summarize",
+    "title": "Reproducible data analysis",
+    "section": "Difference between mutate() and summarize()",
+    "text": "Difference between mutate() and summarize()\n\nmutate() calculates a new column (or over-writes an existing one) and keeps the number of rows the same\nsummarize() calculates a new column and decreases the number of rows"
+  },
+  {
+    "objectID": "day4/index.html#print-out-the-data-1",
+    "href": "day4/index.html#print-out-the-data-1",
+    "title": "Reproducible data analysis",
+    "section": "Print out the data",
+    "text": "Print out the data\n\nNotice that R tells us the number of rows and columns, as well as the data type of each column\n\nThe tidyverse package refers to dataframes as “tibbles”"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-3",
+    "href": "day4/index.html#sort-data-with-arrange-3",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nYou can sort on multiple columns\n\nTies will be sorted by the next column\n\n\n\n\narrange(gapminder, continent, lifeExp)\n\n# A tibble: 1,704 × 6\n   country       continent  year lifeExp     pop gdpPercap\n   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n 1 Rwanda        Africa     1992    23.6 7290203      737.\n 2 Gambia        Africa     1952    30    284320      485.\n 3 Angola        Africa     1952    30.0 4232095     3521.\n 4 Sierra Leone  Africa     1952    30.3 2143249      880.\n 5 Mozambique    Africa     1952    31.3 6446316      469.\n 6 Sierra Leone  Africa     1957    31.6 2295678     1004.\n 7 Burkina Faso  Africa     1952    32.0 4469979      543.\n 8 Angola        Africa     1957    32.0 4561361     3828.\n 9 Gambia        Africa     1957    32.1  323150      521.\n10 Guinea-Bissau Africa     1952    32.5  580653      300.\n# ℹ 1,694 more rows"
   }
 ]

@@ -443,6 +443,10 @@
 <section class="slide level2">
 
 
+<img data-src="https://media.istockphoto.com/id/172342607/photo/cattle-drive.jpg?s=612x612&amp;w=0&amp;k=20&amp;c=Fz--vTqe2gMWKxbHvgdLCgfUveH_Y3-k0js5H1m9Snc=" class="r-stretch quarto-figure-center"><p class="caption">Getty Images</p></section>
+<section class="slide level2">
+
+
 <img data-src="https://datasciencecampus.github.io/DSCA_data_wrangling_with_r/slides/images/data_cowboy.png" alt="data wrangling monsters" class="r-stretch quarto-figure-center"><p class="caption">Image by Allison Horst</p></section>
 <section id="set-up-project" class="slide level2">
 <h2>Set up project</h2>
@@ -472,7 +476,6 @@
 <ul>
 <li>There are nearly 200,000 packages currently available!</li>
 </ul></li>
-<li><p>Packages can be installed with the <code>install.packages()</code> function</p></li>
 </ul>
 </section>
 <section id="install-tidyverse" class="slide level2">
@@ -554,6 +557,9 @@
 </div>
 </div>
 </div>
+</section>
+<section id="print-out-the-data-1" class="slide level2">
+<h2>Print out the data</h2>
 <ul>
 <li>Notice that R tells us the number of <strong>rows</strong> and <strong>columns</strong>, as well as the <strong>data type</strong> of each column
 <ul>
@@ -580,39 +586,43 @@
 </ul></li>
 </ul>
 </section>
-<section id="sort-the-data" class="slide level2">
-<h2>Sort the data</h2>
+<section id="sort-data-with-arrange" class="slide level2">
+<h2>Sort data with <code>arrange()</code></h2>
 <ul>
 <li>We can sort the data using the <code>arrange()</code> function
 <ul>
 <li>First provide the <strong>name of the dataframe</strong>, then the <strong>column</strong> you wish to sort by</li>
 </ul></li>
 </ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">arrange</span>(gapminder, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="sort-data-with-arrange-1" class="slide level2">
+<h2>Sort data with <code>arrange()</code></h2>
 <div class="medsmall">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># Sort the data by population (smallest to biggest)</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a><span class="fu">arrange</span>(gapminder, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
-   country               continent  year lifeExp   pop gdpPercap
-   &lt;chr&gt;                 &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
- 1 Sao Tome and Principe Africa     1952    46.5 60011      880.
- 2 Sao Tome and Principe Africa     1957    48.9 61325      861.
- 3 Djibouti              Africa     1952    34.8 63149     2670.
- 4 Sao Tome and Principe Africa     1962    51.9 65345     1072.
- 5 Sao Tome and Principe Africa     1967    54.4 70787     1385.
- 6 Djibouti              Africa     1957    37.3 71851     2865.
- 7 Sao Tome and Principe Africa     1972    56.5 76595     1533.
- 8 Sao Tome and Principe Africa     1977    58.6 86796     1738.
- 9 Djibouti              Africa     1962    39.7 89898     3021.
-10 Sao Tome and Principe Africa     1982    60.4 98593     1890.
+   country      continent  year lifeExp     pop gdpPercap
+   &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Rwanda       Africa     1992    23.6 7290203      737.
+ 2 Afghanistan  Asia       1952    28.8 8425333      779.
+ 3 Gambia       Africa     1952    30    284320      485.
+ 4 Angola       Africa     1952    30.0 4232095     3521.
+ 5 Sierra Leone Africa     1952    30.3 2143249      880.
+ 6 Afghanistan  Asia       1957    30.3 9240934      821.
+ 7 Cambodia     Asia       1977    31.2 6978607      525.
+ 8 Mozambique   Africa     1952    31.3 6446316      469.
+ 9 Sierra Leone Africa     1957    31.6 2295678     1004.
+10 Burkina Faso Africa     1952    32.0 4469979      543.
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sort-the-data-1" class="slide level2">
-<h2>Sort the data</h2>
+<section id="sort-data-with-arrange-2" class="slide level2">
+<h2>Sort data with <code>arrange()</code></h2>
 <ul>
 <li>The default setting is to sort from <strong>small</strong> to <strong>large</strong>
 <ul>
@@ -621,53 +631,51 @@
 </ul>
 <div class="medsmall">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co"># Sort the data by population (biggest to smallest)</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="fu">arrange</span>(gapminder, <span class="fu">desc</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">arrange</span>(gapminder, <span class="fu">desc</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
-   country continent  year lifeExp        pop gdpPercap
-   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
- 1 China   Asia       2007    73.0 1318683096     4959.
- 2 China   Asia       2002    72.0 1280400000     3119.
- 3 China   Asia       1997    70.4 1230075000     2289.
- 4 China   Asia       1992    68.7 1164970000     1656.
- 5 India   Asia       2007    64.7 1110396331     2452.
- 6 China   Asia       1987    67.3 1084035000     1379.
- 7 India   Asia       2002    62.9 1034172547     1747.
- 8 China   Asia       1982    65.5 1000281000      962.
- 9 India   Asia       1997    61.8  959000000     1459.
-10 China   Asia       1977    64.0  943455000      741.
+   country          continent  year lifeExp       pop gdpPercap
+   &lt;chr&gt;            &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Japan            Asia       2007    82.6 127467972    31656.
+ 2 Hong Kong, China Asia       2007    82.2   6980412    39725.
+ 3 Japan            Asia       2002    82   127065841    28605.
+ 4 Iceland          Europe     2007    81.8    301931    36181.
+ 5 Switzerland      Europe     2007    81.7   7554661    37506.
+ 6 Hong Kong, China Asia       2002    81.5   6762476    30209.
+ 7 Australia        Oceania    2007    81.2  20434176    34435.
+ 8 Spain            Europe     2007    80.9  40448191    28821.
+ 9 Sweden           Europe     2007    80.9   9031088    33860.
+10 Israel           Asia       2007    80.7   6426679    25523.
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
 </div>
 </section>
-<section id="sort-the-data-2" class="slide level2">
-<h2>Sort the data</h2>
+<section id="sort-data-with-arrange-3" class="slide level2">
+<h2>Sort data with <code>arrange()</code></h2>
 <ul>
-<li>You can sort on multiple columns
+<li>You can sort on <strong>multiple</strong> columns
 <ul>
 <li>Ties will be sorted by the next column</li>
 </ul></li>
 </ul>
 <div class="medsmall">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="co"># Sort the data by year, then country</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">arrange</span>(gapminder, year, country)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">arrange</span>(gapminder, continent, lifeExp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,704 × 6
-   country     continent  year lifeExp      pop gdpPercap
-   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
- 1 Afghanistan Asia       1952    28.8  8425333      779.
- 2 Albania     Europe     1952    55.2  1282697     1601.
- 3 Algeria     Africa     1952    43.1  9279525     2449.
- 4 Angola      Africa     1952    30.0  4232095     3521.
- 5 Argentina   Americas   1952    62.5 17876956     5911.
- 6 Australia   Oceania    1952    69.1  8691212    10040.
- 7 Austria     Europe     1952    66.8  6927772     6137.
- 8 Bahrain     Asia       1952    50.9   120447     9867.
- 9 Bangladesh  Asia       1952    37.5 46886859      684.
-10 Belgium     Europe     1952    68    8730405     8343.
+   country       continent  year lifeExp     pop gdpPercap
+   &lt;chr&gt;         &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Rwanda        Africa     1992    23.6 7290203      737.
+ 2 Gambia        Africa     1952    30    284320      485.
+ 3 Angola        Africa     1952    30.0 4232095     3521.
+ 4 Sierra Leone  Africa     1952    30.3 2143249      880.
+ 5 Mozambique    Africa     1952    31.3 6446316      469.
+ 6 Sierra Leone  Africa     1957    31.6 2295678     1004.
+ 7 Burkina Faso  Africa     1952    32.0 4469979      543.
+ 8 Angola        Africa     1957    32.0 4561361     3828.
+ 9 Gambia        Africa     1957    32.1  323150      521.
+10 Guinea-Bissau Africa     1952    32.5  580653      300.
 # ℹ 1,694 more rows</code></pre>
 </div>
 </div>
@@ -681,8 +689,8 @@
 <li><p>What is the <strong>latest</strong> year in the data?</p></li>
 </ul>
 </section>
-<section id="selecting-columns" class="slide level2">
-<h2>Selecting columns</h2>
+<section id="select-columns-with-select" class="slide level2">
+<h2>Select columns with <code>select()</code></h2>
 <ul>
 <li><p>Sometimes, we are only interested in <strong>part</strong> of the data</p></li>
 <li><p>We can use the <code>select()</code> function to keep only the data we are interested in (for example: year, country and GDP per capita):</p></li>
@@ -748,7 +756,7 @@
 <section id="challenge-1" class="slide level2">
 <h2>Challenge</h2>
 <ul>
-<li>Select only year, country, and population, then sort the data by population</li>
+<li><strong>Select</strong> only year, country, and population, then <strong>sort</strong> the data by population</li>
 </ul>
 </section>
 <section id="about-pipes" class="slide level2">
@@ -756,9 +764,9 @@
 <ul>
 <li><p>During the last challenge, you needed to save the output of the <code>select()</code> function, then use it as input into the <code>arrange()</code> function</p></li>
 <li><p>There is a simpler way to do this, called the “pipe”</p></li>
-<li><p>The pipe is written like this: “<code>%&gt;%</code>”</p>
+<li><p>The pipe is written like this: <code>%&gt;%</code></p>
 <ul>
-<li>Newer versions of R also let you write it like this: “<code>|&gt;</code>”</li>
+<li>Newer versions of R also let you write it like this: <code>|&gt;</code></li>
 </ul></li>
 </ul>
 </section>
@@ -774,7 +782,12 @@
 </section>
 <section id="about-pipes-2" class="slide level2">
 <h2>About pipes</h2>
-<p>We can even use the pipe just with one function: - Read this as “start with <code>gapminder</code> <strong>and then</strong> select only year, country, and population”</p>
+<ul>
+<li>We can even use the pipe just with one function:
+<ul>
+<li>Read this as “start with <code>gapminder</code> <strong>and then</strong> select only year, country, and population”</li>
+</ul></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, country, pop)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
@@ -820,7 +833,12 @@
 </section>
 <section id="about-pipes-4" class="slide level2">
 <h2>About pipes</h2>
-<p>We can make it easier to read by putting each step on its own line - R doesn’t care about spaces or extra lines</p>
+<ul>
+<li>We can make it easier to read by putting each step on its own line
+<ul>
+<li>R doesn’t care about spaces or extra lines</li>
+</ul></li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>gapminder <span class="sc">%&gt;%</span></span>
 <span id="cb27-2"><a href="#cb27-2"></a>  <span class="fu">select</span>(year, country, pop) <span class="sc">%&gt;%</span></span>
@@ -848,6 +866,183 @@
 <ul>
 <li><p>This way, <strong>you don’t have to save each intermediate step</strong></p></li>
 <li><p>This is a very useful way to manipulate data</p></li>
+<li><p>I will now use the pipe for the rest of the lesson</p></li>
+</ul>
+</section>
+<section id="subset-rows-with-filter" class="slide level2">
+<h2>Subset rows with <code>filter()</code></h2>
+<ul>
+<li><p>Use the <code>filter()</code> function to only keep rows that <strong>meet a certain condition</strong></p></li>
+<li><p>For example, let’s only keep the data in Europe:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Europe"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 360 × 6
+   country continent  year lifeExp     pop gdpPercap
+   &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Albania Europe     1952    55.2 1282697     1601.
+ 2 Albania Europe     1957    59.3 1476505     1942.
+ 3 Albania Europe     1962    64.8 1728137     2313.
+ 4 Albania Europe     1967    66.2 1984060     2760.
+ 5 Albania Europe     1972    67.7 2263554     3313.
+ 6 Albania Europe     1977    68.9 2509048     3533.
+ 7 Albania Europe     1982    70.4 2780097     3631.
+ 8 Albania Europe     1987    72   3075321     3739.
+ 9 Albania Europe     1992    71.6 3326498     2497.
+10 Albania Europe     1997    73.0 3428038     3193.
+# ℹ 350 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-2" class="slide level2">
+<h2>Challenge</h2>
+<p>Using the pipe and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns.</p>
+</section>
+<section id="modify-data-with-mutate" class="slide level2">
+<h2>Modify data with <code>mutate()</code></h2>
+<ul>
+<li><p>Use the <code>mutate()</code> function to modify data</p></li>
+<li><p>For example, we could change the units of population to millions of people:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pop =</span> pop<span class="sc">/</span><span class="dv">1000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+   country     continent  year lifeExp   pop gdpPercap
+   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8.43      779.
+ 2 Afghanistan Asia       1957    30.3  9.24      821.
+ 3 Afghanistan Asia       1962    32.0 10.3       853.
+ 4 Afghanistan Asia       1967    34.0 11.5       836.
+ 5 Afghanistan Asia       1972    36.1 13.1       740.
+ 6 Afghanistan Asia       1977    38.4 14.9       786.
+ 7 Afghanistan Asia       1982    39.9 12.9       978.
+ 8 Afghanistan Asia       1987    40.8 13.9       852.
+ 9 Afghanistan Asia       1992    41.7 16.3       649.
+10 Afghanistan Asia       1997    41.8 22.2       635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="modify-data-with-mutate-1" class="slide level2">
+<h2>Modify data with <code>mutate()</code></h2>
+<ul>
+<li>If we provide a new column name, that column will be added</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">pop_mil =</span> pop<span class="sc">/</span><span class="dv">1000000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 7
+   country     continent  year lifeExp      pop gdpPercap pop_mil
+   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.    8.43
+ 2 Afghanistan Asia       1957    30.3  9240934      821.    9.24
+ 3 Afghanistan Asia       1962    32.0 10267083      853.   10.3 
+ 4 Afghanistan Asia       1967    34.0 11537966      836.   11.5 
+ 5 Afghanistan Asia       1972    36.1 13079460      740.   13.1 
+ 6 Afghanistan Asia       1977    38.4 14880372      786.   14.9 
+ 7 Afghanistan Asia       1982    39.9 12881816      978.   12.9 
+ 8 Afghanistan Asia       1987    40.8 13867957      852.   13.9 
+ 9 Afghanistan Asia       1992    41.7 16317921      649.   16.3 
+10 Afghanistan Asia       1997    41.8 22227415      635.   22.2 
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="challenge-3" class="slide level2">
+<h2>Challenge</h2>
+<ul>
+<li><p>The <code>gdpPercap</code> column stands for Gross Domestic Product (GDP) per capita (per person)</p></li>
+<li><p>Calculate the <strong>total</strong> GDP using <code>mutate()</code></p>
+<ul>
+<li>hint: You need to use both the <code>pop</code> and <code>gdpPercap</code> columns</li>
+</ul></li>
+</ul>
+</section>
+<section id="calculate-summary-statistics-with-summarize" class="slide level2">
+<h2>Calculate summary statistics with <code>summarize()</code></h2>
+<ul>
+<li>For example, let’s calculate the overall mean population:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">mean_pop =</span> <span class="fu">mean</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+   mean_pop
+      &lt;dbl&gt;
+1 29601212.</code></pre>
+</div>
+</div>
+</section>
+<section id="calculate-summary-statistics-with-summarize-1" class="slide level2">
+<h2>Calculate summary statistics with <code>summarize()</code></h2>
+<ul>
+<li>Another example: the total population over all the data:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">summarize</span>(<span class="at">total =</span> <span class="fu">sum</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+        total
+        &lt;dbl&gt;
+1 50440465801</code></pre>
+</div>
+</div>
+</section>
+<section id="use-group_by-to-do-calculations-per-group" class="slide level2">
+<h2>Use <code>group_by()</code> to do calculations per group</h2>
+<ul>
+<li><p>However, it is often more useful to calculate such summary statistics for <strong>particular groups</strong></p></li>
+<li><p>To do this, first specify the groups with <code>group_by()</code>:</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">group_by</span>(continent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1,704 × 6
+# Groups:   continent [5]
+   country     continent  year lifeExp      pop gdpPercap
+   &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;
+ 1 Afghanistan Asia       1952    28.8  8425333      779.
+ 2 Afghanistan Asia       1957    30.3  9240934      821.
+ 3 Afghanistan Asia       1962    32.0 10267083      853.
+ 4 Afghanistan Asia       1967    34.0 11537966      836.
+ 5 Afghanistan Asia       1972    36.1 13079460      740.
+ 6 Afghanistan Asia       1977    38.4 14880372      786.
+ 7 Afghanistan Asia       1982    39.9 12881816      978.
+ 8 Afghanistan Asia       1987    40.8 13867957      852.
+ 9 Afghanistan Asia       1992    41.7 16317921      649.
+10 Afghanistan Asia       1997    41.8 22227415      635.
+# ℹ 1,694 more rows</code></pre>
+</div>
+</div>
+</section>
+<section id="use-group_by-to-do-calculations-per-group-1" class="slide level2">
+<h2>Use <code>group_by()</code> to do calculations per group</h2>
+<ul>
+<li>Next, use <code>summarize()</code> to calculate the summary statistic:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>  <span class="fu">summarize</span>(<span class="at">mean_pop =</span> <span class="fu">mean</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  continent  mean_pop
+  &lt;chr&gt;         &lt;dbl&gt;
+1 Africa     9916003.
+2 Americas  24504795.
+3 Asia      77038722.
+4 Europe    17169765.
+5 Oceania    8874672.</code></pre>
+</div>
+</div>
+</section>
+<section id="difference-between-mutate-and-summarize" class="slide level2">
+<h2>Difference between <code>mutate()</code> and <code>summarize()</code></h2>
+<ul>
+<li><p><code>mutate()</code> calculates a new column (or over-writes an existing one) and <strong>keeps the number of rows the same</strong></p></li>
+<li><p><code>summarize()</code> calculates a new column and <strong>decreases the number of rows</strong></p></li>
 </ul>
 
 <div class="footer footer-default">
