@@ -3,7 +3,7 @@ format:
   revealjs:
     incremental: false
     css: ../styles.css
-    theme: ../theme.scss
+    theme: ../theme_medium.scss
 execute: 
   echo: true
 ---
@@ -11,6 +11,11 @@ execute:
 # Day 4: Data loading and tidying with tidyverse
 
 2023-10-24
+
+```{r}
+#| echo: false
+old <- options(pillar.print_min = 6)
+```
 
 ## Refresher: vectors
 
@@ -36,13 +41,13 @@ c(TRUE, FALSE, TRUE)
 
 . . .
 
-- Today we will learn to **load** and **clean** (to "tidy" or "wrangle") dataframes
+- Today we will learn to **load** and **tidy** (or "wrangle") dataframes
 
-## About data cleaning ("tidying")
+## About data tidying ("wrangling")
 
 - Data often come to us in a form that is not suitable for analysis
 
-- Data cleaning (or "tidying", or "wrangling") is the process of re-formatting the data so it can be analyzed
+- Data tidying (or "wrangling") is the process of **re-formatting the data so it can be analyzed**
 
 ---
 
@@ -59,6 +64,8 @@ c(TRUE, FALSE, TRUE)
 - Inside that project, create a folder called `data_raw` to store raw data
   - You should **never edit raw data directly** (treat it as read-only)
 
+- Also create a file to write today's code. You could call it `data-tidying-practice.R`
+
 ## Set up project
 
 - Download the `gapminder.csv` file from this link, and put it in `data_raw`
@@ -66,7 +73,7 @@ c(TRUE, FALSE, TRUE)
 
 ## About R Packages
 
-- The functions we have used so far are included in R (called "Base R")
+- The functions we have used so far are included in R (called **"Base R"**)
 
 - But sometimes we need to do something that is not available in Base R
 
@@ -75,7 +82,7 @@ c(TRUE, FALSE, TRUE)
 
 ## Install `tidyverse`
 
-- Today we will use the `tidyverse` set of packages for **data loading** and **cleaning**
+- Today we will use the `tidyverse` set of packages for **working with data**
 
 - Install `tidyverse` using `install.packages()`:
 
@@ -102,6 +109,8 @@ install.packages("tidyverse")
 library(tidyverse)
 ```
 
+## Load `tidyverse`
+
 - `tidyverse` actually includes **multiple** packages (`dplyr`, `tidyr`, `readr`, etc.)
   - These are all packages that are useful for **loading** and **cleaning** data
 
@@ -109,8 +118,6 @@ library(tidyverse)
 
 - Use the `read_csv()` function to load a spreadsheet as a dataframe
   - There are other functions for other file formats like `.xls`, `.xlsx`, `.tsv`, etc.
-
-::: {.medium}
 
 ```{r}
 #| echo: false
@@ -122,19 +129,13 @@ gapminder <- read_csv(here::here("day4/data_raw/gapminder.csv"))
 gapminder <- read_csv("data_raw/gapminder.csv")
 ```
 
-:::
-
 ## Print out the data
 
-- Inspect the data just like any other object (variable) in R: type the name of the object into the console:
-
-::: {.medsmall}
+- Inspect the data just like any other object (variable) in R: type the name of the object into the console
 
 ```{r}
 gapminder
 ```
-
-:::
 
 ## Print out the data
 
@@ -158,51 +159,29 @@ gapminder
 
 ## Sort data with `arrange()`
 
-- We can sort the data using the `arrange()` function
-  - First provide the **name of the dataframe**, then the **column** you wish to sort by
+- First provide the **name of the dataframe**, then the **column** to sort by
 
 ```{r}
-#| eval: false
 arrange(gapminder, pop)
 ```
-
-
-## Sort data with `arrange()`
-
-::: {.medsmall}
-
-```{r}
-#| echo: false
-arrange(gapminder, lifeExp)
-```
-
-:::
 
 ## Sort data with `arrange()`
 
 - The default setting is to sort from **small** to **large**
   - To sort in the reverse (**descending**) direction, use `desc()`
 
-::: {.medsmall}
-
 ```{r}
 arrange(gapminder, desc(lifeExp))
 ```
-
-:::
 
 ## Sort data with `arrange()`
 
 - You can sort on **multiple** columns
   - Ties will be sorted by the next column
 
-::: {.medsmall}
-
 ```{r}
 arrange(gapminder, continent, lifeExp)
 ```
-
-:::
 
 ## Challenge
 
@@ -212,11 +191,9 @@ arrange(gapminder, continent, lifeExp)
 
 - What is the **latest** year in the data?
 
-## Select columns with `select()`
+## Narrow down columns with `select()`
 
-- Sometimes, we are only interested in **part** of the data
-
-- We can use the `select()` function to keep only the data we are interested in (for example: year, country and GDP per capita):
+- First provide the **name of the dataframe**, then the **columns** to select
 
 ```{r}
 select(gapminder, year, country, gdpPercap)
@@ -224,7 +201,7 @@ select(gapminder, year, country, gdpPercap)
 
 ## Saving your output
 
-- Notice that although we have used several functions, `gapminder` is gstill the same:
+- Notice that although we have used several functions, `gapminder` is still the same:
 
 ```{r}
 gapminder
@@ -232,7 +209,7 @@ gapminder
 
 ## Saving your output
 
-- This is because we have not saved any of the output
+- This is because we have not **saved** any of the output
 
 - To do that, you need to create a new object with `<-`
   - You can call the object whatever you want, but use a name that is easy to remember
@@ -260,6 +237,7 @@ gapminder_gdp <- select(gapminder, year, country, gdpPercap)
 
 - You can think of it as saying "and then"
   - Do this **and then** do this, **and then** do this...
+  - Do this **`%>%`** do this, **`%>%`** do this...
 
 ## About pipes
 
@@ -272,17 +250,24 @@ gapminder %>% select(year, country, pop)
 
 ## About pipes
 
-This becomes very useful when we want to do **multiple steps**
+- This becomes very useful when we want to do **multiple steps**
   - Read this as "start with `gapminder`, **and then** select only year, country, and population, **and then** arrange by year,"
 
 ```{r}
+#| eval: false
 gapminder %>% select(year, country, pop) %>% arrange(year)
 ```
+
+```{r}
+#| echo: false
+gapminder %>% select(year, country, pop) %>% arrange(year) %>% print(n = 4)
+```
+
+
 
 ## About pipes
 
 - We can make it easier to read by putting each step on its own line
-  - R doesn't care about spaces or extra lines
 
 ```{r}
 gapminder %>%
@@ -296,7 +281,7 @@ gapminder %>%
 
 - This is a very useful way to manipulate data
 
-- I will now use the pipe for the rest of the lesson
+- I will now use the pipe (`%>%`) for the rest of the lesson
 
 ## Subset rows with `filter()`
 
@@ -310,11 +295,9 @@ gapminder %>% filter(continent == "Europe")
 
 ## Challenge
 
-Using the pipe and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns.
+Using the pipe (`%>%`) and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns.
 
 ## Modify data with `mutate()`
-
-- Use the `mutate()` function to modify data
 
 - For example, we could change the units of population to millions of people:
 
@@ -350,7 +333,7 @@ gapminder %>% summarize(mean_pop = mean(pop))
 - Another example: the total population over all the data:
 
 ```{r}
-gapminder %>% summarize(total = sum(pop))
+gapminder %>% summarize(total_pop = sum(pop))
 ```
 
 ## Use `group_by()` to do calculations per group
@@ -360,7 +343,13 @@ gapminder %>% summarize(total = sum(pop))
 - To do this, first specify the groups with `group_by()`:
 
 ```{r}
+#| eval: false
 gapminder %>% group_by(continent)
+```
+
+```{r}
+#| echo: false
+gapminder %>% group_by(continent) %>% print(n = 4)
 ```
 
 ## Use `group_by()` to do calculations per group
@@ -378,3 +367,18 @@ gapminder %>%
 - `mutate()` calculates a new column (or over-writes an existing one) and **keeps the number of rows the same**
 
 - `summarize()` calculates a new column and **decreases the number of rows**
+
+```{r}
+#| echo: false
+options(old)
+```
+
+## Summary
+
+- Sort data with `arrange()`
+- Narrow down columns with `select()`
+- Filter rows with `filter()`
+- Modify data with `mutate()`
+- Summarize data with `summarize()`
+- Group data with `group_by()`
+- Use the pipe (`%>%`) to chain steps together
