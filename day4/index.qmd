@@ -37,7 +37,7 @@ c(TRUE, FALSE, TRUE)
 - A **dataframe** is a **collection of vectors**
   - basically like a **spreadsheet** in Excel
 
-![](../images/dataframe.png){fig-alt="Image of a data frame" height="400"}
+![](../images/dataframe.png){fig-alt="Image of a data frame" height="320"}
 
 . . .
 
