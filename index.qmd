@@ -35,13 +35,15 @@ toc: false
 
 - [Day 3: R and RStudio](https://github.com/data-analysis-chiba-2023/day03-r/blob/main/day03_intro_to_r.md)
 
+- [Day 4: Tidyverse](https://github.com/data-analysis-chiba-2023/day04-tidy/blob/main/day04_tidy.md)
+
 ## Important Deadlines
 
 - 2023-10-16 11:59PM: [Day 2 homework](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/git_facts.md) due
 
 - 2023-10-23 11:59PM: [Day 3 homework](https://github.com/data-analysis-chiba-2023/day03-r/blob/main/day03_homework.R) due
 
-- 2023-10-30 11:59PM: Day 4 homework due
+- 2023-10-30 11:59PM: [Day 4 homework](https://github.com/data-analysis-chiba-2023/day04-tidy/blob/main/day04_homework.R)
 
 - 2023-11-06 11:59PM: Day 5 homework due
 

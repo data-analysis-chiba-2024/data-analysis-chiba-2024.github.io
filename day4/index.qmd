@@ -59,7 +59,8 @@ c(TRUE, FALSE, TRUE)
 
 ## Set up project
 
-- Create a new project called `day04-practice` in the `data-analysis-course` folder on your Desktop
+- Create a new project called `gapminder-analysis` in the `data-analysis-course` folder on your Desktop
+  - We will use the "gapminder" dataset for the rest of the course
 
 - Inside that project, create a folder called `data_raw` to store raw data
   - You should **never edit raw data directly** (treat it as read-only)
@@ -162,7 +163,7 @@ gapminder
 - First provide the **name of the dataframe**, then the **column** to sort by
 
 ```{r}
-arrange(gapminder, pop)
+arrange(gapminder, lifeExp)
 ```
 
 ## Sort data with `arrange()`
@@ -251,7 +252,7 @@ gapminder %>% select(year, country, pop)
 ## About pipes
 
 - This becomes very useful when we want to do **multiple steps**
-  - Read this as "start with `gapminder`, **and then** select only year, country, and population, **and then** arrange by year,"
+  - Read this as "start with `gapminder`, **and then** select only year, country, and population, **and then** arrange by year"
 
 ```{r}
 #| eval: false
@@ -262,8 +263,6 @@ gapminder %>% select(year, country, pop) %>% arrange(year)
 #| echo: false
 gapminder %>% select(year, country, pop) %>% arrange(year) %>% print(n = 4)
 ```
-
-
 
 ## About pipes
 
