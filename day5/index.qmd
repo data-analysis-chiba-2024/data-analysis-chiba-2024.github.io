@@ -1,0 +1,512 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+    theme: ../theme_medium.scss
+execute: 
+  echo: true
+---
+
+# Day 4: Data visualization with ggplot2
+
+Media day (week of 2023-10-30)
+
+```{r}
+#| echo: false
+old <- options(pillar.print_min = 6)
+```
+
+## What is EDA?
+
+- EDA stands for **E**ploratory **D**ata **A**nalysis
+
+- EDA is the step of "getting to know" your data
+
+- You have already been doing some EDA by sorting the data and understanding what is in each column
+
+## What is EDA?
+
+- Another very useful tool for EDA is **data visualization**
+
+- Today we will learn how to visualize data using `ggplot2`
+  - `ggplot2` is included in the `tidyverse` set of packages
+  - There are other ways to do this such as using `plot()`. But `ggplot2` has more consistent syntax.
+
+---
+
+![Image by Allison Horst](../images/ggplot2_exploratory.png){fig-alt="Monsters exploring data with ggplot2"}
+
+## What makes a good plot?
+
+![](../images/piechart3d.png)
+
+- How about this one?
+
+## Problems with this plot
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.incremental}
+- Colors **don't correspond** to contents (meat is green?)
+
+- 3D doesn't have any meaning, only makes plot **more complicated**
+
+- Hard for humans to visually compare **area**
+:::
+:::
+
+::: {.column width="50%"}
+![](../images/piechart3d.png)
+:::
+
+::::
+
+## What makes a good plot?
+
+- Simple
+
+- Easy to understand
+
+- Conveys a message
+
+## What makes a good plot?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pie chart
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-pie-1.png" alt="drawing" height="220">
+:::
+
+::: {.column width="50%"}
+Bar graph
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-bars-1.png" alt="drawing" height="220">
+:::
+
+::::
+
+:::: {.aside}
+::: {.small}
+https://clauswilke.com/dataviz/proportional-ink.html
+:::
+::::
+
+- **Bar graphs are better** than pie charts for comparing values!
+
+## `ggplot2` approach to plotting
+
+- ***G***rammar of ***G***raphics: all plots share a common "grammar"
+  1. Input **data**
+  2. **Aesthetic mapping**: How to represent the data visually
+    - aesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定
+  3. **Geometry**: What shape to use for the plot
+
+## Aesthetic mappings
+
+![](https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png)
+
+:::: {.aside}
+::: {.small}
+https://clauswilke.com/dataviz/aesthetic-mapping.html
+:::
+::::
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pie chart
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-pie-1.png" alt="drawing" height="220">
+:::
+
+::: {.column width="50%"}
+Bar graph
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-bars-1.png" alt="drawing" height="220">
+:::
+
+::::
+
+- How is population represented ("**mapped**") in each plot?
+
+- What is the shape ("**geometry**") of each plot?
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pie chart
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-pie-1.png" alt="drawing" height="220">
+:::
+
+::: {.column width="50%"}
+Bar graph
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-bars-1.png" alt="drawing" height="220">
+:::
+
+::::
+
+- How is population mapped in each plot?
+  - Mapped to **area** in pie chart, **length** in bar graph
+
+- What is the geometry of each plot?
+  - **Circle** ("pie") in pie chart, **column** ("bar") in bar graph
+
+## Reopen your project
+
+- We will continue to use the `gapminder-analysis` project in the `data-analysis-course` folder on your Desktop
+
+- Also create a file to write today's code. You could call it `data-viz-practice.R`
+
+## Load `tidyverse`
+
+- Let's load the `tidyverse` package with `library()`
+  - Note that you don't need to use quotation marks for the package name
+
+```{r}
+library(tidyverse)
+```
+
+## Load data
+
+- Use the `read_csv()` function to load a spreadsheet as a dataframe
+
+```{r}
+#| echo: false
+gapminder <- read_csv(here::here("day4/data_raw/gapminder.csv"))
+```
+
+```{r}
+#| eval: false
+gapminder <- read_csv("data_raw/gapminder.csv")
+```
+
+## Gapminder
+
+- This is a dataset of economic statistics from various countries over time, from <https://gapminder.org>
+
+- The meaning of some columns is obvious (`country`, `continent`, `year`), but not others
+  - `pop`: Population
+  - `lifeExp`: Life expectancy (寿命)
+  - `gdpPercap`: GDP per capita (一人当たりの国内総生産)
+
+## First plot
+
+```{r}
+#| echo: false
+theme_set(theme_gray(base_size = 24))
+```
+
+```{r}
+#| output-location: column
+ggplot(data = gapminder)
+```
+
+## First plot
+
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = gdpPercap,
+    y = lifeExp))
+```
+
+## First plot
+
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = gdpPercap,
+    y = lifeExp)) +
+  geom_point()
+```
+
+::: {.incremental}
+
+- What does this plot tell us?
+
+:::
+
+## Challenge
+
+- Modify the code to show how life expectancy has changed **over time**
+
+## Add color
+
+- In the last challenge, we saw a general trend, but there could be **more detail within certain groups**, like continent or country
+
+- Let's use **color** to show the **continent**
+
+::: {.incremental}
+
+- What is **color** in `ggplot2`?
+  - Color is an **aesthetic mapping**
+
+:::
+
+## Original plot
+
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = year,
+    y = lifeExp)) +
+  geom_point()
+```
+
+## Add color
+
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_point()
+```
+
+## Add color
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "6"
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_point()
+```
+
+## Basic recipe
+
+- All plots can be made using the same basic formula:
+
+```
+ggplot(data = INPUT-DATA, mapping = aes(MAPPING)) +
+  GEOMETRY
+```
+
+## Basic recipe
+
+- Since `data` always comes first and `mapping` second, we can omit those names and make our code a little simpler:
+
+```
+ggplot(INPUT-DATA, aes(MAPPING)) +
+  GEOMETRY
+```
+
+---
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder, # DATA
+  aes( # MAPPING
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_point() # GEOMETRY
+```
+
+## Plotting lines
+
+- Let's try representing the data with a different **geometry** (shape)
+
+- This time we will use lines (`geom_line()`)
+
+## Plotting lines
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder, # DATA
+  aes( # MAPPING
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_line() # GEOMETRY
+```
+
+- That looks a little odd. What is the problem?
+
+## Plotting lines
+
+- Lines connect points along the x-axis
+
+- But we only want to connect points **within each country**
+
+- We need to add another **aesthic mapping** for that, the `group`
+
+## Plotting lines
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_line()
+```
+
+## Plotting lines
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line()
+```
+
+## Plotting lines
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "7"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line()
+```
+
+## Adding layers
+
+- We can add additional plot layers using the `+` sign
+
+- For example, lets add points on top of the lines
+
+## Adding layers
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line()
+```
+
+## Adding layers
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point()
+```
+
+## Adding layers
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point()
+```
+
+## Modify an aesthetic
+
+- So far, we have been **mapping** aesthetics to variables in the data
+
+- But you can also simply **assign** the same value to a particular aesthetic (such as color)
+
+- Do this by setting its value **outside** of `mapping = aes()`
+
+## Modify an aesthetic
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point()
+```
+
+## Modify an aesthetic
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point(color = "black")
+```
+
+## Modify an aesthetic
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point(color = "black")
+```
+
+
+## Summary
+
+- Think about **what you want your graph to show**
+- **Aesthetic mapping**: How to represent the data visually
+- **Geometry**: What shape to use for the plot
+- Basic recipe: `ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY`

@@ -1034,5 +1034,285 @@
     "title": "Appendix",
     "section": "",
     "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "day5/index.html#what-is-eda",
+    "href": "day5/index.html#what-is-eda",
+    "title": "Reproducible data analysis",
+    "section": "What is EDA?",
+    "text": "What is EDA?\n\nEDA stands for Eploratory Data Analysis\nEDA is the step of “getting to know” your data\nYou have already been doing some EDA by sorting the data and understanding what is in each column"
+  },
+  {
+    "objectID": "day5/index.html#what-is-eda-1",
+    "href": "day5/index.html#what-is-eda-1",
+    "title": "Reproducible data analysis",
+    "section": "What is EDA?",
+    "text": "What is EDA?\n\nAnother very useful tool for EDA is data visualization\nToday we will learn how to visualize data using ggplot2\n\nggplot2 is included in the tidyverse set of packages\nThere are other ways to do this such as using plot(). But ggplot2 has more consistent syntax."
+  },
+  {
+    "objectID": "day5/index.html#what-makes-a-good-plot",
+    "href": "day5/index.html#what-makes-a-good-plot",
+    "title": "Reproducible data analysis",
+    "section": "What makes a good plot?",
+    "text": "What makes a good plot?\n\n\nHow about this one?"
+  },
+  {
+    "objectID": "day5/index.html#what-makes-a-good-plot-1",
+    "href": "day5/index.html#what-makes-a-good-plot-1",
+    "title": "Reproducible data analysis",
+    "section": "What makes a good plot?",
+    "text": "What makes a good plot?\n\nSimple\nEasy to understand\nConveys a message"
+  },
+  {
+    "objectID": "day5/index.html#what-makes-a-good-plot-2",
+    "href": "day5/index.html#what-makes-a-good-plot-2",
+    "title": "Reproducible data analysis",
+    "section": "What makes a good plot?",
+    "text": "What makes a good plot?\n\n\nPie chart  \n\nBar graph  \n\n\n\n\nBar graphs are better than pie charts for comparing values!\n\n\n\nhttps://clauswilke.com/dataviz/proportional-ink.html"
+  },
+  {
+    "objectID": "day5/index.html#reopen-your-project",
+    "href": "day5/index.html#reopen-your-project",
+    "title": "Reproducible data analysis",
+    "section": "Reopen your project",
+    "text": "Reopen your project\n\nWe will continue to use the gapminder-analysis project in the data-analysis-course folder on your Desktop\nAlso create a file to write today’s code. You could call it data-viz-practice.R"
+  },
+  {
+    "objectID": "day5/index.html#load-tidyverse",
+    "href": "day5/index.html#load-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\n\n\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "day5/index.html#load-data",
+    "href": "day5/index.html#load-data",
+    "title": "Reproducible data analysis",
+    "section": "Load data",
+    "text": "Load data\n\nUse the read_csv() function to load a spreadsheet as a dataframe\n\n\ngapminder &lt;- read_csv(\"data_raw/gapminder.csv\")"
+  },
+  {
+    "objectID": "day5/index.html#gapminder",
+    "href": "day5/index.html#gapminder",
+    "title": "Reproducible data analysis",
+    "section": "Gapminder",
+    "text": "Gapminder\n\nThis is a dataset of economic statistics from various countries over time, from https://gapminder.org\nThe meaning of some columns is obvious (country, continent, year), but not others\n\npop: Population\nlifeExp: Life expectancy (寿命)\ngdpPercap: GDP per capita (一人当たりの国内総生産)"
+  },
+  {
+    "objectID": "day5/index.html#summary",
+    "href": "day5/index.html#summary",
+    "title": "Reproducible data analysis",
+    "section": "Summary",
+    "text": "Summary\n\nThink about what you want your graph to show\nAesthetic mapping: How to represent the data visually\nGeometry: What shape to use for the plot\nBasic recipe: ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY"
+  },
+  {
+    "objectID": "day5/index.html#ggplot2-approach-to-plotting",
+    "href": "day5/index.html#ggplot2-approach-to-plotting",
+    "title": "Reproducible data analysis",
+    "section": "ggplot2 approach to plotting",
+    "text": "ggplot2 approach to plotting\n\nGrammar of Graphics: all plots share a common “grammar”\n\nInput data\nAesthetic mapping: How to represent the data visually\n\n\naesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定\n\n\nGeometry: What shape to use for the plot"
+  },
+  {
+    "objectID": "day5/index.html#pie-chart-vs.-bar-plot-again",
+    "href": "day5/index.html#pie-chart-vs.-bar-plot-again",
+    "title": "Reproducible data analysis",
+    "section": "Pie chart vs. Bar plot, again",
+    "text": "Pie chart vs. Bar plot, again\n\n\nPie chart  \n\nBar graph  \n\n\n\nHow is population represented (“mapped”) in each plot?\nWhat is the shape (“geometry”) of each plot?"
+  },
+  {
+    "objectID": "day5/index.html#aesthetic-mappings",
+    "href": "day5/index.html#aesthetic-mappings",
+    "title": "Reproducible data analysis",
+    "section": "Aesthetic mappings",
+    "text": "Aesthetic mappings\n\n\n\n\nhttps://clauswilke.com/dataviz/aesthetic-mapping.html"
+  },
+  {
+    "objectID": "day5/index.html#problems-with-this-plot",
+    "href": "day5/index.html#problems-with-this-plot",
+    "title": "Reproducible data analysis",
+    "section": "Problems with this plot",
+    "text": "Problems with this plot\n\n\n\n\nColors don’t correspond to contents (meat is green?)\n3D doesn’t have any meaning, only makes plot more complicated\nHard for humans to visually compare area"
+  },
+  {
+    "objectID": "day5/index.html#first-plot",
+    "href": "day5/index.html#first-plot",
+    "title": "Reproducible data analysis",
+    "section": "First plot",
+    "text": "First plot\n\n\nggplot(data = gapminder)"
+  },
+  {
+    "objectID": "day5/index.html#first-plot-1",
+    "href": "day5/index.html#first-plot-1",
+    "title": "Reproducible data analysis",
+    "section": "First plot",
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp))"
+  },
+  {
+    "objectID": "day5/index.html#first-plot-2",
+    "href": "day5/index.html#first-plot-2",
+    "title": "Reproducible data analysis",
+    "section": "First plot",
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
+  },
+  {
+    "objectID": "day5/index.html#basic-recipe",
+    "href": "day5/index.html#basic-recipe",
+    "title": "Reproducible data analysis",
+    "section": "Basic recipe",
+    "text": "Basic recipe\n\nAll plots can be made using the same basic formula:\n\nggplot(data = INPUT-DATA, mapping = aes(MAPPING)) +\n  GEOMETRY"
+  },
+  {
+    "objectID": "day5/index.html#challenge",
+    "href": "day5/index.html#challenge",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nModify the code to show how life expectancy has changed over time"
+  },
+  {
+    "objectID": "day5/index.html#add-color",
+    "href": "day5/index.html#add-color",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\nIn the last challenge, we saw a general trend, but there could be more detail within certain groups, like continent or country\nLet’s use color to show the continent\n\n\n\nWhat is color in ggplot2?\n\nColor is an aesthetic mapping"
+  },
+  {
+    "objectID": "day5/index.html#add-color-1",
+    "href": "day5/index.html#add-color-1",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#add-color-2",
+    "href": "day5/index.html#add-color-2",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#add-color-3",
+    "href": "day5/index.html#add-color-3",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#aesthetic-mappings-and-geometry",
+    "href": "day5/index.html#aesthetic-mappings-and-geometry",
+    "title": "Reproducible data analysis",
+    "section": "Aesthetic mappings and geometry",
+    "text": "Aesthetic mappings and geometry\n\nHow is population represented (“mapped”) in each plot?\n\nMapped to area in pie chart, length in bar graph\n\nWhat is the shape (“geometry”) of each plot?\n\nCircle (“pie”) in pie chart, column (“bar”) in bar graph"
+  },
+  {
+    "objectID": "day5/index.html#original-plot",
+    "href": "day5/index.html#original-plot",
+    "title": "Reproducible data analysis",
+    "section": "Original plot",
+    "text": "Original plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#basic-recipe-1",
+    "href": "day5/index.html#basic-recipe-1",
+    "title": "Reproducible data analysis",
+    "section": "Basic recipe",
+    "text": "Basic recipe\n\nSince data always comes first and mapping second, we can omit those names and make our code a little simpler:\n\nggplot(INPUT-DATA, aes(MAPPING)) +\n  GEOMETRY"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines",
+    "href": "day5/index.html#plotting-lines",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\nLet’s try representing the data with a different geometry (shape)\nThis time we will use lines (geom_line())"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-1",
+    "href": "day5/index.html#plotting-lines-1",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-2",
+    "href": "day5/index.html#plotting-lines-2",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\nLines connect points along the x-axis\nBut we only want to connect points within each country\nWe need to add another aesthic mapping for that, the group"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-3",
+    "href": "day5/index.html#plotting-lines-3",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-4",
+    "href": "day5/index.html#plotting-lines-4",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-5",
+    "href": "day5/index.html#plotting-lines-5",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers",
+    "href": "day5/index.html#adding-layers",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers",
+    "text": "Adding layers\n\nWe can add additional plot layers using the + sign\nFor example, lets add points on top of the lines"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-1",
+    "href": "day5/index.html#adding-layers-1",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers",
+    "text": "Adding layers\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-2",
+    "href": "day5/index.html#adding-layers-2",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers",
+    "text": "Adding layers\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-3",
+    "href": "day5/index.html#adding-layers-3",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers",
+    "text": "Adding layers\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic",
+    "href": "day5/index.html#modify-an-aesthetic",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\nSo far, we have been mapping aesthetics to variables in the data\nBut you can also simply assign the same value to a particular aesthetic (such as color)\nDo this by setting its value outside of mapping = aes()"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic-1",
+    "href": "day5/index.html#modify-an-aesthetic-1",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic-2",
+    "href": "day5/index.html#modify-an-aesthetic-2",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point(color = \"black\")"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic-3",
+    "href": "day5/index.html#modify-an-aesthetic-3",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point(color = \"black\")"
   }
 ]
