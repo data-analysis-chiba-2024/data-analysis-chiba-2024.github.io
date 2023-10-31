@@ -27,6 +27,14 @@ toc: false
 
 <!-- [Day 8 (2023-11-21): Final presentation](day8/index.qmd) -->
 
+## Recordings
+
+(video recordings are not available for all lectures)
+
+- [Day 4: Tidyverse](https://youtu.be/ikzQwRJbh18)
+
+- [Day 5: ggplot2](https://youtu.be/n06QEKese5U)
+
 ## Materials
 
 - [Day 2: Git and GitHub](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/day02_intro_to_git.md)

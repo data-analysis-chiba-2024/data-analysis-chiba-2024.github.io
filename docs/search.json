@@ -1531,5 +1531,12 @@
     "title": "Reproducible Data Analysis",
     "section": "",
     "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
+  },
+  {
+    "objectID": "index.html#recordings",
+    "href": "index.html#recordings",
+    "title": "Reproducible Data Analysis",
+    "section": "Recordings",
+    "text": "Recordings\n(video recordings are not available for all lectures)\n\nDay 4: Tidyverse\nDay 5: ggplot2"
   }
 ]
