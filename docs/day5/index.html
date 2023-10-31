@@ -397,22 +397,26 @@
 </section>
 <section id="what-is-eda" class="slide level2">
 <h2>What is EDA?</h2>
+<div>
 <ul>
-<li><p>EDA stands for <strong>E</strong>ploratory <strong>D</strong>ata <strong>A</strong>nalysis</p></li>
-<li><p>EDA is the step of “getting to know” your data</p></li>
-<li><p>You have already been doing some EDA by sorting the data and understanding what is in each column</p></li>
+<li class="fragment"><p>EDA stands for <strong>E</strong>ploratory <strong>D</strong>ata <strong>A</strong>nalysis</p></li>
+<li class="fragment"><p>EDA is the step of “getting to know” your data</p></li>
+<li class="fragment"><p>You have already been doing some EDA by sorting the data and understanding what is in each column</p></li>
 </ul>
+</div>
 </section>
 <section id="what-is-eda-1" class="slide level2">
 <h2>What is EDA?</h2>
+<div>
 <ul>
-<li><p>Another very useful tool for EDA is <strong>data visualization</strong></p></li>
-<li><p>Today we will learn how to visualize data using <code>ggplot2</code></p>
+<li class="fragment"><p>Another very useful tool for EDA is <strong>data visualization</strong></p></li>
+<li class="fragment"><p>Today we will learn how to visualize data using <code>ggplot2</code></p>
 <ul>
-<li><code>ggplot2</code> is included in the <code>tidyverse</code> set of packages</li>
-<li>There are other ways to do this such as using <code>plot()</code>. But <code>ggplot2</code> has more consistent syntax.</li>
+<li class="fragment"><code>ggplot2</code> is included in the <code>tidyverse</code> set of packages</li>
+<li class="fragment">There are other ways to do this such as using <code>plot()</code>. But <code>ggplot2</code> has more consistent syntax.</li>
 </ul></li>
 </ul>
+</div>
 </section>
 <section class="slide level2">
 
@@ -469,19 +473,21 @@
 </div></aside></section>
 <section id="ggplot2-approach-to-plotting" class="slide level2">
 <h2><code>ggplot2</code> approach to plotting</h2>
+<div>
 <ul>
-<li><strong><em>G</em></strong>rammar of <strong><em>G</em></strong>raphics: all plots share a common “grammar”
+<li class="fragment"><strong><em>G</em></strong>rammar of <strong><em>G</em></strong>raphics: all plots share a common “grammar”
 <ol type="1">
-<li>Input <strong>data</strong></li>
-<li><strong>Aesthetic mapping</strong>: How to represent the data visually</li>
+<li class="fragment">Input <strong>data</strong></li>
+<li class="fragment"><strong>Aesthetic mapping</strong>: How to represent the data visually</li>
 </ol>
 <ul>
-<li>aesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定</li>
+<li class="fragment">aesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定</li>
 </ul>
 <ol start="3" type="1">
-<li><strong>Geometry</strong>: What shape to use for the plot</li>
+<li class="fragment"><strong>Geometry</strong>: What <strong>shape</strong> to use for the plot</li>
 </ol></li>
 </ul>
+</div>
 </section>
 <section id="aesthetic-mappings" class="slide level2">
 <h2>Aesthetic mappings</h2>
@@ -539,10 +545,12 @@
 <li>Let’s load the <code>tidyverse</code> package with <code>library()</code>
 <ul>
 <li>Note that you don’t need to use quotation marks for the package name</li>
+<li>Also load the <code>scales</code> package, which is for making plot labels</li>
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="load-data" class="slide level2">
@@ -606,7 +614,7 @@
 <span id="cb5-6"><a href="#cb5-6"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div><div class="column">
 <div class="cell-output-display">
-<p><img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></p>
+<p><img data-src="index_files/figure-revealjs/gdp-life-1.png" width="960"></p>
 </div>
 </div>
 </div>
@@ -624,13 +632,11 @@
 </section>
 <section id="add-color" class="slide level2">
 <h2>Add color</h2>
-<ul>
-<li><p>In the last challenge, we saw a general trend, but there could be <strong>more detail within certain groups</strong>, like continent or country</p></li>
-<li><p>Let’s use <strong>color</strong> to show the <strong>continent</strong></p></li>
-</ul>
 <div>
 <ul>
-<li class="fragment">What is <strong>color</strong> in <code>ggplot2</code>?
+<li class="fragment"><p>In the last challenge, we saw a general trend, but there could be <strong>more detail within certain groups</strong>, like continent or country</p></li>
+<li class="fragment"><p>Let’s use <strong>color</strong> to show the <strong>continent</strong></p></li>
+<li class="fragment"><p>What is <strong>color</strong> in <code>ggplot2</code>?</p>
 <ul>
 <li class="fragment">Color is an <strong>aesthetic mapping</strong></li>
 </ul></li>
@@ -726,10 +732,12 @@
 </section>
 <section id="plotting-lines" class="slide level2">
 <h2>Plotting lines</h2>
+<div>
 <ul>
-<li><p>Let’s try representing the data with a different <strong>geometry</strong> (shape)</p></li>
-<li><p>This time we will use lines (<code>geom_line()</code>)</p></li>
+<li class="fragment"><p>Let’s try representing the data with a different <strong>geometry</strong> (shape)</p></li>
+<li class="fragment"><p>This time we will use lines (<code>geom_line()</code>)</p></li>
 </ul>
+</div>
 </section>
 <section id="plotting-lines-1" class="slide level2">
 <h2>Plotting lines</h2>
@@ -754,11 +762,13 @@
 </section>
 <section id="plotting-lines-2" class="slide level2">
 <h2>Plotting lines</h2>
+<div>
 <ul>
-<li><p>Lines connect points along the x-axis</p></li>
-<li><p>But we only want to connect points <strong>within each country</strong></p></li>
-<li><p>We need to add another <strong>aesthic mapping</strong> for that, the <code>group</code></p></li>
+<li class="fragment"><p>Lines connect points along the x-axis</p></li>
+<li class="fragment"><p>But we only want to connect points <strong>within each country</strong></p></li>
+<li class="fragment"><p>We need to add another <strong>aesthic mapping</strong> for that, the <code>group</code></p></li>
 </ul>
+</div>
 </section>
 <section id="plotting-lines-3" class="slide level2">
 <h2>Plotting lines</h2>
@@ -816,15 +826,17 @@
 </div>
 </div>
 </section>
-<section id="adding-layers" class="slide level2">
-<h2>Adding layers</h2>
+<section id="adding-layers-with" class="slide level2">
+<h2>Adding layers with <code>+</code></h2>
+<div>
 <ul>
-<li><p>We can add additional plot layers using the <code>+</code> sign</p></li>
-<li><p>For example, lets add points on top of the lines</p></li>
+<li class="fragment"><p>We can add additional plot layers using the <code>+</code> sign</p></li>
+<li class="fragment"><p>For example, lets add <strong>points</strong> on top of the <strong>lines</strong></p></li>
 </ul>
+</div>
 </section>
-<section id="adding-layers-1" class="slide level2">
-<h2>Adding layers</h2>
+<section id="adding-layers-with-1" class="slide level2">
+<h2>Adding layers with <code>+</code></h2>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">ggplot</span>(</span>
@@ -842,8 +854,8 @@
 </div>
 </div>
 </section>
-<section id="adding-layers-2" class="slide level2">
-<h2>Adding layers</h2>
+<section id="adding-layers-with-2" class="slide level2">
+<h2>Adding layers with <code>+</code></h2>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">ggplot</span>(</span>
@@ -862,8 +874,8 @@
 </div>
 </div>
 </section>
-<section id="adding-layers-3" class="slide level2">
-<h2>Adding layers</h2>
+<section id="adding-layers-with-3" class="slide level2">
+<h2>Adding layers with <code>+</code></h2>
 <div class="cell columns column-output-location">
 <div class="column">
 <div class="sourceCode cell-code" id="cb18" data-code-line-numbers="9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">ggplot</span>(</span>
@@ -882,13 +894,45 @@
 </div>
 </div>
 </section>
+<section id="challenge-1" class="slide level2">
+<h2>Challenge</h2>
+<p>The <code>ggtitle()</code> adds a title to a plot. Use <code>ggtitle()</code> as <strong>another layer</strong> to add a title to the last plot.</p>
+</section>
+<section id="summary-adding-layers-with" class="slide level2">
+<h2>Summary: Adding layers with <code>+</code></h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div>
+<ul>
+<li class="fragment"><p>Each layer <strong>modifies</strong> the plot, so you can build it gradually</p></li>
+<li class="fragment"><p>Other things layers can do:</p>
+<ul>
+<li class="fragment">Set the plot <strong>theme</strong></li>
+<li class="fragment">Change the <strong>axes</strong></li>
+<li class="fragment">Add <strong>labels</strong></li>
+<li class="fragment">and more!</li>
+</ul></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<p><img data-src="../images/gglayers_edit.png"></p>
+</div>
+</div>
+
+<aside><div>
+<div class="small">
+<p>https://r.qcbs.ca/workshop03/book-en/</p>
+</div>
+</div></aside></section>
 <section id="modify-an-aesthetic" class="slide level2">
 <h2>Modify an aesthetic</h2>
+<div>
 <ul>
-<li><p>So far, we have been <strong>mapping</strong> aesthetics to variables in the data</p></li>
-<li><p>But you can also simply <strong>assign</strong> the same value to a particular aesthetic (such as color)</p></li>
-<li><p>Do this by setting its value <strong>outside</strong> of <code>mapping = aes()</code></p></li>
+<li class="fragment"><p>So far, we have been <strong>mapping</strong> aesthetics to variables in the data</p></li>
+<li class="fragment"><p>But you can also simply <strong>assign</strong> the same value to a particular aesthetic (such as color)</p></li>
+<li class="fragment"><p>Do this by setting its value <strong>outside</strong> of <code>mapping = aes()</code></p></li>
 </ul>
+</div>
 </section>
 <section id="modify-an-aesthetic-1" class="slide level2">
 <h2>Modify an aesthetic</h2>
@@ -950,14 +994,327 @@
 </div>
 </div>
 </section>
+<section id="transformations" class="slide level2">
+<h2>Transformations</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Let’s go back to the life expectancy vs.&nbsp;GDP graph again:</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/gdp-life-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="transformations-1" class="slide level2">
+<h2>Transformations</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Do you notice anything that makes this graph hard to read?</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-24-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="transformations-2" class="slide level2">
+<h2>Transformations</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>Nearly <strong>all the points are crowded to the left</strong>, with only a few outliers on the right</li>
+</ul>
+<div>
+<ul>
+<li class="fragment">We can make this easier to read by using a <strong>log-transformation</strong></li>
+</ul>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="cell">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-25-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="transformations-3" class="slide level2">
+<h2>Transformations</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb22-2"><a href="#cb22-2"></a>  gapminder,</span>
+<span id="cb22-3"><a href="#cb22-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb22-4"><a href="#cb22-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb22-5"><a href="#cb22-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-26-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="transformations-4" class="slide level2">
+<h2>Transformations</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb23-2"><a href="#cb23-2"></a>  gapminder,</span>
+<span id="cb23-3"><a href="#cb23-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb23-4"><a href="#cb23-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb23-5"><a href="#cb23-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-27-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="transformations-5" class="slide level2">
+<h2>Transformations</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb24" data-code-line-numbers="7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb24-2"><a href="#cb24-2"></a>  gapminder,</span>
+<span id="cb24-3"><a href="#cb24-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb24-6"><a href="#cb24-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb24-7"><a href="#cb24-7"></a>  <span class="fu">scale_x_log10</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-28-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="transformations-6" class="slide level2">
+<h2>Transformations</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb25" data-code-line-numbers="7-10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb25-2"><a href="#cb25-2"></a>  gapminder,</span>
+<span id="cb25-3"><a href="#cb25-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb25-4"><a href="#cb25-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb25-5"><a href="#cb25-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb25-6"><a href="#cb25-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb25-7"><a href="#cb25-7"></a>  <span class="fu">scale_x_log10</span>(</span>
+<span id="cb25-8"><a href="#cb25-8"></a>    <span class="at">labels =</span> <span class="fu">label_comma</span>()</span>
+<span id="cb25-9"><a href="#cb25-9"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-29-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="multi-panel-plots" class="slide level2">
+<h2>Multi-panel plots</h2>
+<div>
+<ul>
+<li class="fragment"><p><code>ggplot2</code> can make <strong>multiple plots at once</strong> using <strong>facetting</strong></p></li>
+<li class="fragment"><p>Each <strong>facet</strong> is a mini-plot of some portion of the dataset</p>
+<ul>
+<li class="fragment">Define the facet group with <code>vars()</code></li>
+</ul></li>
+<li class="fragment"><p>Let’s try this for some countries in Asia</p></li>
+</ul>
+</div>
+</section>
+<section id="multi-panel-plots-1" class="slide level2">
+<h2>Multi-panel plots</h2>
+<ul>
+<li>First, subset the data just to some countries in Asia (for this example)</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>gapminder_asia <span class="ot">&lt;-</span> <span class="fu">filter</span>(</span>
+<span id="cb26-2"><a href="#cb26-2"></a>  gapminder,</span>
+<span id="cb26-3"><a href="#cb26-3"></a>  country <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"Japan"</span>, <span class="st">"China"</span>, <span class="st">"Korea, Rep."</span>, <span class="st">"Taiwan"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="multi-panel-plots-2" class="slide level2">
+<h2>Multi-panel plots</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb27-2"><a href="#cb27-2"></a>  gapminder_asia,</span>
+<span id="cb27-3"><a href="#cb27-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb27-4"><a href="#cb27-4"></a>    <span class="at">x =</span> year,</span>
+<span id="cb27-5"><a href="#cb27-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb27-6"><a href="#cb27-6"></a>  <span class="fu">geom_line</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-31-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="multi-panel-plots-3" class="slide level2">
+<h2>Multi-panel plots</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb28-2"><a href="#cb28-2"></a>  gapminder_asia,</span>
+<span id="cb28-3"><a href="#cb28-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb28-4"><a href="#cb28-4"></a>    <span class="at">x =</span> year,</span>
+<span id="cb28-5"><a href="#cb28-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-32-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="multi-panel-plots-4" class="slide level2">
+<h2>Multi-panel plots</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb29" data-code-line-numbers="7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb29-2"><a href="#cb29-2"></a>  gapminder_asia,</span>
+<span id="cb29-3"><a href="#cb29-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb29-4"><a href="#cb29-4"></a>    <span class="at">x =</span> year,</span>
+<span id="cb29-5"><a href="#cb29-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-33-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="adjusting-labels" class="slide level2">
+<h2>Adjusting labels</h2>
+<div>
+<ul>
+<li class="fragment"><p>When you “publish” your plot (this could be including it in a report for a class), it needs to be <strong>clearly labeled</strong></p>
+<ul>
+<li class="fragment">Whoever is reading your report won’t know what “gdpPercap” means</li>
+</ul></li>
+<li class="fragment"><p>To demonstrate, let’s go back to the life expectancy vs.&nbsp;GDP plot</p></li>
+<li class="fragment"><p>Use the <code>labs()</code> function to adjust the labels</p></li>
+</ul>
+</div>
+</section>
+<section id="adjusting-labels-1" class="slide level2">
+<h2>Adjusting labels</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb30-2"><a href="#cb30-2"></a>  gapminder,</span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb30-4"><a href="#cb30-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb30-5"><a href="#cb30-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb30-6"><a href="#cb30-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb30-7"><a href="#cb30-7"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> <span class="fu">label_comma</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-34-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="adjusting-labels-2" class="slide level2">
+<h2>Adjusting labels</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb31-2"><a href="#cb31-2"></a>  gapminder,</span>
+<span id="cb31-3"><a href="#cb31-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb31-4"><a href="#cb31-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb31-5"><a href="#cb31-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb31-6"><a href="#cb31-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb31-7"><a href="#cb31-7"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> <span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb31-8"><a href="#cb31-8"></a>  <span class="fu">labs</span>(</span>
+<span id="cb31-9"><a href="#cb31-9"></a>    <span class="at">x =</span> <span class="st">"GDP per capita ($)"</span>,</span>
+<span id="cb31-10"><a href="#cb31-10"></a>    <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb31-11"><a href="#cb31-11"></a>    <span class="at">title =</span> <span class="st">"Figure 1"</span></span>
+<span id="cb31-12"><a href="#cb31-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="adjusting-labels-3" class="slide level2">
+<h2>Adjusting labels</h2>
+<div class="cell columns column-output-location">
+<div class="column">
+<div class="sourceCode cell-code" id="cb32" data-code-line-numbers="8-127"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a><span class="fu">ggplot</span>(</span>
+<span id="cb32-2"><a href="#cb32-2"></a>  gapminder,</span>
+<span id="cb32-3"><a href="#cb32-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb32-4"><a href="#cb32-4"></a>    <span class="at">x =</span> gdpPercap,</span>
+<span id="cb32-5"><a href="#cb32-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a>  <span class="fu">scale_x_log10</span>(<span class="at">labels =</span> <span class="fu">label_comma</span>()) <span class="sc">+</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>  <span class="fu">labs</span>(</span>
+<span id="cb32-9"><a href="#cb32-9"></a>    <span class="at">x =</span> <span class="st">"GDP per capita ($)"</span>,</span>
+<span id="cb32-10"><a href="#cb32-10"></a>    <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb32-11"><a href="#cb32-11"></a>    <span class="at">title =</span> <span class="st">"Figure 1"</span></span>
+<span id="cb32-12"><a href="#cb32-12"></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div><div class="column">
+<div class="cell-output-display">
+<p><img data-src="index_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="saving-your-plot" class="slide level2">
+<h2>Saving your plot</h2>
+<div>
+<ul>
+<li class="fragment"><p>If you need to you can save your plot in R, and write it out as an image file</p></li>
+<li class="fragment"><p>Use the <code>ggsave()</code> function</p></li>
+</ul>
+</div>
+</section>
+<section id="saving-your-plot-1" class="slide level2">
+<h2>Saving your plot</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>gapminder_asia_plot <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(</span>
+<span id="cb33-2"><a href="#cb33-2"></a>  gapminder_asia,</span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">aes</span>(</span>
+<span id="cb33-4"><a href="#cb33-4"></a>    <span class="at">x =</span> year,</span>
+<span id="cb33-5"><a href="#cb33-5"></a>    <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb33-6"><a href="#cb33-6"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb33-7"><a href="#cb33-7"></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(country))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="saving-your-plot-2" class="slide level2">
+<h2>Saving your plot</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a><span class="fu">ggsave</span>(<span class="at">plot =</span> gapminder_asia_plot, <span class="at">file =</span> <span class="st">"gapminder_asia.pdf"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>You can also save <code>.jpg</code>, <code>.png</code>, etc.</li>
+</ul>
+</section>
 <section id="summary" class="slide level2">
 <h2>Summary</h2>
+<div>
 <ul>
-<li>Think about <strong>what you want your graph to show</strong></li>
-<li><strong>Aesthetic mapping</strong>: How to represent the data visually</li>
-<li><strong>Geometry</strong>: What shape to use for the plot</li>
-<li>Basic recipe: <code>ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY</code></li>
+<li class="fragment">Think about <strong>what you want your graph to show</strong></li>
+<li class="fragment"><strong>Aesthetic mapping</strong>: How to represent the data visually</li>
+<li class="fragment"><strong>Geometry</strong>: What shape to use for the plot</li>
+<li class="fragment">Build your plot using <strong>layers</strong></li>
+<li class="fragment">Basic recipe: <code>ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY</code></li>
 </ul>
+</div>
 
 <div class="footer footer-default">
 

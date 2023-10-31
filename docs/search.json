@@ -1040,14 +1040,14 @@
     "href": "day5/index.html#what-is-eda",
     "title": "Reproducible data analysis",
     "section": "What is EDA?",
-    "text": "What is EDA?\n\nEDA stands for Eploratory Data Analysis\nEDA is the step of “getting to know” your data\nYou have already been doing some EDA by sorting the data and understanding what is in each column"
+    "text": "What is EDA?\n\n\nEDA stands for Eploratory Data Analysis\nEDA is the step of “getting to know” your data\nYou have already been doing some EDA by sorting the data and understanding what is in each column"
   },
   {
     "objectID": "day5/index.html#what-is-eda-1",
     "href": "day5/index.html#what-is-eda-1",
     "title": "Reproducible data analysis",
     "section": "What is EDA?",
-    "text": "What is EDA?\n\nAnother very useful tool for EDA is data visualization\nToday we will learn how to visualize data using ggplot2\n\nggplot2 is included in the tidyverse set of packages\nThere are other ways to do this such as using plot(). But ggplot2 has more consistent syntax."
+    "text": "What is EDA?\n\n\nAnother very useful tool for EDA is data visualization\nToday we will learn how to visualize data using ggplot2\n\nggplot2 is included in the tidyverse set of packages\nThere are other ways to do this such as using plot(). But ggplot2 has more consistent syntax."
   },
   {
     "objectID": "day5/index.html#what-makes-a-good-plot",
@@ -1082,7 +1082,7 @@
     "href": "day5/index.html#load-tidyverse",
     "title": "Reproducible data analysis",
     "section": "Load tidyverse",
-    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\n\n\n\nlibrary(tidyverse)"
+    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\nAlso load the scales package, which is for making plot labels\n\n\n\nlibrary(tidyverse)\nlibrary(scales)"
   },
   {
     "objectID": "day5/index.html#load-data",
@@ -1103,14 +1103,14 @@
     "href": "day5/index.html#summary",
     "title": "Reproducible data analysis",
     "section": "Summary",
-    "text": "Summary\n\nThink about what you want your graph to show\nAesthetic mapping: How to represent the data visually\nGeometry: What shape to use for the plot\nBasic recipe: ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY"
+    "text": "Summary\n\n\nThink about what you want your graph to show\nAesthetic mapping: How to represent the data visually\nGeometry: What shape to use for the plot\nBuild your plot using layers\nBasic recipe: ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY"
   },
   {
     "objectID": "day5/index.html#ggplot2-approach-to-plotting",
     "href": "day5/index.html#ggplot2-approach-to-plotting",
     "title": "Reproducible data analysis",
     "section": "ggplot2 approach to plotting",
-    "text": "ggplot2 approach to plotting\n\nGrammar of Graphics: all plots share a common “grammar”\n\nInput data\nAesthetic mapping: How to represent the data visually\n\n\naesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定\n\n\nGeometry: What shape to use for the plot"
+    "text": "ggplot2 approach to plotting\n\n\nGrammar of Graphics: all plots share a common “grammar”\n\nInput data\nAesthetic mapping: How to represent the data visually\n\n\naesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定\n\n\nGeometry: What shape to use for the plot"
   },
   {
     "objectID": "day5/index.html#pie-chart-vs.-bar-plot-again",
@@ -1173,7 +1173,7 @@
     "href": "day5/index.html#add-color",
     "title": "Reproducible data analysis",
     "section": "Add color",
-    "text": "Add color\n\nIn the last challenge, we saw a general trend, but there could be more detail within certain groups, like continent or country\nLet’s use color to show the continent\n\n\n\nWhat is color in ggplot2?\n\nColor is an aesthetic mapping"
+    "text": "Add color\n\n\nIn the last challenge, we saw a general trend, but there could be more detail within certain groups, like continent or country\nLet’s use color to show the continent\nWhat is color in ggplot2?\n\nColor is an aesthetic mapping"
   },
   {
     "objectID": "day5/index.html#add-color-1",
@@ -1222,7 +1222,7 @@
     "href": "day5/index.html#plotting-lines",
     "title": "Reproducible data analysis",
     "section": "Plotting lines",
-    "text": "Plotting lines\n\nLet’s try representing the data with a different geometry (shape)\nThis time we will use lines (geom_line())"
+    "text": "Plotting lines\n\n\nLet’s try representing the data with a different geometry (shape)\nThis time we will use lines (geom_line())"
   },
   {
     "objectID": "day5/index.html#plotting-lines-1",
@@ -1236,7 +1236,7 @@
     "href": "day5/index.html#plotting-lines-2",
     "title": "Reproducible data analysis",
     "section": "Plotting lines",
-    "text": "Plotting lines\n\nLines connect points along the x-axis\nBut we only want to connect points within each country\nWe need to add another aesthic mapping for that, the group"
+    "text": "Plotting lines\n\n\nLines connect points along the x-axis\nBut we only want to connect points within each country\nWe need to add another aesthic mapping for that, the group"
   },
   {
     "objectID": "day5/index.html#plotting-lines-3",
@@ -1292,7 +1292,7 @@
     "href": "day5/index.html#modify-an-aesthetic",
     "title": "Reproducible data analysis",
     "section": "Modify an aesthetic",
-    "text": "Modify an aesthetic\n\nSo far, we have been mapping aesthetics to variables in the data\nBut you can also simply assign the same value to a particular aesthetic (such as color)\nDo this by setting its value outside of mapping = aes()"
+    "text": "Modify an aesthetic\n\n\nSo far, we have been mapping aesthetics to variables in the data\nBut you can also simply assign the same value to a particular aesthetic (such as color)\nDo this by setting its value outside of mapping = aes()"
   },
   {
     "objectID": "day5/index.html#modify-an-aesthetic-1",
@@ -1314,5 +1314,215 @@
     "title": "Reproducible data analysis",
     "section": "Modify an aesthetic",
     "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point(color = \"black\")"
+  },
+  {
+    "objectID": "day5/index.html#transformations",
+    "href": "day5/index.html#transformations",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\n\nLet’s go back to the life expectancy vs. GDP graph again:"
+  },
+  {
+    "objectID": "day5/index.html#transformations-1",
+    "href": "day5/index.html#transformations-1",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\n\nDo you notice anything that makes this graph hard to read?"
+  },
+  {
+    "objectID": "day5/index.html#transformations-2",
+    "href": "day5/index.html#transformations-2",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\n\nNearly all the points are crowded to the left, with only a few outliers on the right\n\n\n\nWe can make this easier to read by using a log-transformation"
+  },
+  {
+    "objectID": "day5/index.html#transformations-3",
+    "href": "day5/index.html#transformations-3",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#transformations-4",
+    "href": "day5/index.html#transformations-4",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "day5/index.html#transformations-5",
+    "href": "day5/index.html#transformations-5",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-4",
+    "href": "day5/index.html#adding-layers-4",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers",
+    "text": "Adding layers\n\n\n\n\nEach layer modifies the plot, so you can build it gradually\nOther things layers can do:\n\nSet the plot theme\nChange the axes\nAdd labels\nand more!\n\n\n\n\n\n\n\n\n\n\nhttps://r.qcbs.ca/workshop03/book-en/"
+  },
+  {
+    "objectID": "day5/index.html#transparency",
+    "href": "day5/index.html#transparency",
+    "title": "Reproducible data analysis",
+    "section": "Transparency",
+    "text": "Transparency\n\nThere is still one thing that makes this plot tough to read"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with",
+    "href": "day5/index.html#adding-layers-with",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nWe can add additional plot layers using the + sign\nFor example, lets add points on top of the lines"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-1",
+    "href": "day5/index.html#adding-layers-with-1",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-2",
+    "href": "day5/index.html#adding-layers-with-2",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-3",
+    "href": "day5/index.html#adding-layers-with-3",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-4",
+    "href": "day5/index.html#adding-layers-with-4",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\n\n\nEach layer modifies the plot, so you can build it gradually\nOther things layers can do:\n\nSet the plot theme\nChange the axes\nAdd labels\nand more!\n\n\n\n\n\n\n\n\n\n\nhttps://r.qcbs.ca/workshop03/book-en/"
+  },
+  {
+    "objectID": "day5/index.html#transformations-6",
+    "href": "day5/index.html#transformations-6",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(\n    labels = label_comma()\n  )"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots",
+    "href": "day5/index.html#multi-panel-plots",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot2 can make multiple plots at once using facetting\nEach facet is a mini-plot of some portion of the dataset\n\nDefine the facet group with vars()\n\nLet’s try this for some countries in Asia"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-1",
+    "href": "day5/index.html#multi-panel-plots-1",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\nFirst, subset the data just to some countries in Asia (for this example)\n\n\ngapminder_asia &lt;- filter(\n  gapminder,\n  country %in% c(\"Japan\", \"China\", \"Korea, Rep.\", \"Taiwan\"))"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-2",
+    "href": "day5/index.html#multi-panel-plots-2",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-3",
+    "href": "day5/index.html#multi-panel-plots-3",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-4",
+    "href": "day5/index.html#multi-panel-plots-4",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-5",
+    "href": "day5/index.html#multi-panel-plots-5",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  americas,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(~ country) +\n  theme(axis.text.x = element_text(angle = 45))"
+  },
+  {
+    "objectID": "day5/index.html#saving-your-plot",
+    "href": "day5/index.html#saving-your-plot",
+    "title": "Reproducible data analysis",
+    "section": "Saving your plot",
+    "text": "Saving your plot\n\n\nIf you need to you can save your plot in R, and write it out as an image file\nUse the ggsave() function"
+  },
+  {
+    "objectID": "day5/index.html#saving-your-plot-1",
+    "href": "day5/index.html#saving-your-plot-1",
+    "title": "Reproducible data analysis",
+    "section": "Saving your plot",
+    "text": "Saving your plot\n\ngapminder_asia_plot &lt;- ggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+  },
+  {
+    "objectID": "day5/index.html#saving-your-plot-2",
+    "href": "day5/index.html#saving-your-plot-2",
+    "title": "Reproducible data analysis",
+    "section": "Saving your plot",
+    "text": "Saving your plot\n\nggsave(plot = gapminder_asia_plot, file = \"gapminder_asia.pdf\")\n\n\nYou can also save .jpg, .png, etc."
+  },
+  {
+    "objectID": "day5/index.html#challenge-1",
+    "href": "day5/index.html#challenge-1",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\nThe ggtitle() adds a title to a plot. Use ggtitle() as another layer to add a title to the last plot."
+  },
+  {
+    "objectID": "day5/index.html#summary-adding-layers-with",
+    "href": "day5/index.html#summary-adding-layers-with",
+    "title": "Reproducible data analysis",
+    "section": "Summary: Adding layers with +",
+    "text": "Summary: Adding layers with +\n\n\n\n\nEach layer modifies the plot, so you can build it gradually\nOther things layers can do:\n\nSet the plot theme\nChange the axes\nAdd labels\nand more!\n\n\n\n\n\n\n\n\n\n\nhttps://r.qcbs.ca/workshop03/book-en/"
+  },
+  {
+    "objectID": "day5/index.html#what-is-eda-.incremental",
+    "href": "day5/index.html#what-is-eda-.incremental",
+    "title": "Reproducible data analysis",
+    "section": "What is EDA? .incremental",
+    "text": "What is EDA? .incremental\n\nEDA stands for Eploratory Data Analysis\nEDA is the step of “getting to know” your data\nYou have already been doing some EDA by sorting the data and understanding what is in each column"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels",
+    "href": "day5/index.html#adjusting-labels",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nWhen you “publish” your plot (this could be including it in a report for a class), it needs to be clearly labeled\n\nWhoever is reading your report won’t know what “gdpPercap” means\n\nTo demonstrate, let’s go back to the life expectancy vs. GDP plot\nUse the labs() function to adjust the labels"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels-1",
+    "href": "day5/index.html#adjusting-labels-1",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(labels = label_comma())"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels-2",
+    "href": "day5/index.html#adjusting-labels-2",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(labels = label_comma()) +\n  labs(\n    x = \"GDP per capita ($)\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels-3",
+    "href": "day5/index.html#adjusting-labels-3",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(labels = label_comma()) +\n  labs(\n    x = \"GDP per capita ($)\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
   }
 ]
