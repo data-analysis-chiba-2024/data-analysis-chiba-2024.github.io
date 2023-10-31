@@ -21,7 +21,7 @@ old <- options(pillar.print_min = 6)
 
 ::: {.incremental}
 
-- EDA stands for **E**ploratory **D**ata **A**nalysis
+- EDA stands for **E**xploratory **D**ata **A**nalysis
 
 - EDA is the step of "getting to know" your data
 
