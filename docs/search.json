@@ -1110,7 +1110,7 @@
     "href": "day5/index.html#ggplot2-approach-to-plotting",
     "title": "Reproducible data analysis",
     "section": "ggplot2 approach to plotting",
-    "text": "ggplot2 approach to plotting\n\n\nGrammar of Graphics: all plots share a common “grammar”\n\nInput data\nAesthetic mapping: How to represent the data visually\n\n\naesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定\n\n\nGeometry: What shape to use for the plot"
+    "text": "ggplot2 approach to plotting\n\n\nGrammar of Graphics: all plots share a common “grammar”\n\nInput data\nAesthetic mapping: How to represent the data visually\n\n\naesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定\n\n\nGeometry: What shape to use for the plot\n\nRecommended Reading: ggplot2: Elegant Graphics for Data Analysis"
   },
   {
     "objectID": "day5/index.html#pie-chart-vs.-bar-plot-again",

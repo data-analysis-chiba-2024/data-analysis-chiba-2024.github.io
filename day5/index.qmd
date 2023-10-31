@@ -115,6 +115,8 @@ https://clauswilke.com/dataviz/proportional-ink.html
     - aesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定
   3. **Geometry**: What **shape** to use for the plot
 
+- Recommended Reading: [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
+
 :::
 
 ## Aesthetic mappings
