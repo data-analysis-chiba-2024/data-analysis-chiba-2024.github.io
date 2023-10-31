@@ -809,14 +809,14 @@
     "href": "index.html",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\n\n\n\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
+    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
   },
   {
     "objectID": "index.html#materials",
     "href": "index.html#materials",
     "title": "Reproducible Data Analysis",
     "section": "Materials",
-    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio\nDay 4: Tidyverse"
+    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio\nDay 4: Tidyverse\nDay 5: ggplot2"
   },
   {
     "objectID": "index.html#important-deadlines",
@@ -1467,7 +1467,7 @@
     "href": "day5/index.html#saving-your-plot-1",
     "title": "Reproducible data analysis",
     "section": "Saving your plot",
-    "text": "Saving your plot\n\ngapminder_asia_plot &lt;- ggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+    "text": "Saving your plot\n\ngapminder_asia_plot &lt;- ggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country)) +\n  labs(\n    x = \"Year\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
   },
   {
     "objectID": "day5/index.html#saving-your-plot-2",
@@ -1502,27 +1502,34 @@
     "href": "day5/index.html#adjusting-labels",
     "title": "Reproducible data analysis",
     "section": "Adjusting labels",
-    "text": "Adjusting labels\n\n\nWhen you “publish” your plot (this could be including it in a report for a class), it needs to be clearly labeled\n\nWhoever is reading your report won’t know what “gdpPercap” means\n\nTo demonstrate, let’s go back to the life expectancy vs. GDP plot\nUse the labs() function to adjust the labels"
+    "text": "Adjusting labels\n\n\nWhen you “publish” your plot (this could be including it in a report for a class), it needs to be clearly labeled\n\nWhoever is reading your report won’t know what “lifeExp” means"
   },
   {
     "objectID": "day5/index.html#adjusting-labels-1",
     "href": "day5/index.html#adjusting-labels-1",
     "title": "Reproducible data analysis",
     "section": "Adjusting labels",
-    "text": "Adjusting labels\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(labels = label_comma())"
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
   },
   {
     "objectID": "day5/index.html#adjusting-labels-2",
     "href": "day5/index.html#adjusting-labels-2",
     "title": "Reproducible data analysis",
     "section": "Adjusting labels",
-    "text": "Adjusting labels\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(labels = label_comma()) +\n  labs(\n    x = \"GDP per capita ($)\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country)) +\n  labs(\n    x = \"Year\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
   },
   {
     "objectID": "day5/index.html#adjusting-labels-3",
     "href": "day5/index.html#adjusting-labels-3",
     "title": "Reproducible data analysis",
     "section": "Adjusting labels",
-    "text": "Adjusting labels\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(labels = label_comma()) +\n  labs(\n    x = \"GDP per capita ($)\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country)) +\n  labs(\n    x = \"Year\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Reproducible Data Analysis",
+    "section": "",
+    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
   }
 ]

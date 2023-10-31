@@ -13,9 +13,7 @@ toc: false
 
 - [Day 4 (2023-10-24): Data loading and tidying with tidyverse](day4/index.qmd)
 
-- Day 5 (Media Day): Data visualization with ggplot2
-
-<!-- [Day 5 (Media Day): Data visualization with ggplot2](day5/index.qmd) -->
+- [Day 5 (Media Day): Data visualization with ggplot2](day5/index.qmd)
 
 - Day 6 (2023-11-07): Writing documents with Quarto
 
@@ -37,6 +35,8 @@ toc: false
 
 - [Day 4: Tidyverse](https://github.com/data-analysis-chiba-2023/day04-tidy/blob/main/day04_tidy.md)
 
+- [Day 5: ggplot2](https://github.com/data-analysis-chiba-2023/day05-ggplot/blob/main/day05_ggplot2.md)
+
 ## Important Deadlines
 
 - 2023-10-16 11:59PM: [Day 2 homework](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/git_facts.md) due
@@ -45,7 +45,7 @@ toc: false
 
 - 2023-10-30 11:59PM: [Day 4 homework](https://github.com/data-analysis-chiba-2023/day04-tidy/blob/main/day04_homework.R) due
 
-- 2023-11-06 11:59PM: Day 5 homework due
+- 2023-11-06 11:59PM: [Day 5 homework](https://github.com/data-analysis-chiba-2023/day05-ggplot/blob/main/day05_homework.R) due
 
 - 2023-11-20 11:59: Final paper due
 

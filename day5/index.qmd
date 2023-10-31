@@ -753,11 +753,8 @@ ggplot(
 ::: {.incremental}
 
 - When you "publish" your plot (this could be including it in a report for a class), it needs to be **clearly labeled**
-  - Whoever is reading your report won't know what "gdpPercap" means
+  - Whoever is reading your report won't know what "lifeExp" means
 
-- To demonstrate, let's go back to the life expectancy vs. GDP plot
-
-- Use the `labs()` function to adjust the labels
 
 :::
 
@@ -766,12 +763,12 @@ ggplot(
 ```{r}
 #| output-location: column
 ggplot(
-  gapminder,
+  gapminder_asia,
   aes(
-    x = gdpPercap,
+    x = year,
     y = lifeExp)) +
-  geom_point() +
-  scale_x_log10(labels = label_comma())
+  geom_line() +
+  facet_wrap(vars(country))
 ```
 
 ## Adjusting labels
@@ -779,14 +776,14 @@ ggplot(
 ```{r}
 #| output-location: column
 ggplot(
-  gapminder,
+  gapminder_asia,
   aes(
-    x = gdpPercap,
+    x = year,
     y = lifeExp)) +
-  geom_point() +
-  scale_x_log10(labels = label_comma()) +
+  geom_line() +
+  facet_wrap(vars(country)) +
   labs(
-    x = "GDP per capita ($)",
+    x = "Year",
     y = "Life Expectancy (years)",
     title = "Figure 1"
   )
@@ -796,16 +793,16 @@ ggplot(
 
 ```{r}
 #| output-location: column
-#| code-line-numbers: "8-127"
+#| code-line-numbers: "9-13"
 ggplot(
-  gapminder,
+  gapminder_asia,
   aes(
-    x = gdpPercap,
+    x = year,
     y = lifeExp)) +
-  geom_point() +
-  scale_x_log10(labels = label_comma()) +
+  geom_line() +
+  facet_wrap(vars(country)) +
   labs(
-    x = "GDP per capita ($)",
+    x = "Year",
     y = "Life Expectancy (years)",
     title = "Figure 1"
   )
@@ -830,7 +827,12 @@ gapminder_asia_plot <- ggplot(
     x = year,
     y = lifeExp)) +
   geom_line() +
-  facet_wrap(vars(country))
+  facet_wrap(vars(country)) +
+  labs(
+    x = "Year",
+    y = "Life Expectancy (years)",
+    title = "Figure 1"
+  )
 ```
 
 ## Saving your plot
