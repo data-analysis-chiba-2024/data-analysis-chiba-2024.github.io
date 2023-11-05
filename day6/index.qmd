@@ -208,4 +208,46 @@ old <- options(pillar.print_min = 6)
 
 ## Tell git to ignore output
 
-## 
+## Final Project
+
+- The final project is to **analyze a dataset**, including **at least one graph**
+  - Use **Quarto** to write the report (by 11/21)
+  - Present your analysis to the class (on 11/21)
+
+## Final Project
+
+- You will choose a dataset from the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) project to analyze
+  - Tidy Tuesday releases a dataset once a week to practice data analysis
+
+## Final Project
+
+- I have already pre-selected 5 datasets for you
+  - [World's Oldest People](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-30/readme.md#verified-oldest-people)
+  - [Olympics](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-27/readme.md#the-olympics)
+  - [Chocolate ratings](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-01-18#chocolate-ratings)
+  - [Transit cost](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md#transit-costs-project)
+  - [Student to teacher ratios](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-07#global-student-to-teacher-ratios)
+
+## Final Project
+
+- You will work in teams of 2-3 people each
+  - I have already assigned everybody to teams
+
+- Please sit with members of your team and choose a dataset
+  - Please take a slip of paper from the pile with the name of the dataset
+
+## Final Project
+
+- Clone the project on GitHub
+
+- This time, all team members have access to the same repository
+
+## Final project
+
+- My recommendation: **make a copy** of the final report file for each team member to work on. For example, `final-report-jn.Qmd`
+
+- Share your work by pushing and pulling
+
+- When you are ready to submit the final report, **one person** should edit the final report file `final-report.Qmd`
+
+- This will avoid merge conflicts (incompatible changes to the file made by different people)
