@@ -1,0 +1,211 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+    theme: ../theme_medium.scss
+execute: 
+  echo: true
+---
+
+# Day 6: Writing documents with Quarto
+
+2023-11-07
+
+```{r}
+#| echo: false
+old <- options(pillar.print_min = 6)
+```
+
+## What is Quarto?
+
+::: {.incremental}
+
+- **Quarto** is a computer program that allows you to **generate documents** in various formats with code
+
+- We will use it to generate **MS Word** documents with **R**
+
+- It can also generate **PDF**, **HTML**, and other output
+
+- It can also use other programming languages like **Python**
+
+:::
+
+## Why use Quarto?
+
+::: {.incremental}
+
+- Part of **data analysis** is **communicating** your results to an audience
+
+- For example, writing a **final report for a class**, or giving a presentation at work
+
+- Generating a report with code...
+  - helps you **avoid copy-and-paste errors**
+  - ensures that your results are a **direct result of the data**
+  - helps you **save time** by re-using the code later
+
+:::
+
+## Installing Quarto
+
+- You should have already installed Quarto before class
+
+- If not, please go to <https://quarto.org/docs/get-started/> and install it now
+
+## Reopen your project
+
+- We will continue to use the `gapminder-analysis` project in the `data-analysis-course` folder on your Desktop
+
+- Navigate there and click on `gapminder-analysis.Rproj`
+
+## Create a Quarto file
+
+- Create a new Quarto file by clicking File > New File > Quarto Document…
+
+- In menu that appears, type `"Gapminder Analysis"` for the title and your name for the author
+
+- Leave format as HTML (as it says, we can change it at any time later)
+
+- RStudio will create a file. Save it as `"gapminder.qmd"` (`.qmd` is the file extension for Quarto files)
+
+## How a Quarto file is set up
+
+::: {.incremental}
+
+- Look at your new Quarto file. What do you notice that is different from the `.R` files we have been using so far?
+
+- There is **normal text** like "Quarto enables you to weave together content..." that **does not appear in a comment**
+
+- There are lines starting with **two** hashes (`##`)
+
+- There are lines like ` ```{r} `
+
+- **What is going on here?**
+
+:::
+
+## How a Quarto file is set up
+
+::: {.incremental}
+
+- A Quarto (`.qmd`) file is set up **opposite** to an R script
+
+- Normal lines of text **are not code** (so they don't need a `#` like a comment)
+
+- R code is contained within lines starting with ` ```{r} ` and ending with ` ``` ` (called a **"code chunk"**)
+
+:::
+
+## How a Quarto file is set up
+
+- Futhermore, there is a special set of code at the top between lines that look like `---`
+
+- This is called the **YAML header**
+
+- We'll learn more about that soon
+
+## Rendering
+
+::: {.incremental}
+
+- Another important difference between normal `.R` files and `.qmd` files is that the latter **produce documents**
+
+- This is called **"rendering"**
+
+- Let's try that now: press the "Render" button in RStudio 
+
+:::
+
+## Rendering
+
+::: {.incremental}
+
+- You should see the **rendered document** (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)
+  - also, in the Files tab, notice the `gapminder.html` file
+
+- Notice the **formatting** of the output: lines like `## Quarto` appear as **headers**
+
+- You can also see the **output** of the code, like `1 + 1`
+
+:::
+
+## Formatting with Markdown
+
+::: {.incremental}
+
+- The `.qmd` file is written in **plain text** (without formatting, similar to an `.R` file)
+
+- We can specify formatting in the output using **Markdown** syntax
+  - Markdown is a very simple version of HTML
+
+- `.qmd` files are known as "Quarto Markdown" because they add Quarto's features (the ability to include code chunks) to Markdown
+
+:::
+
+## Formatting with Markdown
+
+- As you can see in the document, the hash symbol (`#`) is used to define **headings**, which appear larger than other text
+  - `#` Heading level 1 (biggest)
+  - `##` Heading level 2
+  - `###` Heading level 3...
+
+- For *italics*, wrap the text in `*`, like this `*this*` (renders like *this*)
+
+- For **bold**, wrap the text in `**`, like this `**this**` (renders like **this**)
+
+## Formatting with Markdown
+
+::: {.incremental}
+
+- RStudio has a handy way for you to preview what the rendered text will look like
+
+- Right now we are in **"Source"** mode, which means we are editing the plain text
+
+- Click on the **"Visual"** mode button to switch to "Visual" mode
+
+- Now it looks much more like the output on the right
+  - But notice that we don't see the results of running the code chunks
+
+:::
+
+## Formatting with Markdown
+
+::: {.incremental}
+
+- I much prefer working with plain text, so we will switch back to "Source" mode
+
+- But it is a good idea to use "Visual" mode to check what your markdown formatting will look like
+
+- This PDF file lists other common Markdown formatting
+
+:::
+
+## About the code chunks
+
+::: {.incremental}
+
+- Within the code chunks, anything you type is treated **just like an R script**
+  - Normal text must be R code
+  - Comments can be written with `#`
+
+- The idea is to **conduct analysis in the code chunks**, and directly **show the output in the rendered document**
+
+:::
+
+## Challenge
+
+- Modify the first code chunk to load the `tidyverse` package, then read in the `gapminder` dataset like we did before
+
+## About the YAML header
+
+## Code chunk options
+
+## Challenge
+
+- Modify the document to describe the `gapminder` dataset and add a plot
+
+## Change the output format
+
+## Tell git to ignore output
+
+## 
