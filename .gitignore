@@ -2,3 +2,4 @@
 /.quarto/
 working
 .DS_Store
+*.docx

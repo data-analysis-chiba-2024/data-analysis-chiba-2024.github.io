@@ -362,11 +362,10 @@ old <- options(pillar.print_min = 6)
 
 ## Team Setup
 
-- You will work in teams of 2-3 people each
+- You will work in teams of 4 people each
   - I have already assigned everybody to teams
 
-- Please sit with members of your team and choose a dataset
-  - Please take a slip of paper from the pile with the name of the dataset
+- Please sit with members of your team and choose a dataset and team name
 
 ## Working as a team
 
