@@ -343,11 +343,24 @@
 </section>
 <section id="why-use-quarto" class="slide level2">
 <h2>Why use Quarto?</h2>
+<div class="columns">
+<div class="column">
 <div>
 <ul>
 <li class="fragment"><p>Part of <strong>data analysis</strong> is <strong>communicating</strong> your results to an audience</p></li>
 <li class="fragment"><p>For example, writing a <strong>final report for a class</strong>, or giving a presentation at work</p></li>
-<li class="fragment"><p>Generating a report with code…</p>
+</ul>
+</div>
+</div><div class="column">
+<p><img data-src="https://1.bp.blogspot.com/-_GTwRCTvCwI/WzC-xyQXfmI/AAAAAAABNEs/qUWGQKyzYgUtUsoGlG01LYqS0w5H7is0QCLcBGAs/s800/presentation_kaigi_woman.png"></p>
+</div>
+</div>
+</section>
+<section id="why-use-quarto-1" class="slide level2">
+<h2>Why use Quarto?</h2>
+<div>
+<ul>
+<li class="fragment">Generating a report with code…
 <ul>
 <li class="fragment">helps you <strong>avoid copy-and-paste errors</strong></li>
 <li class="fragment">ensures that your results are a <strong>direct result of the data</strong></li>
@@ -376,9 +389,13 @@
 <li><p>Create a new Quarto file by clicking File &gt; New File &gt; Quarto Document…</p></li>
 <li><p>In menu that appears, type <code>"Gapminder Analysis"</code> for the title and your name for the author</p></li>
 <li><p>Leave format as HTML (as it says, we can change it at any time later)</p></li>
-<li><p>RStudio will create a file. Save it as <code>"gapminder.qmd"</code> (<code>.qmd</code> is the file extension for Quarto files)</p></li>
+<li><p>RStudio will create a file. Save it as <code>"gapminder-report.qmd"</code> (<code>.qmd</code> is the file extension for Quarto files)</p></li>
 </ul>
 </section>
+<section class="slide level2">
+
+
+<img data-src="../images/quarto-new.png" class="r-stretch"></section>
 <section id="how-a-quarto-file-is-set-up" class="slide level2">
 <h2>How a Quarto file is set up</h2>
 <div>
@@ -387,7 +404,7 @@
 <li class="fragment"><p>There is <strong>normal text</strong> like “Quarto enables you to weave together content…” that <strong>does not appear in a comment</strong></p></li>
 <li class="fragment"><p>There are lines starting with <strong>two</strong> hashes (<code>##</code>)</p></li>
 <li class="fragment"><p>There are lines like <code>```{r}</code></p></li>
-<li class="fragment"><p>What is going on here?</p></li>
+<li class="fragment"><p><strong>What is going on here?</strong></p></li>
 </ul>
 </div>
 </section>
@@ -401,14 +418,6 @@
 </ul>
 </div>
 </section>
-<section id="how-a-quarto-file-is-set-up-2" class="slide level2">
-<h2>How a Quarto file is set up</h2>
-<ul>
-<li><p>Futhermore, there is a special set of code at the top between lines that look like <code>---</code></p></li>
-<li><p>This is called the <strong>YAML header</strong></p></li>
-<li><p>We’ll learn more about that soon</p></li>
-</ul>
-</section>
 <section id="rendering" class="slide level2">
 <h2>Rendering</h2>
 <div>
@@ -419,16 +428,27 @@
 </ul>
 </div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="../images/quarto-render.png" class="r-stretch"></section>
 <section id="rendering-1" class="slide level2">
 <h2>Rendering</h2>
 <div>
 <ul>
-<li class="fragment"><p>You should see the <strong>rendered document</strong> (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)</p></li>
+<li class="fragment"><p>You should see the <strong>rendered document</strong> (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)</p>
+<ul>
+<li class="fragment">also, in the Files tab, notice the <code>gapminder-report.html</code> file</li>
+</ul></li>
 <li class="fragment"><p>Notice the <strong>formatting</strong> of the output: lines like <code>## Quarto</code> appear as <strong>headers</strong></p></li>
 <li class="fragment"><p>You can also see the <strong>output</strong> of the code, like <code>1 + 1</code></p></li>
 </ul>
 </div>
 </section>
+<section class="slide level2">
+
+
+<img data-src="../images/quarto-rendered.png" class="r-stretch"></section>
 <section id="formatting-with-markdown" class="slide level2">
 <h2>Formatting with Markdown</h2>
 <div>
@@ -438,7 +458,6 @@
 <ul>
 <li class="fragment">Markdown is a very simple version of HTML</li>
 </ul></li>
-<li class="fragment"><p><code>.qmd</code> files are known as “Quarto Markdown” because they add Quarto’s features (the ability to include code chunks) to Markdown</p></li>
 </ul>
 </div>
 </section>
@@ -459,6 +478,19 @@
 <h2>Formatting with Markdown</h2>
 <div>
 <ul>
+<li class="fragment"><p><code>.qmd</code> files are known as “Quarto Markdown” because they add Quarto’s features (the ability to include code chunks) to Markdown</p></li>
+<li class="fragment"><p>You may have heard of “R Markdown,” which is the precursor to Quarto Markdown</p>
+<ul>
+<li class="fragment">There is generally no reason to use R Markdown instead of Quarto Markdown</li>
+<li class="fragment">They are very similar, so most things you read about R Markdown will apply to Quarto Markdown</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="formatting-with-markdown-3" class="slide level2">
+<h2>Formatting with Markdown</h2>
+<div>
+<ul>
 <li class="fragment"><p>RStudio has a handy way for you to preview what the rendered text will look like</p></li>
 <li class="fragment"><p>Right now we are in <strong>“Source”</strong> mode, which means we are editing the plain text</p></li>
 <li class="fragment"><p>Click on the <strong>“Visual”</strong> mode button to switch to “Visual” mode</p></li>
@@ -469,12 +501,17 @@
 </ul>
 </div>
 </section>
-<section id="formatting-with-markdown-3" class="slide level2">
+<section class="slide level2">
+
+
+<img data-src="../images/quarto-visual.png" class="r-stretch"></section>
+<section id="formatting-with-markdown-4" class="slide level2">
 <h2>Formatting with Markdown</h2>
 <div>
 <ul>
 <li class="fragment"><p>I much prefer working with plain text, so we will switch back to “Source” mode</p></li>
 <li class="fragment"><p>But it is a good idea to use “Visual” mode to check what your markdown formatting will look like</p></li>
+<li class="fragment"><p>There are many <a href="https://www.freecodecamp.org/news/markdown-cheatsheet/">guides</a> online to learn more about writing Markdown</p></li>
 </ul>
 </div>
 </section>
@@ -495,6 +532,202 @@
 <h2>Challenge</h2>
 <ul>
 <li>Modify the first code chunk to load the <code>tidyverse</code> package, then read in the <code>gapminder</code> dataset like we did before</li>
+</ul>
+</section>
+<section id="about-the-code-chunks-1" class="slide level2">
+<h2>About the code chunks</h2>
+<div>
+<ul>
+<li class="fragment"><p>Notice that when we render the document, the gapminder dataset <strong>is not loaded into our current R session</strong></p></li>
+<li class="fragment"><p>That is because rending takes place in a <strong>separate instance of R</strong></p></li>
+<li class="fragment"><p>To run the R code in a chunk <strong>in your current R session</strong>, press the green “play” button at the right-hand side of the chunk</p></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+
+<img data-src="../images/code-chunk-play.png" class="r-stretch"></section>
+<section id="in-line-code" class="slide level2">
+<h2>In-line code</h2>
+<div>
+<ul>
+<li class="fragment"><p>In addition to code chunks, you can also mix short bits of R code within normal text by first writing a backtick (<code>`</code>) and the letter <code>r</code>, then the R code, then another backtick</p></li>
+<li class="fragment"><p>For example, we can show the number of rows in the dataset with <code>`r nrow(gapminder)`</code></p></li>
+<li class="fragment"><p>This is best used for describing facts about the data or results</p></li>
+</ul>
+</div>
+</section>
+<section id="about-the-yaml-header" class="slide level2">
+<h2>About the YAML header</h2>
+<div>
+<ul>
+<li class="fragment">The first set of lines at the top of the file are called the “YAML header”
+<ul>
+<li class="fragment">YAML stands for “Yet Another Markup Language”</li>
+</ul></li>
+<li class="fragment">The YAML header specifies <strong>settings</strong> for the document using <strong>variables</strong>
+<ul>
+<li class="fragment">You can set the values of the values of the variables with a colon: <code>variable: value</code>, for example <code>author: "Joel Nitta"</code></li>
+</ul></li>
+<li class="fragment">There are many other settings, but we won’t cover those today</li>
+</ul>
+</div>
+</section>
+<section id="code-chunk-options" class="slide level2">
+<h2>Code chunk options</h2>
+<div>
+<ul>
+<li class="fragment"><p>Similar to the YAML header, we can also specify settings for the code chunks</p></li>
+<li class="fragment"><p>This is done by first writing <code>#|</code>, then the setting like you would for the YAML header</p></li>
+<li class="fragment"><p>For example, in a report, you usually only want to show the <strong>results</strong> of the code, not the code itself</p></li>
+<li class="fragment"><p>You can do this with the following code chunk option: <code>#| echo: false</code> (remember <code>echo</code> <strong>echoes</strong> the code)</p></li>
+</ul>
+</div>
+</section>
+<section id="code-chunk-options-1" class="slide level2">
+<h2>Code chunk options</h2>
+<ul>
+<li>Other useful code options
+<ul>
+<li><code>message: false</code> Hide code messages</li>
+<li><code>warning: false</code> Hide code warnings</li>
+</ul></li>
+</ul>
+</section>
+<section id="code-chunk-options-2" class="slide level2">
+<h2>Code chunk options</h2>
+<ul>
+<li>Let’s write another code chunk that outputs a plot. Change the chunk options to hide the code.</li>
+</ul>
+</section>
+<section id="change-the-output-format" class="slide level2">
+<h2>Change the output format</h2>
+<div>
+<ul>
+<li class="fragment"><p>So far, we have been using HTML output because it is the default and shows up immediately when we press “render”</p></li>
+<li class="fragment"><p>But your report should be submitted in Word (.docx) format.</p></li>
+<li class="fragment"><p>Change the output format to <code>docx</code> and render the document again</p></li>
+</ul>
+</div>
+</section>
+<section id="tell-git-to-ignore-output" class="slide level2">
+<h2>Tell git to ignore output</h2>
+<ul>
+<li>You should not commit the output of code
+<ul>
+<li>It clutters your git history, and is not necessary since you can always obtain the output by running the code</li>
+</ul></li>
+<li>You can tell git to <strong>ignore</strong> files by adding them to <code>.gitignore</code>:
+<ul>
+<li><code>gapminder-report.docx</code></li>
+<li><code>gapminder-report.html</code></li>
+<li><code>gapminder-report_files</code> (files needed for HTML output)</li>
+</ul></li>
+</ul>
+</section>
+<section id="tell-git-to-ignore-output-1" class="slide level2">
+<h2>Tell git to ignore output</h2>
+<ul>
+<li>If you know you want to ignore <strong>all</strong> docx files, you could instead write this:
+<ul>
+<li><code>*.docx</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="summary" class="slide level2">
+<h2>Summary</h2>
+<div>
+<ul>
+<li class="fragment"><p>Quarto allows you to insert your analysis results <strong>directly</strong> into reports</p></li>
+<li class="fragment"><p>Quarto can generate <strong>multiple</strong> output formats</p></li>
+<li class="fragment"><p>The way of writing code and plain text is reversed compared to R scripts</p></li>
+</ul>
+</div>
+</section></section>
+<section>
+<section id="final-project" class="title-slide slide level1 center">
+<h1>Final Project</h1>
+
+</section>
+<section id="project-description" class="slide level2">
+<h2>Project Description</h2>
+<ul>
+<li>The final project is to <strong>analyze a dataset</strong>, including <strong>at least one graph</strong>
+<ul>
+<li>Use <strong>Quarto</strong> to write the report (by 11/21)</li>
+<li>Present your analysis to the class (on 11/21)</li>
+</ul></li>
+</ul>
+</section>
+<section id="example-repo" class="slide level2">
+<h2>Example Repo</h2>
+<ul>
+<li><p>I have created an <strong>example report</strong> for you using the gapminder dataset: <a href="https://github.com/data-analysis-chiba-2023/gapminder-report" class="uri">https://github.com/data-analysis-chiba-2023/gapminder-report</a></p></li>
+<li><p>You can look at the <code>.qmd</code> file online, or clone the repo to your computer</p></li>
+</ul>
+</section>
+<section id="dataset" class="slide level2">
+<h2>Dataset</h2>
+<ul>
+<li>You will choose a dataset from the <a href="https://github.com/rfordatascience/tidytuesday">Tidy Tuesday</a> project to analyze
+<ul>
+<li>Tidy Tuesday releases a dataset once a week to practice data analysis</li>
+</ul></li>
+</ul>
+</section>
+<section id="dataset-1" class="slide level2">
+<h2>Dataset</h2>
+<ul>
+<li>I have already pre-selected 5 datasets for you
+<ul>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-30/readme.md#verified-oldest-people">World’s Oldest People</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-27/readme.md#the-olympics">Olympics</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-01-18#chocolate-ratings">Chocolate ratings</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md#transit-costs-project">Transit cost</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-07#global-student-to-teacher-ratios">Student to teacher ratios</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="team-setup" class="slide level2">
+<h2>Team Setup</h2>
+<ul>
+<li>You will work in teams of 2-3 people each
+<ul>
+<li>I have already assigned everybody to teams</li>
+</ul></li>
+<li>Please sit with members of your team and choose a dataset
+<ul>
+<li>Please take a slip of paper from the pile with the name of the dataset</li>
+</ul></li>
+</ul>
+</section>
+<section id="working-as-a-team" class="slide level2">
+<h2>Working as a team</h2>
+<ul>
+<li><p>Clone the project on GitHub by clicking on the link in Moodle</p></li>
+<li><p>This time, <em>all team members have access to the same repository</em></p></li>
+</ul>
+</section>
+<section id="working-as-a-team-1" class="slide level2">
+<h2>Working as a team</h2>
+<ul>
+<li><p>To avoid <strong>merge conflicts</strong> (incompatible changes to the same file made by different people) <strong>make a copy</strong> of the final report file <strong>for each team member</strong> to work on.</p>
+<ul>
+<li>For example, <code>final-report-jn.Qmd</code></li>
+</ul></li>
+<li><p>Share your work by pushing and pulling</p></li>
+<li><p>When you are ready to submit the final report, <strong>one person</strong> should edit the final report file <code>final-report.Qmd</code></p></li>
+</ul>
+</section>
+<section id="editing-the-template" class="slide level2">
+<h2>Editing the template</h2>
+<ul>
+<li>There is some text in the <code>.qmd</code> file. Edit it to match your dataset and team members.
+<ul>
+<li>Delete the lines about the other datasets</li>
+<li>Delete the questions and add your text</li>
+</ul></li>
 </ul>
 
 <div class="footer footer-default">
