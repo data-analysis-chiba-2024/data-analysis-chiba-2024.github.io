@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Reproducible data analysis - Reproducible Data Analysis</title>
+<title>Reproducible data analysis - Final Report Assignment</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./index.html" rel="" target="">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -100,13 +100,31 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#dataset" id="toc-dataset" class="nav-link active" data-scroll-target="#dataset">Dataset</a></li>
+  <li><a href="#report-content" id="toc-report-content" class="nav-link" data-scroll-target="#report-content">Report Content</a></li>
+  <li><a href="#example-report" id="toc-example-report" class="nav-link" data-scroll-target="#example-report">Example Report</a></li>
+  <li><a href="#group-work" id="toc-group-work" class="nav-link" data-scroll-target="#group-work">Group Work</a></li>
+  <li><a href="#presentation" id="toc-presentation" class="nav-link" data-scroll-target="#presentation">Presentation</a></li>
+  <li><a href="#evaluation" id="toc-evaluation" class="nav-link" data-scroll-target="#evaluation">Evaluation</a></li>
+  <li><a href="#language" id="toc-language" class="nav-link" data-scroll-target="#language">Language</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#rubric" id="toc-rubric" class="nav-link" data-scroll-target="#rubric">Rubric</a></li>
+  <li><a href="#scoring" id="toc-scoring" class="nav-link" data-scroll-target="#scoring">Scoring</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="final-report-desc.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Reproducible Data Analysis</h1>
+<h1 class="title">Final Report Assignment</h1>
+<p class="subtitle lead">Reproducible Data Analysis 2023 T4</p>
 </div>
 
 
@@ -121,58 +139,142 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>The goal of the final project is to <strong>analyze a dataset with R</strong> and <strong>write a report about it using Quarto</strong>. Futhermore, you will <strong>present</strong> your analysis during the final class meeting on 2023-11-14.</p>
+<section id="dataset" class="level2">
+<h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
+<p>The dataset comes from the <a href="https://github.com/rfordatascience/tidytuesday">Tidy Tuesday Project</a>, which releases datasets for practicing data analysis skills once per week. There are five datasets to choose from. Each group will select one dataset during class on 2023-11-07:</p>
 <ul>
-<li><p><a href="./day1/index.html">Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?</a></p></li>
-<li><p><a href="./day2/index.html">Day 2 (2023-10-10): Git and GitHub</a></p></li>
-<li><p><a href="./day3/index.html">Day 3 (2023-10-17): Basic usage of R and RStudio</a></p></li>
-<li><p><a href="./day4/index.html">Day 4 (2023-10-24): Data loading and tidying with tidyverse</a></p></li>
-<li><p><a href="./day5/index.html">Day 5 (Media Day): Data visualization with ggplot2</a></p></li>
-<li><p><a href="./day6/index.html">Day 6 (2023-11-07): Writing documents with Quarto</a></p></li>
-<li><p>Day 7 (2023-11-14): Best practices for reproducible data analysis</p></li>
-</ul>
-<!-- - [Day 7 (2023-11-14): Best practices for reproducible data analysis](day7/index.qmd -->
-<ul>
-<li>Day 8 (2023-11-21): Final presentation</li>
-</ul>
-<!-- [Day 8 (2023-11-21): Final presentation](day8/index.qmd) -->
-</section>
-<section id="recordings" class="level2">
-<h2 class="anchored" data-anchor-id="recordings">Recordings</h2>
-<p>(video recordings are not available for all lectures)</p>
-<ul>
-<li><p><a href="https://youtu.be/ikzQwRJbh18">Day 4: Tidyverse</a></p></li>
-<li><p><a href="https://youtu.be/n06QEKese5U">Day 5: ggplot2</a></p></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-30/readme.md#verified-oldest-people">World’s Oldest People</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-27/readme.md#the-olympics">Olympics</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-01-18#chocolate-ratings">Chocolate ratings</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md#transit-costs-project">Transit cost</a></li>
+<li><a href="https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-07#global-student-to-teacher-ratios">Student to teacher ratios</a></li>
 </ul>
 </section>
-<section id="materials" class="level2">
-<h2 class="anchored" data-anchor-id="materials">Materials</h2>
+<section id="report-content" class="level2">
+<h2 class="anchored" data-anchor-id="report-content">Report Content</h2>
+<p>You should use the R skills we have learned in class to <strong>analyze the data</strong>.</p>
+<p>Your report should include the following components:</p>
 <ul>
-<li><p><a href="https://github.com/data-analysis-chiba-2023/day02-git/blob/main/day02_intro_to_git.md">Day 2: Git and GitHub</a></p></li>
-<li><p><a href="https://github.com/data-analysis-chiba-2023/day03-r/blob/main/day03_intro_to_r.md">Day 3: R and RStudio</a></p></li>
-<li><p><a href="https://github.com/data-analysis-chiba-2023/day04-tidy/blob/main/day04_tidy.md">Day 4: Tidyverse</a></p></li>
-<li><p><a href="https://github.com/data-analysis-chiba-2023/day05-ggplot/blob/main/day05_ggplot2.md">Day 5: ggplot2</a></p></li>
+<li><strong>Introduction</strong>
+<ul>
+<li>What is the dataset <strong>about</strong>?</li>
+<li>Where does the dataset <strong>come from</strong>?</li>
+<li>What <strong>question(s)</strong> will you answer by analyzing the dataset?</li>
+</ul></li>
+<li><strong>Visualization</strong>
+<ul>
+<li>Please generate <strong>at least two graphs</strong> that show relationships between variables in the data</li>
+</ul></li>
+<li><strong>Discussion</strong>
+<ul>
+<li>What is the <strong>message</strong> in your data visualization?</li>
+<li>What <strong>insights</strong> can the dataset provide (in other words, <strong>what conclusions</strong> can you draw from the data)?</li>
+</ul></li>
+</ul>
+<p>If you cite any references, please include a reference list at the end.</p>
+</section>
+<section id="example-report" class="level2">
+<h2 class="anchored" data-anchor-id="example-report">Example Report</h2>
+<p>I have made an example report that you can refer to when working on your project: <a href="https://github.com/data-analysis-chiba-2023/gapminder-report" class="uri">https://github.com/data-analysis-chiba-2023/gapminder-report</a></p>
+</section>
+<section id="group-work" class="level2">
+<h2 class="anchored" data-anchor-id="group-work">Group Work</h2>
+<p>This is a <strong>group project</strong> (four members per group). Group members will be responsible for dividing the work amongst themselves. For example, two members could work on one graph, and the other two members could work on the other graph. You will be assigned to groups in class on 2023-11-07.</p>
+<p>Please <strong>use git and github to share your work</strong> by pushing and pulling as we learned in class. I recommend that each person creates a copy of the report (you could name the file with your initials, such as <code>final-report-jn.qmd</code>) when you are working on it. Then, when you are ready to submit the final version <strong>one person</strong> should edit and push <code>final-report.qmd</code>. This is to avoid <strong>merge conflicts</strong>, that is, incompatible changes made to the same file by different people. There is a way to fix those, but it is an advanced topic that we weren’t able to learn in this class.</p>
+</section>
+<section id="presentation" class="level2">
+<h2 class="anchored" data-anchor-id="presentation">Presentation</h2>
+<p>You will present your analysis in class on 2023-11-14. You can use whatever software you want to create the presentation. (We didn’t have time to cover it in class, but <strong>Quarto</strong> can be used to make slides too! Ask the instructor if you’re interested).</p>
+<p>Your presentation should include the same basic information as the paper:</p>
+<ul>
+<li>Introduction</li>
+<li>Visualization</li>
+<li>Discussion</li>
+</ul>
+<p>Each group will have <strong>10 minutes</strong> to present, and up to <strong>5 minutes</strong> to answer questions.</p>
+</section>
+<section id="evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="evaluation">Evaluation</h2>
+<p>The instructor will evaluate each report and presentation. Since this is group work, <strong>all members will receive the same grade</strong> for the report and presentation.</p>
+<p>You will also evaluate <strong>each other groups’ presentation</strong> (<strong>Form A</strong>; hard copy, turn in at the end of class on 2023-11-21), as well as <strong>the contribution of each other member of your group</strong> (<strong>Form B</strong>; on Moodle, due by 2023-11-21 11:59 PM).</p>
+<p>Please see the <strong>rubric</strong> at the end of this description for evaluating other presentations and for your own reference.</p>
+</section>
+<section id="language" class="level2">
+<h2 class="anchored" data-anchor-id="language">Language</h2>
+<p>Both the report and presentation must be <strong>in English</strong></p>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>The <strong>report</strong> (<code>final-report.qmd</code>) is due on 2023-11-20 11:59 PM. It should be submitted the same way as the homework assignments: by pushing to GitHub. Please also submit the assignment on Moodle as usual by entering the URL of your repo. Note that you should submit (commit) the <code>final-report.qmd</code> file, not the <code>.docx</code> file that it generates.</p>
+<p>The <strong>presentation</strong> will be given in class on 2023-11-21.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="rubric" class="level2">
+<h2 class="anchored" data-anchor-id="rubric">Rubric</h2>
+<table class="table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>4 (excellent)</th>
+<th>3 (good)</th>
+<th>2 (needs improvement)</th>
+<th>1 (poor)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Introduction</td>
+<td>The dataset is described succinctly and clearly, including where it comes from.</td>
+<td>The overall purpose of the dataset is clear, but some details are lacking.</td>
+<td>Only the title of the dataset is given; no information about where the data come from.</td>
+<td>Introduction missing or no useful information provided</td>
+</tr>
+<tr class="even">
+<td>Visualization</td>
+<td>All graphs are clearly labeled and easy to read. The message conveyed by each graph is clear.</td>
+<td>Some labels may not be easy to understand (not changed from the default in the data). There is a pattern in the graph, but it is not well explained.</td>
+<td>Cannot understand what the labels mean. No clear pattern in the graph or explanation given.</td>
+<td>One or more of the graphs is missing.</td>
+</tr>
+<tr class="odd">
+<td>Discussion</td>
+<td>The message of the visualization is clearly explained. A conclusion is provided that draws insight from the data.</td>
+<td>Some interpretation of the visualization is provided, but the insights to be gained from the data are not clear.</td>
+<td>A general discussion of the dataset is provided, but there are no direct references to the visualization or concrete conclusions drawn.</td>
+<td>Discussion missing, cannot be understood, or mostly unrelated to the dataset.</td>
+</tr>
+<tr class="even">
+<td>Style and grammar (some aspects only apply to the presentation)</td>
+<td>All English grammar is correct. Style is consistent. Slides are easy to read.</td>
+<td>Some grammar may be incorrect, but meaning is still clear. Slight deviations in style (such as different formatting of references) may occur. Slides are generally easy to read, but may be a bit cluttered.</td>
+<td>There are grammatical errors that obscure the meaning of what the authors are trying to say. Style is not consistent. Slides are poorly designed, at times hard to understand.</td>
+<td>Even basic English is frequently incorrect. The message is very hard to understand because of poor English. Slides have no consistent style and are very difficult to read.</td>
+</tr>
+</tbody>
+</table>
+<p>In addition, your report will be scored on the following criteria:</p>
+<ul>
+<li>The code should run without errors</li>
+<li>The <code>.docx</code> file should be generated correctly from the <code>.qmd</code> file</li>
+<li>The <code>.docx</code> file should not include any code chunks (code chunks should be hidden with <code>|# echo: false</code>)</li>
 </ul>
 </section>
-<section id="important-deadlines" class="level2">
-<h2 class="anchored" data-anchor-id="important-deadlines">Important Deadlines</h2>
+<section id="scoring" class="level2">
+<h2 class="anchored" data-anchor-id="scoring">Scoring</h2>
+<p>Points will be assigned for the final project as follows:</p>
 <ul>
-<li><p>2023-10-16 11:59PM: <a href="https://github.com/data-analysis-chiba-2023/day02-git/blob/main/git_facts.md">Day 2 homework</a> due</p></li>
-<li><p>2023-10-23 11:59PM: <a href="https://github.com/data-analysis-chiba-2023/day03-r/blob/main/day03_homework.R">Day 3 homework</a> due</p></li>
-<li><p>2023-10-30 11:59PM: <a href="https://github.com/data-analysis-chiba-2023/day04-tidy/blob/main/day04_homework.R">Day 4 homework</a> due</p></li>
-<li><p>2023-11-06 11:59PM: <a href="https://github.com/data-analysis-chiba-2023/day05-ggplot/blob/main/day05_homework.R">Day 5 homework</a> due</p></li>
-<li><p>2023-11-20 11:59: Final paper due</p></li>
-<li><p>2023-11-21: Final presentation (in class)</p></li>
+<li>Final report: 45%</li>
+<li>Final presentation: 45%</li>
+<li>Participation (filling out Form A and B): 10%</li>
 </ul>
-</section>
-<section id="office-hours" class="level2">
-<h2 class="anchored" data-anchor-id="office-hours">Office Hours</h2>
-<p>By appointment, please send an email to <a href="mailto:joelnitta@chiba-u.jp" class="email">joelnitta@chiba-u.jp</a></p>
-</section>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<p><a href="https://syllabus.gs.chiba-u.jp/2023/101101101076000/Z011531301/en_US">Syllabus in English</a></p>
 
 
 </section>

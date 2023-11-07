@@ -809,7 +809,7 @@
     "href": "index.html",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
+    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
   },
   {
     "objectID": "index.html#materials",
@@ -1530,7 +1530,7 @@
     "href": "index.html#slides",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\n\n\n\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
+    "text": "Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?\nDay 2 (2023-10-10): Git and GitHub\nDay 3 (2023-10-17): Basic usage of R and RStudio\nDay 4 (2023-10-24): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data visualization with ggplot2\nDay 6 (2023-11-07): Writing documents with Quarto\nDay 7 (2023-11-14): Best practices for reproducible data analysis\n\n\n\nDay 8 (2023-11-21): Final presentation"
   },
   {
     "objectID": "index.html#recordings",
@@ -1853,5 +1853,82 @@
     "title": "Reproducible data analysis",
     "section": "Evaluation Sheets",
     "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
+  },
+  {
+    "objectID": "final-report-desc.html",
+    "href": "final-report-desc.html",
+    "title": "Final Report Assignment",
+    "section": "",
+    "text": "The goal of the final project is to analyze a dataset with R and write a report about it using Quarto. Futhermore, you will present your analysis during the final class meeting on 2023-11-14."
+  },
+  {
+    "objectID": "final-report-desc.html#dataset",
+    "href": "final-report-desc.html#dataset",
+    "title": "Final Report Assignment",
+    "section": "Dataset",
+    "text": "Dataset\nThe dataset comes from the Tidy Tuesday Project, which releases datasets for practicing data analysis skills once per week. There are five datasets to choose from. Each group will select one dataset during class on 2023-11-07:\n\nWorld’s Oldest People\nOlympics\nChocolate ratings\nTransit cost\nStudent to teacher ratios"
+  },
+  {
+    "objectID": "final-report-desc.html#report-content",
+    "href": "final-report-desc.html#report-content",
+    "title": "Final Report Assignment",
+    "section": "Report Content",
+    "text": "Report Content\nYou should use the R skills we have learned in class to analyze the data.\nYour report should include the following components:\n\nIntroduction\n\nWhat is the dataset about?\nWhere does the dataset come from?\nWhat question(s) will you answer by analyzing the dataset?\n\nVisualization\n\nPlease generate at least two graphs that show relationships between variables in the data\n\nDiscussion\n\nWhat is the message in your data visualization?\nWhat insights can the dataset provide (in other words, what conclusions can you draw from the data)?\n\n\nIf you cite any references, please include a reference list at the end."
+  },
+  {
+    "objectID": "final-report-desc.html#example-report",
+    "href": "final-report-desc.html#example-report",
+    "title": "Final Report Assignment",
+    "section": "Example Report",
+    "text": "Example Report\nI have made an example report that you can refer to when working on your project: https://github.com/data-analysis-chiba-2023/gapminder-report"
+  },
+  {
+    "objectID": "final-report-desc.html#group-work",
+    "href": "final-report-desc.html#group-work",
+    "title": "Final Report Assignment",
+    "section": "Group Work",
+    "text": "Group Work\nThis is a group project (four members per group). Group members will be responsible for dividing the work amongst themselves. For example, two members could work on one graph, and the other two members could work on the other graph. You will be assigned to groups in class on 2023-11-07.\nPlease use git and github to share your work by pushing and pulling as we learned in class. I recommend that each person creates a copy of the report (you could name the file with your initials, such as final-report-jn.qmd) when you are working on it. Then, when you are ready to submit the final version one person should edit and push final-report.qmd. This is to avoid merge conflicts, that is, incompatible changes made to the same file by different people. There is a way to fix those, but it is an advanced topic that we weren’t able to learn in this class."
+  },
+  {
+    "objectID": "final-report-desc.html#presentation",
+    "href": "final-report-desc.html#presentation",
+    "title": "Final Report Assignment",
+    "section": "Presentation",
+    "text": "Presentation\nYou will present your analysis in class on 2023-11-14. You can use whatever software you want to create the presentation. (We didn’t have time to cover it in class, but Quarto can be used to make slides too! Ask the instructor if you’re interested).\nYour presentation should include the same basic information as the paper:\n\nIntroduction\nVisualization\nDiscussion\n\nEach group will have 10 minutes to present, and up to 5 minutes to answer questions."
+  },
+  {
+    "objectID": "final-report-desc.html#evaluation",
+    "href": "final-report-desc.html#evaluation",
+    "title": "Final Report Assignment",
+    "section": "Evaluation",
+    "text": "Evaluation\nThe instructor will evaluate each report and presentation. Since this is group work, all members will receive the same grade for the report and presentation.\nYou will also evaluate each other groups’ presentation (Form A; hard copy, turn in at the end of class on 2023-11-21), as well as the contribution of each other member of your group (Form B; on Moodle, due by 2023-11-21 11:59 PM).\nPlease see the rubric at the end of this description for evaluating other presentations and for your own reference."
+  },
+  {
+    "objectID": "final-report-desc.html#language",
+    "href": "final-report-desc.html#language",
+    "title": "Final Report Assignment",
+    "section": "Language",
+    "text": "Language\nBoth the report and presentation must be in English"
+  },
+  {
+    "objectID": "final-report-desc.html#submission",
+    "href": "final-report-desc.html#submission",
+    "title": "Final Report Assignment",
+    "section": "Submission",
+    "text": "Submission\nThe report (final-report.qmd) is due on 2023-11-20 11:59 PM. It should be submitted the same way as the homework assignments: by pushing to GitHub. Please also submit the assignment on Moodle as usual by entering the URL of your repo. Note that you should submit (commit) the final-report.qmd file, not the .docx file that it generates.\nThe presentation will be given in class on 2023-11-21."
+  },
+  {
+    "objectID": "final-report-desc.html#rubric",
+    "href": "final-report-desc.html#rubric",
+    "title": "Final Report Assignment",
+    "section": "Rubric",
+    "text": "Rubric\n\n\n\n\n\n\n\n\n\n\n\n4 (excellent)\n3 (good)\n2 (needs improvement)\n1 (poor)\n\n\n\n\nIntroduction\nThe dataset is described succinctly and clearly, including where it comes from.\nThe overall purpose of the dataset is clear, but some details are lacking.\nOnly the title of the dataset is given; no information about where the data come from.\nIntroduction missing or no useful information provided\n\n\nVisualization\nAll graphs are clearly labeled and easy to read. The message conveyed by each graph is clear.\nSome labels may not be easy to understand (not changed from the default in the data). There is a pattern in the graph, but it is not well explained.\nCannot understand what the labels mean. No clear pattern in the graph or explanation given.\nOne or more of the graphs is missing.\n\n\nDiscussion\nThe message of the visualization is clearly explained. A conclusion is provided that draws insight from the data.\nSome interpretation of the visualization is provided, but the insights to be gained from the data are not clear.\nA general discussion of the dataset is provided, but there are no direct references to the visualization or concrete conclusions drawn.\nDiscussion missing, cannot be understood, or mostly unrelated to the dataset.\n\n\nStyle and grammar (some aspects only apply to the presentation)\nAll English grammar is correct. Style is consistent. Slides are easy to read.\nSome grammar may be incorrect, but meaning is still clear. Slight deviations in style (such as different formatting of references) may occur. Slides are generally easy to read, but may be a bit cluttered.\nThere are grammatical errors that obscure the meaning of what the authors are trying to say. Style is not consistent. Slides are poorly designed, at times hard to understand.\nEven basic English is frequently incorrect. The message is very hard to understand because of poor English. Slides have no consistent style and are very difficult to read.\n\n\n\nIn addition, your report will be scored on the following criteria:\n\nThe code should run without errors\nThe .docx file should be generated correctly from the .qmd file\nThe .docx file should not include any code chunks (code chunks should be hidden with |# echo: false)"
+  },
+  {
+    "objectID": "final-report-desc.html#scoring",
+    "href": "final-report-desc.html#scoring",
+    "title": "Final Report Assignment",
+    "section": "Scoring",
+    "text": "Scoring\nPoints will be assigned for the final project as follows:\n\nFinal report: 45%\nFinal presentation: 45%\nParticipation (filling out Form A and B): 10%"
   }
 ]
