@@ -15,9 +15,7 @@ toc: false
 
 - [Day 5 (Media Day): Data visualization with ggplot2](day5/index.qmd)
 
-- Day 6 (2023-11-07): Writing documents with Quarto
-
-<!-- [Day 6 (2023-11-07): Writing documents with Quarto](day6/index.qmd) -->
+- [Day 6 (2023-11-07): Writing documents with Quarto](day6/index.qmd)
 
 - Day 7 (2023-11-14): Best practices for reproducible data analysis
 

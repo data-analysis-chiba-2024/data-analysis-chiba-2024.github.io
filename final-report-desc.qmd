@@ -4,7 +4,7 @@ subtitle: "Reproducible Data Analysis 2023 T4"
 format: docx
 ---
 
-The goal of the final project is to **analyze a dataset with R** and **write a report about it using Quarto**. Futhermore, you will present your analysis during the final class meeting on 2023-11-14.
+The goal of the final project is to **analyze a dataset with R** and **write a report about it using Quarto**. Futhermore, you will **present** your analysis during the final class meeting on 2023-11-14.
 
 ## Dataset
 
@@ -23,15 +23,14 @@ You should use the R skills we have learned in class to **analyze the data**.
 Your report should include the following components:
 
 - **Introduction**
-  - What is the dataset about?
-  - Where does the dataset come from?
-  - What question(s) will you answer by analyzing the dataset?
-- **Dataset**
-  - What are the variables in the dataset that you analyzed?
-- **Visualization**: Please generate **at least two graphs** that show relationships between variables in the data
+  - What is the dataset **about**?
+  - Where does the dataset **come from**?
+  - What **question(s)** will you answer by analyzing the dataset?
+- **Visualization**
+  - Please generate **at least two graphs** that show relationships between variables in the data
 - **Discussion**
   - What is the **message** in your data visualization?
-  - What **insights** can the dataset provide?
+  - What **insights** can the dataset provide (in other words, **what conclusions** can you draw from the data)?
 
 If you cite any references, please include a reference list at the end.
 
@@ -52,7 +51,6 @@ You will present your analysis in class on 2023-11-14. You can use whatever soft
 Your presentation should include the same basic information as the paper:
 
 - Introduction
-- Dataset
 - Visualization
 - Discussion
 
@@ -72,20 +70,31 @@ Both the report and presentation must be **in English**
 
 ## Submission
 
-The **report** (`final-report.qmd`) is due on 2023-11-20 11:59 PM. It should be submitted the same way as the homework assignments: by pushing to GitHub. You don't need to submit anything on Moodle.
+The **report** (`final-report.qmd`) is due on 2023-11-20 11:59 PM. It should be submitted the same way as the homework assignments: by pushing to GitHub. Please also submit the assignment on Moodle as usual by entering the URL of your repo. Note that you should submit (commit) the `final-report.qmd` file, not the `.docx` file that it generates.
 
 The **presentation** will be given in class on 2023-11-21.
+
+{{< pagebreak >}}
 
 ## Rubric
 
 |   |4 (excellent)|3 (good)|2 (needs improvement)|1 (poor)|
 |---|---|---|---|---|
 |Introduction|The dataset is described succinctly and clearly, including where it comes from.|The overall purpose of the dataset is clear, but some details are lacking.|Only the title of the dataset is given; no information about where the data come from.|Introduction missing or no useful information provided|
-|Visualization|All graphs are clearly labeled and easy to read. The message conveyed by each graph is clear.|Some labels may not be easy to understand (not changed from the default in the data). There is a pattern in the graph, but it is not obvious.|Cannot understand what the labels mean. No clear pattern in the graph.|One or more of the graphs is missing.|
+|Visualization|All graphs are clearly labeled and easy to read. The message conveyed by each graph is clear.|Some labels may not be easy to understand (not changed from the default in the data). There is a pattern in the graph, but it is not well explained.|Cannot understand what the labels mean. No clear pattern in the graph or explanation given.|One or more of the graphs is missing.|
 |Discussion|The message of the visualization is clearly explained. A conclusion is provided that draws insight from the data.|Some interpretation of the visualization is provided, but the insights to be gained from the data are not clear.|A general discussion of the dataset is provided, but there are no direct references to the visualization or concrete conclusions drawn.|Discussion missing, cannot be understood, or mostly unrelated to the dataset.|
-|Style and grammar|All English grammar is correct. Style is consistent.|Some grammar may be incorrect, but meaning is still clear. Slight deviations in style (such as different formatting of references) may occur.|There are grammatical errors that obscure the meaning of what the authors are trying to say. Style is not consistent.|Even basic English is frequently incorrect. The message is very hard to understand because of poor English.|
+|Style and grammar (some aspects only apply to the presentation)|All English grammar is correct. Style is consistent. Slides are easy to read.|Some grammar may be incorrect, but meaning is still clear. Slight deviations in style (such as different formatting of references) may occur. Slides are generally easy to read, but may be a bit cluttered.|There are grammatical errors that obscure the meaning of what the authors are trying to say. Style is not consistent. Slides are poorly designed, at times hard to understand.|Even basic English is frequently incorrect. The message is very hard to understand because of poor English. Slides have no consistent style and are very difficult to read.|
 
 In addition, your report will be scored on the following criteria:
+
 - The code should run without errors
 - The `.docx` file should be generated correctly from the `.qmd` file
 - The `.docx` file should not include any code chunks (code chunks should be hidden with `|# echo: false`)
+
+## Scoring
+
+Points will be assigned for the final project as follows:
+
+- Final report: 45%
+- Final presentation: 45%
+- Participation (filling out Form A and B): 10%

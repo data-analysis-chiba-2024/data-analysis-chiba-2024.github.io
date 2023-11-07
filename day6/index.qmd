@@ -330,15 +330,19 @@ old <- options(pillar.print_min = 6)
 
 - The way of writing code and plain text is reversed compared to R scripts
 
+- Please try to use Quarto for your class reports!
+
 :::
 
 # Final Project
 
 ## Project Description
 
-- The final project is to **analyze a dataset**, including **at least one graph**
+- The final project is to **analyze a dataset**, including **at least two graphs**
   - Use **Quarto** to write the report (by 11/21)
   - Present your analysis to the class (on 11/21)
+
+- There will be time in class next week to work on the report (but you are expected to work on it outside of class as well)
 
 ## Example Repo
 
@@ -365,13 +369,21 @@ old <- options(pillar.print_min = 6)
 - You will work in teams of 4 people each
   - I have already assigned everybody to teams
 
-- Please sit with members of your team and choose a dataset and team name
+- Please sit with members of your team and choose a dataset (you can choose a new team name if you want)
 
 ## Working as a team
 
 - Clone the project on GitHub by clicking on the link in Moodle
 
+- Be sure to enter your team name correctly! (pay attention to lower and upper case)
+
 - This time, *all team members have access to the same repository*
+
+## Editing the template
+
+- There is some text in the `final-report.qmd` file. Edit it to match your dataset and team members.
+  - Delete the lines about the other datasets
+  - Delete the questions and add your text
 
 ## Working as a team
 
@@ -382,8 +394,18 @@ old <- options(pillar.print_min = 6)
 
 - When you are ready to submit the final report, **one person** should edit the final report file `final-report.Qmd`
 
-## Editing the template
+- Also submit the repo URL on Moodle as usual
 
-- There is some text in the `.qmd` file. Edit it to match your dataset and team members.
-  - Delete the lines about the other datasets
-  - Delete the questions and add your text
+## Due dates
+
+- The report (`final-report.qmd`) is due **2023-11-20 11:59 PM**
+
+- The presentation will be given in class on **2023-11-21**
+
+## Evaluation Sheets
+
+- You will evaluate (score) **each other team's presentation** in class on 2023-11-21
+  - Turn in **Form A** (hardcopy) at the end of the class
+
+- You will evaluate the contributions of **each of your team members** after class (due by 2023-11-21 11:59 PM)
+  - Turn in **Form B** (digital) on Moodle
