@@ -1,10 +1,10 @@
 ---
 title: "Final Report Assignment"
 subtitle: "Reproducible Data Analysis 2023 T4"
-format: docx
+format: pdf
 ---
 
-The goal of the final project is to **analyze a dataset with R** and **write a report about it using Quarto**. Futhermore, you will **present** your analysis during the final class meeting on 2023-11-14.
+The goal of the final project is to **analyze a dataset with R** and **write a report about it using Quarto**. Futhermore, you will **present** your analysis during the final class meeting on 2023-11-21.
 
 ## Dataset
 
@@ -42,11 +42,11 @@ I have made an example report that you can refer to when working on your project
 
 This is a **group project** (four members per group). Group members will be responsible for dividing the work amongst themselves. For example, two members could work on one graph, and the other two members could work on the other graph. You will be assigned to groups in class on 2023-11-07.
 
-Please **use git and github to share your work** by pushing and pulling as we learned in class. I recommend that each person creates a copy of the report (you could name the file with your initials, such as `final-report-jn.qmd`) when you are working on it. Then, when you are ready to submit the final version **one person** should edit and push `final-report.qmd`. This is to avoid **merge conflicts**, that is, incompatible changes made to the same file by different people. There is a way to fix those, but it is an advanced topic that we weren't able to learn in this class.
+Please **use git and github to share your work** by pushing and pulling as we learned in class. I recommend that each person creates a copy of the report (you could name the file with your initials, such as `report-jn.qmd`) when you are working on it. Then, when you are ready to submit the final version **one person** should edit and push `report.qmd`. This is to avoid **merge conflicts**, that is, incompatible changes made to the same file by different people. There is a way to fix those, but it is an advanced topic that we weren't able to learn in this class.
 
 ## Presentation
 
-You will present your analysis in class on 2023-11-14. You can use whatever software you want to create the presentation. (We didn't have time to cover it in class, but **Quarto** can be used to make slides too! Ask the instructor if you're interested).
+You will present your analysis in class on 2023-11-21. You can use whatever software you want to create the presentation. (We didn't have time to cover it in class, but **Quarto** can be used to make slides too! Ask the instructor if you're interested).
 
 Your presentation should include the same basic information as the paper:
 
@@ -58,11 +58,11 @@ Each group will have **10 minutes** to present, and up to **5 minutes** to answe
 
 ## Evaluation
 
-The instructor will evaluate each report and presentation. Since this is group work, **all members will receive the same grade** for the report and presentation.
+The instructor will evaluate each report and presentation according to the [rubric](#rubric).
 
 You will also evaluate **each other groups' presentation** (**Form A**; hard copy, turn in at the end of class on 2023-11-21), as well as **the contribution of each other member of your group** (**Form B**; on Moodle, due by 2023-11-21 11:59 PM).
 
-Please see the **rubric** at the end of this description for evaluating other presentations and for your own reference.
+Please see the [rubric](#rubric) at the end of this description for evaluating other presentations and for your own reference.
 
 ## Language
 
@@ -70,7 +70,7 @@ Both the report and presentation must be **in English**
 
 ## Submission
 
-The **report** (`final-report.qmd`) is due on 2023-11-20 11:59 PM. It should be submitted the same way as the homework assignments: by pushing to GitHub. Please also submit the assignment on Moodle as usual by entering the URL of your repo. Note that you should submit (commit) the `final-report.qmd` file, not the `.docx` file that it generates.
+The **report** (`report.qmd`) is due on 2023-11-20 11:59 PM. It should be submitted the same way as the homework assignments: by pushing to GitHub. Please also submit the assignment on Moodle as usual by entering the URL of your repo. Note that you should submit (commit) the `report.qmd` file, not the `.docx` file that it generates.
 
 The **presentation** will be given in class on 2023-11-21.
 
@@ -80,10 +80,10 @@ The **presentation** will be given in class on 2023-11-21.
 
 |   |4 (excellent)|3 (good)|2 (needs improvement)|1 (poor)|
 |---|---|---|---|---|
-|Introduction|The dataset is described succinctly and clearly, including where it comes from.|The overall purpose of the dataset is clear, but some details are lacking.|Only the title of the dataset is given; no information about where the data come from.|Introduction missing or no useful information provided|
-|Visualization|All graphs are clearly labeled and easy to read. The message conveyed by each graph is clear.|Some labels may not be easy to understand (not changed from the default in the data). There is a pattern in the graph, but it is not well explained.|Cannot understand what the labels mean. No clear pattern in the graph or explanation given.|One or more of the graphs is missing.|
-|Discussion|The message of the visualization is clearly explained. A conclusion is provided that draws insight from the data.|Some interpretation of the visualization is provided, but the insights to be gained from the data are not clear.|A general discussion of the dataset is provided, but there are no direct references to the visualization or concrete conclusions drawn.|Discussion missing, cannot be understood, or mostly unrelated to the dataset.|
-|Style and grammar (some aspects only apply to the presentation)|All English grammar is correct. Style is consistent. Slides are easy to read.|Some grammar may be incorrect, but meaning is still clear. Slight deviations in style (such as different formatting of references) may occur. Slides are generally easy to read, but may be a bit cluttered.|There are grammatical errors that obscure the meaning of what the authors are trying to say. Style is not consistent. Slides are poorly designed, at times hard to understand.|Even basic English is frequently incorrect. The message is very hard to understand because of poor English. Slides have no consistent style and are very difficult to read.|
+|**Introduction**|The dataset is described succinctly and clearly, including where it comes from.|The overall purpose of the dataset is clear, but some details are lacking.|Only the title of the dataset is given; no information about where the data come from.|Introduction missing or no useful information provided|
+|**Visualization**|All graphs are clearly labeled and easy to read. The message conveyed by each graph is clear.|Some labels may not be easy to understand (not changed from the default in the data). There is a pattern in the graph, but it is not well explained.|Cannot understand what the labels mean. No clear pattern in the graph or explanation given.|One or more of the graphs is missing.|
+|**Discussion**|The message of the visualization is clearly explained. A conclusion is provided that draws insight from the data.|Some interpretation of the visualization is provided, but the insights to be gained from the data are not clear.|A general discussion of the dataset is provided, but there are no direct references to the visualization or concrete conclusions drawn.|Discussion missing, cannot be understood, or mostly unrelated to the dataset.|
+|**Style and grammar** (some aspects only apply to the presentation)|All English grammar is correct. Style is consistent. Slides are easy to read.|Some grammar may be incorrect, but meaning is still clear. Slight deviations in style (such as different formatting of references) may occur. Slides are generally easy to read, but may be a bit cluttered.|There are grammatical errors that obscure the meaning of what the authors are trying to say. Style is not consistent. Slides are poorly designed, at times hard to understand.|Even basic English is frequently incorrect. The message is very hard to understand because of poor English. Slides have no consistent style and are very difficult to read.|
 
 In addition, your report will be scored on the following criteria:
 

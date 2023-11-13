@@ -17,9 +17,7 @@ toc: false
 
 - [Day 6 (2023-11-07): Writing documents with Quarto](day6/index.qmd)
 
-- Day 7 (2023-11-14): Best practices for reproducible data analysis
-
-<!-- - [Day 7 (2023-11-14): Best practices for reproducible data analysis](day7/index.qmd -->
+- [Day 7 (2023-11-14): Quarto, part II](day7/index.qmd)
 
 - Day 8 (2023-11-21): Final presentation
 

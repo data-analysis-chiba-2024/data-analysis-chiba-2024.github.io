@@ -1,0 +1,102 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+    theme: ../theme_medium.scss
+execute: 
+  echo: true
+---
+
+# Day 7: Quarto, Part II
+
+2023-11-14
+
+## Recap from Day 6
+
+- Quarto is a system for generating **reports** from **code**
+
+- By using Quarto, we can ensure our results are **reproducible** and derived directly from the data (and code)
+
+## Recap: Working as a team
+
+- To avoid **merge conflicts** (incompatible changes to the same file made by different people) **make a copy** of the final report file **for each team member** to work on.
+  - For example, `report-jn.Qmd`
+
+- Share your work by pushing and pulling
+
+- When you are ready to submit the final report, **one person** should edit the final report file `report.Qmd`
+
+- Also submit the repo URL on Moodle as usual
+
+## Due dates
+
+- The report (`report.qmd`) is due **2023-11-20 11:59 PM**
+
+- The presentation will be given in class on **2023-11-21**
+  - You can use any software you like to prepare the presentation (such as Powerpoint)
+  - Please make sure one team member has their computer ready to show the presentation
+
+## Grading
+
+- Please see the **rubric** in the final report instructions to understand how the paper and presentation will be graded
+
+## Evaluation Sheets
+
+- You will evaluate (score) **each other team's presentation** in class on 2023-11-21
+  - Turn in **Form A** (hardcopy) at the end of the class
+
+- You will evaluate the contributions of **each of your team members** after class (due by 2023-11-21 11:59 PM)
+  - Turn in **Form B** (digital) on Moodle
+
+# Some tips for your report
+
+## Change the size of a figure
+
+- You can adjust the **size** of the figure with chunk options `fig.height` and `fig.width` (units in inches)
+
+- For example:
+
+```
+#| fig.height: 6
+#| fig.width: 6
+```
+
+## Change the font size
+
+- You can adjust the **overall font size** of the figure like this:
+
+```{r}
+#| eval: false
+ggplot(gapminder, aes(x = pop, y = lifeExp)) +
+  geom_point() +
+  theme_gray(base_size = 16)
+```
+
+## Change the font size
+
+- You can adjust the **overall font size** of the figure like this:
+
+```{r}
+#| eval: false
+#| code-line-numbers: "3"
+ggplot(gapminder, aes(x = pop, y = lifeExp)) +
+  geom_point() +
+  theme_gray(base_size = 16)
+```
+
+::: {.incremental}
+
+- There are other themes available too, but `theme_gray()` should be fine for the final paper
+
+:::
+
+## Add a pagebreak
+
+- You can add a pagebreak to your document like this:
+
+ <code>&lbrace;&lbrace;</code>`<pagebreak>`<code>&rbrace;&rbrace;</code>
+
+## Group Work
+
+- The rest of the class time is for group work. I will answer any questions you may have about the report.

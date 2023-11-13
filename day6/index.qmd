@@ -381,24 +381,24 @@ old <- options(pillar.print_min = 6)
 
 ## Editing the template
 
-- There is some text in the `final-report.qmd` file. Edit it to match your dataset and team members.
+- There is some text in the `report.qmd` file. Edit it to match your dataset and team members.
   - Delete the lines about the other datasets
   - Delete the questions and add your text
 
 ## Working as a team
 
 - To avoid **merge conflicts** (incompatible changes to the same file made by different people) **make a copy** of the final report file **for each team member** to work on.
-  - For example, `final-report-jn.Qmd`
+  - For example, `report-jn.Qmd`
 
 - Share your work by pushing and pulling
 
-- When you are ready to submit the final report, **one person** should edit the final report file `final-report.Qmd`
+- When you are ready to submit the final report, **one person** should edit the final report file `report.Qmd`
 
 - Also submit the repo URL on Moodle as usual
 
 ## Due dates
 
-- The report (`final-report.qmd`) is due **2023-11-20 11:59 PM**
+- The report (`report.qmd`) is due **2023-11-20 11:59 PM**
 
 - The presentation will be given in class on **2023-11-21**
 
