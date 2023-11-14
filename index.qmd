@@ -41,6 +41,8 @@ toc: false
 
 - [Day 5: ggplot2](https://github.com/data-analysis-chiba-2023/day05-ggplot/blob/main/day05_ggplot2.md)
 
+- [Final Report Example](https://github.com/data-analysis-chiba-2023/gapminder-report/)
+
 ## Important Deadlines
 
 - 2023-10-16 11:59PM: [Day 2 homework](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/git_facts.md) due
