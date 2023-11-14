@@ -12,6 +12,13 @@ execute:
 
 2023-11-14
 
+## Announcements
+
+- **Grades** for all homework assignments are now posted to Moodle
+
+- Keys (answers) for all homework assignments are also posted
+  - You can compare your answer to the key
+
 ## Recap from Day 6
 
 - Quarto is a system for generating **reports** from **code**

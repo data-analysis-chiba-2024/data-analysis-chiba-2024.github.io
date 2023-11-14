@@ -1934,9 +1934,9 @@
   {
     "objectID": "day7/index.html#recap-from-day-6",
     "href": "day7/index.html#recap-from-day-6",
-    "title": "Day 7: Quarto, Part II",
-    "section": "",
-    "text": "Quarto is a system for generating reports from code\nBy using Quarto, we can ensure our results are reproducible and derived directly from the data (and code)"
+    "title": "Reproducible data analysis",
+    "section": "Recap from Day 6",
+    "text": "Recap from Day 6\n\nQuarto is a system for generating reports from code\nBy using Quarto, we can ensure our results are reproducible and derived directly from the data (and code)"
   },
   {
     "objectID": "day7/index.html#working-as-a-team",
@@ -1948,63 +1948,63 @@
   {
     "objectID": "day7/index.html#due-dates",
     "href": "day7/index.html#due-dates",
-    "title": "Day 7: Quarto, Part II",
-    "section": "",
-    "text": "The report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21\n\nYou can use any software you like to prepare the presentation (such as Powerpoint)\nPlease make sure one team member has their computer ready to show the presentation"
+    "title": "Reproducible data analysis",
+    "section": "Due dates",
+    "text": "Due dates\n\nThe report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21\n\nYou can use any software you like to prepare the presentation (such as Powerpoint)\nPlease make sure one team member has their computer ready to show the presentation"
   },
   {
     "objectID": "day7/index.html#grading",
     "href": "day7/index.html#grading",
-    "title": "Day 7: Quarto, Part II",
-    "section": "",
-    "text": "Please see the rubric in the final report instructions to understand how the paper and presentation will be graded"
+    "title": "Reproducible data analysis",
+    "section": "Grading",
+    "text": "Grading\n\nPlease see the rubric in the final report instructions to understand how the paper and presentation will be graded"
   },
   {
     "objectID": "day7/index.html#evaluation-sheets",
     "href": "day7/index.html#evaluation-sheets",
-    "title": "Day 7: Quarto, Part II",
-    "section": "",
-    "text": "You will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
+    "title": "Reproducible data analysis",
+    "section": "Evaluation Sheets",
+    "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
   },
   {
     "objectID": "day7/index.html#change-the-size-of-a-figure",
     "href": "day7/index.html#change-the-size-of-a-figure",
-    "title": "Day 7: Quarto, Part II",
+    "title": "Reproducible data analysis",
     "section": "Change the size of a figure",
     "text": "Change the size of a figure\n\nYou can adjust the size of the figure with chunk options fig.height and fig.width (units in inches)\nFor example:\n\n#| fig.height: 6\n#| fig.width: 6"
   },
   {
     "objectID": "day7/index.html#change-the-font-size",
     "href": "day7/index.html#change-the-font-size",
-    "title": "Day 7: Quarto, Part II",
+    "title": "Reproducible data analysis",
     "section": "Change the font size",
     "text": "Change the font size\n\nYou can adjust the overall font size of the figure like this:\n\n\nggplot(gapminder, aes(x = pop, y = lifeExp)) +\n  geom_point() +\n  theme_gray(base_size = 16)"
   },
   {
     "objectID": "day7/index.html#add-a-pagebreak",
     "href": "day7/index.html#add-a-pagebreak",
-    "title": "Day 7: Quarto, Part II",
+    "title": "Reproducible data analysis",
     "section": "Add a pagebreak",
     "text": "Add a pagebreak\n\nYou can add a pagebreak to your document like this:\n\n{{&lt;pagebreak&gt;}}"
   },
   {
     "objectID": "day7/index.html#recap-working-as-a-team",
     "href": "day7/index.html#recap-working-as-a-team",
-    "title": "Day 7: Quarto, Part II",
-    "section": "",
-    "text": "To avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual"
+    "title": "Reproducible data analysis",
+    "section": "Recap: Working as a team",
+    "text": "Recap: Working as a team\n\nTo avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual"
   },
   {
     "objectID": "day7/index.html#change-the-font-size-1",
     "href": "day7/index.html#change-the-font-size-1",
-    "title": "Day 7: Quarto, Part II",
+    "title": "Reproducible data analysis",
     "section": "Change the font size",
     "text": "Change the font size\n\nYou can adjust the overall font size of the figure like this:\n\n\nggplot(gapminder, aes(x = pop, y = lifeExp)) +\n  geom_point() +\n  theme_gray(base_size = 16)\n\n\n\nThere are other themes available too, but theme_gray() should be fine for the final paper"
   },
   {
     "objectID": "day7/index.html#group-work",
     "href": "day7/index.html#group-work",
-    "title": "Day 7: Quarto, Part II",
+    "title": "Reproducible data analysis",
     "section": "Group Work",
     "text": "Group Work\n\nThe rest of the class time is for group work. I will answer any questions you may have about the report."
   },
@@ -2021,5 +2021,12 @@
     "title": "Day 7: Quarto, Part II",
     "section": "",
     "text": "2023-11-14\n\n\n\nQuarto is a system for generating reports from code\nBy using Quarto, we can ensure our results are reproducible and derived directly from the data (and code)\n\n\n\n\n\nTo avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual\n\n\n\n\n\nThe report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21\n\nYou can use any software you like to prepare the presentation (such as Powerpoint)\nPlease make sure one team member has their computer ready to show the presentation\n\n\n\n\n\n\nPlease see the rubric in the final report instructions to understand how the paper and presentation will be graded\n\n\n\n\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
+  },
+  {
+    "objectID": "day7/index.html#announcements",
+    "href": "day7/index.html#announcements",
+    "title": "Reproducible data analysis",
+    "section": "Announcements",
+    "text": "Announcements\n\nGrades for all homework assignments are now posted to Moodle\nKeys (answers) for all homework assignments are also posted\n\nYou can compare your answer to the key"
   }
 ]
