@@ -102,7 +102,7 @@ ggplot(gapminder, aes(x = pop, y = lifeExp)) +
 
 - You can add a pagebreak to your document like this:
 
- <code>&lbrace;&lbrace;</code>`<pagebreak>`<code>&rbrace;&rbrace;</code>
+ <code>&lbrace;&lbrace;</code>`< pagebreak >`<code>&rbrace;&rbrace;</code>
 
 ## Group Work
 

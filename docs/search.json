@@ -1985,7 +1985,7 @@
     "href": "day7/index.html#add-a-pagebreak",
     "title": "Reproducible data analysis",
     "section": "Add a pagebreak",
-    "text": "Add a pagebreak\n\nYou can add a pagebreak to your document like this:\n\n{{&lt;pagebreak&gt;}}"
+    "text": "Add a pagebreak\n\nYou can add a pagebreak to your document like this:\n\n{{&lt; pagebreak &gt;}}"
   },
   {
     "objectID": "day7/index.html#recap-working-as-a-team",
