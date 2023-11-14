@@ -1542,51 +1542,51 @@
   {
     "objectID": "day6/index.html#what-is-quarto",
     "href": "day6/index.html#what-is-quarto",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Quarto is a computer program that allows you to generate documents in various formats with code\nWe will use it to generate MS Word documents with R\nIt can also generate PDF, HTML, and other output\nIt can also use other programming languages like Python"
+    "title": "Reproducible data analysis",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\n\n\nQuarto is a computer program that allows you to generate documents in various formats with code\nWe will use it to generate MS Word documents with R\nIt can also generate PDF, HTML, and other output\nIt can also use other programming languages like Python"
   },
   {
     "objectID": "day6/index.html#why-use-quarto",
     "href": "day6/index.html#why-use-quarto",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Part of data analysis is communicating your results to an audience\nFor example, writing a final report for a class, or giving a presentation at work"
+    "title": "Reproducible data analysis",
+    "section": "Why use Quarto?",
+    "text": "Why use Quarto?\n\n\n\n\nPart of data analysis is communicating your results to an audience\nFor example, writing a final report for a class, or giving a presentation at work"
   },
   {
     "objectID": "day6/index.html#installing-quarto",
     "href": "day6/index.html#installing-quarto",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "You should have already installed Quarto before class\nIf not, please go to https://quarto.org/docs/get-started/ and install it now"
+    "title": "Reproducible data analysis",
+    "section": "Installing Quarto",
+    "text": "Installing Quarto\n\nYou should have already installed Quarto before class\nIf not, please go to https://quarto.org/docs/get-started/ and install it now"
   },
   {
     "objectID": "day6/index.html#reopen-your-project",
     "href": "day6/index.html#reopen-your-project",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "We will continue to use the gapminder-analysis project in the data-analysis-course folder on your Desktop\nNavigate there and click on gapminder-analysis.Rproj"
+    "title": "Reproducible data analysis",
+    "section": "Reopen your project",
+    "text": "Reopen your project\n\nWe will continue to use the gapminder-analysis project in the data-analysis-course folder on your Desktop\nNavigate there and click on gapminder-analysis.Rproj"
   },
   {
     "objectID": "day6/index.html#create-a-quarto-file",
     "href": "day6/index.html#create-a-quarto-file",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Create a new Quarto file by clicking File &gt; New File &gt; Quarto Document…\nIn menu that appears, type \"Gapminder Analysis\" for the title and your name for the author\nLeave format as HTML (as it says, we can change it at any time later)\nRStudio will create a file. Save it as \"gapminder-report.qmd\" (.qmd is the file extension for Quarto files)"
+    "title": "Reproducible data analysis",
+    "section": "Create a Quarto file",
+    "text": "Create a Quarto file\n\nCreate a new Quarto file by clicking File &gt; New File &gt; Quarto Document…\nIn menu that appears, type \"Gapminder Analysis\" for the title and your name for the author\nLeave format as HTML (as it says, we can change it at any time later)\nRStudio will create a file. Save it as \"gapminder-report.qmd\" (.qmd is the file extension for Quarto files)"
   },
   {
     "objectID": "day6/index.html#how-a-quarto-file-is-set-up",
     "href": "day6/index.html#how-a-quarto-file-is-set-up",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Look at your new Quarto file. What do you notice that is different from the .R files we have been using so far?\nThere is normal text like “Quarto enables you to weave together content…” that does not appear in a comment\nThere are lines starting with two hashes (##)\nThere are lines like ```{r}\nWhat is going on here?"
+    "title": "Reproducible data analysis",
+    "section": "How a Quarto file is set up",
+    "text": "How a Quarto file is set up\n\n\nLook at your new Quarto file. What do you notice that is different from the .R files we have been using so far?\nThere is normal text like “Quarto enables you to weave together content…” that does not appear in a comment\nThere are lines starting with two hashes (##)\nThere are lines like ```{r}\nWhat is going on here?"
   },
   {
     "objectID": "day6/index.html#how-a-quarto-file-is-set-up-1",
     "href": "day6/index.html#how-a-quarto-file-is-set-up-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "A Quarto (.qmd) file is set up opposite to an R script\nNormal lines of text are not code (so they don’t need a # like a comment)\nR code is contained within lines starting with ```{r} and ending with ``` (called a “code chunk”)"
+    "title": "Reproducible data analysis",
+    "section": "How a Quarto file is set up",
+    "text": "How a Quarto file is set up\n\n\nA Quarto (.qmd) file is set up opposite to an R script\nNormal lines of text are not code (so they don’t need a # like a comment)\nR code is contained within lines starting with ```{r} and ending with ``` (called a “code chunk”)"
   },
   {
     "objectID": "day6/index.html#how-a-quarto-file-is-set-up-2",
@@ -1598,72 +1598,72 @@
   {
     "objectID": "day6/index.html#rendering",
     "href": "day6/index.html#rendering",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Another important difference between normal .R files and .qmd files is that the latter produce documents\nThis is called “rendering”\nLet’s try that now: press the “Render” button in RStudio"
+    "title": "Reproducible data analysis",
+    "section": "Rendering",
+    "text": "Rendering\n\n\nAnother important difference between normal .R files and .qmd files is that the latter produce documents\nThis is called “rendering”\nLet’s try that now: press the “Render” button in RStudio"
   },
   {
     "objectID": "day6/index.html#rendering-1",
     "href": "day6/index.html#rendering-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "You should see the rendered document (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)\n\nalso, in the Files tab, notice the gapminder-report.html file\n\nNotice the formatting of the output: lines like ## Quarto appear as headers\nYou can also see the output of the code, like 1 + 1"
+    "title": "Reproducible data analysis",
+    "section": "Rendering",
+    "text": "Rendering\n\n\nYou should see the rendered document (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)\n\nalso, in the Files tab, notice the gapminder-report.html file\n\nNotice the formatting of the output: lines like ## Quarto appear as headers\nYou can also see the output of the code, like 1 + 1"
   },
   {
     "objectID": "day6/index.html#formatting-with-markdown",
     "href": "day6/index.html#formatting-with-markdown",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "The .qmd file is written in plain text (without formatting, similar to an .R file)\nWe can specify formatting in the output using Markdown syntax\n\nMarkdown is a very simple version of HTML"
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\nThe .qmd file is written in plain text (without formatting, similar to an .R file)\nWe can specify formatting in the output using Markdown syntax\n\nMarkdown is a very simple version of HTML"
   },
   {
     "objectID": "day6/index.html#formatting-with-markdown-1",
     "href": "day6/index.html#formatting-with-markdown-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "As you can see in the document, the hash symbol (#) is used to define headings, which appear larger than other text\n\n# Heading level 1 (biggest)\n## Heading level 2\n### Heading level 3…\n\nFor italics, wrap the text in *, like this *this* (renders like this)\nFor bold, wrap the text in **, like this **this** (renders like this)"
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\nAs you can see in the document, the hash symbol (#) is used to define headings, which appear larger than other text\n\n# Heading level 1 (biggest)\n## Heading level 2\n### Heading level 3…\n\nFor italics, wrap the text in *, like this *this* (renders like this)\nFor bold, wrap the text in **, like this **this** (renders like this)"
   },
   {
     "objectID": "day6/index.html#formatting-with-markdown-2",
     "href": "day6/index.html#formatting-with-markdown-2",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": ".qmd files are known as “Quarto Markdown” because they add Quarto’s features (the ability to include code chunks) to Markdown\nYou may have heard of “R Markdown,” which is the precursor to Quarto Markdown\n\nThere is generally no reason to use R Markdown instead of Quarto Markdown\nThey are very similar, so most things you read about R Markdown will apply to Quarto Markdown"
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\n.qmd files are known as “Quarto Markdown” because they add Quarto’s features (the ability to include code chunks) to Markdown\nYou may have heard of “R Markdown,” which is the precursor to Quarto Markdown\n\nThere is generally no reason to use R Markdown instead of Quarto Markdown\nThey are very similar, so most things you read about R Markdown will apply to Quarto Markdown"
   },
   {
     "objectID": "day6/index.html#formatting-with-markdown-3",
     "href": "day6/index.html#formatting-with-markdown-3",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "RStudio has a handy way for you to preview what the rendered text will look like\nRight now we are in “Source” mode, which means we are editing the plain text\nClick on the “Visual” mode button to switch to “Visual” mode\nNow it looks much more like the output on the right\n\nBut notice that we don’t see the results of running the code chunks"
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\nRStudio has a handy way for you to preview what the rendered text will look like\nRight now we are in “Source” mode, which means we are editing the plain text\nClick on the “Visual” mode button to switch to “Visual” mode\nNow it looks much more like the output on the right\n\nBut notice that we don’t see the results of running the code chunks"
   },
   {
     "objectID": "day6/index.html#about-the-code-chunks",
     "href": "day6/index.html#about-the-code-chunks",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Within the code chunks, anything you type is treated just like an R script\n\nNormal text must be R code\nComments can be written with #\n\nThe idea is to conduct analysis in the code chunks, and directly show the output in the rendered document"
+    "title": "Reproducible data analysis",
+    "section": "About the code chunks",
+    "text": "About the code chunks\n\n\nWithin the code chunks, anything you type is treated just like an R script\n\nNormal text must be R code\nComments can be written with #\n\nThe idea is to conduct analysis in the code chunks, and directly show the output in the rendered document"
   },
   {
     "objectID": "day6/index.html#challenge",
     "href": "day6/index.html#challenge",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Modify the first code chunk to load the tidyverse package, then read in the gapminder dataset like we did before"
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nModify the first code chunk to load the tidyverse package, then read in the gapminder dataset like we did before"
   },
   {
     "objectID": "day6/index.html#about-the-yaml-header",
     "href": "day6/index.html#about-the-yaml-header",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "The first set of lines at the top of the file are called the “YAML header”\n\nYAML stands for “Yet Another Markup Language”\n\nThe YAML header specifies settings for the document using variables\n\nYou can set the values of the values of the variables with a colon: variable: value, for example author: \"Joel Nitta\"\n\nThere are many other settings, but we won’t cover those today"
+    "title": "Reproducible data analysis",
+    "section": "About the YAML header",
+    "text": "About the YAML header\n\n\nThe first set of lines at the top of the file are called the “YAML header”\n\nYAML stands for “Yet Another Markup Language”\n\nThe YAML header specifies settings for the document using variables\n\nYou can set the values of the values of the variables with a colon: variable: value, for example author: \"Joel Nitta\"\n\nThere are many other settings, but we won’t cover those today"
   },
   {
     "objectID": "day6/index.html#code-chunk-options",
     "href": "day6/index.html#code-chunk-options",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Similar to the YAML header, we can also specify settings for the code chunks\nThis is done by first writing #|, then the setting like you would for the YAML header\nFor example, in a report, you usually only want to show the results of the code, not the code itself\nYou can do this with the following code chunk option: #| echo: false (remember echo echoes the code)"
+    "title": "Reproducible data analysis",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\n\nSimilar to the YAML header, we can also specify settings for the code chunks\nThis is done by first writing #|, then the setting like you would for the YAML header\nFor example, in a report, you usually only want to show the results of the code, not the code itself\nYou can do this with the following code chunk option: #| echo: false (remember echo echoes the code)"
   },
   {
     "objectID": "day6/index.html#challenge-1",
@@ -1675,16 +1675,16 @@
   {
     "objectID": "day6/index.html#change-the-output-format",
     "href": "day6/index.html#change-the-output-format",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "So far, we have been using HTML output because it is the default and shows up immediately when we press “render”\nBut your report should be submitted in Word (.docx) format.\nChange the output format to docx and render the document again"
+    "title": "Reproducible data analysis",
+    "section": "Change the output format",
+    "text": "Change the output format\n\n\nSo far, we have been using HTML output because it is the default and shows up immediately when we press “render”\nBut your report should be submitted in Word (.docx) format.\nChange the output format to docx and render the document again"
   },
   {
     "objectID": "day6/index.html#tell-git-to-ignore-output",
     "href": "day6/index.html#tell-git-to-ignore-output",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "You should not commit the output of code\n\nIt clutters your git history, and is not necessary since you can always obtain the output by running the code\n\nYou can tell git to ignore files by adding them to .gitignore:\n\ngapminder-report.docx\ngapminder-report.html\ngapminder-report_files (files needed for HTML output)"
+    "title": "Reproducible data analysis",
+    "section": "Tell git to ignore output",
+    "text": "Tell git to ignore output\n\nYou should not commit the output of code\n\nIt clutters your git history, and is not necessary since you can always obtain the output by running the code\n\nYou can tell git to ignore files by adding them to .gitignore:\n\ngapminder-report.docx\ngapminder-report.html\ngapminder-report_files (files needed for HTML output)"
   },
   {
     "objectID": "day6/index.html#final-project",
@@ -1731,126 +1731,126 @@
   {
     "objectID": "day6/index.html#why-use-quarto-1",
     "href": "day6/index.html#why-use-quarto-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Generating a report with code…\n\nhelps you avoid copy-and-paste errors\nensures that your results are a direct result of the data\nhelps you save time by re-using the code later"
+    "title": "Reproducible data analysis",
+    "section": "Why use Quarto?",
+    "text": "Why use Quarto?\n\n\nGenerating a report with code…\n\nhelps you avoid copy-and-paste errors\nensures that your results are a direct result of the data\nhelps you save time by re-using the code later"
   },
   {
     "objectID": "day6/index.html#in-line-code",
     "href": "day6/index.html#in-line-code",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "In addition to code chunks, you can also mix short bits of R code within normal text by first writing a backtick (`) and the letter r, then the R code, then another backtick\nFor example, we can show the number of rows in the dataset with `r nrow(gapminder)`\nThis is best used for describing facts about the data or results"
+    "title": "Reproducible data analysis",
+    "section": "In-line code",
+    "text": "In-line code\n\n\nIn addition to code chunks, you can also mix short bits of R code within normal text by first writing a backtick (`) and the letter r, then the R code, then another backtick\nFor example, we can show the number of rows in the dataset with `r nrow(gapminder)`\nThis is best used for describing facts about the data or results"
   },
   {
     "objectID": "day6/index.html#about-the-code-chunks-1",
     "href": "day6/index.html#about-the-code-chunks-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Notice that when we render the document, the gapminder dataset is not loaded into our current R session\nThat is because rending takes place in a separate instance of R\nTo run the R code in a chunk in your current R session, press the green “play” button at the right-hand side of the chunk"
+    "title": "Reproducible data analysis",
+    "section": "About the code chunks",
+    "text": "About the code chunks\n\n\nNotice that when we render the document, the gapminder dataset is not loaded into our current R session\nThat is because rending takes place in a separate instance of R\nTo run the R code in a chunk in your current R session, press the green “play” button at the right-hand side of the chunk"
   },
   {
     "objectID": "day6/index.html#code-chunk-options-1",
     "href": "day6/index.html#code-chunk-options-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Other useful code options\n\nmessage: false Hide code messages\nwarning: false Hide code warnings"
+    "title": "Reproducible data analysis",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\nOther useful code options\n\nmessage: false Hide code messages\nwarning: false Hide code warnings"
   },
   {
     "objectID": "day6/index.html#tell-git-to-ignore-output-1",
     "href": "day6/index.html#tell-git-to-ignore-output-1",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "If you know you want to ignore all docx files, you could instead write this:\n\n*.docx"
+    "title": "Reproducible data analysis",
+    "section": "Tell git to ignore output",
+    "text": "Tell git to ignore output\n\nIf you know you want to ignore all docx files, you could instead write this:\n\n*.docx"
   },
   {
     "objectID": "day6/index.html#formatting-with-markdown-4",
     "href": "day6/index.html#formatting-with-markdown-4",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "I much prefer working with plain text, so we will switch back to “Source” mode\nBut it is a good idea to use “Visual” mode to check what your markdown formatting will look like\nThere are many guides online to learn more about writing Markdown"
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\nI much prefer working with plain text, so we will switch back to “Source” mode\nBut it is a good idea to use “Visual” mode to check what your markdown formatting will look like\nThere are many guides online to learn more about writing Markdown"
   },
   {
     "objectID": "day6/index.html#code-chunk-options-2",
     "href": "day6/index.html#code-chunk-options-2",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Let’s write another code chunk that outputs a plot. Change the chunk options to hide the code."
+    "title": "Reproducible data analysis",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\nLet’s write another code chunk that outputs a plot. Change the chunk options to hide the code."
   },
   {
     "objectID": "day6/index.html#summary",
     "href": "day6/index.html#summary",
-    "title": "Day 6: Writing documents with Quarto",
-    "section": "",
-    "text": "Quarto allows you to insert your analysis results directly into reports\nQuarto can generate multiple output formats\nThe way of writing code and plain text is reversed compared to R scripts\nPlease try to use Quarto for your class reports!"
+    "title": "Reproducible data analysis",
+    "section": "Summary",
+    "text": "Summary\n\n\nQuarto allows you to insert your analysis results directly into reports\nQuarto can generate multiple output formats\nThe way of writing code and plain text is reversed compared to R scripts\nPlease try to use Quarto for your class reports!"
   },
   {
     "objectID": "day6/index.html#project-description",
     "href": "day6/index.html#project-description",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Project Description",
     "text": "Project Description\n\nThe final project is to analyze a dataset, including at least two graphs\n\nUse Quarto to write the report (by 11/21)\nPresent your analysis to the class (on 11/21)\n\nThere will be time in class next week to work on the report (but you are expected to work on it outside of class as well)"
   },
   {
     "objectID": "day6/index.html#example-repo",
     "href": "day6/index.html#example-repo",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Example Repo",
     "text": "Example Repo\n\nI have created an example report for you using the gapminder dataset: https://github.com/data-analysis-chiba-2023/gapminder-report\nYou can look at the .qmd file online, or clone the repo to your computer"
   },
   {
     "objectID": "day6/index.html#dataset",
     "href": "day6/index.html#dataset",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Dataset",
     "text": "Dataset\n\nYou will choose a dataset from the Tidy Tuesday project to analyze\n\nTidy Tuesday releases a dataset once a week to practice data analysis"
   },
   {
     "objectID": "day6/index.html#dataset-1",
     "href": "day6/index.html#dataset-1",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Dataset",
     "text": "Dataset\n\nI have already pre-selected 5 datasets for you\n\nWorld’s Oldest People\nOlympics\nChocolate ratings\nTransit cost\nStudent to teacher ratios"
   },
   {
     "objectID": "day6/index.html#team-setup",
     "href": "day6/index.html#team-setup",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Team Setup",
     "text": "Team Setup\n\nYou will work in teams of 4 people each\n\nI have already assigned everybody to teams\n\nPlease sit with members of your team and choose a dataset (you can choose a new team name if you want)"
   },
   {
     "objectID": "day6/index.html#working-as-a-team",
     "href": "day6/index.html#working-as-a-team",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Working as a team",
     "text": "Working as a team\n\nClone the project on GitHub by clicking on the link in Moodle\nBe sure to enter your team name correctly! (pay attention to lower and upper case)\nThis time, all team members have access to the same repository"
   },
   {
     "objectID": "day6/index.html#working-as-a-team-1",
     "href": "day6/index.html#working-as-a-team-1",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Working as a team",
     "text": "Working as a team\n\nTo avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual"
   },
   {
     "objectID": "day6/index.html#editing-the-template",
     "href": "day6/index.html#editing-the-template",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Editing the template",
     "text": "Editing the template\n\nThere is some text in the report.qmd file. Edit it to match your dataset and team members.\n\nDelete the lines about the other datasets\nDelete the questions and add your text"
   },
   {
     "objectID": "day6/index.html#due-dates",
     "href": "day6/index.html#due-dates",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Due dates",
     "text": "Due dates\n\nThe report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21"
   },
   {
     "objectID": "day6/index.html#evaluation-sheets",
     "href": "day6/index.html#evaluation-sheets",
-    "title": "Day 6: Writing documents with Quarto",
+    "title": "Reproducible data analysis",
     "section": "Evaluation Sheets",
     "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
   },
