@@ -19,9 +19,7 @@ toc: false
 
 - [Day 7 (2023-11-14): Quarto, part II](day7/index.qmd)
 
-- Day 8 (2023-11-21): Final presentation
-
-<!-- [Day 8 (2023-11-21): Final presentation](day8/index.qmd) -->
+- [Day 8 (2023-11-21): Final presentation](day8/index.qmd)
 
 ## Recordings
 

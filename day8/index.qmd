@@ -1,0 +1,36 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+    theme: ../theme_medium.scss
+execute: 
+  echo: true
+---
+
+# Day 8: Final Presentations
+
+2023-11-21
+
+## Presentation format
+
+- 10 minutes per group
+
+- 5 minutes for questions
+
+- Alphabetical by color (blue, green, orange, red)
+
+## Evaluation sheets
+
+- Fill out Form A today and turn it in at the end of class
+
+- Fill out Form B (on Moodle) after class **by 11:59PM today (Nov. 21)**
+  - There are **three copies of Form B** (one per each other group member)
+
+## Extra Credit (bonus points)
+
+- You can receive extra credit by asking questions during the presentation
+
+- Extra credit will be given for **up to 2 questions** per person
+
+- You must **write your questions** on Form A to receive extra credit
