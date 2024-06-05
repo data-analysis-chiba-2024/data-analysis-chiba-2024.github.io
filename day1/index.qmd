@@ -9,8 +9,6 @@ execute:
 
 # Day 1: Introduction to "Reproducible Data Analysis"
 
-2023-10-03
-
 ## Instructor: Joel Nitta
 
 :::: {.columns}
@@ -153,44 +151,35 @@ By the end of the course, you will be able to:
 
 ## Final project
 
-- You will need to analyze a dataset of your own choosing for your final project, due 2023-11-20
+- You will need to analyze a dataset of your own choosing for your final project, due 2024-07-24 11:59 PM
 
-- The last homework assignment is due 2023-11-06, so you have at least 2 weeks to work on the final project
+- The last homework assignment is due 2024-07-10 11:59 PM, so you have at least 2 weeks to work on the final project
 
 ## Schedule
 
-- Day 1, 2023-10-03
-  - Introduction
+- Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?
 
-- Day 2, 2023-10-10
-  - Git and GitHub
+- Day 2 (2024-06-13): Git and GitHub
 
-- Day 3, 2023-10-17
-  - Basic usage of R and RStudio
+- Day 3 (2024-06-20): Basic usage of R and RStudio
 
-- Day 4, 2023-10-24
-  - Writing documents with Quarto
+- Day 4 (Media Day): Data loading and tidying with tidyverse
 
 ## Schedule (cont'd)
 
-- Day 5, 2023-10-31 (Media Day)
-  - Data loading and tidying with tidyverse
+- Day 5 (Media Day): Data tidying, part II
 
-- Day 6, 2023-11-07
-  - Data visualization with ggplot2
+- Day 6 (Media Day): Data visualization with ggplot2
 
-- Day 7, 2023-11-14
-  - Best practices for reproducible data analysis
+- Day 7 (2024-07-11): Writing documents with Quarto
 
-- Day 8, 2023-11-21
-  - Final presentation
+- Day 8 (2024-07-18): Quarto, part II
 
 ## Grades
 
 - In-class participation 25%
 - Homework 25%
-- Final report 30%
-- Final presentation 20%
+- Final report 50%
 
 **No late submissions allowed** (exceptions may be made for medical emergencies)
 

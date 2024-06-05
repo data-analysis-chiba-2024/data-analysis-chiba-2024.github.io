@@ -13,7 +13,9 @@ toc: false
 
 - [Day 4 (Media Day): Data loading and tidying with tidyverse](day4/index.qmd)
 
-- [Day 5 (Media Day): Data tidying, part II](day5/index.qmd)
+<!-- - [Day 5 (Media Day): Data tidying, part II](day5/index.qmd) -->
+
+- Day 5 (Media Day): Data tidying, part II
 
 - [Day 6 (Media Day): Data visualization with ggplot2](day6/index.qmd)
 
@@ -41,23 +43,21 @@ toc: false
 
 - [Day 4: Tidyverse, part I](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_tidy.md)
 
-- [Day 5: ggplot2](https://github.com/data-analysis-chiba-2024/day05-ggplot/blob/main/day05_ggplot2.md)
+- [Day 6: ggplot2](https://github.com/data-analysis-chiba-2024/day06-ggplot/blob/main/day06_ggplot2.md)
 
 - [Final Report Example](https://github.com/data-analysis-chiba-2024/gapminder-report/)
 
 ## Important Deadlines
 
-- 2023-10-16 11:59PM: [Day 2 homework](https://github.com/data-analysis-chiba-2024/day02-git/blob/main/git_facts.md) due
+- 2024-06-19 11:59PM: [Day 2 homework](https://github.com/data-analysis-chiba-2024/day02-git/blob/main/git_facts.md) due
 
-- 2023-10-23 11:59PM: [Day 3 homework](https://github.com/data-analysis-chiba-2024/day03-r/blob/main/day03_homework.R) due
+- 2024-06-26 11:59PM: [Day 3 homework](https://github.com/data-analysis-chiba-2024/day03-r/blob/main/day03_homework.R) due
 
-- 2023-10-30 11:59PM: [Day 4 homework](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_homework.R) due
+- 2024-07-03 11:59PM: [Day 4 homework](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_homework.R) due
 
-- 2023-11-06 11:59PM: [Day 5 homework](https://github.com/data-analysis-chiba-2024/day05-ggplot/blob/main/day05_homework.R) due
+- 2024-07-10 11:59PM: [Day 5 homework](https://github.com/data-analysis-chiba-2024/day05-ggplot/blob/main/day05_homework.R) due
 
-- 2023-11-20 11:59: Final paper due
-
-- 2023-11-21: Final presentation (in class)
+- 2024-07-24 11:59PM: Final paper due
 
 ## Office Hours
 
