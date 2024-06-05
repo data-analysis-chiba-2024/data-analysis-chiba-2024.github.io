@@ -1,0 +1,1815 @@
+[
+  {
+    "objectID": "appendix.html",
+    "href": "appendix.html",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "appendix.html#setup-github-authentication-ssh",
+    "href": "appendix.html#setup-github-authentication-ssh",
+    "title": "Appendix",
+    "section": "",
+    "text": "What is SSH?\n\nSecure Shell Protocol\nAuthentication method that uses public and private keys (like a padlock and key)\npublic key goes on GitHub\nprivate key stays on your computer\n\n\n(more detailed instructions available on the Software Carpentry website)\n\n\n\nEnter this in your terminal (it lists files in a folder):\n\nls -al ~/.ssh\n\nIf any of these files show up, you already have keys available that you can use to log into GitHub\n\nid_rsa.pub\nid_ecdsa.pub\nid_ed25519.pub\n\n\n\n\nIf no such keys are already present, we need to create a private/public key pair.\nUse this command (the -t option specifies which type of algorithm to use and -C attaches a comment to the key):\n\nssh-keygen -t ed25519 -C \"you@youremail.com\"\n(use your own email address)\n\nIt will ask where you want you want to save the key. Use the default location.\nAdd a passphrase if you want (more secure, but you will have to enter it frequently).\nThen, you should see something like this:\n\nYour identification has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519\nYour public key has been saved in /c/Users/Vlad Dracula/.ssh/id_ed25519.pub\nThis tells you the location of your private and public keys\n\n\n\n\nFirst, get the content of the public key:\n\ncat ~/.ssh/id_ed25519.pub\nIt should include a long string of letters and numbers.\nCopy that exact line with command + c (mac) or control + c (Windows)\n\n\n\n\nGo to https://github.com, click on your profile icon in the top right corner to see the drop-down menu\nClick “Settings,” then “SSH and GPG keys”\nClick the “New SSH key” button on the right side\nEnter a name that you will remember (for example, “Joel’s Laptop”), paste your SSH key into the field, and click “Add SSH key”\n\n\n\n\n\nRun this command to check that it worked\n\nssh -T git@github.com\nNow, you can use git commands without providing a password every time"
+  },
+  {
+    "objectID": "day6/index.html#what-is-quarto",
+    "href": "day6/index.html#what-is-quarto",
+    "title": "Reproducible data analysis",
+    "section": "What is Quarto?",
+    "text": "What is Quarto?\n\n\nQuarto is a computer program that allows you to generate documents in various formats with code\nWe will use it to generate MS Word documents with R\nIt can also generate PDF, HTML, and other output\nIt can also use other programming languages like Python"
+  },
+  {
+    "objectID": "day6/index.html#why-use-quarto",
+    "href": "day6/index.html#why-use-quarto",
+    "title": "Reproducible data analysis",
+    "section": "Why use Quarto?",
+    "text": "Why use Quarto?\n\n\n\n\nPart of data analysis is communicating your results to an audience\nFor example, writing a final report for a class, or giving a presentation at work"
+  },
+  {
+    "objectID": "day6/index.html#why-use-quarto-1",
+    "href": "day6/index.html#why-use-quarto-1",
+    "title": "Reproducible data analysis",
+    "section": "Why use Quarto?",
+    "text": "Why use Quarto?\n\n\nGenerating a report with code…\n\nhelps you avoid copy-and-paste errors\nensures that your results are a direct result of the data\nhelps you save time by re-using the code later"
+  },
+  {
+    "objectID": "day6/index.html#installing-quarto",
+    "href": "day6/index.html#installing-quarto",
+    "title": "Reproducible data analysis",
+    "section": "Installing Quarto",
+    "text": "Installing Quarto\n\nYou should have already installed Quarto before class\nIf not, please go to https://quarto.org/docs/get-started/ and install it now"
+  },
+  {
+    "objectID": "day6/index.html#reopen-your-project",
+    "href": "day6/index.html#reopen-your-project",
+    "title": "Reproducible data analysis",
+    "section": "Reopen your project",
+    "text": "Reopen your project\n\nWe will continue to use the gapminder-analysis project in the data-analysis-course folder on your Desktop\nNavigate there and click on gapminder-analysis.Rproj"
+  },
+  {
+    "objectID": "day6/index.html#create-a-quarto-file",
+    "href": "day6/index.html#create-a-quarto-file",
+    "title": "Reproducible data analysis",
+    "section": "Create a Quarto file",
+    "text": "Create a Quarto file\n\nCreate a new Quarto file by clicking File &gt; New File &gt; Quarto Document…\nIn menu that appears, type \"Gapminder Analysis\" for the title and your name for the author\nLeave format as HTML (as it says, we can change it at any time later)\nRStudio will create a file. Save it as \"gapminder-report.qmd\" (.qmd is the file extension for Quarto files)"
+  },
+  {
+    "objectID": "day6/index.html#how-a-quarto-file-is-set-up",
+    "href": "day6/index.html#how-a-quarto-file-is-set-up",
+    "title": "Reproducible data analysis",
+    "section": "How a Quarto file is set up",
+    "text": "How a Quarto file is set up\n\n\nLook at your new Quarto file. What do you notice that is different from the .R files we have been using so far?\nThere is normal text like “Quarto enables you to weave together content…” that does not appear in a comment\nThere are lines starting with two hashes (##)\nThere are lines like ```{r}\nWhat is going on here?"
+  },
+  {
+    "objectID": "day6/index.html#how-a-quarto-file-is-set-up-1",
+    "href": "day6/index.html#how-a-quarto-file-is-set-up-1",
+    "title": "Reproducible data analysis",
+    "section": "How a Quarto file is set up",
+    "text": "How a Quarto file is set up\n\n\nA Quarto (.qmd) file is set up opposite to an R script\nNormal lines of text are not code (so they don’t need a # like a comment)\nR code is contained within lines starting with ```{r} and ending with ``` (called a “code chunk”)"
+  },
+  {
+    "objectID": "day6/index.html#rendering",
+    "href": "day6/index.html#rendering",
+    "title": "Reproducible data analysis",
+    "section": "Rendering",
+    "text": "Rendering\n\n\nAnother important difference between normal .R files and .qmd files is that the latter produce documents\nThis is called “rendering”\nLet’s try that now: press the “Render” button in RStudio"
+  },
+  {
+    "objectID": "day6/index.html#rendering-1",
+    "href": "day6/index.html#rendering-1",
+    "title": "Reproducible data analysis",
+    "section": "Rendering",
+    "text": "Rendering\n\n\nYou should see the rendered document (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)\n\nalso, in the Files tab, notice the gapminder-report.html file\n\nNotice the formatting of the output: lines like ## Quarto appear as headers\nYou can also see the output of the code, like 1 + 1"
+  },
+  {
+    "objectID": "day6/index.html#formatting-with-markdown",
+    "href": "day6/index.html#formatting-with-markdown",
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\nThe .qmd file is written in plain text (without formatting, similar to an .R file)\nWe can specify formatting in the output using Markdown syntax\n\nMarkdown is a very simple version of HTML"
+  },
+  {
+    "objectID": "day6/index.html#formatting-with-markdown-1",
+    "href": "day6/index.html#formatting-with-markdown-1",
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\nAs you can see in the document, the hash symbol (#) is used to define headings, which appear larger than other text\n\n# Heading level 1 (biggest)\n## Heading level 2\n### Heading level 3…\n\nFor italics, wrap the text in *, like this *this* (renders like this)\nFor bold, wrap the text in **, like this **this** (renders like this)"
+  },
+  {
+    "objectID": "day6/index.html#formatting-with-markdown-2",
+    "href": "day6/index.html#formatting-with-markdown-2",
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\n.qmd files are known as “Quarto Markdown” because they add Quarto’s features (the ability to include code chunks) to Markdown\nYou may have heard of “R Markdown,” which is the precursor to Quarto Markdown\n\nThere is generally no reason to use R Markdown instead of Quarto Markdown\nThey are very similar, so most things you read about R Markdown will apply to Quarto Markdown"
+  },
+  {
+    "objectID": "day6/index.html#formatting-with-markdown-3",
+    "href": "day6/index.html#formatting-with-markdown-3",
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\nRStudio has a handy way for you to preview what the rendered text will look like\nRight now we are in “Source” mode, which means we are editing the plain text\nClick on the “Visual” mode button to switch to “Visual” mode\nNow it looks much more like the output on the right\n\nBut notice that we don’t see the results of running the code chunks"
+  },
+  {
+    "objectID": "day6/index.html#formatting-with-markdown-4",
+    "href": "day6/index.html#formatting-with-markdown-4",
+    "title": "Reproducible data analysis",
+    "section": "Formatting with Markdown",
+    "text": "Formatting with Markdown\n\n\nI much prefer working with plain text, so we will switch back to “Source” mode\nBut it is a good idea to use “Visual” mode to check what your markdown formatting will look like\nThere are many guides online to learn more about writing Markdown"
+  },
+  {
+    "objectID": "day6/index.html#about-the-code-chunks",
+    "href": "day6/index.html#about-the-code-chunks",
+    "title": "Reproducible data analysis",
+    "section": "About the code chunks",
+    "text": "About the code chunks\n\n\nWithin the code chunks, anything you type is treated just like an R script\n\nNormal text must be R code\nComments can be written with #\n\nThe idea is to conduct analysis in the code chunks, and directly show the output in the rendered document"
+  },
+  {
+    "objectID": "day6/index.html#challenge",
+    "href": "day6/index.html#challenge",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nModify the first code chunk to load the tidyverse package, then read in the gapminder dataset like we did before"
+  },
+  {
+    "objectID": "day6/index.html#about-the-code-chunks-1",
+    "href": "day6/index.html#about-the-code-chunks-1",
+    "title": "Reproducible data analysis",
+    "section": "About the code chunks",
+    "text": "About the code chunks\n\n\nNotice that when we render the document, the gapminder dataset is not loaded into our current R session\nThat is because rending takes place in a separate instance of R\nTo run the R code in a chunk in your current R session, press the green “play” button at the right-hand side of the chunk"
+  },
+  {
+    "objectID": "day6/index.html#in-line-code",
+    "href": "day6/index.html#in-line-code",
+    "title": "Reproducible data analysis",
+    "section": "In-line code",
+    "text": "In-line code\n\n\nIn addition to code chunks, you can also mix short bits of R code within normal text by first writing a backtick (`) and the letter r, then the R code, then another backtick\nFor example, we can show the number of rows in the dataset with `r nrow(gapminder)`\nThis is best used for describing facts about the data or results"
+  },
+  {
+    "objectID": "day6/index.html#about-the-yaml-header",
+    "href": "day6/index.html#about-the-yaml-header",
+    "title": "Reproducible data analysis",
+    "section": "About the YAML header",
+    "text": "About the YAML header\n\n\nThe first set of lines at the top of the file are called the “YAML header”\n\nYAML stands for “Yet Another Markup Language”\n\nThe YAML header specifies settings for the document using variables\n\nYou can set the values of the values of the variables with a colon: variable: value, for example author: \"Joel Nitta\"\n\nThere are many other settings, but we won’t cover those today"
+  },
+  {
+    "objectID": "day6/index.html#code-chunk-options",
+    "href": "day6/index.html#code-chunk-options",
+    "title": "Reproducible data analysis",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\n\nSimilar to the YAML header, we can also specify settings for the code chunks\nThis is done by first writing #|, then the setting like you would for the YAML header\nFor example, in a report, you usually only want to show the results of the code, not the code itself\nYou can do this with the following code chunk option: #| echo: false (remember echo echoes the code)"
+  },
+  {
+    "objectID": "day6/index.html#code-chunk-options-1",
+    "href": "day6/index.html#code-chunk-options-1",
+    "title": "Reproducible data analysis",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\nOther useful code options\n\nmessage: false Hide code messages\nwarning: false Hide code warnings"
+  },
+  {
+    "objectID": "day6/index.html#code-chunk-options-2",
+    "href": "day6/index.html#code-chunk-options-2",
+    "title": "Reproducible data analysis",
+    "section": "Code chunk options",
+    "text": "Code chunk options\n\nLet’s write another code chunk that outputs a plot. Change the chunk options to hide the code."
+  },
+  {
+    "objectID": "day6/index.html#change-the-output-format",
+    "href": "day6/index.html#change-the-output-format",
+    "title": "Reproducible data analysis",
+    "section": "Change the output format",
+    "text": "Change the output format\n\n\nSo far, we have been using HTML output because it is the default and shows up immediately when we press “render”\nBut your report should be submitted in Word (.docx) format.\nChange the output format to docx and render the document again"
+  },
+  {
+    "objectID": "day6/index.html#tell-git-to-ignore-output",
+    "href": "day6/index.html#tell-git-to-ignore-output",
+    "title": "Reproducible data analysis",
+    "section": "Tell git to ignore output",
+    "text": "Tell git to ignore output\n\nYou should not commit the output of code\n\nIt clutters your git history, and is not necessary since you can always obtain the output by running the code\n\nYou can tell git to ignore files by adding them to .gitignore:\n\ngapminder-report.docx\ngapminder-report.html\ngapminder-report_files (files needed for HTML output)"
+  },
+  {
+    "objectID": "day6/index.html#tell-git-to-ignore-output-1",
+    "href": "day6/index.html#tell-git-to-ignore-output-1",
+    "title": "Reproducible data analysis",
+    "section": "Tell git to ignore output",
+    "text": "Tell git to ignore output\n\nIf you know you want to ignore all docx files, you could instead write this:\n\n*.docx"
+  },
+  {
+    "objectID": "day6/index.html#summary",
+    "href": "day6/index.html#summary",
+    "title": "Reproducible data analysis",
+    "section": "Summary",
+    "text": "Summary\n\n\nQuarto allows you to insert your analysis results directly into reports\nQuarto can generate multiple output formats\nThe way of writing code and plain text is reversed compared to R scripts\nPlease try to use Quarto for your class reports!"
+  },
+  {
+    "objectID": "day6/index.html#project-description",
+    "href": "day6/index.html#project-description",
+    "title": "Reproducible data analysis",
+    "section": "Project Description",
+    "text": "Project Description\n\nThe final project is to analyze a dataset, including at least two graphs\n\nUse Quarto to write the report (by 11/21)\nPresent your analysis to the class (on 11/21)\n\nThere will be time in class next week to work on the report (but you are expected to work on it outside of class as well)"
+  },
+  {
+    "objectID": "day6/index.html#example-repo",
+    "href": "day6/index.html#example-repo",
+    "title": "Reproducible data analysis",
+    "section": "Example Repo",
+    "text": "Example Repo\n\nI have created an example report for you using the gapminder dataset: https://github.com/data-analysis-chiba-2024/gapminder-report\nYou can look at the .qmd file online, or clone the repo to your computer"
+  },
+  {
+    "objectID": "day6/index.html#dataset",
+    "href": "day6/index.html#dataset",
+    "title": "Reproducible data analysis",
+    "section": "Dataset",
+    "text": "Dataset\n\nYou will choose a dataset from the Tidy Tuesday project to analyze\n\nTidy Tuesday releases a dataset once a week to practice data analysis"
+  },
+  {
+    "objectID": "day6/index.html#dataset-1",
+    "href": "day6/index.html#dataset-1",
+    "title": "Reproducible data analysis",
+    "section": "Dataset",
+    "text": "Dataset\n\nI have already pre-selected 5 datasets for you\n\nWorld’s Oldest People\nOlympics\nChocolate ratings\nTransit cost\nStudent to teacher ratios"
+  },
+  {
+    "objectID": "day6/index.html#team-setup",
+    "href": "day6/index.html#team-setup",
+    "title": "Reproducible data analysis",
+    "section": "Team Setup",
+    "text": "Team Setup\n\nYou will work in teams of 4 people each\n\nI have already assigned everybody to teams\n\nPlease sit with members of your team and choose a dataset (you can choose a new team name if you want)"
+  },
+  {
+    "objectID": "day6/index.html#working-as-a-team",
+    "href": "day6/index.html#working-as-a-team",
+    "title": "Reproducible data analysis",
+    "section": "Working as a team",
+    "text": "Working as a team\n\nClone the project on GitHub by clicking on the link in Moodle\nBe sure to enter your team name correctly! (pay attention to lower and upper case)\nThis time, all team members have access to the same repository"
+  },
+  {
+    "objectID": "day6/index.html#editing-the-template",
+    "href": "day6/index.html#editing-the-template",
+    "title": "Reproducible data analysis",
+    "section": "Editing the template",
+    "text": "Editing the template\n\nThere is some text in the report.qmd file. Edit it to match your dataset and team members.\n\nDelete the lines about the other datasets\nDelete the questions and add your text"
+  },
+  {
+    "objectID": "day6/index.html#working-as-a-team-1",
+    "href": "day6/index.html#working-as-a-team-1",
+    "title": "Reproducible data analysis",
+    "section": "Working as a team",
+    "text": "Working as a team\n\nTo avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual"
+  },
+  {
+    "objectID": "day6/index.html#due-dates",
+    "href": "day6/index.html#due-dates",
+    "title": "Reproducible data analysis",
+    "section": "Due dates",
+    "text": "Due dates\n\nThe report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21"
+  },
+  {
+    "objectID": "day6/index.html#evaluation-sheets",
+    "href": "day6/index.html#evaluation-sheets",
+    "title": "Reproducible data analysis",
+    "section": "Evaluation Sheets",
+    "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
+  },
+  {
+    "objectID": "day7/index.html#announcements",
+    "href": "day7/index.html#announcements",
+    "title": "Reproducible data analysis",
+    "section": "Announcements",
+    "text": "Announcements\n\nGrades for all homework assignments are now posted to Moodle\nKeys (answers) for all homework assignments are also posted\n\nYou can compare your answer to the key"
+  },
+  {
+    "objectID": "day7/index.html#recap-from-day-6",
+    "href": "day7/index.html#recap-from-day-6",
+    "title": "Reproducible data analysis",
+    "section": "Recap from Day 6",
+    "text": "Recap from Day 6\n\nQuarto is a system for generating reports from code\nBy using Quarto, we can ensure our results are reproducible and derived directly from the data (and code)"
+  },
+  {
+    "objectID": "day7/index.html#recap-working-as-a-team",
+    "href": "day7/index.html#recap-working-as-a-team",
+    "title": "Reproducible data analysis",
+    "section": "Recap: Working as a team",
+    "text": "Recap: Working as a team\n\nTo avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual"
+  },
+  {
+    "objectID": "day7/index.html#due-dates",
+    "href": "day7/index.html#due-dates",
+    "title": "Reproducible data analysis",
+    "section": "Due dates",
+    "text": "Due dates\n\nThe report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21\n\nYou can use any software you like to prepare the presentation (such as Powerpoint)\nPlease make sure one team member has their computer ready to show the presentation"
+  },
+  {
+    "objectID": "day7/index.html#grading",
+    "href": "day7/index.html#grading",
+    "title": "Reproducible data analysis",
+    "section": "Grading",
+    "text": "Grading\n\nPlease see the rubric in the final report instructions to understand how the paper and presentation will be graded"
+  },
+  {
+    "objectID": "day7/index.html#evaluation-sheets",
+    "href": "day7/index.html#evaluation-sheets",
+    "title": "Reproducible data analysis",
+    "section": "Evaluation Sheets",
+    "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
+  },
+  {
+    "objectID": "day7/index.html#change-the-size-of-a-figure",
+    "href": "day7/index.html#change-the-size-of-a-figure",
+    "title": "Reproducible data analysis",
+    "section": "Change the size of a figure",
+    "text": "Change the size of a figure\n\nYou can adjust the size of the figure with chunk options fig.height and fig.width (units in inches)\nFor example:\n\n#| fig.height: 6\n#| fig.width: 6"
+  },
+  {
+    "objectID": "day7/index.html#change-the-font-size",
+    "href": "day7/index.html#change-the-font-size",
+    "title": "Reproducible data analysis",
+    "section": "Change the font size",
+    "text": "Change the font size\n\nYou can adjust the overall font size of the figure like this:\n\n\nggplot(gapminder, aes(x = pop, y = lifeExp)) +\n  geom_point() +\n  theme_gray(base_size = 16)"
+  },
+  {
+    "objectID": "day7/index.html#change-the-font-size-1",
+    "href": "day7/index.html#change-the-font-size-1",
+    "title": "Reproducible data analysis",
+    "section": "Change the font size",
+    "text": "Change the font size\n\nYou can adjust the overall font size of the figure like this:\n\n\nggplot(gapminder, aes(x = pop, y = lifeExp)) +\n  geom_point() +\n  theme_gray(base_size = 16)\n\n\n\nThere are other themes available too, but theme_gray() should be fine for the final paper"
+  },
+  {
+    "objectID": "day7/index.html#add-a-pagebreak",
+    "href": "day7/index.html#add-a-pagebreak",
+    "title": "Reproducible data analysis",
+    "section": "Add a pagebreak",
+    "text": "Add a pagebreak\n\nYou can add a pagebreak to your document like this:\n\n{{&lt; pagebreak &gt;}}"
+  },
+  {
+    "objectID": "day7/index.html#group-work",
+    "href": "day7/index.html#group-work",
+    "title": "Reproducible data analysis",
+    "section": "Group Work",
+    "text": "Group Work\n\nThe rest of the class time is for group work. I will answer any questions you may have about the report."
+  },
+  {
+    "objectID": "day2/index.html#what-is-git",
+    "href": "day2/index.html#what-is-git",
+    "title": "Reproducible data analysis",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
+  },
+  {
+    "objectID": "day2/index.html#why-use-git",
+    "href": "day2/index.html#why-use-git",
+    "title": "Reproducible data analysis",
+    "section": "Why use Git?",
+    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
+  },
+  {
+    "objectID": "day2/index.html#what-is-github",
+    "href": "day2/index.html#what-is-github",
+    "title": "Reproducible data analysis",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
+  },
+  {
+    "objectID": "day2/index.html#setup",
+    "href": "day2/index.html#setup",
+    "title": "Reproducible data analysis",
+    "section": "Setup",
+    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
+  },
+  {
+    "objectID": "day2/index.html#instructions-to-install-git",
+    "href": "day2/index.html#instructions-to-install-git",
+    "title": "Reproducible data analysis",
+    "section": "Instructions to install git",
+    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-account",
+    "href": "day2/index.html#setup-github-account",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub account",
+    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-authentication-pat",
+    "href": "day2/index.html#setup-github-authentication-pat",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub authentication: PAT",
+    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like an extra-secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
+  },
+  {
+    "objectID": "day2/index.html#create-pat-on-github",
+    "href": "day2/index.html#create-pat-on-github",
+    "title": "Reproducible data analysis",
+    "section": "Create PAT on GitHub",
+    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, first install usethis with install.packages(\"usethis\"), then do\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+  },
+  {
+    "objectID": "day2/index.html#save-your-pat",
+    "href": "day2/index.html#save-your-pat",
+    "title": "Reproducible data analysis",
+    "section": "Save your PAT",
+    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
+  },
+  {
+    "objectID": "day2/index.html#a-few-more-notes-about-pat",
+    "href": "day2/index.html#a-few-more-notes-about-pat",
+    "title": "Reproducible data analysis",
+    "section": "A few more notes about PAT",
+    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
+  },
+  {
+    "objectID": "day2/index.html#introduce-yourself-to-git",
+    "href": "day2/index.html#introduce-yourself-to-git",
+    "title": "Reproducible data analysis",
+    "section": "Introduce yourself to git",
+    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name \"your_github_username\"\ngit config --global user.email \"your_email_adress\"\ngit config --global --list"
+  },
+  {
+    "objectID": "day2/index.html#change-some-default-settings",
+    "href": "day2/index.html#change-some-default-settings",
+    "title": "Reproducible data analysis",
+    "section": "Change some default settings",
+    "text": "Change some default settings\n\nGit can allow you to have multiple versions of your code at the same time.\nThese are called “branches”.\nTell git to use the name “main” for the main branch:\n\ngit config --global init.defaultBranch main"
+  },
+  {
+    "objectID": "day2/index.html#about-repos",
+    "href": "day2/index.html#about-repos",
+    "title": "Reproducible data analysis",
+    "section": "About repos",
+    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
+  },
+  {
+    "objectID": "day2/index.html#remote-and-local-repos",
+    "href": "day2/index.html#remote-and-local-repos",
+    "title": "Reproducible data analysis",
+    "section": "Remote and local repos",
+    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
+  },
+  {
+    "objectID": "day2/index.html#cloning",
+    "href": "day2/index.html#cloning",
+    "title": "Reproducible data analysis",
+    "section": "Cloning",
+    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
+  },
+  {
+    "objectID": "day2/index.html#pushing-and-pulling",
+    "href": "day2/index.html#pushing-and-pulling",
+    "title": "Reproducible data analysis",
+    "section": "Pushing and pulling",
+    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
+  },
+  {
+    "objectID": "day2/index.html#commits",
+    "href": "day2/index.html#commits",
+    "title": "Reproducible data analysis",
+    "section": "Commits",
+    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
+  },
+  {
+    "objectID": "day2/index.html#staging-and-committing",
+    "href": "day2/index.html#staging-and-committing",
+    "title": "Reproducible data analysis",
+    "section": "Staging and committing",
+    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
+  },
+  {
+    "objectID": "day2/index.html#the-.gitignore-file",
+    "href": "day2/index.html#the-.gitignore-file",
+    "title": "Reproducible data analysis",
+    "section": "The .gitignore file",
+    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis itself)"
+  },
+  {
+    "objectID": "day2/index.html#how-this-works-in-practice",
+    "href": "day2/index.html#how-this-works-in-practice",
+    "title": "Reproducible data analysis",
+    "section": "How this works in practice",
+    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
+  },
+  {
+    "objectID": "day4/index.html#refresher-vectors",
+    "href": "day4/index.html#refresher-vectors",
+    "title": "Reproducible data analysis",
+    "section": "Refresher: vectors",
+    "text": "Refresher: vectors\n\nRecall that a vector is a series of values that are all the same type\n\n\n# A numeric vector:\nc(1, 2, 3)\n\n[1] 1 2 3\n\n# A character vector:\nc(\"banana\", \"orange\", \"apple\")\n\n[1] \"banana\" \"orange\" \"apple\" \n\n# A logical vector:\nc(TRUE, FALSE, TRUE)\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "day4/index.html#about-dataframes",
+    "href": "day4/index.html#about-dataframes",
+    "title": "Reproducible data analysis",
+    "section": "About dataframes",
+    "text": "About dataframes\n\nA dataframe is a collection of vectors\n\nbasically like a spreadsheet in Excel\n\n\n\n\n\nToday we will learn to load and tidy (or “wrangle”) dataframes"
+  },
+  {
+    "objectID": "day4/index.html#about-data-tidying-wrangling",
+    "href": "day4/index.html#about-data-tidying-wrangling",
+    "title": "Reproducible data analysis",
+    "section": "About data tidying (“wrangling”)",
+    "text": "About data tidying (“wrangling”)\n\nData often come to us in a form that is not suitable for analysis\nData tidying (or “wrangling”) is the process of re-formatting the data so it can be analyzed"
+  },
+  {
+    "objectID": "day4/index.html#set-up-project",
+    "href": "day4/index.html#set-up-project",
+    "title": "Reproducible data analysis",
+    "section": "Set up project",
+    "text": "Set up project\n\nCreate a new project called gapminder-analysis in the data-analysis-course folder on your Desktop\n\nWe will use the “gapminder” dataset for the rest of the course\n\nInside that project, create a folder called data_raw to store raw data\n\nYou should never edit raw data directly (treat it as read-only)\n\nAlso create a file to write today’s code. You could call it data-tidying-practice.R"
+  },
+  {
+    "objectID": "day4/index.html#set-up-project-1",
+    "href": "day4/index.html#set-up-project-1",
+    "title": "Reproducible data analysis",
+    "section": "Set up project",
+    "text": "Set up project\n\nDownload the gapminder.csv file from this link, and put it in data_raw\n\nhttps://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0"
+  },
+  {
+    "objectID": "day4/index.html#about-r-packages",
+    "href": "day4/index.html#about-r-packages",
+    "title": "Reproducible data analysis",
+    "section": "About R Packages",
+    "text": "About R Packages\n\nThe functions we have used so far are included in R (called “Base R”)\nBut sometimes we need to do something that is not available in Base R\nPackages are collections of code that extend the functionality of R\n\nThere are nearly 200,000 packages currently available!"
+  },
+  {
+    "objectID": "day4/index.html#install-tidyverse",
+    "href": "day4/index.html#install-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Install tidyverse",
+    "text": "Install tidyverse\n\nToday we will use the tidyverse set of packages for working with data\nInstall tidyverse using install.packages():\n\n\ninstall.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "day4/index.html#loading-packages",
+    "href": "day4/index.html#loading-packages",
+    "title": "Reproducible data analysis",
+    "section": "Loading packages",
+    "text": "Loading packages\n\nThe install.packages() function downloads the package to your computer\n\nYou only need to do this once per package (or when you want to update the package)\n\nBut R isn’t able to use the package yet\nThe library() function tells R to load a package so that we can use it"
+  },
+  {
+    "objectID": "day4/index.html#load-tidyverse",
+    "href": "day4/index.html#load-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\n\n\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "day4/index.html#load-tidyverse-1",
+    "href": "day4/index.html#load-tidyverse-1",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\ntidyverse actually includes multiple packages (dplyr, tidyr, readr, etc.)\n\nThese are all packages that are useful for loading and cleaning data"
+  },
+  {
+    "objectID": "day4/index.html#load-data",
+    "href": "day4/index.html#load-data",
+    "title": "Reproducible data analysis",
+    "section": "Load data",
+    "text": "Load data\n\nUse the read_csv() function to load a spreadsheet as a dataframe\n\nThere are other functions for other file formats like .xls, .xlsx, .tsv, etc.\n\n\n\ngapminder &lt;- read_csv(\"data_raw/gapminder.csv\")"
+  },
+  {
+    "objectID": "day4/index.html#print-out-the-data",
+    "href": "day4/index.html#print-out-the-data",
+    "title": "Reproducible data analysis",
+    "section": "Print out the data",
+    "text": "Print out the data\n\nInspect the data just like any other object (variable) in R: type the name of the object into the console\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#print-out-the-data-1",
+    "href": "day4/index.html#print-out-the-data-1",
+    "title": "Reproducible data analysis",
+    "section": "Print out the data",
+    "text": "Print out the data\n\nNotice that R tells us the number of rows and columns, as well as the data type of each column\n\nThe tidyverse package refers to dataframes as “tibbles”"
+  },
+  {
+    "objectID": "day4/index.html#what-is-this-dataset-about",
+    "href": "day4/index.html#what-is-this-dataset-about",
+    "title": "Reproducible data analysis",
+    "section": "What is this dataset about?",
+    "text": "What is this dataset about?\n\nWhat do you think this dataset is about?\nWhat do you think the columns mean?"
+  },
+  {
+    "objectID": "day4/index.html#gapminder",
+    "href": "day4/index.html#gapminder",
+    "title": "Reproducible data analysis",
+    "section": "Gapminder",
+    "text": "Gapminder\n\nThis is a dataset of economic statistics from various countries over time, from https://gapminder.org\nThe meaning of some columns is obvious (country, continent, year), but not others\n\npop: Population\nlifeExp: Life expectancy (寿命)\ngdpPercap: GDP per capita (一人当たりの国内総生産)"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange",
+    "href": "day4/index.html#sort-data-with-arrange",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nFirst provide the name of the dataframe, then the column to sort by\n\n\narrange(gapminder, lifeExp)\n\n# A tibble: 1,704 × 6\n  country      continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Rwanda       Africa     1992    23.6 7290203      737.\n2 Afghanistan  Asia       1952    28.8 8425333      779.\n3 Gambia       Africa     1952    30    284320      485.\n4 Angola       Africa     1952    30.0 4232095     3521.\n5 Sierra Leone Africa     1952    30.3 2143249      880.\n6 Afghanistan  Asia       1957    30.3 9240934      821.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-1",
+    "href": "day4/index.html#sort-data-with-arrange-1",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nThe default setting is to sort from small to large\n\nTo sort in the reverse (descending) direction, use desc()\n\n\n\narrange(gapminder, desc(lifeExp))\n\n# A tibble: 1,704 × 6\n  country          continent  year lifeExp       pop gdpPercap\n  &lt;chr&gt;            &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Japan            Asia       2007    82.6 127467972    31656.\n2 Hong Kong, China Asia       2007    82.2   6980412    39725.\n3 Japan            Asia       2002    82   127065841    28605.\n4 Iceland          Europe     2007    81.8    301931    36181.\n5 Switzerland      Europe     2007    81.7   7554661    37506.\n6 Hong Kong, China Asia       2002    81.5   6762476    30209.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-2",
+    "href": "day4/index.html#sort-data-with-arrange-2",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nYou can sort on multiple columns\n\nTies will be sorted by the next column\n\n\n\narrange(gapminder, continent, lifeExp)\n\n# A tibble: 1,704 × 6\n  country      continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Rwanda       Africa     1992    23.6 7290203      737.\n2 Gambia       Africa     1952    30    284320      485.\n3 Angola       Africa     1952    30.0 4232095     3521.\n4 Sierra Leone Africa     1952    30.3 2143249      880.\n5 Mozambique   Africa     1952    31.3 6446316      469.\n6 Sierra Leone Africa     1957    31.6 2295678     1004.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge",
+    "href": "day4/index.html#challenge",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nSort the data by year, first going from smallest to biggest, then from biggest to smallest.\nWhat is the earliest year in the data?\nWhat is the latest year in the data?"
+  },
+  {
+    "objectID": "day4/index.html#narrow-down-columns-with-select",
+    "href": "day4/index.html#narrow-down-columns-with-select",
+    "title": "Reproducible data analysis",
+    "section": "Narrow down columns with select()",
+    "text": "Narrow down columns with select()\n\nFirst provide the name of the dataframe, then the columns to select\n\n\nselect(gapminder, year, country, gdpPercap)\n\n# A tibble: 1,704 × 3\n   year country     gdpPercap\n  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1  1952 Afghanistan      779.\n2  1957 Afghanistan      821.\n3  1962 Afghanistan      853.\n4  1967 Afghanistan      836.\n5  1972 Afghanistan      740.\n6  1977 Afghanistan      786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#saving-your-output",
+    "href": "day4/index.html#saving-your-output",
+    "title": "Reproducible data analysis",
+    "section": "Saving your output",
+    "text": "Saving your output\n\nNotice that although we have used several functions, gapminder is still the same:\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#saving-your-output-1",
+    "href": "day4/index.html#saving-your-output-1",
+    "title": "Reproducible data analysis",
+    "section": "Saving your output",
+    "text": "Saving your output\n\nThis is because we have not saved any of the output\nTo do that, you need to create a new object with &lt;-\n\nYou can call the object whatever you want, but use a name that is easy to remember\n\n\n\ngapminder_gdp &lt;- select(gapminder, year, country, gdpPercap)"
+  },
+  {
+    "objectID": "day4/index.html#challenge-1",
+    "href": "day4/index.html#challenge-1",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nSelect only year, country, and population, then sort the data by population"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes",
+    "href": "day4/index.html#about-pipes",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nDuring the last challenge, you needed to save the output of the select() function, then use it as input into the arrange() function\nThere is a simpler way to do this, called the “pipe”\nThe pipe is written like this: %&gt;%\n\nNewer versions of R also let you write it like this: |&gt;"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-1",
+    "href": "day4/index.html#about-pipes-1",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThe pipe takes the output from one function and passes it to the input of the next function\nYou can think of it as saying “and then”\n\nDo this and then do this, and then do this…\nDo this %&gt;% do this, %&gt;% do this…"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-2",
+    "href": "day4/index.html#about-pipes-2",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nWe can even use the pipe just with one function:\n\nRead this as “start with gapminder and then select only year, country, and population”\n\n\n\ngapminder %&gt;% select(year, country, pop)\n\n# A tibble: 1,704 × 3\n   year country          pop\n  &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1  1952 Afghanistan  8425333\n2  1957 Afghanistan  9240934\n3  1962 Afghanistan 10267083\n4  1967 Afghanistan 11537966\n5  1972 Afghanistan 13079460\n6  1977 Afghanistan 14880372\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-3",
+    "href": "day4/index.html#about-pipes-3",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThis becomes very useful when we want to do multiple steps\n\nRead this as “start with gapminder, and then select only year, country, and population, and then arrange by year”\n\n\n\ngapminder %&gt;% select(year, country, pop) %&gt;% arrange(year)\n\n\n\n# A tibble: 1,704 × 3\n   year country         pop\n  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;\n1  1952 Afghanistan 8425333\n2  1952 Albania     1282697\n3  1952 Algeria     9279525\n4  1952 Angola      4232095\n# ℹ 1,700 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-4",
+    "href": "day4/index.html#about-pipes-4",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nWe can make it easier to read by putting each step on its own line\n\n\ngapminder %&gt;%\n  select(year, country, pop) %&gt;%\n  arrange(year)\n\n# A tibble: 1,704 × 3\n   year country          pop\n  &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1  1952 Afghanistan  8425333\n2  1952 Albania      1282697\n3  1952 Algeria      9279525\n4  1952 Angola       4232095\n5  1952 Argentina   17876956\n6  1952 Australia    8691212\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-5",
+    "href": "day4/index.html#about-pipes-5",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThis way, you don’t have to save each intermediate step\nThis is a very useful way to manipulate data\nI will now use the pipe (%&gt;%) for the rest of the lesson"
+  },
+  {
+    "objectID": "day4/index.html#subset-rows-with-filter",
+    "href": "day4/index.html#subset-rows-with-filter",
+    "title": "Reproducible data analysis",
+    "section": "Subset rows with filter()",
+    "text": "Subset rows with filter()\n\nUse the filter() function to only keep rows that meet a certain condition\nFor example, let’s only keep the data in Europe:\n\n\ngapminder %&gt;% filter(continent == \"Europe\")\n\n# A tibble: 360 × 6\n  country continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Albania Europe     1952    55.2 1282697     1601.\n2 Albania Europe     1957    59.3 1476505     1942.\n3 Albania Europe     1962    64.8 1728137     2313.\n4 Albania Europe     1967    66.2 1984060     2760.\n5 Albania Europe     1972    67.7 2263554     3313.\n6 Albania Europe     1977    68.9 2509048     3533.\n# ℹ 354 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge-2",
+    "href": "day4/index.html#challenge-2",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\nUsing the pipe (%&gt;%) and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns."
+  },
+  {
+    "objectID": "day4/index.html#modify-data-with-mutate",
+    "href": "day4/index.html#modify-data-with-mutate",
+    "title": "Reproducible data analysis",
+    "section": "Modify data with mutate()",
+    "text": "Modify data with mutate()\n\nFor example, we could change the units of population to millions of people:\n\n\ngapminder %&gt;% mutate(pop = pop/1000000)\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp   pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8.43      779.\n2 Afghanistan Asia       1957    30.3  9.24      821.\n3 Afghanistan Asia       1962    32.0 10.3       853.\n4 Afghanistan Asia       1967    34.0 11.5       836.\n5 Afghanistan Asia       1972    36.1 13.1       740.\n6 Afghanistan Asia       1977    38.4 14.9       786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#modify-data-with-mutate-1",
+    "href": "day4/index.html#modify-data-with-mutate-1",
+    "title": "Reproducible data analysis",
+    "section": "Modify data with mutate()",
+    "text": "Modify data with mutate()\n\nIf we provide a new column name, that column will be added\n\n\ngapminder %&gt;% mutate(pop_mil = pop/1000000)\n\n# A tibble: 1,704 × 7\n  country     continent  year lifeExp      pop gdpPercap pop_mil\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.    8.43\n2 Afghanistan Asia       1957    30.3  9240934      821.    9.24\n3 Afghanistan Asia       1962    32.0 10267083      853.   10.3 \n4 Afghanistan Asia       1967    34.0 11537966      836.   11.5 \n5 Afghanistan Asia       1972    36.1 13079460      740.   13.1 \n6 Afghanistan Asia       1977    38.4 14880372      786.   14.9 \n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge-3",
+    "href": "day4/index.html#challenge-3",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nThe gdpPercap column stands for Gross Domestic Product (GDP) per capita (per person)\nCalculate the total GDP using mutate()\n\nhint: You need to use both the pop and gdpPercap columns"
+  },
+  {
+    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize",
+    "href": "day4/index.html#calculate-summary-statistics-with-summarize",
+    "title": "Reproducible data analysis",
+    "section": "Calculate summary statistics with summarize()",
+    "text": "Calculate summary statistics with summarize()\n\nFor example, let’s calculate the overall mean population:\n\n\ngapminder %&gt;% summarize(mean_pop = mean(pop))\n\n# A tibble: 1 × 1\n   mean_pop\n      &lt;dbl&gt;\n1 29601212."
+  },
+  {
+    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize-1",
+    "href": "day4/index.html#calculate-summary-statistics-with-summarize-1",
+    "title": "Reproducible data analysis",
+    "section": "Calculate summary statistics with summarize()",
+    "text": "Calculate summary statistics with summarize()\n\nAnother example: the total population over all the data:\n\n\ngapminder %&gt;% summarize(total_pop = sum(pop))\n\n# A tibble: 1 × 1\n    total_pop\n        &lt;dbl&gt;\n1 50440465801"
+  },
+  {
+    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group",
+    "href": "day4/index.html#use-group_by-to-do-calculations-per-group",
+    "title": "Reproducible data analysis",
+    "section": "Use group_by() to do calculations per group",
+    "text": "Use group_by() to do calculations per group\n\nHowever, it is often more useful to calculate such summary statistics for particular groups\nTo do this, first specify the groups with group_by():\n\n\ngapminder %&gt;% group_by(continent)\n\n\n\n# A tibble: 1,704 × 6\n# Groups:   continent [5]\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n# ℹ 1,700 more rows"
+  },
+  {
+    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
+    "href": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
+    "title": "Reproducible data analysis",
+    "section": "Use group_by() to do calculations per group",
+    "text": "Use group_by() to do calculations per group\n\nNext, use summarize() to calculate the summary statistic:\n\n\ngapminder %&gt;%\n  group_by(continent) %&gt;%\n  summarize(mean_pop = mean(pop))\n\n# A tibble: 5 × 2\n  continent  mean_pop\n  &lt;chr&gt;         &lt;dbl&gt;\n1 Africa     9916003.\n2 Americas  24504795.\n3 Asia      77038722.\n4 Europe    17169765.\n5 Oceania    8874672."
+  },
+  {
+    "objectID": "day4/index.html#difference-between-mutate-and-summarize",
+    "href": "day4/index.html#difference-between-mutate-and-summarize",
+    "title": "Reproducible data analysis",
+    "section": "Difference between mutate() and summarize()",
+    "text": "Difference between mutate() and summarize()\n\nmutate() calculates a new column (or over-writes an existing one) and keeps the number of rows the same\nsummarize() calculates a new column and decreases the number of rows"
+  },
+  {
+    "objectID": "day4/index.html#summary",
+    "href": "day4/index.html#summary",
+    "title": "Reproducible data analysis",
+    "section": "Summary",
+    "text": "Summary\n\nSort data with arrange()\nNarrow down columns with select()\nFilter rows with filter()\nModify data with mutate()\nSummarize data with summarize()\nGroup data with group_by()\nUse the pipe (%&gt;%) to chain steps together"
+  },
+  {
+    "objectID": "day3/index.html#announcements",
+    "href": "day3/index.html#announcements",
+    "title": "Reproducible data analysis",
+    "section": "Announcements",
+    "text": "Announcements\n\nBe sure to submit your homework on Moodle (paste the URL of your git repo)"
+  },
+  {
+    "objectID": "day3/index.html#announcements-1",
+    "href": "day3/index.html#announcements-1",
+    "title": "Reproducible data analysis",
+    "section": "Announcements",
+    "text": "Announcements\n\nSchedule change\n\nOld: Day 4 Quarto, Day 5 Tidyverse (media day), Day 6 Visualization\nNew: Day 4 Tidyverse, Day 5 Visualization (media day), Day 6 Quarto"
+  },
+  {
+    "objectID": "day3/index.html#why-use-a-programming-language",
+    "href": "day3/index.html#why-use-a-programming-language",
+    "title": "Reproducible data analysis",
+    "section": "Why use a programming language?",
+    "text": "Why use a programming language?\n\nProgramming makes your analysis reproducible, because you have an exact, written record of what you have done"
+  },
+  {
+    "objectID": "day3/index.html#what-is-reproducibility",
+    "href": "day3/index.html#what-is-reproducibility",
+    "title": "Reproducible data analysis",
+    "section": "What is reproducibility?",
+    "text": "What is reproducibility?\n\nThe ability for other people (including your future self!) to reproduce your analysis results\n\nGives you confidence in your results\nMakes it easier to switch between projects"
+  },
+  {
+    "objectID": "day3/index.html#why-learn-r",
+    "href": "day3/index.html#why-learn-r",
+    "title": "Reproducible data analysis",
+    "section": "Why learn R?",
+    "text": "Why learn R?\n\nR is free\nR is extensible\nR produces high-quality graphics\nR has a large and welcoming community"
+  },
+  {
+    "objectID": "day3/index.html#r-vs.-rstudio",
+    "href": "day3/index.html#r-vs.-rstudio",
+    "title": "Reproducible data analysis",
+    "section": "R vs. RStudio",
+    "text": "R vs. RStudio\n\nR is the programming language\nRStudio is software to use R and write R code\nWe will always use R through RStudio! (don’t click on the icon for R)"
+  },
+  {
+    "objectID": "day3/index.html#introduction-to-rstudio",
+    "href": "day3/index.html#introduction-to-rstudio",
+    "title": "Reproducible data analysis",
+    "section": "Introduction to RStudio",
+    "text": "Introduction to RStudio\n\nWe will start by navigating RStudio\nThere are four main panels\n\nSource (where you write your code)\nEnvironment (lists the objects in your R session)\nR Console (where you talk to R)\nFiles and Plots (shows the files in your project, and any plots you make)"
+  },
+  {
+    "objectID": "day3/index.html#projects",
+    "href": "day3/index.html#projects",
+    "title": "Reproducible data analysis",
+    "section": "Projects",
+    "text": "Projects\n\nAn R Project is a folder that contains all the files you need for a particular data analysis project\n\nBasically the same thing as a repo (if you are using git)\n\nProjects help organize code and files so we don’t get lost"
+  },
+  {
+    "objectID": "day3/index.html#create-a-new-project",
+    "href": "day3/index.html#create-a-new-project",
+    "title": "Reproducible data analysis",
+    "section": "Create a new project",
+    "text": "Create a new project\n\nSo far, we have only cloned projects from GitHub\nToday you will create a new project on your computer"
+  },
+  {
+    "objectID": "day3/index.html#create-a-new-project-1",
+    "href": "day3/index.html#create-a-new-project-1",
+    "title": "Reproducible data analysis",
+    "section": "Create a new project",
+    "text": "Create a new project\n\nIn RStudio, click File ➡︎ New Project ➡︎ New Directory ➡︎ New Project (again)\n\nEnter the name of the project (folder) and where to put it\nI recommend putting it somewhere easy to find\n\nLet’s put call this project day03-practice and put it in the data-analysis-course folder on the Desktop\nClick “Create a git repository”, since we are using git"
+  },
+  {
+    "objectID": "day3/index.html#create-a-new-project-2",
+    "href": "day3/index.html#create-a-new-project-2",
+    "title": "Reproducible data analysis",
+    "section": "Create a new project",
+    "text": "Create a new project\n\nRStudio will restart, and you will see in the File pane that we are located in the new project\nRStudio has created two files automatically, day03-practice.Rproj and .gitignore\n\nCommit these files with the commit message “Initial commit” (or whatever you want, but that is often used as a first commit message for a new project)\n\nNow we are ready to start using R!"
+  },
+  {
+    "objectID": "day3/index.html#r-as-a-calculator",
+    "href": "day3/index.html#r-as-a-calculator",
+    "title": "Reproducible data analysis",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\nYou can execute R code to calculate numbers directly in the console by typing the calculation then pressing “Enter”\nTry something like this:\n\n\n2 + 2\n\n[1] 4"
+  },
+  {
+    "objectID": "day3/index.html#r-as-a-calculator-1",
+    "href": "day3/index.html#r-as-a-calculator-1",
+    "title": "Reproducible data analysis",
+    "section": "R as a calculator",
+    "text": "R as a calculator\n\n5 * 10\n\n[1] 50\n\n2 / 3\n\n[1] 0.6666667\n\n(2 + 1)^2\n\n[1] 9\n\n\nCongratulations! You are now an R programmer!"
+  },
+  {
+    "objectID": "day3/index.html#objects-variables",
+    "href": "day3/index.html#objects-variables",
+    "title": "Reproducible data analysis",
+    "section": "Objects (variables)",
+    "text": "Objects (variables)\n\nR can do much more than act like a calculator\nOne very useful thing is the ability to store values in variables, often called “objects” in R\nWe assign values to objects using the arrow symbol: &lt;-\n\n\nx &lt;- 2 + 2\n\n\nHowever, R does not show you the value of x when you assign it"
+  },
+  {
+    "objectID": "day3/index.html#objects-variables-1",
+    "href": "day3/index.html#objects-variables-1",
+    "title": "Reproducible data analysis",
+    "section": "Objects (variables)",
+    "text": "Objects (variables)\nTo check the value of x, type x in the console and press “Enter”\n\nx\n\n[1] 4\n\n\nThe value of x is also shown in the Environment panel (top-right panel)"
+  },
+  {
+    "objectID": "day3/index.html#objects-variables-2",
+    "href": "day3/index.html#objects-variables-2",
+    "title": "Reproducible data analysis",
+    "section": "Objects (variables)",
+    "text": "Objects (variables)\nNow that we have saved a value to x, we can do additional calculations with it:\n\nx * 10\n\n[1] 40"
+  },
+  {
+    "objectID": "day3/index.html#objects-variables-3",
+    "href": "day3/index.html#objects-variables-3",
+    "title": "Reproducible data analysis",
+    "section": "Objects (variables)",
+    "text": "Objects (variables)\nWe can then use that code to build a new object:\n\ny &lt;- x * 10\ny\n\n[1] 40"
+  },
+  {
+    "objectID": "day3/index.html#objects-variables-4",
+    "href": "day3/index.html#objects-variables-4",
+    "title": "Reproducible data analysis",
+    "section": "Objects (variables)",
+    "text": "Objects (variables)\nBut notice that the objects don’t “react” to each other (in other words, assigning a value to one object does not change the values of other objects):\n\nx &lt;- 5\n# What is value of x?\nx\n\n[1] 5\n\n\n\n\n# What is the value of y?\n# (remember, y &lt;- x * 10)\n\n\n\n\ny\n\n[1] 40"
+  },
+  {
+    "objectID": "day3/index.html#workspace-settings-and-using-the-.rproj-file",
+    "href": "day3/index.html#workspace-settings-and-using-the-.rproj-file",
+    "title": "Reproducible data analysis",
+    "section": "Workspace settings and using the .Rproj file",
+    "text": "Workspace settings and using the .Rproj file\n\nBefore continuing, we need to change some of the default settings in R\nI’ll also demonstrate how to use the .Rproj file to open a project\nQuit RStudio (we will open it again soon) by clicking File ➡︎ Quit Session"
+  },
+  {
+    "objectID": "day3/index.html#use-the-.rproj-file-to-open-the-project",
+    "href": "day3/index.html#use-the-.rproj-file-to-open-the-project",
+    "title": "Reproducible data analysis",
+    "section": "Use the .Rproj file to open the project",
+    "text": "Use the .Rproj file to open the project\n\nOpen your project by navigating to data-analysis-course/day03-practice on your Desktop and clicking on day03-practice.Rproj."
+  },
+  {
+    "objectID": "day3/index.html#change-workspace-settings",
+    "href": "day3/index.html#change-workspace-settings",
+    "title": "Reproducible data analysis",
+    "section": "Change Workspace settings",
+    "text": "Change Workspace settings\n\nWhat do you see in RStudio when you open your project?"
+  },
+  {
+    "objectID": "day3/index.html#change-workspace-settings-1",
+    "href": "day3/index.html#change-workspace-settings-1",
+    "title": "Reproducible data analysis",
+    "section": "Change Workspace settings",
+    "text": "Change Workspace settings\n\nNotice in the “Environment” pane (upper-right) that x and y are still there, even though the code that we typed last time is gone!\n\nIn other words, we don’t know how we got x and y\nThis is bad for reproducibility!"
+  },
+  {
+    "objectID": "day3/index.html#change-workspace-settings-2",
+    "href": "day3/index.html#change-workspace-settings-2",
+    "title": "Reproducible data analysis",
+    "section": "Change Workspace settings",
+    "text": "Change Workspace settings\n\nThe contents of the R session (the “environment”) should only show what we have done using code during that session\n\nWe will change the default settings to avoid this behavior"
+  },
+  {
+    "objectID": "day3/index.html#change-workspace-settings-3",
+    "href": "day3/index.html#change-workspace-settings-3",
+    "title": "Reproducible data analysis",
+    "section": "Change Workspace settings",
+    "text": "Change Workspace settings\n\nClick on Tools ➡︎ Global Options\n\nUncheck “Restore .RData into workspace at startup”\nSelect “Never” for “Save workspace to .RData on exit”\nClick “OK”\n\nYou can also delete the .RData file, which is where those data were stored"
+  },
+  {
+    "objectID": "day3/index.html#saving-code",
+    "href": "day3/index.html#saving-code",
+    "title": "Reproducible data analysis",
+    "section": "Saving code",
+    "text": "Saving code\n\nSo far, we have only typed code directly into R\n\n\n\nIt is much more useful to save your code in a file (called a “script”) so that you can run it again without typing everything all over again"
+  },
+  {
+    "objectID": "day3/index.html#saving-code-1",
+    "href": "day3/index.html#saving-code-1",
+    "title": "Reproducible data analysis",
+    "section": "Saving code",
+    "text": "Saving code\n\nClick File ➡︎ New File ➡︎ R Script\nClick the disk icon or File ➡︎ Save As... to give your file a name (let’s say, “practice.R”) and save it."
+  },
+  {
+    "objectID": "day3/index.html#running-code-from-a-file",
+    "href": "day3/index.html#running-code-from-a-file",
+    "title": "Reproducible data analysis",
+    "section": "Running code from a file",
+    "text": "Running code from a file\n\nType the same code as before in your new file: x &lt;- 2 + 2 and hit the “Enter” key\n\n\n\nNotice that R does not run the code, since this is the file editing pane, not the R console\nWe need to send the code to the console (that is, send it to R)"
+  },
+  {
+    "objectID": "day3/index.html#running-code-from-a-file-1",
+    "href": "day3/index.html#running-code-from-a-file-1",
+    "title": "Reproducible data analysis",
+    "section": "Running code from a file",
+    "text": "Running code from a file\n\nOne way to do this is to copy-and-paste it. But that is annoying.\nThe better way is to use the keyboard shortcut: control (Window) or command (Mac) + the enter key. Try it!\nYou can also either press the “Run” button in RStudio to run one line at a time, or the “Source” button to run all of the contents of your script"
+  },
+  {
+    "objectID": "day3/index.html#comments",
+    "href": "day3/index.html#comments",
+    "title": "Reproducible data analysis",
+    "section": "Comments",
+    "text": "Comments\n\nIn addition to the actual code, it is very useful to include notes in your script so you can remember why you did things\nThese notes are called “comments”\nYou write a comment by starting with #. Anything after that will be ignored by R"
+  },
+  {
+    "objectID": "day3/index.html#comments-1",
+    "href": "day3/index.html#comments-1",
+    "title": "Reproducible data analysis",
+    "section": "Comments",
+    "text": "Comments\n\n# This is a comment.\n# Let's use R like a calculator:\n22 / 7\n\n[1] 3.142857"
+  },
+  {
+    "objectID": "day3/index.html#functions-and-arguments",
+    "href": "day3/index.html#functions-and-arguments",
+    "title": "Reproducible data analysis",
+    "section": "Functions and arguments",
+    "text": "Functions and arguments\n\n\nThe next step in our R journey is to learn about functions\nA function takes input, does something to it, and returns output\nFor example, let’s try using the round function, which rounds numbers"
+  },
+  {
+    "objectID": "day3/index.html#functions-and-arguments-1",
+    "href": "day3/index.html#functions-and-arguments-1",
+    "title": "Reproducible data analysis",
+    "section": "Functions and arguments",
+    "text": "Functions and arguments\n\nThe input to the function is indicated by using parentheses, like this:\n\nfunction_name(input)\n\nTry it with round:\n\n\nround(3.142857)\n\n[1] 3"
+  },
+  {
+    "objectID": "day3/index.html#functions-and-arguments-2",
+    "href": "day3/index.html#functions-and-arguments-2",
+    "title": "Reproducible data analysis",
+    "section": "Functions and arguments",
+    "text": "Functions and arguments\n\nIn addition to the input, functions also have various settings, which are called “arguments”\n\n\n\nFor example, say we want to round to greater precision. We can use the digits argument to round to 3 digits.\n\n\nround(3.142857, digits = 3)\n\n[1] 3.143"
+  },
+  {
+    "objectID": "day3/index.html#functions-and-arguments-3",
+    "href": "day3/index.html#functions-and-arguments-3",
+    "title": "Reproducible data analysis",
+    "section": "Functions and arguments",
+    "text": "Functions and arguments\n\nR will recognize the input and arguments by their order, so you don’t actually have to specify the argument name (this can save you some typing):\n\n\nround(3.142857, 3)\n\n[1] 3.143\n\n\n\nBut you need to remember the order yourself! If you aren’t sure, it’s always better to be explicit and include the argument name"
+  },
+  {
+    "objectID": "day3/index.html#getting-help",
+    "href": "day3/index.html#getting-help",
+    "title": "Reproducible data analysis",
+    "section": "Getting help",
+    "text": "Getting help\n\nThis is all fine if you already know everything about what the function does, but nobody knows everything about R!\nTo see the settings (arguments) of a function, type a question mark followed by the name of the function, like this: ?round\nA description will appear in the help panel on the lower left."
+  },
+  {
+    "objectID": "day3/index.html#getting-help-1",
+    "href": "day3/index.html#getting-help-1",
+    "title": "Reproducible data analysis",
+    "section": "Getting help",
+    "text": "Getting help\n\nGoogling or asking ChatGPT* are also OK\n*but always be sure to check what ChatGPT tells you!"
+  },
+  {
+    "objectID": "day3/index.html#vectors",
+    "href": "day3/index.html#vectors",
+    "title": "Reproducible data analysis",
+    "section": "Vectors",
+    "text": "Vectors\n\nSo far, we have been doing calculations on one value at a time. But we want to be able to calculate many things at once.\nWe can do that with vectors, which are a series of values\nYou make a vector with the c() function\n\n(from now on I will always refer to functions by their name plus the parentheses, since you always need them to actually use the function)"
+  },
+  {
+    "objectID": "day3/index.html#vectors-1",
+    "href": "day3/index.html#vectors-1",
+    "title": "Reproducible data analysis",
+    "section": "Vectors",
+    "text": "Vectors\n\n# Create a vector of numbers\n# (a \"numeric vector\")\nnumbers &lt;- c(1, 2, 3, 4, 5)\nnumbers\n\n[1] 1 2 3 4 5"
+  },
+  {
+    "objectID": "day3/index.html#vectors-2",
+    "href": "day3/index.html#vectors-2",
+    "title": "Reproducible data analysis",
+    "section": "Vectors",
+    "text": "Vectors\nWe can now do use the vector as input. Say we want to double each of the numbers:\n\nnumbers * 2\n\n[1]  2  4  6  8 10\n\n\n…or obtain their mean value:\n\nmean(numbers)\n\n[1] 3\n\n\n\nAlmost everything you do in R relies on objects, functions, and vectors"
+  },
+  {
+    "objectID": "day3/index.html#data-types",
+    "href": "day3/index.html#data-types",
+    "title": "Reproducible data analysis",
+    "section": "Data types",
+    "text": "Data types\n\nVectors have a rule: each item (called an “element”) of the vector must be of the same data type\nThe basic data types in R include:\n\nNumeric (numbers, also confusingly called \"double\")\nCharacter (words)\nLogical (TRUE or FALSE)"
+  },
+  {
+    "objectID": "day3/index.html#data-types-1",
+    "href": "day3/index.html#data-types-1",
+    "title": "Reproducible data analysis",
+    "section": "Data types",
+    "text": "Data types\n\n# A numeric vector:\nc(1, 2, 3)\n\n[1] 1 2 3\n\n# A character vector:\nc(\"banana\", \"orange\", \"apple\")\n\n[1] \"banana\" \"orange\" \"apple\" \n\n# A logical vector:\nc(TRUE, FALSE, TRUE)\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "day3/index.html#data-types-2",
+    "href": "day3/index.html#data-types-2",
+    "title": "Reproducible data analysis",
+    "section": "Data types",
+    "text": "Data types\nWe can check the type of the vector using the typof() function.\n\nnums &lt;- c(1, 2, 3)\ntypeof(nums)\n\n[1] \"double\"\n\nfruit &lt;- c(\"banana\", \"orange\", \"apple\")\ntypeof(fruit)\n\n[1] \"character\"\n\ntf &lt;- c(TRUE, FALSE, TRUE)\ntypeof(tf)\n\n[1] \"logical\""
+  },
+  {
+    "objectID": "day3/index.html#data-types-3",
+    "href": "day3/index.html#data-types-3",
+    "title": "Reproducible data analysis",
+    "section": "Data types",
+    "text": "Data types\n\nWhat do you think happens if you try to combine data of different types?\nTry it!\n\n\nmixed &lt;- c(1, 2, \"banana\", \"orange\")"
+  },
+  {
+    "objectID": "day3/index.html#data-types-4",
+    "href": "day3/index.html#data-types-4",
+    "title": "Reproducible data analysis",
+    "section": "Data types",
+    "text": "Data types\n\nmixed &lt;- c(1, 2, \"banana\", \"orange\")\nmixed\n\n[1] \"1\"      \"2\"      \"banana\" \"orange\"\n\ntypeof(mixed)\n\n[1] \"character\"\n\n\n\n\nThe numeric data and the character data were all forced to be character (even though \"1\" may look like a number, the quotation marks show you that it is stored as a character)"
+  },
+  {
+    "objectID": "day3/index.html#comparisons",
+    "href": "day3/index.html#comparisons",
+    "title": "Reproducible data analysis",
+    "section": "Comparisons",
+    "text": "Comparisons\n\nWe will finish by demonstrating a very useful thing in programming: comparing values\nThe comparison symbols are:\n\n&gt; greater than\n&lt; less than\n== equals (be careful! use two equals signs, not one)\n!= not equal"
+  },
+  {
+    "objectID": "day3/index.html#comparisons-1",
+    "href": "day3/index.html#comparisons-1",
+    "title": "Reproducible data analysis",
+    "section": "Comparisons",
+    "text": "Comparisons\n\nThe comparisons will return a logical vector:\n\n\n# Here are some ages of people\nages &lt;- c(21, 8, 40)\n\n# Which of these people are adults?\nages &gt; 20\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "day3/index.html#subsetting",
+    "href": "day3/index.html#subsetting",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nThe reason that comparisons are so useful is that you can use them for subsetting, that is, to narrow down the data\nYou perform subsetting with square brackets, []"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-1",
+    "href": "day3/index.html#subsetting-1",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nHere we obtain the second value of the vector:\n\n\nages[2]\n\n[1] 8"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-2",
+    "href": "day3/index.html#subsetting-2",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nOr we could obtain the first and second values:\n\n\nages[c(1, 2)]\n\n[1] 21  8"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-3",
+    "href": "day3/index.html#subsetting-3",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nOr we can use a logical vector to indicate which values to keep:\n\n\nages[c(TRUE, TRUE, FALSE)]\n\n[1] 21  8"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-4",
+    "href": "day3/index.html#subsetting-4",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nHowever, you typically don’t type such logical vectors by hand\nIt is more useful to subset by using the output of a comparison\nFor example, let’s subset to only ages of adults. Recall how we set up that comparison:\n\n\nages &gt; 20\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "day3/index.html#subsetting-5",
+    "href": "day3/index.html#subsetting-5",
+    "title": "Reproducible data analysis",
+    "section": "Subsetting",
+    "text": "Subsetting\n\nNow, use that code to subset the values:\n\n\nages[ages &gt; 20]\n\n[1] 21 40\n\n\n\n\nThis kind of subsetting is very helpful for working with data, which will do starting next week!"
+  },
+  {
+    "objectID": "day3/index.html#homework",
+    "href": "day3/index.html#homework",
+    "title": "Reproducible data analysis",
+    "section": "Homework",
+    "text": "Homework\n\nGo to Moodle, click on Day 3 Homework and click on the link to accept the assignment\nClone the repo to your data-analysis-course on your Desktop, like we did last time"
+  },
+  {
+    "objectID": "day3/index.html#homework-1",
+    "href": "day3/index.html#homework-1",
+    "title": "Reproducible data analysis",
+    "section": "Homework",
+    "text": "Homework\n\nEdit the day03_homework.R file to answer the questions.\nMake sure to run the code. Your R code should not have any errors!\nCommit your changes as you work on your homework, and push them to the remote\nSubmit the URL for the remote as your answer on Moodle"
+  },
+  {
+    "objectID": "day3/index.html#homework-and-chatgpt",
+    "href": "day3/index.html#homework-and-chatgpt",
+    "title": "Reproducible data analysis",
+    "section": "Homework and ChatGPT",
+    "text": "Homework and ChatGPT\n\nI provide homework to give you a chance to think and learn\nFor basic R homework, ChatGPT can answer all of the questions instantly, and I can’t tell if you used it or not\nBut if you only use ChatGPT, you will not learn anything\nPlease think about why you are taking this class (and why you are paying money to attend Chiba U): do you just want a grade, or do you want to learn? It is up to you."
+  },
+  {
+    "objectID": "day5/index.html#what-is-eda",
+    "href": "day5/index.html#what-is-eda",
+    "title": "Reproducible data analysis",
+    "section": "What is EDA?",
+    "text": "What is EDA?\n\n\nEDA stands for Exploratory Data Analysis\nEDA is the step of “getting to know” your data\nYou have already been doing some EDA by sorting the data and understanding what is in each column"
+  },
+  {
+    "objectID": "day5/index.html#what-is-eda-1",
+    "href": "day5/index.html#what-is-eda-1",
+    "title": "Reproducible data analysis",
+    "section": "What is EDA?",
+    "text": "What is EDA?\n\n\nAnother very useful tool for EDA is data visualization\nToday we will learn how to visualize data using ggplot2\n\nggplot2 is included in the tidyverse set of packages\nThere are other ways to do this such as using plot(). But ggplot2 has more consistent syntax."
+  },
+  {
+    "objectID": "day5/index.html#what-makes-a-good-plot",
+    "href": "day5/index.html#what-makes-a-good-plot",
+    "title": "Reproducible data analysis",
+    "section": "What makes a good plot?",
+    "text": "What makes a good plot?\n\n\nHow about this one?"
+  },
+  {
+    "objectID": "day5/index.html#problems-with-this-plot",
+    "href": "day5/index.html#problems-with-this-plot",
+    "title": "Reproducible data analysis",
+    "section": "Problems with this plot",
+    "text": "Problems with this plot\n\n\n\n\nColors don’t correspond to contents (meat is green?)\n3D doesn’t have any meaning, only makes plot more complicated\nHard for humans to visually compare area"
+  },
+  {
+    "objectID": "day5/index.html#what-makes-a-good-plot-1",
+    "href": "day5/index.html#what-makes-a-good-plot-1",
+    "title": "Reproducible data analysis",
+    "section": "What makes a good plot?",
+    "text": "What makes a good plot?\n\nSimple\nEasy to understand\nConveys a message"
+  },
+  {
+    "objectID": "day5/index.html#what-makes-a-good-plot-2",
+    "href": "day5/index.html#what-makes-a-good-plot-2",
+    "title": "Reproducible data analysis",
+    "section": "What makes a good plot?",
+    "text": "What makes a good plot?\n\n\nPie chart  \n\nBar graph  \n\n\n\n\nBar graphs are better than pie charts for comparing values!\n\n\n\nhttps://clauswilke.com/dataviz/proportional-ink.html"
+  },
+  {
+    "objectID": "day5/index.html#ggplot2-approach-to-plotting",
+    "href": "day5/index.html#ggplot2-approach-to-plotting",
+    "title": "Reproducible data analysis",
+    "section": "ggplot2 approach to plotting",
+    "text": "ggplot2 approach to plotting\n\n\nGrammar of Graphics: all plots share a common “grammar”\n\nInput data\nAesthetic mapping: How to represent the data visually\n\n\naesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定\n\n\nGeometry: What shape to use for the plot\n\nRecommended Reading: ggplot2: Elegant Graphics for Data Analysis"
+  },
+  {
+    "objectID": "day5/index.html#aesthetic-mappings",
+    "href": "day5/index.html#aesthetic-mappings",
+    "title": "Reproducible data analysis",
+    "section": "Aesthetic mappings",
+    "text": "Aesthetic mappings\n\n\n\n\nhttps://clauswilke.com/dataviz/aesthetic-mapping.html"
+  },
+  {
+    "objectID": "day5/index.html#reopen-your-project",
+    "href": "day5/index.html#reopen-your-project",
+    "title": "Reproducible data analysis",
+    "section": "Reopen your project",
+    "text": "Reopen your project\n\nWe will continue to use the gapminder-analysis project in the data-analysis-course folder on your Desktop\nAlso create a file to write today’s code. You could call it data-viz-practice.R"
+  },
+  {
+    "objectID": "day5/index.html#load-tidyverse",
+    "href": "day5/index.html#load-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\nAlso load the scales package, which is for making plot labels\n\n\n\nlibrary(tidyverse)\nlibrary(scales)"
+  },
+  {
+    "objectID": "day5/index.html#load-data",
+    "href": "day5/index.html#load-data",
+    "title": "Reproducible data analysis",
+    "section": "Load data",
+    "text": "Load data\n\nUse the read_csv() function to load a spreadsheet as a dataframe\n\n\ngapminder &lt;- read_csv(\"data_raw/gapminder.csv\")"
+  },
+  {
+    "objectID": "day5/index.html#gapminder",
+    "href": "day5/index.html#gapminder",
+    "title": "Reproducible data analysis",
+    "section": "Gapminder",
+    "text": "Gapminder\n\nThis is a dataset of economic statistics from various countries over time, from https://gapminder.org\nThe meaning of some columns is obvious (country, continent, year), but not others\n\npop: Population\nlifeExp: Life expectancy (寿命)\ngdpPercap: GDP per capita (一人当たりの国内総生産)"
+  },
+  {
+    "objectID": "day5/index.html#first-plot",
+    "href": "day5/index.html#first-plot",
+    "title": "Reproducible data analysis",
+    "section": "First plot",
+    "text": "First plot\n\n\nggplot(data = gapminder)"
+  },
+  {
+    "objectID": "day5/index.html#first-plot-1",
+    "href": "day5/index.html#first-plot-1",
+    "title": "Reproducible data analysis",
+    "section": "First plot",
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp))"
+  },
+  {
+    "objectID": "day5/index.html#first-plot-2",
+    "href": "day5/index.html#first-plot-2",
+    "title": "Reproducible data analysis",
+    "section": "First plot",
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
+  },
+  {
+    "objectID": "day5/index.html#challenge",
+    "href": "day5/index.html#challenge",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nModify the code to show how life expectancy has changed over time"
+  },
+  {
+    "objectID": "day5/index.html#add-color",
+    "href": "day5/index.html#add-color",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\n\nIn the last challenge, we saw a general trend, but there could be more detail within certain groups, like continent or country\nLet’s use color to show the continent\nWhat is color in ggplot2?\n\nColor is an aesthetic mapping"
+  },
+  {
+    "objectID": "day5/index.html#original-plot",
+    "href": "day5/index.html#original-plot",
+    "title": "Reproducible data analysis",
+    "section": "Original plot",
+    "text": "Original plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#add-color-1",
+    "href": "day5/index.html#add-color-1",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#add-color-2",
+    "href": "day5/index.html#add-color-2",
+    "title": "Reproducible data analysis",
+    "section": "Add color",
+    "text": "Add color\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#basic-recipe",
+    "href": "day5/index.html#basic-recipe",
+    "title": "Reproducible data analysis",
+    "section": "Basic recipe",
+    "text": "Basic recipe\n\nAll plots can be made using the same basic formula:\n\nggplot(data = INPUT-DATA, mapping = aes(MAPPING)) +\n  GEOMETRY"
+  },
+  {
+    "objectID": "day5/index.html#basic-recipe-1",
+    "href": "day5/index.html#basic-recipe-1",
+    "title": "Reproducible data analysis",
+    "section": "Basic recipe",
+    "text": "Basic recipe\n\nSince data always comes first and mapping second, we can omit those names and make our code a little simpler:\n\nggplot(INPUT-DATA, aes(MAPPING)) +\n  GEOMETRY"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines",
+    "href": "day5/index.html#plotting-lines",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nLet’s try representing the data with a different geometry (shape)\nThis time we will use lines (geom_line())"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-1",
+    "href": "day5/index.html#plotting-lines-1",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-2",
+    "href": "day5/index.html#plotting-lines-2",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nLines connect points along the x-axis\nBut we only want to connect points within each country\nWe need to add another aesthic mapping for that, the group"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-3",
+    "href": "day5/index.html#plotting-lines-3",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-4",
+    "href": "day5/index.html#plotting-lines-4",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#plotting-lines-5",
+    "href": "day5/index.html#plotting-lines-5",
+    "title": "Reproducible data analysis",
+    "section": "Plotting lines",
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with",
+    "href": "day5/index.html#adding-layers-with",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nWe can add additional plot layers using the + sign\nFor example, lets add points on top of the lines"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-1",
+    "href": "day5/index.html#adding-layers-with-1",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-2",
+    "href": "day5/index.html#adding-layers-with-2",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#adding-layers-with-3",
+    "href": "day5/index.html#adding-layers-with-3",
+    "title": "Reproducible data analysis",
+    "section": "Adding layers with +",
+    "text": "Adding layers with +\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#challenge-1",
+    "href": "day5/index.html#challenge-1",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\nThe ggtitle() adds a title to a plot. Use ggtitle() as another layer to add a title to the last plot."
+  },
+  {
+    "objectID": "day5/index.html#summary-adding-layers-with",
+    "href": "day5/index.html#summary-adding-layers-with",
+    "title": "Reproducible data analysis",
+    "section": "Summary: Adding layers with +",
+    "text": "Summary: Adding layers with +\n\n\n\n\nEach layer modifies the plot, so you can build it gradually\nOther things layers can do:\n\nSet the plot theme\nChange the axes\nAdd labels\nand more!\n\n\n\n\n\n\n\n\n\n\nhttps://r.qcbs.ca/workshop03/book-en/"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic",
+    "href": "day5/index.html#modify-an-aesthetic",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nSo far, we have been mapping aesthetics to variables in the data\nBut you can also simply assign the same value to a particular aesthetic (such as color)\nDo this by setting its value outside of mapping = aes()"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic-1",
+    "href": "day5/index.html#modify-an-aesthetic-1",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic-2",
+    "href": "day5/index.html#modify-an-aesthetic-2",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point(color = \"black\")"
+  },
+  {
+    "objectID": "day5/index.html#modify-an-aesthetic-3",
+    "href": "day5/index.html#modify-an-aesthetic-3",
+    "title": "Reproducible data analysis",
+    "section": "Modify an aesthetic",
+    "text": "Modify an aesthetic\n\n\nggplot(\n  gapminder,\n  aes(\n    x = year,\n    y = lifeExp,\n    color = continent,\n    group = country)) +\n  geom_line() +\n  geom_point(color = \"black\")"
+  },
+  {
+    "objectID": "day5/index.html#transformations",
+    "href": "day5/index.html#transformations",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\n\nLet’s go back to the life expectancy vs. GDP graph again:"
+  },
+  {
+    "objectID": "day5/index.html#transformations-1",
+    "href": "day5/index.html#transformations-1",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\n\nDo you notice anything that makes this graph hard to read?"
+  },
+  {
+    "objectID": "day5/index.html#transformations-2",
+    "href": "day5/index.html#transformations-2",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\n\nNearly all the points are crowded to the left, with only a few outliers on the right\n\n\n\nWe can make this easier to read by using a log-transformation"
+  },
+  {
+    "objectID": "day5/index.html#transformations-3",
+    "href": "day5/index.html#transformations-3",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()"
+  },
+  {
+    "objectID": "day5/index.html#transformations-4",
+    "href": "day5/index.html#transformations-4",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "day5/index.html#transformations-5",
+    "href": "day5/index.html#transformations-5",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10()"
+  },
+  {
+    "objectID": "day5/index.html#transformations-6",
+    "href": "day5/index.html#transformations-6",
+    "title": "Reproducible data analysis",
+    "section": "Transformations",
+    "text": "Transformations\n\n\nggplot(\n  gapminder,\n  aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point() +\n  scale_x_log10(\n    labels = label_comma()\n  )"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots",
+    "href": "day5/index.html#multi-panel-plots",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot2 can make multiple plots at once using facetting\nEach facet is a mini-plot of some portion of the dataset\n\nDefine the facet group with vars()\n\nLet’s try this for some countries in Asia"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-1",
+    "href": "day5/index.html#multi-panel-plots-1",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\nFirst, subset the data just to some countries in Asia (for this example)\n\n\ngapminder_asia &lt;- filter(\n  gapminder,\n  country %in% c(\"Japan\", \"China\", \"Korea, Rep.\", \"Taiwan\"))"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-2",
+    "href": "day5/index.html#multi-panel-plots-2",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line()"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-3",
+    "href": "day5/index.html#multi-panel-plots-3",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+  },
+  {
+    "objectID": "day5/index.html#multi-panel-plots-4",
+    "href": "day5/index.html#multi-panel-plots-4",
+    "title": "Reproducible data analysis",
+    "section": "Multi-panel plots",
+    "text": "Multi-panel plots\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels",
+    "href": "day5/index.html#adjusting-labels",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nWhen you “publish” your plot (this could be including it in a report for a class), it needs to be clearly labeled\n\nWhoever is reading your report won’t know what “lifeExp” means"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels-1",
+    "href": "day5/index.html#adjusting-labels-1",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country))"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels-2",
+    "href": "day5/index.html#adjusting-labels-2",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country)) +\n  labs(\n    x = \"Year\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+  },
+  {
+    "objectID": "day5/index.html#adjusting-labels-3",
+    "href": "day5/index.html#adjusting-labels-3",
+    "title": "Reproducible data analysis",
+    "section": "Adjusting labels",
+    "text": "Adjusting labels\n\n\nggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country)) +\n  labs(\n    x = \"Year\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+  },
+  {
+    "objectID": "day5/index.html#saving-your-plot",
+    "href": "day5/index.html#saving-your-plot",
+    "title": "Reproducible data analysis",
+    "section": "Saving your plot",
+    "text": "Saving your plot\n\n\nIf you need to you can save your plot in R, and write it out as an image file\nUse the ggsave() function"
+  },
+  {
+    "objectID": "day5/index.html#saving-your-plot-1",
+    "href": "day5/index.html#saving-your-plot-1",
+    "title": "Reproducible data analysis",
+    "section": "Saving your plot",
+    "text": "Saving your plot\n\ngapminder_asia_plot &lt;- ggplot(\n  gapminder_asia,\n  aes(\n    x = year,\n    y = lifeExp)) +\n  geom_line() +\n  facet_wrap(vars(country)) +\n  labs(\n    x = \"Year\",\n    y = \"Life Expectancy (years)\",\n    title = \"Figure 1\"\n  )"
+  },
+  {
+    "objectID": "day5/index.html#saving-your-plot-2",
+    "href": "day5/index.html#saving-your-plot-2",
+    "title": "Reproducible data analysis",
+    "section": "Saving your plot",
+    "text": "Saving your plot\n\nggsave(plot = gapminder_asia_plot, file = \"gapminder_asia.pdf\")\n\n\nYou can also save .jpg, .png, etc."
+  },
+  {
+    "objectID": "day5/index.html#summary",
+    "href": "day5/index.html#summary",
+    "title": "Reproducible data analysis",
+    "section": "Summary",
+    "text": "Summary\n\n\nThink about what you want your graph to show\nAesthetic mapping: How to represent the data visually\nGeometry: What shape to use for the plot\nBuild your plot using layers\nBasic recipe: ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Reproducible Data Analysis",
+    "section": "",
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data tidying, part II\nDay 6 (Media Day): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II"
+  },
+  {
+    "objectID": "index.html#slides",
+    "href": "index.html#slides",
+    "title": "Reproducible Data Analysis",
+    "section": "",
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Data tidying, part II\nDay 6 (Media Day): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II"
+  },
+  {
+    "objectID": "index.html#materials",
+    "href": "index.html#materials",
+    "title": "Reproducible Data Analysis",
+    "section": "Materials",
+    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio\nDay 4: Tidyverse, part I\nDay 5: ggplot2\nFinal Report Example"
+  },
+  {
+    "objectID": "index.html#important-deadlines",
+    "href": "index.html#important-deadlines",
+    "title": "Reproducible Data Analysis",
+    "section": "Important Deadlines",
+    "text": "Important Deadlines\n\n2023-10-16 11:59PM: Day 2 homework due\n2023-10-23 11:59PM: Day 3 homework due\n2023-10-30 11:59PM: Day 4 homework due\n2023-11-06 11:59PM: Day 5 homework due\n2023-11-20 11:59: Final paper due\n2023-11-21: Final presentation (in class)"
+  },
+  {
+    "objectID": "index.html#office-hours",
+    "href": "index.html#office-hours",
+    "title": "Reproducible Data Analysis",
+    "section": "Office Hours",
+    "text": "Office Hours\nBy appointment, please send an email to joelnitta@chiba-u.jp"
+  },
+  {
+    "objectID": "index.html#syllabus",
+    "href": "index.html#syllabus",
+    "title": "Reproducible Data Analysis",
+    "section": "Syllabus",
+    "text": "Syllabus\nSyllabus in English"
+  },
+  {
+    "objectID": "day8/index.html#presentation-format",
+    "href": "day8/index.html#presentation-format",
+    "title": "Reproducible data analysis",
+    "section": "Presentation format",
+    "text": "Presentation format\n\n10 minutes per group\n5 minutes for questions\nAlphabetical by color (blue, green, orange, red)"
+  },
+  {
+    "objectID": "day8/index.html#evaluation-sheets",
+    "href": "day8/index.html#evaluation-sheets",
+    "title": "Reproducible data analysis",
+    "section": "Evaluation sheets",
+    "text": "Evaluation sheets\n\nFill out Form A today and turn it in at the end of class\nFill out Form B (on Moodle) after class by 11:59PM today (Nov. 21)\n\nThere are three copies of Form B (one per each other group member)"
+  },
+  {
+    "objectID": "day8/index.html#extra-credit-bonus-points",
+    "href": "day8/index.html#extra-credit-bonus-points",
+    "title": "Reproducible data analysis",
+    "section": "Extra Credit (bonus points)",
+    "text": "Extra Credit (bonus points)\n\nYou can receive extra credit by asking questions during the presentation\nExtra credit will be given for up to 2 questions per person\nYou must write your questions on Form A to receive extra credit"
+  },
+  {
+    "objectID": "day1/index.html#instructor-joel-nitta",
+    "href": "day1/index.html#instructor-joel-nitta",
+    "title": "Reproducible data analysis",
+    "section": "Instructor: Joel Nitta",
+    "text": "Instructor: Joel Nitta\n\n\n\nResearch topic 1: Ecology and evolution of ferns\n\nAlso teach Biodiversity and Japan\n\nResearch topic 2: Development of software for data science\nhttps://www.joelnitta.com"
+  },
+  {
+    "objectID": "day1/index.html#instructor-joel-nitta-1",
+    "href": "day1/index.html#instructor-joel-nitta-1",
+    "title": "Reproducible data analysis",
+    "section": "Instructor: Joel Nitta",
+    "text": "Instructor: Joel Nitta\n\n\n\nBorn and raised in California\nFourth generation Japanese-American\nFirst came to Japan as high school exchange student"
+  },
+  {
+    "objectID": "day1/index.html#ice-breaker",
+    "href": "day1/index.html#ice-breaker",
+    "title": "Reproducible data analysis",
+    "section": "Ice-breaker",
+    "text": "Ice-breaker\n\n\n\nAnswer the question: “Why are you interested in data analysis?”\nIntroduce yourself and discuss with your neighbor\n\n\n\n\n\n\nhttps://www.odelama.com/data-analysis/"
+  },
+  {
+    "objectID": "day1/index.html#what-is-data-analysis",
+    "href": "day1/index.html#what-is-data-analysis",
+    "title": "Reproducible data analysis",
+    "section": "What is data analysis?",
+    "text": "What is data analysis?\n\nObtaining insight from data\nImportant for many careers (academic and industry)\n\n\nEmployment of data scientists is projected to grow 35% from 2022 to 2032, much faster than the average for all occupations.\n\n\nhttps://www.bls.gov/ooh/math/data-scientists.htm"
+  },
+  {
+    "objectID": "day1/index.html#why-programming",
+    "href": "day1/index.html#why-programming",
+    "title": "Reproducible data analysis",
+    "section": "Why programming?",
+    "text": "Why programming?\nWho has used Excel? Who has used a programming language?\nWhat are the advantages and disadvantages of each for data analysis?\n\nDiscuss with your neighbor"
+  },
+  {
+    "objectID": "day1/index.html#why-programming-1",
+    "href": "day1/index.html#why-programming-1",
+    "title": "Reproducible data analysis",
+    "section": "Why programming?",
+    "text": "Why programming?\n\nProgramming allows you to record every step of data analysis\n\nThis means you can repeat your analysis!\n\n\nIt takes some time to get used to, but eventually you will feel more comfortable with it because you can re-trace your steps and have confidence in your results."
+  },
+  {
+    "objectID": "day1/index.html#why-reproducibility",
+    "href": "day1/index.html#why-reproducibility",
+    "title": "Reproducible data analysis",
+    "section": "Why reproducibility?",
+    "text": "Why reproducibility?\nWhen might you want to repeat an analysis? Why?\n\nDiscuss with your neighbor"
+  },
+  {
+    "objectID": "day1/index.html#why-reproducibility-1",
+    "href": "day1/index.html#why-reproducibility-1",
+    "title": "Reproducible data analysis",
+    "section": "Why reproducibility?",
+    "text": "Why reproducibility?\n\nIf new data comes in and you need to update an analysis\nIf you want to double-check your own results\nIf you want to repeat somebody else’s analysis\nIf you switch between different projects and can’t remember exactly what you were doing"
+  },
+  {
+    "objectID": "day1/index.html#goals-of-this-class",
+    "href": "day1/index.html#goals-of-this-class",
+    "title": "Reproducible data analysis",
+    "section": "Goals of this class",
+    "text": "Goals of this class\nThe goal of this class is to learn the fundamentals of reproducible data analysis by doing it yourself.\nBy the end of the course, you will be able to:\n\nload, clean, and visualize data using R\ntrack changes to code using Git and GitHub\nwrite a reproducible report using Quarto"
+  },
+  {
+    "objectID": "day1/index.html#expectations-of-this-class",
+    "href": "day1/index.html#expectations-of-this-class",
+    "title": "Reproducible data analysis",
+    "section": "Expectations of this class",
+    "text": "Expectations of this class\n\nI expect you to participate in discussions\nI expect you to ask questions"
+  },
+  {
+    "objectID": "day1/index.html#language-of-this-class",
+    "href": "day1/index.html#language-of-this-class",
+    "title": "Reproducible data analysis",
+    "section": "Language of this class",
+    "text": "Language of this class\n\nThis class is conducted in English\nBut, you can ask questions in Japanese and I will explain in Japanese if needed"
+  },
+  {
+    "objectID": "day1/index.html#recommended-reading",
+    "href": "day1/index.html#recommended-reading",
+    "title": "Reproducible data analysis",
+    "section": "Recommended Reading",
+    "text": "Recommended Reading\n\nR for Data Science. https://r4ds.had.co.nz/\n\nAvailable in Japanese from Amazon or O’Reilly\n\nHappy Git with R. https://happygitwithr.com/\nIntroduction to Reproducible Publications with RStudio https://ucsbcarpentry.github.io/Reproducible-Publications-with-RStudio-Quarto/index.html"
+  },
+  {
+    "objectID": "day1/index.html#homework-assignments",
+    "href": "day1/index.html#homework-assignments",
+    "title": "Reproducible data analysis",
+    "section": "Homework assignments",
+    "text": "Homework assignments\n\nThere will be a homework assignment on GitHub for each class, starting next week.\nYou submit the assignment by making a commit in Git (more about this on Day 2)"
+  },
+  {
+    "objectID": "day1/index.html#final-project",
+    "href": "day1/index.html#final-project",
+    "title": "Reproducible data analysis",
+    "section": "Final project",
+    "text": "Final project\n\nYou will need to analyze a dataset of your own choosing for your final project, due 2023-11-20\nThe last homework assignment is due 2023-11-06, so you have at least 2 weeks to work on the final project"
+  },
+  {
+    "objectID": "day1/index.html#schedule",
+    "href": "day1/index.html#schedule",
+    "title": "Reproducible data analysis",
+    "section": "Schedule",
+    "text": "Schedule\n\nDay 1, 2023-10-03\n\nIntroduction\n\nDay 2, 2023-10-10\n\nGit and GitHub\n\nDay 3, 2023-10-17\n\nBasic usage of R and RStudio\n\nDay 4, 2023-10-24\n\nWriting documents with Quarto"
+  },
+  {
+    "objectID": "day1/index.html#schedule-contd",
+    "href": "day1/index.html#schedule-contd",
+    "title": "Reproducible data analysis",
+    "section": "Schedule (cont’d)",
+    "text": "Schedule (cont’d)\n\nDay 5, 2023-10-31 (Media Day)\n\nData loading and tidying with tidyverse\n\nDay 6, 2023-11-07\n\nData visualization with ggplot2\n\nDay 7, 2023-11-14\n\nBest practices for reproducible data analysis\n\nDay 8, 2023-11-21\n\nFinal presentation"
+  },
+  {
+    "objectID": "day1/index.html#grades",
+    "href": "day1/index.html#grades",
+    "title": "Reproducible data analysis",
+    "section": "Grades",
+    "text": "Grades\n\nIn-class participation 25%\nHomework 25%\nFinal report 30%\nFinal presentation 20%\n\nNo late submissions allowed (exceptions may be made for medical emergencies)"
+  },
+  {
+    "objectID": "day1/index.html#course-website-and-slides",
+    "href": "day1/index.html#course-website-and-slides",
+    "title": "Reproducible data analysis",
+    "section": "Course website and slides",
+    "text": "Course website and slides\n\nAll slides (and other info) available athttps://data-analysis-chiba-2024.github.io/"
+  },
+  {
+    "objectID": "day1/index.html#moodle",
+    "href": "day1/index.html#moodle",
+    "title": "Reproducible data analysis",
+    "section": "Moodle",
+    "text": "Moodle\n\nAssignments (GitHub classroom repos) will be posted on Moodle\nCheck Moodle every week"
+  },
+  {
+    "objectID": "day1/index.html#office-hours",
+    "href": "day1/index.html#office-hours",
+    "title": "Reproducible data analysis",
+    "section": "Office hours",
+    "text": "Office hours\nBy appointment: contact me at joelnitta@chiba.u-jp"
+  },
+  {
+    "objectID": "day1/index.html#questions",
+    "href": "day1/index.html#questions",
+    "title": "Reproducible data analysis",
+    "section": "Questions?",
+    "text": "Questions?"
+  },
+  {
+    "objectID": "day1/index.html#chatgpt",
+    "href": "day1/index.html#chatgpt",
+    "title": "Reproducible data analysis",
+    "section": "ChatGPT",
+    "text": "ChatGPT\n\nWho has used ChatGPT before?\n\nhttps://chat.openai.com/\n\nYou may use ChatGPT for your homework and final project\nBut first you need to know how to use it"
+  },
+  {
+    "objectID": "day1/index.html#chatgpt-1",
+    "href": "day1/index.html#chatgpt-1",
+    "title": "Reproducible data analysis",
+    "section": "ChatGPT",
+    "text": "ChatGPT\n\nChatGPT makes statistical predictions about words based on training data (it does not “think”)\nChatGPT is designed to produce sentences that sound as natural as possible\nChatGPT may lie to you or make up facts (called “hallucination”; this is especially common when it lacks adequate training data)"
+  },
+  {
+    "objectID": "day1/index.html#chatgpt-policies-dos",
+    "href": "day1/index.html#chatgpt-policies-dos",
+    "title": "Reproducible data analysis",
+    "section": "ChatGPT policies (DOs)",
+    "text": "ChatGPT policies (DOs)\n\nDo try by yourself first (without ChatGPT)\nDo ask it detailed, specific questions (prompts)\n\nhttps://www.promptingguide.ai/ (日本語)\n\nDo double-check the results: does ChatGPT’s code produce the expected result?\nDo make sure you understand the code that ChatGPT provides"
+  },
+  {
+    "objectID": "day1/index.html#chatgpt-policies-donts",
+    "href": "day1/index.html#chatgpt-policies-donts",
+    "title": "Reproducible data analysis",
+    "section": "ChatGPT policies (DON’Ts)",
+    "text": "ChatGPT policies (DON’Ts)\n\nDon’t copy-paste directly from ChatGPT for your report.\n\nTyping the code yourself will help you remember it and understand what you are doing. Copy-pasting text for a paper is plagiarism.\n\nDon’t submit an answer from ChatGPT without trying/checking it yourself first\n\nChatGPT could very well be wrong!"
+  },
+  {
+    "objectID": "day1/index.html#setting-up-rstudio",
+    "href": "day1/index.html#setting-up-rstudio",
+    "title": "Reproducible data analysis",
+    "section": "Setting up RStudio",
+    "text": "Setting up RStudio\n\nInstall R\nInstall RStudio"
+  },
+  {
+    "objectID": "day1/index.html#setting-up-git",
+    "href": "day1/index.html#setting-up-git",
+    "title": "Reproducible data analysis",
+    "section": "Setting up Git",
+    "text": "Setting up Git\nWe will follow instructions for Day 2 to set up Git"
+  }
+]
