@@ -8,402 +8,850 @@ execute:
   echo: true
 ---
 
-# Day 6: Writing documents with Quarto
+# Day 5: Data visualization with ggplot2
 
 ```{r}
 #| echo: false
 old <- options(pillar.print_min = 6)
 ```
 
-## What is Quarto?
+## What is EDA?
 
 ::: {.incremental}
 
-- **Quarto** is a computer program that allows you to **generate documents** in various formats with code
+- EDA stands for **E**xploratory **D**ata **A**nalysis
 
-- We will use it to generate **MS Word** documents with **R**
+- EDA is the step of "getting to know" your data
 
-- It can also generate **PDF**, **HTML**, and other output
-
-- It can also use other programming languages like **Python**
+- You have already been doing some EDA by sorting the data and understanding what is in each column
 
 :::
 
-## Why use Quarto?
-
-::: {.columns}
-::: {.column}
-::: {.incremental}
-
-- Part of **data analysis** is **communicating** your results to an audience
-
-- For example, writing a **final report for a class**, or giving a presentation at work
-
-:::
-:::
-::: {.column}
-![](https://1.bp.blogspot.com/-_GTwRCTvCwI/WzC-xyQXfmI/AAAAAAABNEs/qUWGQKyzYgUtUsoGlG01LYqS0w5H7is0QCLcBGAs/s800/presentation_kaigi_woman.png)
-:::
-:::
-
-## Why use Quarto?
+## What is EDA?
 
 ::: {.incremental}
 
-- Generating a report with code...
-  - helps you **avoid copy-and-paste errors**
-  - ensures that your results are a **direct result of the data**
-  - helps you **save time** by re-using the code later
+- Another very useful tool for EDA is **data visualization**
+
+- Today we will learn how to visualize data using `ggplot2`
+  - `ggplot2` is included in the `tidyverse` set of packages
+  - There are other ways to do this such as using `plot()`. But `ggplot2` has more consistent syntax.
 
 :::
 
-## Installing Quarto
+---
 
-- You should have already installed Quarto before class
+![Image by Allison Horst](../images/ggplot2_exploratory.png){fig-alt="Monsters exploring data with ggplot2"}
 
-- If not, please go to <https://quarto.org/docs/get-started/> and install it now
+## What makes a good plot?
+
+![](../images/piechart3d.png)
+
+- How about this one?
+
+## Problems with this plot
+
+:::: {.columns}
+
+::: {.column width="50%"}
+::: {.incremental}
+- Colors **don't correspond** to contents (meat is green?)
+
+- 3D doesn't have any meaning, only makes plot **more complicated**
+
+- Hard for humans to visually compare **area**
+:::
+:::
+
+::: {.column width="50%"}
+![](../images/piechart3d.png)
+:::
+
+::::
+
+## What makes a good plot?
+
+- Simple
+
+- Easy to understand
+
+- Conveys a message
+
+## What makes a good plot?
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pie chart
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-pie-1.png" alt="drawing" height="220">
+:::
+
+::: {.column width="50%"}
+Bar graph
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-bars-1.png" alt="drawing" height="220">
+:::
+
+::::
+
+:::: {.aside}
+::: {.small}
+https://clauswilke.com/dataviz/proportional-ink.html
+:::
+::::
+
+- **Bar graphs are better** than pie charts for comparing values!
+
+## `ggplot2` approach to plotting
+
+::: {.incremental}
+
+- ***G***rammar of ***G***raphics: all plots share a common "grammar"
+  1. Input **data**
+  2. **Aesthetic mapping**: How to represent the data visually
+    - aesthetic = 美的, mapping = 相当する. どんな美的な要素に相当するのかの指定
+  3. **Geometry**: What **shape** to use for the plot
+
+- Recommended Reading: [ggplot2: Elegant Graphics for Data Analysis](https://ggplot2-book.org/)
+
+:::
+
+## Aesthetic mappings
+
+![](https://clauswilke.com/dataviz/aesthetic_mapping_files/figure-html/common-aesthetics-1.png)
+
+:::: {.aside}
+::: {.small}
+https://clauswilke.com/dataviz/aesthetic-mapping.html
+:::
+::::
+
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pie chart
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-pie-1.png" alt="drawing" height="220">
+:::
+
+::: {.column width="50%"}
+Bar graph
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-bars-1.png" alt="drawing" height="220">
+:::
+
+::::
+
+- How is population represented ("**mapped**") in each plot?
+
+- What is the shape ("**geometry**") of each plot?
+---
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Pie chart
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-pie-1.png" alt="drawing" height="220">
+:::
+
+::: {.column width="50%"}
+Bar graph
+<br><br>
+<img src="https://clauswilke.com/dataviz/proportional_ink_files/figure-html/RI-pop-bars-1.png" alt="drawing" height="220">
+:::
+
+::::
+
+- How is population mapped in each plot?
+  - Mapped to **area** in pie chart, **length** in bar graph
+
+- What is the geometry of each plot?
+  - **Circle** ("pie") in pie chart, **column** ("bar") in bar graph
 
 ## Reopen your project
 
 - We will continue to use the `gapminder-analysis` project in the `data-analysis-course` folder on your Desktop
 
-- Navigate there and click on `gapminder-analysis.Rproj`
+- Also create a file to write today's code. You could call it `data-viz-practice.R`
 
-## Create a Quarto file
+## Load `tidyverse`
 
-- Create a new Quarto file by clicking File > New File > Quarto Document…
+- Let's load the `tidyverse` package with `library()`
+  - Note that you don't need to use quotation marks for the package name
+  - Also load the `scales` package, which is for making plot labels
 
-- In menu that appears, type `"Gapminder Analysis"` for the title and your name for the author
+```{r}
+library(tidyverse)
+library(scales)
+```
 
-- Leave format as HTML (as it says, we can change it at any time later)
+## Load data
 
-- RStudio will create a file. Save it as `"gapminder-report.qmd"` (`.qmd` is the file extension for Quarto files)
+- Use the `read_csv()` function to load a spreadsheet as a dataframe
 
----
+```{r}
+#| echo: false
+gapminder <- read_csv(here::here("day4/data_raw/gapminder.csv"))
+```
 
-![](../images/quarto-new.png)
+```{r}
+#| eval: false
+gapminder <- read_csv("data_raw/gapminder.csv")
+```
 
-## How a Quarto file is set up
+## Gapminder
 
-::: {.incremental}
+- This is a dataset of economic statistics from various countries over time, from <https://gapminder.org>
 
-- Look at your new Quarto file. What do you notice that is different from the `.R` files we have been using so far?
+- The meaning of some columns is obvious (`country`, `continent`, `year`), but not others
+  - `pop`: Population
+  - `lifeExp`: Life expectancy (寿命)
+  - `gdpPercap`: GDP per capita (一人当たりの国内総生産)
 
-- There is **normal text** like "Quarto enables you to weave together content..." that **does not appear in a comment**
+## First plot
 
-- There are lines starting with **two** hashes (`##`)
+```{r}
+#| echo: false
+theme_set(theme_gray(base_size = 24))
+```
 
-- There are lines like ` ```{r} `
+```{r}
+#| output-location: column
+ggplot(data = gapminder)
+```
 
-- **What is going on here?**
+## First plot
 
-:::
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = gdpPercap,
+    y = lifeExp))
+```
 
-## How a Quarto file is set up
+## First plot
 
-::: {.incremental}
-
-- A Quarto (`.qmd`) file is set up **opposite** to an R script
-
-- Normal lines of text **are not code** (so they don't need a `#` like a comment)
-
-- R code is contained within lines starting with ` ```{r} ` and ending with ` ``` ` (called a **"code chunk"**)
-
-:::
-
-## Rendering
-
-::: {.incremental}
-
-- Another important difference between normal `.R` files and `.qmd` files is that the latter **produce documents**
-
-- This is called **"rendering"**
-
-- Let's try that now: press the "Render" button in RStudio 
-
-:::
-
----
-
-![](../images/quarto-render.png)
-
-## Rendering
-
-::: {.incremental}
-
-- You should see the **rendered document** (a web page, in this case) appear on the right side of RStudio (in the Files and Plots panel)
-  - also, in the Files tab, notice the `gapminder-report.html` file
-
-- Notice the **formatting** of the output: lines like `## Quarto` appear as **headers**
-
-- You can also see the **output** of the code, like `1 + 1`
-
-:::
-
----
-
-![](../images/quarto-rendered.png)
-
-## Formatting with Markdown
+```{r}
+#| output-location: column
+#| label: gdp-life
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = gdpPercap,
+    y = lifeExp)) +
+  geom_point()
+```
 
 ::: {.incremental}
 
-- The `.qmd` file is written in **plain text** (without formatting, similar to an `.R` file)
-
-- We can specify formatting in the output using **Markdown** syntax
-  - Markdown is a very simple version of HTML
-
-:::
-
-## Formatting with Markdown
-
-- As you can see in the document, the hash symbol (`#`) is used to define **headings**, which appear larger than other text
-  - `#` Heading level 1 (biggest)
-  - `##` Heading level 2
-  - `###` Heading level 3...
-
-- For *italics*, wrap the text in `*`, like this `*this*` (renders like *this*)
-
-- For **bold**, wrap the text in `**`, like this `**this**` (renders like **this**)
-
-## Formatting with Markdown
-
-::: {.incremental}
-
-- `.qmd` files are known as "Quarto Markdown" because they add Quarto's features (the ability to include code chunks) to Markdown
-
-- You may have heard of "R Markdown," which is the precursor to Quarto Markdown
-  - There is generally no reason to use R Markdown instead of Quarto Markdown
-  - They are very similar, so most things you read about R Markdown will apply to Quarto Markdown
-
-:::
-
-## Formatting with Markdown
-
-::: {.incremental}
-
-- RStudio has a handy way for you to preview what the rendered text will look like
-
-- Right now we are in **"Source"** mode, which means we are editing the plain text
-
-- Click on the **"Visual"** mode button to switch to "Visual" mode
-
-- Now it looks much more like the output on the right
-  - But notice that we don't see the results of running the code chunks
-
-:::
-
----
-
-![](../images/quarto-visual.png)
-
-## Formatting with Markdown
-
-::: {.incremental}
-
-- I much prefer working with plain text, so we will switch back to "Source" mode
-
-- But it is a good idea to use "Visual" mode to check what your markdown formatting will look like
-
-- There are many [guides](https://www.freecodecamp.org/news/markdown-cheatsheet/) online to learn more about writing Markdown
-
-:::
-
-## About the code chunks
-
-::: {.incremental}
-
-- Within the code chunks, anything you type is treated **just like an R script**
-  - Normal text must be R code
-  - Comments can be written with `#`
-
-- The idea is to **conduct analysis in the code chunks**, and directly **show the output in the rendered document**
+- What does this plot tell us?
 
 :::
 
 ## Challenge
 
-- Modify the first code chunk to load the `tidyverse` package, then read in the `gapminder` dataset like we did before
+- Modify the code to show how life expectancy has changed **over time**
 
-## About the code chunks
+## Add color
 
 ::: {.incremental}
 
-- Notice that when we render the document, the gapminder dataset **is not loaded into our current R session**
+- In the last challenge, we saw a general trend, but there could be **more detail within certain groups**, like continent or country
 
-- That is because rending takes place in a **separate instance of R**
+- Let's use **color** to show the **continent**
 
-- To run the R code in a chunk **in your current R session**, press the green "play" button at the right-hand side of the chunk
+- What is **color** in `ggplot2`?
+  - Color is an **aesthetic mapping**
 
 :::
+
+## Original plot
+
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = year,
+    y = lifeExp)) +
+  geom_point()
+```
+
+## Add color
+
+```{r}
+#| output-location: column
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_point()
+```
+
+## Add color
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "6"
+ggplot(
+  data = gapminder,
+  mapping = aes(
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_point()
+```
+
+## Basic recipe
+
+- All plots can be made using the same basic formula:
+
+```
+ggplot(data = INPUT-DATA, mapping = aes(MAPPING)) +
+  GEOMETRY
+```
+
+## Basic recipe
+
+- Since `data` always comes first and `mapping` second, we can omit those names and make our code a little simpler:
+
+```
+ggplot(INPUT-DATA, aes(MAPPING)) +
+  GEOMETRY
+```
 
 ---
 
-![](../images/code-chunk-play.png)
+```{r}
+#| output-location: column
+ggplot(
+  gapminder, # DATA
+  aes( # MAPPING
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_point() # GEOMETRY
+```
 
-## In-line code
-
-::: {.incremental}
-
-- In addition to code chunks, you can also mix short bits of R code within normal text by first writing a backtick (`` ` ``) and the letter `r`, then the R code, then another backtick
-
-- For example, we can show the number of rows in the dataset with <code>&grave;r nrow(gapminder)&grave;</code>
-
-- This is best used for describing facts about the data or results
-
-:::
-
-## About the YAML header
+## Plotting lines
 
 ::: {.incremental}
 
-- The first set of lines at the top of the file are called the "YAML header"
-  - YAML stands for "Yet Another Markup Language"
+- Let's try representing the data with a different **geometry** (shape)
 
-- The YAML header specifies **settings** for the document using **variables**
-  - You can set the values of the values of the variables with a colon: `variable: value`, for example `author: "Joel Nitta"`
-
-- There are many other settings, but we won't cover those today
+- This time we will use lines (`geom_line()`)
 
 :::
 
-## Code chunk options
+## Plotting lines
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder, # DATA
+  aes( # MAPPING
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_line() # GEOMETRY
+```
+
+- That looks a little odd. What is the problem?
+
+## Plotting lines
 
 ::: {.incremental}
 
-- Similar to the YAML header, we can also specify settings for the code chunks
+- Lines connect points along the x-axis
 
-- This is done by first writing `#|`, then the setting like you would for the YAML header
+- But we only want to connect points **within each country**
 
-- For example, in a report, you usually only want to show the **results** of the code, not the code itself
-
-- You can do this with the following code chunk option: `#| echo: false` (remember `echo` **echoes** the code)
+- We need to add another **aesthic mapping** for that, the `group`
 
 :::
 
-## Code chunk options
+## Plotting lines
 
-- Other useful code options
-  - `message: false` Hide code messages
-  - `warning: false` Hide code warnings 
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent)) +
+  geom_line()
+```
 
-## Code chunk options
+## Plotting lines
 
-- Let's write another code chunk that outputs a plot. Change the chunk options to hide the code.
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line()
+```
 
-## Change the output format
+## Plotting lines
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "7"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line()
+```
+
+## Adding layers with `+`
 
 ::: {.incremental}
 
-- So far, we have been using HTML output because it is the default and shows up immediately when we press "render"
+- We can add additional plot layers using the `+` sign
 
-- But your report should be submitted in Word (.docx) format.
-
-- Change the output format to `docx` and render the document again
+- For example, lets add **points** on top of the **lines**
 
 :::
 
-## Tell git to ignore output
+## Adding layers with `+`
 
-- You should not commit the output of code
-  - It clutters your git history, and is not necessary since you can always obtain the output by running the code
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line()
+```
 
-- You can tell git to **ignore** files by adding them to `.gitignore`:
-  - `gapminder-report.docx`
-  - `gapminder-report.html`
-  - `gapminder-report_files` (files needed for HTML output)
+## Adding layers with `+`
 
-## Tell git to ignore output
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point()
+```
 
-- If you know you want to ignore **all** docx files, you could instead write this:
-  - `*.docx`
+## Adding layers with `+`
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point()
+```
+
+## Challenge
+
+The `ggtitle()` adds a title to a plot. Use `ggtitle()` as **another layer** to add a title to the last plot.
+
+## Summary: Adding layers with `+`
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+::: {.incremental}
+- Each layer **modifies** the plot, so you can build it gradually
+
+- Other things layers can do:
+  - Set the plot **theme**
+  - Change the **axes**
+  - Add **labels**
+  - and more!
+:::
+
+:::
+
+::: {.column width="50%"}
+![](../images/gglayers_edit.png)
+:::
+
+::::
+
+:::: {.aside}
+::: {.small}
+https://r.qcbs.ca/workshop03/book-en/
+:::
+::::
+
+## Modify an aesthetic
+
+::: {.incremental}
+
+- So far, we have been **mapping** aesthetics to variables in the data
+
+- But you can also simply **assign** the same value to a particular aesthetic (such as color)
+
+- Do this by setting its value **outside** of `mapping = aes()`
+
+:::
+
+## Modify an aesthetic
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point()
+```
+
+## Modify an aesthetic
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point(color = "black")
+```
+
+## Modify an aesthetic
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9"
+ggplot(
+  gapminder,
+  aes(
+    x = year,
+    y = lifeExp,
+    color = continent,
+    group = country)) +
+  geom_line() +
+  geom_point(color = "black")
+```
+
+## Transformations
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Let's go back to the life expectancy vs. GDP graph again:
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| label: gdp-life
+```
+
+:::
+
+::::
+
+## Transformations
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+- Do you notice anything that makes this graph hard to read?
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| ref.label: gdp-life
+```
+
+:::
+
+::::
+
+## Transformations
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- Nearly **all the points are crowded to the left**, with only a few outliers on the right
+
+::: {.incremental}
+- We can make this easier to read by using a **log-transformation**
+:::
+
+:::
+
+::: {.column width="50%"}
+```{r}
+#| echo: false
+#| ref.label: gdp-life
+```
+
+:::
+
+::::
+
+## Transformations
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = gdpPercap,
+    y = lifeExp)) +
+  geom_point()
+```
+
+## Transformations
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder,
+  aes(
+    x = gdpPercap,
+    y = lifeExp)) +
+  geom_point() +
+  scale_x_log10()
+```
+
+## Transformations
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "7"
+ggplot(
+  gapminder,
+  aes(
+    x = gdpPercap,
+    y = lifeExp)) +
+  geom_point() +
+  scale_x_log10()
+```
+
+## Transformations
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "7-10"
+ggplot(
+  gapminder,
+  aes(
+    x = gdpPercap,
+    y = lifeExp)) +
+  geom_point() +
+  scale_x_log10(
+    labels = label_comma()
+  )
+```
+
+## Multi-panel plots
+
+::: {.incremental}
+
+- `ggplot2` can make **multiple plots at once** using **facetting**
+
+- Each **facet** is a mini-plot of some portion of the dataset
+  - Define the facet group with `vars()`
+
+- Let's try this for some countries in Asia
+
+:::
+
+## Multi-panel plots
+
+- First, subset the data just to some countries in Asia (for this example)
+
+```{r}
+gapminder_asia <- filter(
+  gapminder,
+  country %in% c("Japan", "China", "Korea, Rep.", "Taiwan"))
+```
+
+## Multi-panel plots
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line()
+```
+
+## Multi-panel plots
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line() +
+  facet_wrap(vars(country))
+```
+
+## Multi-panel plots
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "7"
+ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line() +
+  facet_wrap(vars(country))
+```
+
+## Adjusting labels
+
+::: {.incremental}
+
+- When you "publish" your plot (this could be including it in a report for a class), it needs to be **clearly labeled**
+  - Whoever is reading your report won't know what "lifeExp" means
+
+
+:::
+
+## Adjusting labels
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line() +
+  facet_wrap(vars(country))
+```
+
+## Adjusting labels
+
+```{r}
+#| output-location: column
+ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line() +
+  facet_wrap(vars(country)) +
+  labs(
+    x = "Year",
+    y = "Life Expectancy (years)",
+    title = "Figure 1"
+  )
+```
+
+## Adjusting labels
+
+```{r}
+#| output-location: column
+#| code-line-numbers: "9-13"
+ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line() +
+  facet_wrap(vars(country)) +
+  labs(
+    x = "Year",
+    y = "Life Expectancy (years)",
+    title = "Figure 1"
+  )
+```
+
+## Saving your plot
+
+::: {.incremental}
+
+- If you need to you can save your plot in R, and write it out as an image file
+
+- Use the `ggsave()` function
+
+:::
+
+## Saving your plot
+
+```{r}
+gapminder_asia_plot <- ggplot(
+  gapminder_asia,
+  aes(
+    x = year,
+    y = lifeExp)) +
+  geom_line() +
+  facet_wrap(vars(country)) +
+  labs(
+    x = "Year",
+    y = "Life Expectancy (years)",
+    title = "Figure 1"
+  )
+```
+
+## Saving your plot
+
+```{r}
+#| eval: false
+ggsave(plot = gapminder_asia_plot, file = "gapminder_asia.pdf")
+```
+
+- You can also save `.jpg`, `.png`, etc.
 
 ## Summary
 
 ::: {.incremental}
 
-- Quarto allows you to insert your analysis results **directly** into reports
-
-- Quarto can generate **multiple** output formats
-
-- The way of writing code and plain text is reversed compared to R scripts
-
-- Please try to use Quarto for your class reports!
+- Think about **what you want your graph to show**
+- **Aesthetic mapping**: How to represent the data visually
+- **Geometry**: What shape to use for the plot
+- Build your plot using **layers**
+- Basic recipe: `ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY`
 
 :::
-
-# Final Project
-
-## Project Description
-
-- The final project is to **analyze a dataset**, including **at least two graphs**
-  - Use **Quarto** to write the report (by 11/21)
-  - Present your analysis to the class (on 11/21)
-
-- There will be time in class next week to work on the report (but you are expected to work on it outside of class as well)
-
-## Example Repo
-
-- I have created an **example report** for you using the gapminder dataset: <https://github.com/data-analysis-chiba-2024/gapminder-report>
-
-- You can look at the `.qmd` file online, or clone the repo to your computer
-
-## Dataset
-
-- You will choose a dataset from the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) project to analyze
-  - Tidy Tuesday releases a dataset once a week to practice data analysis
-
-## Dataset
-
-- I have already pre-selected 5 datasets for you
-  - [World's Oldest People](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-30/readme.md#verified-oldest-people)
-  - [Olympics](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-07-27/readme.md#the-olympics)
-  - [Chocolate ratings](https://github.com/rfordatascience/tidytuesday/tree/master/data/2022/2022-01-18#chocolate-ratings)
-  - [Transit cost](https://github.com/rfordatascience/tidytuesday/blob/master/data/2021/2021-01-05/readme.md#transit-costs-project)
-  - [Student to teacher ratios](https://github.com/rfordatascience/tidytuesday/tree/master/data/2019/2019-05-07#global-student-to-teacher-ratios)
-
-## Team Setup
-
-- You will work in teams of 4 people each
-  - I have already assigned everybody to teams
-
-- Please sit with members of your team and choose a dataset (you can choose a new team name if you want)
-
-## Working as a team
-
-- Clone the project on GitHub by clicking on the link in Moodle
-
-- Be sure to enter your team name correctly! (pay attention to lower and upper case)
-
-- This time, *all team members have access to the same repository*
-
-## Editing the template
-
-- There is some text in the `report.qmd` file. Edit it to match your dataset and team members.
-  - Delete the lines about the other datasets
-  - Delete the questions and add your text
-
-## Working as a team
-
-- To avoid **merge conflicts** (incompatible changes to the same file made by different people) **make a copy** of the final report file **for each team member** to work on.
-  - For example, `report-jn.Qmd`
-
-- Share your work by pushing and pulling
-
-- When you are ready to submit the final report, **one person** should edit the final report file `report.Qmd`
-
-- Also submit the repo URL on Moodle as usual
-
-## Due dates
-
-- The report (`report.qmd`) is due **2023-11-20 11:59 PM**
-
-- The presentation will be given in class on **2023-11-21**
-
-## Evaluation Sheets
-
-- You will evaluate (score) **each other team's presentation** in class on 2023-11-21
-  - Turn in **Form A** (hardcopy) at the end of the class
-
-- You will evaluate the contributions of **each of your team members** after class (due by 2023-11-21 11:59 PM)
-  - Turn in **Form B** (digital) on Moodle
