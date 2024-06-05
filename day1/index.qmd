@@ -196,7 +196,7 @@ By the end of the course, you will be able to:
 
 ## Course website and slides
 
-- All slides (and other info) available at<br><https://data-analysis-chiba-2023.github.io/>
+- All slides (and other info) available at<br><https://data-analysis-chiba-2024.github.io/>
 
 ## Moodle
 

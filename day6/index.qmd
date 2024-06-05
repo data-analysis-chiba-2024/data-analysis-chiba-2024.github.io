@@ -346,7 +346,7 @@ old <- options(pillar.print_min = 6)
 
 ## Example Repo
 
-- I have created an **example report** for you using the gapminder dataset: <https://github.com/data-analysis-chiba-2023/gapminder-report>
+- I have created an **example report** for you using the gapminder dataset: <https://github.com/data-analysis-chiba-2024/gapminder-report>
 
 - You can look at the `.qmd` file online, or clone the repo to your computer
 

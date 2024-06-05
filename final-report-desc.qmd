@@ -36,7 +36,7 @@ If you cite any references, please include a reference list at the end.
 
 ## Example Report
 
-I have made an example report that you can refer to when working on your project: <https://github.com/data-analysis-chiba-2023/gapminder-report>
+I have made an example report that you can refer to when working on your project: <https://github.com/data-analysis-chiba-2024/gapminder-report>
 
 ## Group Work
 

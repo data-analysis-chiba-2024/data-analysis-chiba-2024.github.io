@@ -168,4 +168,4 @@ It is usually a good idea to ignore **raw data files** and **output files**. We 
 
 We will go through a typical git workflow together in class using RStudio.
 
-This is explained in the ["Intro to Git" markdown file](https://github.com/data-analysis-chiba-2023/day02-git/blob/main/day02_intro_to_git.md), which you will copy to your computer when you clone the [Day 2 repo](https://github.com/data-analysis-chiba-2023/day02-git/).
+This is explained in the ["Intro to Git" markdown file](https://github.com/data-analysis-chiba-2024/day02-git/blob/main/day02_intro_to_git.md), which you will copy to your computer when you clone the [Day 2 repo](https://github.com/data-analysis-chiba-2024/day02-git/).
