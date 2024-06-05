@@ -16,6 +16,10 @@ Instructor: Assoc. Prof. [Joel H. Nitta](https://www.joelnitta.com)
 
 <https://syllabus.gs.chiba-u.jp/2024/101101101076000/Z011531301/en_US>
 
+## Publishing
+
+To publish the site, run `quarto publish`. The site is rendered from the `gh-pages` branch.
+
 ## Licenses
 
 Some material has been adapted from the following:
