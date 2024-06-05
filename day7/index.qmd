@@ -8,7 +8,7 @@ execute:
   echo: true
 ---
 
-# Day 6: Writing documents with Quarto
+# Day 7: Writing documents with Quarto
 
 ```{r}
 #| echo: false

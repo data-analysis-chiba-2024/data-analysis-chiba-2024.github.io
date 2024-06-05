@@ -8,7 +8,7 @@ execute:
   echo: true
 ---
 
-# Day 7: Quarto, Part II
+# Day 8: Quarto, Part II
 
 ## Announcements
 
@@ -17,7 +17,7 @@ execute:
 - Keys (answers) for all homework assignments are also posted
   - You can compare your answer to the key
 
-## Recap from Day 6
+## Recap from Day 7
 
 - Quarto is a system for generating **reports** from **code**
 
@@ -36,23 +36,11 @@ execute:
 
 ## Due dates
 
-- The report (`report.qmd`) is due **2023-11-20 11:59 PM**
-
-- The presentation will be given in class on **2023-11-21**
-  - You can use any software you like to prepare the presentation (such as Powerpoint)
-  - Please make sure one team member has their computer ready to show the presentation
+- The report (`report.qmd`) is due **2024-07-24 11:59PM**
 
 ## Grading
 
-- Please see the **rubric** in the final report instructions to understand how the paper and presentation will be graded
-
-## Evaluation Sheets
-
-- You will evaluate (score) **each other team's presentation** in class on 2023-11-21
-  - Turn in **Form A** (hardcopy) at the end of the class
-
-- You will evaluate the contributions of **each of your team members** after class (due by 2023-11-21 11:59 PM)
-  - Turn in **Form B** (digital) on Moodle
+- Please see the **rubric** in the final report instructions to understand how the paper will be graded
 
 # Some tips for your report
 
