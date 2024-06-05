@@ -9,9 +9,6 @@ execute:
 ---
 
 # Day 4: Data loading and tidying with tidyverse
-
-2023-10-24
-
 ```{r}
 #| echo: false
 old <- options(pillar.print_min = 6)

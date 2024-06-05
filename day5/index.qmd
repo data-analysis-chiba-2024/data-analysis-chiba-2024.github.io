@@ -10,8 +10,6 @@ execute:
 
 # Day 5: Data visualization with ggplot2
 
-Media day (week of 2023-10-30)
-
 ```{r}
 #| echo: false
 old <- options(pillar.print_min = 6)

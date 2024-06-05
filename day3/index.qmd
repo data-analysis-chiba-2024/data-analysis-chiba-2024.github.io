@@ -10,8 +10,6 @@ execute:
 
 # Day 3: Basic usage of R and RStudio
 
-2023-10-17
-
 ## Announcements
 
 - Be sure to submit your homework **on Moodle** (paste the URL of your git repo)

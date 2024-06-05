@@ -9,8 +9,6 @@ execute:
 
 # Day 2: Git and GitHub
 
-2023-10-10
-
 ## What is Git?
 
 - Git is **version control software**

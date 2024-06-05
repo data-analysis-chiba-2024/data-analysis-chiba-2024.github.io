@@ -10,8 +10,6 @@ execute:
 
 # Day 6: Writing documents with Quarto
 
-2023-11-07
-
 ```{r}
 #| echo: false
 old <- options(pillar.print_min = 6)

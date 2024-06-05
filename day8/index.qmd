@@ -10,8 +10,6 @@ execute:
 
 # Day 8: Final Presentations
 
-2023-11-21
-
 ## Presentation format
 
 - 10 minutes per group

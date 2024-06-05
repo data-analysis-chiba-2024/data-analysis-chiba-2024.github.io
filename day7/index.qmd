@@ -10,8 +10,6 @@ execute:
 
 # Day 7: Quarto, Part II
 
-2023-11-14
-
 ## Announcements
 
 - **Grades** for all homework assignments are now posted to Moodle

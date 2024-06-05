@@ -5,21 +5,23 @@ toc: false
 
 ## Slides
 
-- [Day 1 (2023-10-03): Introduction: Why code? Why reproducibility?](day1/index.qmd)
+- [Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?](day1/index.qmd)
 
-- [Day 2 (2023-10-10): Git and GitHub](day2/index.qmd)
+- [Day 2 (2024-06-13): Git and GitHub](day2/index.qmd)
 
-- [Day 3 (2023-10-17): Basic usage of R and RStudio](day3/index.qmd)
+- [Day 3 (2024-06-20): Basic usage of R and RStudio](day3/index.qmd)
 
-- [Day 4 (2023-10-24): Data loading and tidying with tidyverse](day4/index.qmd)
+- [Day 4 (Media Day): Data loading and tidying with tidyverse](day4/index.qmd)
 
-- [Day 5 (Media Day): Data visualization with ggplot2](day5/index.qmd)
+- [Day 5 (Media Day): Data tidying, part II](day5/index.qmd)
 
-- [Day 6 (2023-11-07): Writing documents with Quarto](day6/index.qmd)
+- [Day 6 (Media Day): Data visualization with ggplot2](day6/index.qmd)
 
-- [Day 7 (2023-11-14): Quarto, part II](day7/index.qmd)
+- [Day 7 (2024-07-11): Writing documents with Quarto](day7/index.qmd)
 
-- [Day 8 (2023-11-21): Final presentation](day8/index.qmd)
+- [Day 8 (2024-07-18): Quarto, part II](day8/index.qmd)
+
+<!--
 
 ## Recordings
 
@@ -27,7 +29,9 @@ toc: false
 
 - [Day 4: Tidyverse](https://youtu.be/ikzQwRJbh18)
 
-- [Day 5: ggplot2](https://youtu.be/n06QEKese5U)
+- [Day 6: ggplot2](https://youtu.be/n06QEKese5U)
+
+-->
 
 ## Materials
 
@@ -35,7 +39,7 @@ toc: false
 
 - [Day 3: R and RStudio](https://github.com/data-analysis-chiba-2024/day03-r/blob/main/day03_intro_to_r.md)
 
-- [Day 4: Tidyverse](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_tidy.md)
+- [Day 4: Tidyverse, part I](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_tidy.md)
 
 - [Day 5: ggplot2](https://github.com/data-analysis-chiba-2024/day05-ggplot/blob/main/day05_ggplot2.md)
 
