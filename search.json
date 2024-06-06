@@ -116,7 +116,7 @@
     "href": "day6/index.html#first-plot-2",
     "title": "Reproducible data analysis",
     "section": "First plot",
-    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
   },
   {
     "objectID": "day6/index.html#challenge",
@@ -179,7 +179,7 @@
     "href": "day6/index.html#plotting-lines-1",
     "title": "Reproducible data analysis",
     "section": "Plotting lines",
-    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
   },
   {
     "objectID": "day6/index.html#plotting-lines-2",
@@ -1488,14 +1488,14 @@
     "href": "index.html",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\n\n\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (Media Day): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\n\n\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
   },
   {
     "objectID": "index.html#slides",
     "href": "index.html#slides",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\n\n\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (Media Day): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\n\n\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
   },
   {
     "objectID": "index.html#materials",
@@ -1705,14 +1705,14 @@
     "href": "day1/index.html#schedule-contd",
     "title": "Reproducible data analysis",
     "section": "Schedule (cont’d)",
-    "text": "Schedule (cont’d)\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (Media Day): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Schedule (cont’d)\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (2024-07-08): Data visualization with ggplot2\n\nNOTE different date/time than usual: 6th period (17:50~19:20)\n\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II"
   },
   {
     "objectID": "day1/index.html#grades",
     "href": "day1/index.html#grades",
     "title": "Reproducible data analysis",
     "section": "Grades",
-    "text": "Grades\n\nIn-class participation 25%\nHomework 25%\nFinal report 50%\n\nNo late submissions allowed (exceptions may be made for medical emergencies)"
+    "text": "Grades\n\nHomework 50%\nFinal report 50%\n\nNo late submissions allowed (exceptions may be made for medical emergencies)"
   },
   {
     "objectID": "day1/index.html#course-website-and-slides",
