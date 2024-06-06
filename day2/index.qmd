@@ -91,6 +91,12 @@ Done!
 
 - Using an expiration date is recommended for security
 
+## Troubleshooting
+
+If you get an error like `Could not find system git`, try [the following](https://github.com/SBOHVM/RPiR/discussions/444#discussioncomment-1795047):
+
+Go to `Tools -> Global Options`, choose the `git/svn` tab , then you need to browse for the git executable - presumably in `C:\Program Files\Git\bin\git.exe`
+
 ## Introduce yourself to git
 
 You need to let git know your GitHub username and email address:
