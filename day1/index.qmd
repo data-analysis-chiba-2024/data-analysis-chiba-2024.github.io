@@ -187,7 +187,7 @@ Only the **top three** homework assignments will be used for grading (so you get
 
 ## Extra Credit
 
-- I will teach a workshop on using the ["targets" R package](https://docs.ropensci.org/targets/) for data analysis on 2024-07-17 (exact time and location TBA).
+- I will teach a [workshop](https://carpentries-incubator.github.io/targets-workshop/) on using the ["targets" R package](https://docs.ropensci.org/targets/) for data analysis on 2024-07-17 (exact time and location TBA).
 
 - Anybody who participates in the workshop will receive extra credit
 
