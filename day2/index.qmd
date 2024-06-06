@@ -38,7 +38,7 @@ execute:
 
 - You need to install git on your computer **and** set up an account on <https://github.com>
 
-## Instructions to install git
+## Instructions to [install git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
 
 - [Mac](https://git-scm.com/download/mac)
   - May need to install [Homebrew](https://brew.sh/) first
@@ -59,7 +59,7 @@ There is another method for authentication called SSH, but it's a bit more compl
 
 ## Create PAT on GitHub
 
-- Go to https://github.com/settings/tokens
+- Go to <https://github.com/settings/tokens>
 
 Or, from R, first install `usethis` with `install.packages("usethis")`, then do
 
