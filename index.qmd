@@ -17,7 +17,7 @@ toc: false
 
 - Day 5 (Media Day): Data tidying, part II
 
-- [Day 6 (Media Day): Data visualization with ggplot2](day6/index.qmd)
+- [Day 6 (2024-07-08): Data visualization with ggplot2](day6/index.qmd)
 
 - [Day 7 (2024-07-11): Writing documents with Quarto](day7/index.qmd)
 

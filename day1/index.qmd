@@ -169,7 +169,8 @@ By the end of the course, you will be able to:
 
 - Day 5 (Media Day): Data tidying, part II
 
-- Day 6 (Media Day): Data visualization with ggplot2
+- Day 6 (2024-07-08): Data visualization with ggplot2
+  - **NOTE** different date/time than usual: 6th period (17:50~19:20)
 
 - Day 7 (2024-07-11): Writing documents with Quarto
 
@@ -177,8 +178,7 @@ By the end of the course, you will be able to:
 
 ## Grades
 
-- In-class participation 25%
-- Homework 25%
+- Homework 50%
 - Final report 50%
 
 **No late submissions allowed** (exceptions may be made for medical emergencies)
