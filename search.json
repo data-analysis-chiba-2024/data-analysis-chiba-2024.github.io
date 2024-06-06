@@ -1712,7 +1712,14 @@
     "href": "day1/index.html#grades",
     "title": "Reproducible data analysis",
     "section": "Grades",
-    "text": "Grades\n\nHomework 50%\nFinal report 50%\n\nNo late submissions allowed (exceptions may be made for medical emergencies)"
+    "text": "Grades\n\nHomework (4 assignments) 50%\nFinal report 50%\n\nNo late submissions allowed\nOnly the top three homework assignments will be used for grading (so you get one free exception if you forget to turn it in etc.)"
+  },
+  {
+    "objectID": "day1/index.html#extra-credit",
+    "href": "day1/index.html#extra-credit",
+    "title": "Reproducible data analysis",
+    "section": "Extra Credit",
+    "text": "Extra Credit\n\nI will teach a workshop on using the “targets” R package for data analysis on 2024-07-17 (exact time and location TBA).\nAnybody who participates in the workshop will receive extra credit"
   },
   {
     "objectID": "day1/index.html#course-website-and-slides",
