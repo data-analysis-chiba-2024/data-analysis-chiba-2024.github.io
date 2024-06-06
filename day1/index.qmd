@@ -178,10 +178,18 @@ By the end of the course, you will be able to:
 
 ## Grades
 
-- Homework 50%
+- Homework (4 assignments) 50%
 - Final report 50%
 
-**No late submissions allowed** (exceptions may be made for medical emergencies)
+**No late submissions allowed**
+
+Only the **top three** homework assignments will be used for grading (so you get one free exception if you forget to turn it in etc.)
+
+## Extra Credit
+
+- I will teach a workshop on using the ["targets" R package](https://docs.ropensci.org/targets/) for data analysis on 2024-07-17 (exact time and location TBA).
+
+- Anybody who participates in the workshop will receive extra credit
 
 ## Course website and slides
 
