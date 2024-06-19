@@ -679,20 +679,6 @@
     "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
   },
   {
-    "objectID": "day3/index.html#announcements",
-    "href": "day3/index.html#announcements",
-    "title": "Reproducible data analysis",
-    "section": "Announcements",
-    "text": "Announcements\n\nBe sure to submit your homework on Moodle (paste the URL of your git repo)"
-  },
-  {
-    "objectID": "day3/index.html#announcements-1",
-    "href": "day3/index.html#announcements-1",
-    "title": "Reproducible data analysis",
-    "section": "Announcements",
-    "text": "Announcements\n\nSchedule change\n\nOld: Day 4 Quarto, Day 5 Tidyverse (media day), Day 6 Visualization\nNew: Day 4 Tidyverse, Day 5 Visualization (media day), Day 6 Quarto"
-  },
-  {
     "objectID": "day3/index.html#why-use-a-programming-language",
     "href": "day3/index.html#why-use-a-programming-language",
     "title": "Reproducible data analysis",
@@ -970,7 +956,7 @@
     "href": "day3/index.html#data-types-2",
     "title": "Reproducible data analysis",
     "section": "Data types",
-    "text": "Data types\nWe can check the type of the vector using the typof() function.\n\nnums &lt;- c(1, 2, 3)\ntypeof(nums)\n\n[1] \"double\"\n\nfruit &lt;- c(\"banana\", \"orange\", \"apple\")\ntypeof(fruit)\n\n[1] \"character\"\n\ntf &lt;- c(TRUE, FALSE, TRUE)\ntypeof(tf)\n\n[1] \"logical\""
+    "text": "Data types\nWe can check the type of the vector using the typeof() function.\n\nnums &lt;- c(1, 2, 3)\ntypeof(nums)\n\n[1] \"double\"\n\nfruit &lt;- c(\"banana\", \"orange\", \"apple\")\ntypeof(fruit)\n\n[1] \"character\"\n\ntf &lt;- c(TRUE, FALSE, TRUE)\ntypeof(tf)\n\n[1] \"logical\""
   },
   {
     "objectID": "day3/index.html#data-types-3",
@@ -1412,6 +1398,13 @@
     "title": "Reproducible data analysis",
     "section": "A few more notes about PAT",
     "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
+  },
+  {
+    "objectID": "day2/index.html#troubleshooting",
+    "href": "day2/index.html#troubleshooting",
+    "title": "Reproducible data analysis",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nIf you get an error like Could not find system git, try the following:\nGo to Tools -&gt; Global Options, choose the git/svn tab , then you need to browse for the git executable - presumably in C:\\Program Files\\Git\\bin\\git.exe"
   },
   {
     "objectID": "day2/index.html#introduce-yourself-to-git",
