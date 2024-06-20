@@ -907,7 +907,7 @@
     "href": "day3/index.html#getting-help",
     "title": "Reproducible data analysis",
     "section": "Getting help",
-    "text": "Getting help\n\nThis is all fine if you already know everything about what the function does, but nobody knows everything about R!\nTo see the settings (arguments) of a function, type a question mark followed by the name of the function, like this: ?round\nA description will appear in the help panel on the lower left."
+    "text": "Getting help\n\nThis is all fine if you already know everything about what the function does, but nobody knows everything about R!\nTo see the settings (arguments) of a function, type a question mark followed by the name of the function, like this: ?round\nA description will appear in the help panel on the lower right."
   },
   {
     "objectID": "day3/index.html#getting-help-1",
