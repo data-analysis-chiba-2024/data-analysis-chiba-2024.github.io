@@ -334,7 +334,7 @@ round(3.142857, 3)
 
 - To see the settings (arguments) of a function, type a question mark followed by the name of the function, like this: `?round`
 
-- A description will appear in the help panel on the lower left.
+- A description will appear in the help panel on the lower right.
 
 ## Getting help
 
