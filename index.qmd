@@ -13,9 +13,7 @@ toc: false
 
 - [Day 4 (Media Day): Data loading and tidying with tidyverse](day4/index.qmd)
 
-<!-- - [Day 5 (Media Day): Data tidying, part II](day5/index.qmd) -->
-
-- Day 5 (Media Day): Data tidying, part II
+- [Day 5 (Media Day): Joining data](day5/index.qmd)
 
 - [Day 6 (2024-07-08): Data visualization with ggplot2](day6/index.qmd)
 
@@ -42,6 +40,8 @@ toc: false
 - [Day 3: R and RStudio](https://github.com/data-analysis-chiba-2024/day03-r/blob/main/day03_intro_to_r.md)
 
 - [Day 4: Tidyverse, part I](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_tidy.md)
+
+- [Day 5: Joining data (R for Data Science)](https://r4ds.hadley.nz/joins)
 
 - [Day 6: ggplot2](https://github.com/data-analysis-chiba-2024/day06-ggplot/blob/main/day06_ggplot2.md)
 
