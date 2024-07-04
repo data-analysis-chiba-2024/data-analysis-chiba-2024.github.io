@@ -1,39 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/appendix.html</loc>
-    <lastmod>2024-06-20T06:31:13.903Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/appendix.html</loc>
+    <lastmod>2024-06-05T05:14:09.890Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day6/index.html</loc>
-    <lastmod>2024-06-20T06:31:12.965Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day6/index.html</loc>
+    <lastmod>2024-06-05T08:13:18.921Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day7/index.html</loc>
-    <lastmod>2024-06-20T06:31:05.394Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day7/index.html</loc>
+    <lastmod>2024-06-05T08:13:28.933Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day3/index.html</loc>
-    <lastmod>2024-06-20T06:30:59.276Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day2/index.html</loc>
+    <lastmod>2024-06-24T02:42:33.113Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day4/index.html</loc>
-    <lastmod>2024-06-20T06:30:57.544Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day4/index.html</loc>
+    <lastmod>2024-06-24T02:56:44.777Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day2/index.html</loc>
-    <lastmod>2024-06-20T06:30:59.814Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day3/index.html</loc>
+    <lastmod>2024-06-24T02:42:33.114Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/index.html</loc>
-    <lastmod>2024-06-20T06:31:04.184Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day5/index.html</loc>
+    <lastmod>2024-07-04T00:49:52.731Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day8/index.html</loc>
-    <lastmod>2024-06-20T06:31:06.412Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/index.html</loc>
+    <lastmod>2024-07-04T01:56:25.444Z</lastmod>
   </url>
   <url>
-    <loc>git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/day1/index.html</loc>
-    <lastmod>2024-06-20T06:31:13.526Z</lastmod>
+    <loc>https://data-analysis-chiba-2024.github.io/day8/index.html</loc>
+    <lastmod>2024-06-05T08:15:08.063Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-analysis-chiba-2024.github.io/day1/index.html</loc>
+    <lastmod>2024-06-24T02:42:33.113Z</lastmod>
   </url>
 </urlset>

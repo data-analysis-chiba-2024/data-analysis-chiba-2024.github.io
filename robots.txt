@@ -1,1 +1,1 @@
-Sitemap: git@github.com:data-analysis-chiba-2024/data-analysis-chiba-2024.github.io/sitemap.xml
+Sitemap: https://data-analysis-chiba-2024.github.io/sitemap.xml

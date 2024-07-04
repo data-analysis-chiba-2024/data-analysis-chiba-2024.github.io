@@ -116,7 +116,7 @@
     "href": "day6/index.html#first-plot-2",
     "title": "Reproducible data analysis",
     "section": "First plot",
-    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
   },
   {
     "objectID": "day6/index.html#challenge",
@@ -179,7 +179,7 @@
     "href": "day6/index.html#plotting-lines-1",
     "title": "Reproducible data analysis",
     "section": "Plotting lines",
-    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
   },
   {
     "objectID": "day6/index.html#plotting-lines-2",
@@ -679,6 +679,433 @@
     "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
   },
   {
+    "objectID": "day2/index.html#what-is-git",
+    "href": "day2/index.html#what-is-git",
+    "title": "Reproducible data analysis",
+    "section": "What is Git?",
+    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
+  },
+  {
+    "objectID": "day2/index.html#why-use-git",
+    "href": "day2/index.html#why-use-git",
+    "title": "Reproducible data analysis",
+    "section": "Why use Git?",
+    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
+  },
+  {
+    "objectID": "day2/index.html#what-is-github",
+    "href": "day2/index.html#what-is-github",
+    "title": "Reproducible data analysis",
+    "section": "What is GitHub?",
+    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
+  },
+  {
+    "objectID": "day2/index.html#setup",
+    "href": "day2/index.html#setup",
+    "title": "Reproducible data analysis",
+    "section": "Setup",
+    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
+  },
+  {
+    "objectID": "day2/index.html#instructions-to-install-git",
+    "href": "day2/index.html#instructions-to-install-git",
+    "title": "Reproducible data analysis",
+    "section": "Instructions to install git",
+    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-account",
+    "href": "day2/index.html#setup-github-account",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub account",
+    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
+  },
+  {
+    "objectID": "day2/index.html#setup-github-authentication-pat",
+    "href": "day2/index.html#setup-github-authentication-pat",
+    "title": "Reproducible data analysis",
+    "section": "Setup GitHub authentication: PAT",
+    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like an extra-secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
+  },
+  {
+    "objectID": "day2/index.html#create-pat-on-github",
+    "href": "day2/index.html#create-pat-on-github",
+    "title": "Reproducible data analysis",
+    "section": "Create PAT on GitHub",
+    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, first install usethis with install.packages(\"usethis\"), then do\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
+  },
+  {
+    "objectID": "day2/index.html#save-your-pat",
+    "href": "day2/index.html#save-your-pat",
+    "title": "Reproducible data analysis",
+    "section": "Save your PAT",
+    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
+  },
+  {
+    "objectID": "day2/index.html#a-few-more-notes-about-pat",
+    "href": "day2/index.html#a-few-more-notes-about-pat",
+    "title": "Reproducible data analysis",
+    "section": "A few more notes about PAT",
+    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
+  },
+  {
+    "objectID": "day2/index.html#troubleshooting",
+    "href": "day2/index.html#troubleshooting",
+    "title": "Reproducible data analysis",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nIf you get an error like Could not find system git, try the following:\nGo to Tools -&gt; Global Options, choose the git/svn tab , then you need to browse for the git executable - presumably in C:\\Program Files\\Git\\bin\\git.exe"
+  },
+  {
+    "objectID": "day2/index.html#introduce-yourself-to-git",
+    "href": "day2/index.html#introduce-yourself-to-git",
+    "title": "Reproducible data analysis",
+    "section": "Introduce yourself to git",
+    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name \"your_github_username\"\ngit config --global user.email \"your_email_adress\"\ngit config --global --list"
+  },
+  {
+    "objectID": "day2/index.html#change-some-default-settings",
+    "href": "day2/index.html#change-some-default-settings",
+    "title": "Reproducible data analysis",
+    "section": "Change some default settings",
+    "text": "Change some default settings\n\nGit can allow you to have multiple versions of your code at the same time.\nThese are called “branches”.\nTell git to use the name “main” for the main branch:\n\ngit config --global init.defaultBranch main"
+  },
+  {
+    "objectID": "day2/index.html#about-repos",
+    "href": "day2/index.html#about-repos",
+    "title": "Reproducible data analysis",
+    "section": "About repos",
+    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
+  },
+  {
+    "objectID": "day2/index.html#remote-and-local-repos",
+    "href": "day2/index.html#remote-and-local-repos",
+    "title": "Reproducible data analysis",
+    "section": "Remote and local repos",
+    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
+  },
+  {
+    "objectID": "day2/index.html#cloning",
+    "href": "day2/index.html#cloning",
+    "title": "Reproducible data analysis",
+    "section": "Cloning",
+    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
+  },
+  {
+    "objectID": "day2/index.html#pushing-and-pulling",
+    "href": "day2/index.html#pushing-and-pulling",
+    "title": "Reproducible data analysis",
+    "section": "Pushing and pulling",
+    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
+  },
+  {
+    "objectID": "day2/index.html#commits",
+    "href": "day2/index.html#commits",
+    "title": "Reproducible data analysis",
+    "section": "Commits",
+    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
+  },
+  {
+    "objectID": "day2/index.html#staging-and-committing",
+    "href": "day2/index.html#staging-and-committing",
+    "title": "Reproducible data analysis",
+    "section": "Staging and committing",
+    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
+  },
+  {
+    "objectID": "day2/index.html#the-.gitignore-file",
+    "href": "day2/index.html#the-.gitignore-file",
+    "title": "Reproducible data analysis",
+    "section": "The .gitignore file",
+    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis itself)"
+  },
+  {
+    "objectID": "day2/index.html#how-this-works-in-practice",
+    "href": "day2/index.html#how-this-works-in-practice",
+    "title": "Reproducible data analysis",
+    "section": "How this works in practice",
+    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
+  },
+  {
+    "objectID": "day4/index.html#refresher-vectors",
+    "href": "day4/index.html#refresher-vectors",
+    "title": "Reproducible data analysis",
+    "section": "Refresher: vectors",
+    "text": "Refresher: vectors\n\nRecall that a vector is a series of values that are all the same type\n\n\n# A numeric vector:\nc(1, 2, 3)\n\n[1] 1 2 3\n\n# A character vector:\nc(\"banana\", \"orange\", \"apple\")\n\n[1] \"banana\" \"orange\" \"apple\" \n\n# A logical vector:\nc(TRUE, FALSE, TRUE)\n\n[1]  TRUE FALSE  TRUE"
+  },
+  {
+    "objectID": "day4/index.html#about-dataframes",
+    "href": "day4/index.html#about-dataframes",
+    "title": "Reproducible data analysis",
+    "section": "About dataframes",
+    "text": "About dataframes\n\nA dataframe is a collection of vectors\n\nbasically like a spreadsheet in Excel\n\n\n\n\n\nToday we will learn to load and tidy (or “wrangle”) dataframes"
+  },
+  {
+    "objectID": "day4/index.html#about-data-tidying-wrangling",
+    "href": "day4/index.html#about-data-tidying-wrangling",
+    "title": "Reproducible data analysis",
+    "section": "About data tidying (“wrangling”)",
+    "text": "About data tidying (“wrangling”)\n\nData often come to us in a form that is not suitable for analysis\nData tidying (or “wrangling”) is the process of re-formatting the data so it can be analyzed"
+  },
+  {
+    "objectID": "day4/index.html#set-up-project",
+    "href": "day4/index.html#set-up-project",
+    "title": "Reproducible data analysis",
+    "section": "Set up project",
+    "text": "Set up project\n\nCreate a new project called gapminder-analysis in the data-analysis-course folder on your Desktop\n\nWe will use the “gapminder” dataset for the rest of the course\n\nInside that project, create a folder called data_raw to store raw data\n\nYou should never edit raw data directly (treat it as read-only)\n\nAlso create a file to write today’s code. You could call it data-tidying-practice.R"
+  },
+  {
+    "objectID": "day4/index.html#set-up-project-1",
+    "href": "day4/index.html#set-up-project-1",
+    "title": "Reproducible data analysis",
+    "section": "Set up project",
+    "text": "Set up project\n\nDownload the gapminder.csv file from this link, and put it in data_raw\n\nhttps://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0"
+  },
+  {
+    "objectID": "day4/index.html#about-r-packages",
+    "href": "day4/index.html#about-r-packages",
+    "title": "Reproducible data analysis",
+    "section": "About R Packages",
+    "text": "About R Packages\n\nThe functions we have used so far are included in R (called “Base R”)\nBut sometimes we need to do something that is not available in Base R\nPackages are collections of code that extend the functionality of R\n\nThere are nearly 200,000 packages currently available!"
+  },
+  {
+    "objectID": "day4/index.html#install-tidyverse",
+    "href": "day4/index.html#install-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Install tidyverse",
+    "text": "Install tidyverse\n\nToday we will use the tidyverse set of packages for working with data\nInstall tidyverse using install.packages():\n\n\ninstall.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "day4/index.html#loading-packages",
+    "href": "day4/index.html#loading-packages",
+    "title": "Reproducible data analysis",
+    "section": "Loading packages",
+    "text": "Loading packages\n\nThe install.packages() function downloads the package to your computer\n\nYou only need to do this once per package (or when you want to update the package)\n\nBut R isn’t able to use the package yet\nThe library() function tells R to load a package so that we can use it"
+  },
+  {
+    "objectID": "day4/index.html#load-tidyverse",
+    "href": "day4/index.html#load-tidyverse",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\n\n\n\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "day4/index.html#load-tidyverse-1",
+    "href": "day4/index.html#load-tidyverse-1",
+    "title": "Reproducible data analysis",
+    "section": "Load tidyverse",
+    "text": "Load tidyverse\n\ntidyverse actually includes multiple packages (dplyr, tidyr, readr, etc.)\n\nThese are all packages that are useful for loading and cleaning data"
+  },
+  {
+    "objectID": "day4/index.html#load-data",
+    "href": "day4/index.html#load-data",
+    "title": "Reproducible data analysis",
+    "section": "Load data",
+    "text": "Load data\n\nUse the read_csv() function to load a spreadsheet as a dataframe\n\nThere are other functions for other file formats like .xls, .xlsx, .tsv, etc.\n\n\n\ngapminder &lt;- read_csv(\"data_raw/gapminder.csv\")"
+  },
+  {
+    "objectID": "day4/index.html#print-out-the-data",
+    "href": "day4/index.html#print-out-the-data",
+    "title": "Reproducible data analysis",
+    "section": "Print out the data",
+    "text": "Print out the data\n\nInspect the data just like any other object (variable) in R: type the name of the object into the console\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#print-out-the-data-1",
+    "href": "day4/index.html#print-out-the-data-1",
+    "title": "Reproducible data analysis",
+    "section": "Print out the data",
+    "text": "Print out the data\n\nNotice that R tells us the number of rows and columns, as well as the data type of each column\n\nThe tidyverse package refers to dataframes as “tibbles”"
+  },
+  {
+    "objectID": "day4/index.html#what-is-this-dataset-about",
+    "href": "day4/index.html#what-is-this-dataset-about",
+    "title": "Reproducible data analysis",
+    "section": "What is this dataset about?",
+    "text": "What is this dataset about?\n\nWhat do you think this dataset is about?\nWhat do you think the columns mean?"
+  },
+  {
+    "objectID": "day4/index.html#gapminder",
+    "href": "day4/index.html#gapminder",
+    "title": "Reproducible data analysis",
+    "section": "Gapminder",
+    "text": "Gapminder\n\nThis is a dataset of economic statistics from various countries over time, from https://gapminder.org\nThe meaning of some columns is obvious (country, continent, year), but not others\n\npop: Population\nlifeExp: Life expectancy (寿命)\ngdpPercap: GDP per capita (一人当たりの国内総生産)"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange",
+    "href": "day4/index.html#sort-data-with-arrange",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nFirst provide the name of the dataframe, then the column to sort by\n\n\narrange(gapminder, lifeExp)\n\n# A tibble: 1,704 × 6\n  country      continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Rwanda       Africa     1992    23.6 7290203      737.\n2 Afghanistan  Asia       1952    28.8 8425333      779.\n3 Gambia       Africa     1952    30    284320      485.\n4 Angola       Africa     1952    30.0 4232095     3521.\n5 Sierra Leone Africa     1952    30.3 2143249      880.\n6 Afghanistan  Asia       1957    30.3 9240934      821.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-1",
+    "href": "day4/index.html#sort-data-with-arrange-1",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nThe default setting is to sort from small to large\n\nTo sort in the reverse (descending) direction, use desc()\n\n\n\narrange(gapminder, desc(lifeExp))\n\n# A tibble: 1,704 × 6\n  country          continent  year lifeExp       pop gdpPercap\n  &lt;chr&gt;            &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Japan            Asia       2007    82.6 127467972    31656.\n2 Hong Kong, China Asia       2007    82.2   6980412    39725.\n3 Japan            Asia       2002    82   127065841    28605.\n4 Iceland          Europe     2007    81.8    301931    36181.\n5 Switzerland      Europe     2007    81.7   7554661    37506.\n6 Hong Kong, China Asia       2002    81.5   6762476    30209.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#sort-data-with-arrange-2",
+    "href": "day4/index.html#sort-data-with-arrange-2",
+    "title": "Reproducible data analysis",
+    "section": "Sort data with arrange()",
+    "text": "Sort data with arrange()\n\nYou can sort on multiple columns\n\nTies will be sorted by the next column\n\n\n\narrange(gapminder, continent, lifeExp)\n\n# A tibble: 1,704 × 6\n  country      continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Rwanda       Africa     1992    23.6 7290203      737.\n2 Gambia       Africa     1952    30    284320      485.\n3 Angola       Africa     1952    30.0 4232095     3521.\n4 Sierra Leone Africa     1952    30.3 2143249      880.\n5 Mozambique   Africa     1952    31.3 6446316      469.\n6 Sierra Leone Africa     1957    31.6 2295678     1004.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge",
+    "href": "day4/index.html#challenge",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nSort the data by year, first going from smallest to biggest, then from biggest to smallest.\nWhat is the earliest year in the data?\nWhat is the latest year in the data?"
+  },
+  {
+    "objectID": "day4/index.html#narrow-down-columns-with-select",
+    "href": "day4/index.html#narrow-down-columns-with-select",
+    "title": "Reproducible data analysis",
+    "section": "Narrow down columns with select()",
+    "text": "Narrow down columns with select()\n\nFirst provide the name of the dataframe, then the columns to select\n\n\nselect(gapminder, year, country, gdpPercap)\n\n# A tibble: 1,704 × 3\n   year country     gdpPercap\n  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1  1952 Afghanistan      779.\n2  1957 Afghanistan      821.\n3  1962 Afghanistan      853.\n4  1967 Afghanistan      836.\n5  1972 Afghanistan      740.\n6  1977 Afghanistan      786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#saving-your-output",
+    "href": "day4/index.html#saving-your-output",
+    "title": "Reproducible data analysis",
+    "section": "Saving your output",
+    "text": "Saving your output\n\nNotice that although we have used several functions, gapminder is still the same:\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#saving-your-output-1",
+    "href": "day4/index.html#saving-your-output-1",
+    "title": "Reproducible data analysis",
+    "section": "Saving your output",
+    "text": "Saving your output\n\nThis is because we have not saved any of the output\nTo do that, you need to create a new object with &lt;-\n\nYou can call the object whatever you want, but use a name that is easy to remember\n\n\n\ngapminder_gdp &lt;- select(gapminder, year, country, gdpPercap)"
+  },
+  {
+    "objectID": "day4/index.html#challenge-1",
+    "href": "day4/index.html#challenge-1",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nSelect only year, country, and population, then sort the data by population"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes",
+    "href": "day4/index.html#about-pipes",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nDuring the last challenge, you needed to save the output of the select() function, then use it as input into the arrange() function\nThere is a simpler way to do this, called the “pipe”\nThe pipe is written like this: %&gt;%\n\nNewer versions of R also let you write it like this: |&gt;"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-1",
+    "href": "day4/index.html#about-pipes-1",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThe pipe takes the output from one function and passes it to the input of the next function\nYou can think of it as saying “and then”\n\nDo this and then do this, and then do this…\nDo this %&gt;% do this, %&gt;% do this…"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-2",
+    "href": "day4/index.html#about-pipes-2",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nWe can even use the pipe just with one function:\n\nRead this as “start with gapminder and then select only year, country, and population”\n\n\n\ngapminder %&gt;% select(year, country, pop)\n\n# A tibble: 1,704 × 3\n   year country          pop\n  &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1  1952 Afghanistan  8425333\n2  1957 Afghanistan  9240934\n3  1962 Afghanistan 10267083\n4  1967 Afghanistan 11537966\n5  1972 Afghanistan 13079460\n6  1977 Afghanistan 14880372\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-3",
+    "href": "day4/index.html#about-pipes-3",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThis becomes very useful when we want to do multiple steps\n\nRead this as “start with gapminder, and then select only year, country, and population, and then arrange by year”\n\n\n\ngapminder %&gt;% select(year, country, pop) %&gt;% arrange(year)\n\n\n\n# A tibble: 1,704 × 3\n   year country         pop\n  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;\n1  1952 Afghanistan 8425333\n2  1952 Albania     1282697\n3  1952 Algeria     9279525\n4  1952 Angola      4232095\n# ℹ 1,700 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-4",
+    "href": "day4/index.html#about-pipes-4",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nWe can make it easier to read by putting each step on its own line\n\n\ngapminder %&gt;%\n  select(year, country, pop) %&gt;%\n  arrange(year)\n\n# A tibble: 1,704 × 3\n   year country          pop\n  &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1  1952 Afghanistan  8425333\n2  1952 Albania      1282697\n3  1952 Algeria      9279525\n4  1952 Angola       4232095\n5  1952 Argentina   17876956\n6  1952 Australia    8691212\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#about-pipes-5",
+    "href": "day4/index.html#about-pipes-5",
+    "title": "Reproducible data analysis",
+    "section": "About pipes",
+    "text": "About pipes\n\nThis way, you don’t have to save each intermediate step\nThis is a very useful way to manipulate data\nI will now use the pipe (%&gt;%) for the rest of the lesson"
+  },
+  {
+    "objectID": "day4/index.html#subset-rows-with-filter",
+    "href": "day4/index.html#subset-rows-with-filter",
+    "title": "Reproducible data analysis",
+    "section": "Subset rows with filter()",
+    "text": "Subset rows with filter()\n\nUse the filter() function to only keep rows that meet a certain condition\nFor example, let’s only keep the data in Europe:\n\n\ngapminder %&gt;% filter(continent == \"Europe\")\n\n# A tibble: 360 × 6\n  country continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Albania Europe     1952    55.2 1282697     1601.\n2 Albania Europe     1957    59.3 1476505     1942.\n3 Albania Europe     1962    64.8 1728137     2313.\n4 Albania Europe     1967    66.2 1984060     2760.\n5 Albania Europe     1972    67.7 2263554     3313.\n6 Albania Europe     1977    68.9 2509048     3533.\n# ℹ 354 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge-2",
+    "href": "day4/index.html#challenge-2",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\nUsing the pipe (%&gt;%) and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns."
+  },
+  {
+    "objectID": "day4/index.html#modify-data-with-mutate",
+    "href": "day4/index.html#modify-data-with-mutate",
+    "title": "Reproducible data analysis",
+    "section": "Modify data with mutate()",
+    "text": "Modify data with mutate()\n\nFor example, we could change the units of population to millions of people:\n\n\ngapminder %&gt;% mutate(pop = pop/1000000)\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp   pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8.43      779.\n2 Afghanistan Asia       1957    30.3  9.24      821.\n3 Afghanistan Asia       1962    32.0 10.3       853.\n4 Afghanistan Asia       1967    34.0 11.5       836.\n5 Afghanistan Asia       1972    36.1 13.1       740.\n6 Afghanistan Asia       1977    38.4 14.9       786.\n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#modify-data-with-mutate-1",
+    "href": "day4/index.html#modify-data-with-mutate-1",
+    "title": "Reproducible data analysis",
+    "section": "Modify data with mutate()",
+    "text": "Modify data with mutate()\n\nIf we provide a new column name, that column will be added\n\n\ngapminder %&gt;% mutate(pop_mil = pop/1000000)\n\n# A tibble: 1,704 × 7\n  country     continent  year lifeExp      pop gdpPercap pop_mil\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.    8.43\n2 Afghanistan Asia       1957    30.3  9240934      821.    9.24\n3 Afghanistan Asia       1962    32.0 10267083      853.   10.3 \n4 Afghanistan Asia       1967    34.0 11537966      836.   11.5 \n5 Afghanistan Asia       1972    36.1 13079460      740.   13.1 \n6 Afghanistan Asia       1977    38.4 14880372      786.   14.9 \n# ℹ 1,698 more rows"
+  },
+  {
+    "objectID": "day4/index.html#challenge-3",
+    "href": "day4/index.html#challenge-3",
+    "title": "Reproducible data analysis",
+    "section": "Challenge",
+    "text": "Challenge\n\nThe gdpPercap column stands for Gross Domestic Product (GDP) per capita (per person)\nCalculate the total GDP using mutate()\n\nhint: You need to use both the pop and gdpPercap columns"
+  },
+  {
+    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize",
+    "href": "day4/index.html#calculate-summary-statistics-with-summarize",
+    "title": "Reproducible data analysis",
+    "section": "Calculate summary statistics with summarize()",
+    "text": "Calculate summary statistics with summarize()\n\nFor example, let’s calculate the overall mean population:\n\n\ngapminder %&gt;% summarize(mean_pop = mean(pop))\n\n# A tibble: 1 × 1\n   mean_pop\n      &lt;dbl&gt;\n1 29601212."
+  },
+  {
+    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize-1",
+    "href": "day4/index.html#calculate-summary-statistics-with-summarize-1",
+    "title": "Reproducible data analysis",
+    "section": "Calculate summary statistics with summarize()",
+    "text": "Calculate summary statistics with summarize()\n\nAnother example: the total population over all the data:\n\n\ngapminder %&gt;% summarize(total_pop = sum(pop))\n\n# A tibble: 1 × 1\n    total_pop\n        &lt;dbl&gt;\n1 50440465801"
+  },
+  {
+    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group",
+    "href": "day4/index.html#use-group_by-to-do-calculations-per-group",
+    "title": "Reproducible data analysis",
+    "section": "Use group_by() to do calculations per group",
+    "text": "Use group_by() to do calculations per group\n\nHowever, it is often more useful to calculate such summary statistics for particular groups\nTo do this, first specify the groups with group_by():\n\n\ngapminder %&gt;% group_by(continent)\n\n\n\n# A tibble: 1,704 × 6\n# Groups:   continent [5]\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n# ℹ 1,700 more rows"
+  },
+  {
+    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
+    "href": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
+    "title": "Reproducible data analysis",
+    "section": "Use group_by() to do calculations per group",
+    "text": "Use group_by() to do calculations per group\n\nNext, use summarize() to calculate the summary statistic:\n\n\ngapminder %&gt;%\n  group_by(continent) %&gt;%\n  summarize(mean_pop = mean(pop))\n\n# A tibble: 5 × 2\n  continent  mean_pop\n  &lt;chr&gt;         &lt;dbl&gt;\n1 Africa     9916003.\n2 Americas  24504795.\n3 Asia      77038722.\n4 Europe    17169765.\n5 Oceania    8874672."
+  },
+  {
+    "objectID": "day4/index.html#difference-between-mutate-and-summarize",
+    "href": "day4/index.html#difference-between-mutate-and-summarize",
+    "title": "Reproducible data analysis",
+    "section": "Difference between mutate() and summarize()",
+    "text": "Difference between mutate() and summarize()\n\nmutate() calculates a new column (or over-writes an existing one) and keeps the number of rows the same\nsummarize() calculates a new column and decreases the number of rows"
+  },
+  {
+    "objectID": "day4/index.html#summary",
+    "href": "day4/index.html#summary",
+    "title": "Reproducible data analysis",
+    "section": "Summary",
+    "text": "Summary\n\nSort data with arrange()\nNarrow down columns with select()\nFilter rows with filter()\nModify data with mutate()\nSummarize data with summarize()\nGroup data with group_by()\nUse the pipe (%&gt;%) to chain steps together"
+  },
+  {
     "objectID": "day3/index.html#why-use-a-programming-language",
     "href": "day3/index.html#why-use-a-programming-language",
     "title": "Reproducible data analysis",
@@ -1050,452 +1477,249 @@
     "text": "Homework and ChatGPT\n\nI provide homework to give you a chance to think and learn\nFor basic R homework, ChatGPT can answer all of the questions instantly, and I can’t tell if you used it or not\nBut if you only use ChatGPT, you will not learn anything\nPlease think about why you are taking this class (and why you are paying money to attend Chiba U): do you just want a grade, or do you want to learn? It is up to you."
   },
   {
-    "objectID": "day4/index.html#refresher-vectors",
-    "href": "day4/index.html#refresher-vectors",
+    "objectID": "day5/index.html#overview",
+    "href": "day5/index.html#overview",
     "title": "Reproducible data analysis",
-    "section": "Refresher: vectors",
-    "text": "Refresher: vectors\n\nRecall that a vector is a series of values that are all the same type\n\n\n# A numeric vector:\nc(1, 2, 3)\n\n[1] 1 2 3\n\n# A character vector:\nc(\"banana\", \"orange\", \"apple\")\n\n[1] \"banana\" \"orange\" \"apple\" \n\n# A logical vector:\nc(TRUE, FALSE, TRUE)\n\n[1]  TRUE FALSE  TRUE"
+    "section": "Overview",
+    "text": "Overview\n\nSo far, we have been working with a single dataframe\nBut sometimes, data comes to us as multiple dataframes\n\nThis is also known as a “database”\n\nWe will learn how to join data across dataframes"
   },
   {
-    "objectID": "day4/index.html#about-dataframes",
-    "href": "day4/index.html#about-dataframes",
+    "objectID": "day5/index.html#recommended-reading",
+    "href": "day5/index.html#recommended-reading",
     "title": "Reproducible data analysis",
-    "section": "About dataframes",
-    "text": "About dataframes\n\nA dataframe is a collection of vectors\n\nbasically like a spreadsheet in Excel\n\n\n\n\n\nToday we will learn to load and tidy (or “wrangle”) dataframes"
+    "section": "Recommended Reading",
+    "text": "Recommended Reading\n\n\nHadely Wickham, R for Data Science (2e)\n\nChapter 19, “Joins”"
   },
   {
-    "objectID": "day4/index.html#about-data-tidying-wrangling",
-    "href": "day4/index.html#about-data-tidying-wrangling",
+    "objectID": "day5/index.html#set-up",
+    "href": "day5/index.html#set-up",
     "title": "Reproducible data analysis",
-    "section": "About data tidying (“wrangling”)",
-    "text": "About data tidying (“wrangling”)\n\nData often come to us in a form that is not suitable for analysis\nData tidying (or “wrangling”) is the process of re-formatting the data so it can be analyzed"
+    "section": "Set up",
+    "text": "Set up\n\nWe will use data in the nycflights13 package to demonstrate joins, so install that first (remember you only need to install a package once, so don’t include this in your code)\n\n\ninstall.packages(\"nycflights13\")"
   },
   {
-    "objectID": "day4/index.html#set-up-project",
-    "href": "day4/index.html#set-up-project",
+    "objectID": "day5/index.html#about-the-nycflights13-data",
+    "href": "day5/index.html#about-the-nycflights13-data",
     "title": "Reproducible data analysis",
-    "section": "Set up project",
-    "text": "Set up project\n\nCreate a new project called gapminder-analysis in the data-analysis-course folder on your Desktop\n\nWe will use the “gapminder” dataset for the rest of the course\n\nInside that project, create a folder called data_raw to store raw data\n\nYou should never edit raw data directly (treat it as read-only)\n\nAlso create a file to write today’s code. You could call it data-tidying-practice.R"
+    "section": "About the nycflights13 data",
+    "text": "About the nycflights13 data\n\n\n\nThe main dataframe in nycflights13 is called flights and includes data about flights that departed from New York in 2013\n\n\n\n\n\n\n\nhttps://www.express.co.uk/travel/articles/1440362/us-holidays-jetblue-flights-travel-low-cost-budget-heathrow-gatwick"
   },
   {
-    "objectID": "day4/index.html#set-up-project-1",
-    "href": "day4/index.html#set-up-project-1",
+    "objectID": "day5/index.html#about-the-nycflights13-data-1",
+    "href": "day5/index.html#about-the-nycflights13-data-1",
     "title": "Reproducible data analysis",
-    "section": "Set up project",
-    "text": "Set up project\n\nDownload the gapminder.csv file from this link, and put it in data_raw\n\nhttps://www.dropbox.com/s/fdirlsnxlzy53qq/gapminder.csv?dl=0"
+    "section": "About the nycflights13 data",
+    "text": "About the nycflights13 data\n\nYou can read the helpfile with ?flights\nYou can view it by typing flights:\n\n\nflights\n\n# A tibble: 336,776 × 19\n   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay carrier flight tailnum origin dest  air_time distance  hour minute time_hour          \n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dttm&gt;             \n1  2013     1     1      517            515         2      830            819        11 UA        1545 N14228  EWR    IAH        227     1400     5     15 2013-01-01 05:00:00\n2  2013     1     1      533            529         4      850            830        20 UA        1714 N24211  LGA    IAH        227     1416     5     29 2013-01-01 05:00:00\n3  2013     1     1      542            540         2      923            850        33 AA        1141 N619AA  JFK    MIA        160     1089     5     40 2013-01-01 05:00:00\n4  2013     1     1      544            545        -1     1004           1022       -18 B6         725 N804JB  JFK    BQN        183     1576     5     45 2013-01-01 05:00:00\n5  2013     1     1      554            600        -6      812            837       -25 DL         461 N668DN  LGA    ATL        116      762     6      0 2013-01-01 06:00:00\n6  2013     1     1      554            558        -4      740            728        12 UA        1696 N39463  EWR    ORD        150      719     5     58 2013-01-01 05:00:00\n# ℹ 336,770 more rows"
   },
   {
-    "objectID": "day4/index.html#about-r-packages",
-    "href": "day4/index.html#about-r-packages",
+    "objectID": "day5/index.html#about-the-nycflights13-data-2",
+    "href": "day5/index.html#about-the-nycflights13-data-2",
     "title": "Reproducible data analysis",
-    "section": "About R Packages",
-    "text": "About R Packages\n\nThe functions we have used so far are included in R (called “Base R”)\nBut sometimes we need to do something that is not available in Base R\nPackages are collections of code that extend the functionality of R\n\nThere are nearly 200,000 packages currently available!"
+    "section": "About the nycflights13 data",
+    "text": "About the nycflights13 data\n\nThe package also includes several other related dataframes:\n\nweather: hourly meterological data for each airport\nplanes: construction information about each plane\nairports: airport names and locations\nairlines: translation between two letter carrier codes and airline names\n\nWe can read the helpfile for each one and view it in the same way as flights (for example, ?weather)"
   },
   {
-    "objectID": "day4/index.html#install-tidyverse",
-    "href": "day4/index.html#install-tidyverse",
+    "objectID": "day5/index.html#about-keys",
+    "href": "day5/index.html#about-keys",
     "title": "Reproducible data analysis",
-    "section": "Install tidyverse",
-    "text": "Install tidyverse\n\nToday we will use the tidyverse set of packages for working with data\nInstall tidyverse using install.packages():\n\n\ninstall.packages(\"tidyverse\")"
+    "section": "About keys",
+    "text": "About keys\n\nDataframes often include a special column called the primary key\nThe values of the primary key are unique to each row. In other words, we can identify a row using the primary key.\nThe primary key is often the first column in the data, but not always"
   },
   {
-    "objectID": "day4/index.html#loading-packages",
-    "href": "day4/index.html#loading-packages",
+    "objectID": "day5/index.html#about-keys-1",
+    "href": "day5/index.html#about-keys-1",
     "title": "Reproducible data analysis",
-    "section": "Loading packages",
-    "text": "Loading packages\n\nThe install.packages() function downloads the package to your computer\n\nYou only need to do this once per package (or when you want to update the package)\n\nBut R isn’t able to use the package yet\nThe library() function tells R to load a package so that we can use it"
+    "section": "About keys",
+    "text": "About keys\n\n\n\nLet’s look at an example. The primary key for planes is tailnum\n\nThe “tail number” is a unique code on the tail of each airplane\n\n\n\n\n\n\n\n\nhttps://www.quora.com/Is-there-a-general-name-for-the-identifying-numbers-on-the-sides-of-airplanes"
   },
   {
-    "objectID": "day4/index.html#load-tidyverse",
-    "href": "day4/index.html#load-tidyverse",
+    "objectID": "day5/index.html#about-keys-planes",
+    "href": "day5/index.html#about-keys-planes",
     "title": "Reproducible data analysis",
-    "section": "Load tidyverse",
-    "text": "Load tidyverse\n\nLet’s load the tidyverse package with library()\n\nNote that you don’t need to use quotation marks for the package name\n\n\n\nlibrary(tidyverse)"
+    "section": "About keys: planes",
+    "text": "About keys: planes\n\nplanes\n\n# A tibble: 3,322 × 9\n  tailnum  year type                    manufacturer     model     engines seats speed engine   \n  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt;            &lt;chr&gt;       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    \n1 N10156   2004 Fixed wing multi engine EMBRAER          EMB-145XR       2    55    NA Turbo-fan\n2 N102UW   1998 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n3 N103US   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n4 N104UW   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n5 N10575   2002 Fixed wing multi engine EMBRAER          EMB-145LR       2    55    NA Turbo-fan\n6 N105UW   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n# ℹ 3,316 more rows"
   },
   {
-    "objectID": "day4/index.html#load-tidyverse-1",
-    "href": "day4/index.html#load-tidyverse-1",
+    "objectID": "day5/index.html#about-keys-planes-1",
+    "href": "day5/index.html#about-keys-planes-1",
     "title": "Reproducible data analysis",
-    "section": "Load tidyverse",
-    "text": "Load tidyverse\n\ntidyverse actually includes multiple packages (dplyr, tidyr, readr, etc.)\n\nThese are all packages that are useful for loading and cleaning data"
+    "section": "About keys: planes",
+    "text": "About keys: planes\nNotice that the values of tailnum appear unique, while the values of other columns may be repeated.\nBut we should actually check this…"
   },
   {
-    "objectID": "day4/index.html#load-data",
-    "href": "day4/index.html#load-data",
+    "objectID": "day5/index.html#verifying-the-primary-key",
+    "href": "day5/index.html#verifying-the-primary-key",
     "title": "Reproducible data analysis",
-    "section": "Load data",
-    "text": "Load data\n\nUse the read_csv() function to load a spreadsheet as a dataframe\n\nThere are other functions for other file formats like .xls, .xlsx, .tsv, etc.\n\n\n\ngapminder &lt;- read_csv(\"data_raw/gapminder.csv\")"
+    "section": "Verifying the primary key",
+    "text": "Verifying the primary key\nWe can verify that the primary is indeed unique by counting how many times each tailnum occurs in planes:\n\nplanes |&gt;\n  count(tailnum)\n\n# A tibble: 3,322 × 2\n  tailnum     n\n  &lt;chr&gt;   &lt;int&gt;\n1 N10156      1\n2 N102UW      1\n3 N103US      1\n4 N104UW      1\n5 N10575      1\n6 N105UW      1\n# ℹ 3,316 more rows"
   },
   {
-    "objectID": "day4/index.html#print-out-the-data",
-    "href": "day4/index.html#print-out-the-data",
+    "objectID": "day5/index.html#verifying-the-primary-key-1",
+    "href": "day5/index.html#verifying-the-primary-key-1",
     "title": "Reproducible data analysis",
-    "section": "Print out the data",
-    "text": "Print out the data\n\nInspect the data just like any other object (variable) in R: type the name of the object into the console\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n# ℹ 1,698 more rows"
+    "section": "Verifying the primary key",
+    "text": "Verifying the primary key\nWhat we are really concerned with, is whether any tail number occurs more than once. Let’s check that with filter:\n\nplanes |&gt;\n  count(tailnum) |&gt;\n  filter(n &gt; 1)\n\n# A tibble: 0 × 2\n# ℹ 2 variables: tailnum &lt;chr&gt;, n &lt;int&gt;\n\n\n\nGood!"
   },
   {
-    "objectID": "day4/index.html#print-out-the-data-1",
-    "href": "day4/index.html#print-out-the-data-1",
+    "objectID": "day5/index.html#verifying-the-primary-key-2",
+    "href": "day5/index.html#verifying-the-primary-key-2",
     "title": "Reproducible data analysis",
-    "section": "Print out the data",
-    "text": "Print out the data\n\nNotice that R tells us the number of rows and columns, as well as the data type of each column\n\nThe tidyverse package refers to dataframes as “tibbles”"
+    "section": "Verifying the primary key",
+    "text": "Verifying the primary key\nAnother important thing to check is missing values. We can’t identify a row if its identifier is missing!\n\nplanes |&gt;\n  filter(is.na(tailnum))\n\n# A tibble: 0 × 9\n# ℹ 9 variables: tailnum &lt;chr&gt;, year &lt;int&gt;, type &lt;chr&gt;, manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;\n\n\n\nAlso good!"
   },
   {
-    "objectID": "day4/index.html#what-is-this-dataset-about",
-    "href": "day4/index.html#what-is-this-dataset-about",
+    "objectID": "day5/index.html#primary-keys-of-other-dataframes",
+    "href": "day5/index.html#primary-keys-of-other-dataframes",
     "title": "Reproducible data analysis",
-    "section": "What is this dataset about?",
-    "text": "What is this dataset about?\n\nWhat do you think this dataset is about?\nWhat do you think the columns mean?"
+    "section": "Primary keys of other dataframes",
+    "text": "Primary keys of other dataframes\n\nOK, so we know the primary key of planes is tailnum.\nWhat about the other dataframes?"
   },
   {
-    "objectID": "day4/index.html#gapminder",
-    "href": "day4/index.html#gapminder",
+    "objectID": "day5/index.html#airports",
+    "href": "day5/index.html#airports",
     "title": "Reproducible data analysis",
-    "section": "Gapminder",
-    "text": "Gapminder\n\nThis is a dataset of economic statistics from various countries over time, from https://gapminder.org\nThe meaning of some columns is obvious (country, continent, year), but not others\n\npop: Population\nlifeExp: Life expectancy (寿命)\ngdpPercap: GDP per capita (一人当たりの国内総生産)"
+    "section": "airports",
+    "text": "airports\nThe primary key of airports is its three-letter airport code, which is named in the the dataframe faa:\n\nairports\n\n# A tibble: 1,458 × 8\n  faa   name                             lat   lon   alt    tz dst   tzone           \n  &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           \n1 04G   Lansdowne Airport               41.1 -80.6  1044    -5 A     America/New_York\n2 06A   Moton Field Municipal Airport   32.5 -85.7   264    -6 A     America/Chicago \n3 06C   Schaumburg Regional             42.0 -88.1   801    -6 A     America/Chicago \n4 06N   Randall Airport                 41.4 -74.4   523    -5 A     America/New_York\n5 09J   Jekyll Island Airport           31.1 -81.4    11    -5 A     America/New_York\n6 0A9   Elizabethton Municipal Airport  36.4 -82.2  1593    -5 A     America/New_York\n# ℹ 1,452 more rows"
   },
   {
-    "objectID": "day4/index.html#sort-data-with-arrange",
-    "href": "day4/index.html#sort-data-with-arrange",
+    "objectID": "day5/index.html#challenge-check-the-key",
+    "href": "day5/index.html#challenge-check-the-key",
     "title": "Reproducible data analysis",
-    "section": "Sort data with arrange()",
-    "text": "Sort data with arrange()\n\nFirst provide the name of the dataframe, then the column to sort by\n\n\narrange(gapminder, lifeExp)\n\n# A tibble: 1,704 × 6\n  country      continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Rwanda       Africa     1992    23.6 7290203      737.\n2 Afghanistan  Asia       1952    28.8 8425333      779.\n3 Gambia       Africa     1952    30    284320      485.\n4 Angola       Africa     1952    30.0 4232095     3521.\n5 Sierra Leone Africa     1952    30.3 2143249      880.\n6 Afghanistan  Asia       1957    30.3 9240934      821.\n# ℹ 1,698 more rows"
+    "section": "Challenge: Check the key",
+    "text": "Challenge: Check the key\nBut (like I mentioned before) it’s a good idea to verify that faa is indeed a valid primary key! Can you do it?"
   },
   {
-    "objectID": "day4/index.html#sort-data-with-arrange-1",
-    "href": "day4/index.html#sort-data-with-arrange-1",
+    "objectID": "day5/index.html#compound-keys",
+    "href": "day5/index.html#compound-keys",
     "title": "Reproducible data analysis",
-    "section": "Sort data with arrange()",
-    "text": "Sort data with arrange()\n\nThe default setting is to sort from small to large\n\nTo sort in the reverse (descending) direction, use desc()\n\n\n\narrange(gapminder, desc(lifeExp))\n\n# A tibble: 1,704 × 6\n  country          continent  year lifeExp       pop gdpPercap\n  &lt;chr&gt;            &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;\n1 Japan            Asia       2007    82.6 127467972    31656.\n2 Hong Kong, China Asia       2007    82.2   6980412    39725.\n3 Japan            Asia       2002    82   127065841    28605.\n4 Iceland          Europe     2007    81.8    301931    36181.\n5 Switzerland      Europe     2007    81.7   7554661    37506.\n6 Hong Kong, China Asia       2002    81.5   6762476    30209.\n# ℹ 1,698 more rows"
+    "section": "Compound keys",
+    "text": "Compound keys\n\nSometimes, no single column is provided as a key. Instead, multiple columns may be combined that uniquely identify each row.\nFor example, in the weather dataframe, the combination of origin and time_hour combined are unique."
   },
   {
-    "objectID": "day4/index.html#sort-data-with-arrange-2",
-    "href": "day4/index.html#sort-data-with-arrange-2",
+    "objectID": "day5/index.html#verify-the-compound-key",
+    "href": "day5/index.html#verify-the-compound-key",
     "title": "Reproducible data analysis",
-    "section": "Sort data with arrange()",
-    "text": "Sort data with arrange()\n\nYou can sort on multiple columns\n\nTies will be sorted by the next column\n\n\n\narrange(gapminder, continent, lifeExp)\n\n# A tibble: 1,704 × 6\n  country      continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;        &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Rwanda       Africa     1992    23.6 7290203      737.\n2 Gambia       Africa     1952    30    284320      485.\n3 Angola       Africa     1952    30.0 4232095     3521.\n4 Sierra Leone Africa     1952    30.3 2143249      880.\n5 Mozambique   Africa     1952    31.3 6446316      469.\n6 Sierra Leone Africa     1957    31.6 2295678     1004.\n# ℹ 1,698 more rows"
+    "section": "Verify the compound key",
+    "text": "Verify the compound key\n\nWe can also verify a compound key, much like before.\n\nThis time, we need to add group_by() before counting:\n\n\n\nweather |&gt;\n  group_by(origin, time_hour) |&gt;\n  count() |&gt;\n  filter(n &gt; 1)\n\n# A tibble: 0 × 3\n# Groups:   origin, time_hour [0]\n# ℹ 3 variables: origin &lt;chr&gt;, time_hour &lt;dttm&gt;, n &lt;int&gt;\n\n\n\nGood!"
   },
   {
-    "objectID": "day4/index.html#challenge",
-    "href": "day4/index.html#challenge",
+    "objectID": "day5/index.html#keys-are-used-to-match-dataframes",
+    "href": "day5/index.html#keys-are-used-to-match-dataframes",
     "title": "Reproducible data analysis",
-    "section": "Challenge",
-    "text": "Challenge\n\nSort the data by year, first going from smallest to biggest, then from biggest to smallest.\nWhat is the earliest year in the data?\nWhat is the latest year in the data?"
+    "section": "Keys are used to match dataframes",
+    "text": "Keys are used to match dataframes\n\nThe reason we care about keys is that they can be used to link dataframes"
   },
   {
-    "objectID": "day4/index.html#narrow-down-columns-with-select",
-    "href": "day4/index.html#narrow-down-columns-with-select",
+    "objectID": "day5/index.html#summary-of-keys-in-nycflights13",
+    "href": "day5/index.html#summary-of-keys-in-nycflights13",
     "title": "Reproducible data analysis",
-    "section": "Narrow down columns with select()",
-    "text": "Narrow down columns with select()\n\nFirst provide the name of the dataframe, then the columns to select\n\n\nselect(gapminder, year, country, gdpPercap)\n\n# A tibble: 1,704 × 3\n   year country     gdpPercap\n  &lt;dbl&gt; &lt;chr&gt;           &lt;dbl&gt;\n1  1952 Afghanistan      779.\n2  1957 Afghanistan      821.\n3  1962 Afghanistan      853.\n4  1967 Afghanistan      836.\n5  1972 Afghanistan      740.\n6  1977 Afghanistan      786.\n# ℹ 1,698 more rows"
+    "section": "Summary of keys in nycflights13",
+    "text": "Summary of keys in nycflights13\n\nVariables making up a primary key are colored grey, and are connected to their corresponding foreign keys with arrows."
   },
   {
-    "objectID": "day4/index.html#saving-your-output",
-    "href": "day4/index.html#saving-your-output",
+    "objectID": "day5/index.html#summary-of-keys",
+    "href": "day5/index.html#summary-of-keys",
     "title": "Reproducible data analysis",
-    "section": "Saving your output",
-    "text": "Saving your output\n\nNotice that although we have used several functions, gapminder is still the same:\n\n\ngapminder\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n5 Afghanistan Asia       1972    36.1 13079460      740.\n6 Afghanistan Asia       1977    38.4 14880372      786.\n# ℹ 1,698 more rows"
+    "section": "Summary of keys",
+    "text": "Summary of keys\n\nA primary key in one dataframe is a foreign key in another dataframe\nAlso notice that a given column may have different names in different dataframes (compare faa of the airports dataframe to origin of the flights dataframe)"
   },
   {
-    "objectID": "day4/index.html#saving-your-output-1",
-    "href": "day4/index.html#saving-your-output-1",
+    "objectID": "day5/index.html#types-of-joins",
+    "href": "day5/index.html#types-of-joins",
     "title": "Reproducible data analysis",
-    "section": "Saving your output",
-    "text": "Saving your output\n\nThis is because we have not saved any of the output\nTo do that, you need to create a new object with &lt;-\n\nYou can call the object whatever you want, but use a name that is easy to remember\n\n\n\ngapminder_gdp &lt;- select(gapminder, year, country, gdpPercap)"
+    "section": "Types of joins",
+    "text": "Types of joins\n\nNow that we understand the theory behind joining (you need keys!), we can learn about joining functions. There are two main kinds:\n\nMutating joins add new columns to a dataframe (like the mutate() function)\nFiltering joins filter the rows of a dataframe (like the filter() function)\n\nWe will start with mutating joins."
   },
   {
-    "objectID": "day4/index.html#challenge-1",
-    "href": "day4/index.html#challenge-1",
+    "objectID": "day5/index.html#make-a-smaller-demo-dataset",
+    "href": "day5/index.html#make-a-smaller-demo-dataset",
     "title": "Reproducible data analysis",
-    "section": "Challenge",
-    "text": "Challenge\n\nSelect only year, country, and population, then sort the data by population"
+    "section": "Make a smaller demo dataset",
+    "text": "Make a smaller demo dataset\n\nMutating joins add columns to the right side, so they may be hard to see if your dataframe already has many columns.\nLet’s make a smaller one called flights2 for demo purposes:"
   },
   {
-    "objectID": "day4/index.html#about-pipes",
-    "href": "day4/index.html#about-pipes",
+    "objectID": "day5/index.html#left_join",
+    "href": "day5/index.html#left_join",
     "title": "Reproducible data analysis",
-    "section": "About pipes",
-    "text": "About pipes\n\nDuring the last challenge, you needed to save the output of the select() function, then use it as input into the arrange() function\nThere is a simpler way to do this, called the “pipe”\nThe pipe is written like this: %&gt;%\n\nNewer versions of R also let you write it like this: |&gt;"
+    "section": "left_join()",
+    "text": "left_join()\n\nThe most frequently used join\n\nAdds new columns to the dataframe you’re joining to\n\nFor example, add the airline carrier name to the flights data:"
   },
   {
-    "objectID": "day4/index.html#about-pipes-1",
-    "href": "day4/index.html#about-pipes-1",
+    "objectID": "day5/index.html#challenge-join-the-planes-data",
+    "href": "day5/index.html#challenge-join-the-planes-data",
     "title": "Reproducible data analysis",
-    "section": "About pipes",
-    "text": "About pipes\n\nThe pipe takes the output from one function and passes it to the input of the next function\nYou can think of it as saying “and then”\n\nDo this and then do this, and then do this…\nDo this %&gt;% do this, %&gt;% do this…"
+    "section": "Challenge: join the planes data",
+    "text": "Challenge: join the planes data\nLet’s say we want to know more about the weather on the day of each flight.\nHow can we join the weather data to the flight data?"
   },
   {
-    "objectID": "day4/index.html#about-pipes-2",
-    "href": "day4/index.html#about-pipes-2",
+    "objectID": "day5/index.html#specifying-the-key",
+    "href": "day5/index.html#specifying-the-key",
     "title": "Reproducible data analysis",
-    "section": "About pipes",
-    "text": "About pipes\n\nWe can even use the pipe just with one function:\n\nRead this as “start with gapminder and then select only year, country, and population”\n\n\n\ngapminder %&gt;% select(year, country, pop)\n\n# A tibble: 1,704 × 3\n   year country          pop\n  &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1  1952 Afghanistan  8425333\n2  1957 Afghanistan  9240934\n3  1962 Afghanistan 10267083\n4  1967 Afghanistan 11537966\n5  1972 Afghanistan 13079460\n6  1977 Afghanistan 14880372\n# ℹ 1,698 more rows"
+    "section": "Specifying the key",
+    "text": "Specifying the key\n\nYou may have noticed a message like this in the output:\n\nJoining with `by = join_by(carrier)`"
   },
   {
-    "objectID": "day4/index.html#about-pipes-3",
-    "href": "day4/index.html#about-pipes-3",
+    "objectID": "day5/index.html#other-mutating-joins",
+    "href": "day5/index.html#other-mutating-joins",
     "title": "Reproducible data analysis",
-    "section": "About pipes",
-    "text": "About pipes\n\nThis becomes very useful when we want to do multiple steps\n\nRead this as “start with gapminder, and then select only year, country, and population, and then arrange by year”\n\n\n\ngapminder %&gt;% select(year, country, pop) %&gt;% arrange(year)\n\n\n\n# A tibble: 1,704 × 3\n   year country         pop\n  &lt;dbl&gt; &lt;chr&gt;         &lt;dbl&gt;\n1  1952 Afghanistan 8425333\n2  1952 Albania     1282697\n3  1952 Algeria     9279525\n4  1952 Angola      4232095\n# ℹ 1,700 more rows"
+    "section": "Other mutating joins",
+    "text": "Other mutating joins\n*_join(x, y)\n\nleft_join(x, y): keep all rows in x\nright_join(x, y): keep all rows in y\ninner_join(x, y): keep only rows in common between x and y\nfull_join(x, y): keep all rows in both x and y\n\nWe don’t have time to cover them in detail, but please try them out!"
   },
   {
-    "objectID": "day4/index.html#about-pipes-4",
-    "href": "day4/index.html#about-pipes-4",
+    "objectID": "day5/index.html#filtering-joins",
+    "href": "day5/index.html#filtering-joins",
     "title": "Reproducible data analysis",
-    "section": "About pipes",
-    "text": "About pipes\n\nWe can make it easier to read by putting each step on its own line\n\n\ngapminder %&gt;%\n  select(year, country, pop) %&gt;%\n  arrange(year)\n\n# A tibble: 1,704 × 3\n   year country          pop\n  &lt;dbl&gt; &lt;chr&gt;          &lt;dbl&gt;\n1  1952 Afghanistan  8425333\n2  1952 Albania      1282697\n3  1952 Algeria      9279525\n4  1952 Angola       4232095\n5  1952 Argentina   17876956\n6  1952 Australia    8691212\n# ℹ 1,698 more rows"
+    "section": "Filtering joins",
+    "text": "Filtering joins\n\nFiltering joins are different from mutating joins in that they do not add new data\nInstead, we only them to filter data"
   },
   {
-    "objectID": "day4/index.html#about-pipes-5",
-    "href": "day4/index.html#about-pipes-5",
+    "objectID": "day5/index.html#semi_join",
+    "href": "day5/index.html#semi_join",
     "title": "Reproducible data analysis",
-    "section": "About pipes",
-    "text": "About pipes\n\nThis way, you don’t have to save each intermediate step\nThis is a very useful way to manipulate data\nI will now use the pipe (%&gt;%) for the rest of the lesson"
+    "section": "semi_join()",
+    "text": "semi_join()\n\nsemi_join(x, y): Keep all rows in x that have a match in y"
   },
   {
-    "objectID": "day4/index.html#subset-rows-with-filter",
-    "href": "day4/index.html#subset-rows-with-filter",
+    "objectID": "day5/index.html#anti_join",
+    "href": "day5/index.html#anti_join",
     "title": "Reproducible data analysis",
-    "section": "Subset rows with filter()",
-    "text": "Subset rows with filter()\n\nUse the filter() function to only keep rows that meet a certain condition\nFor example, let’s only keep the data in Europe:\n\n\ngapminder %&gt;% filter(continent == \"Europe\")\n\n# A tibble: 360 × 6\n  country continent  year lifeExp     pop gdpPercap\n  &lt;chr&gt;   &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;\n1 Albania Europe     1952    55.2 1282697     1601.\n2 Albania Europe     1957    59.3 1476505     1942.\n3 Albania Europe     1962    64.8 1728137     2313.\n4 Albania Europe     1967    66.2 1984060     2760.\n5 Albania Europe     1972    67.7 2263554     3313.\n6 Albania Europe     1977    68.9 2509048     3533.\n# ℹ 354 more rows"
+    "section": "anti_join()",
+    "text": "anti_join()\n\nanti_join(x, y): Keep all rows in x that don’t have a match in y\nUseful to check for implicit missing data"
   },
   {
-    "objectID": "day4/index.html#challenge-2",
-    "href": "day4/index.html#challenge-2",
-    "title": "Reproducible data analysis",
-    "section": "Challenge",
-    "text": "Challenge\nUsing the pipe (%&gt;%) and the functions we have learned so far, filter the data to Asia, then select only the country, year, and population columns."
-  },
-  {
-    "objectID": "day4/index.html#modify-data-with-mutate",
-    "href": "day4/index.html#modify-data-with-mutate",
-    "title": "Reproducible data analysis",
-    "section": "Modify data with mutate()",
-    "text": "Modify data with mutate()\n\nFor example, we could change the units of population to millions of people:\n\n\ngapminder %&gt;% mutate(pop = pop/1000000)\n\n# A tibble: 1,704 × 6\n  country     continent  year lifeExp   pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8.43      779.\n2 Afghanistan Asia       1957    30.3  9.24      821.\n3 Afghanistan Asia       1962    32.0 10.3       853.\n4 Afghanistan Asia       1967    34.0 11.5       836.\n5 Afghanistan Asia       1972    36.1 13.1       740.\n6 Afghanistan Asia       1977    38.4 14.9       786.\n# ℹ 1,698 more rows"
-  },
-  {
-    "objectID": "day4/index.html#modify-data-with-mutate-1",
-    "href": "day4/index.html#modify-data-with-mutate-1",
-    "title": "Reproducible data analysis",
-    "section": "Modify data with mutate()",
-    "text": "Modify data with mutate()\n\nIf we provide a new column name, that column will be added\n\n\ngapminder %&gt;% mutate(pop_mil = pop/1000000)\n\n# A tibble: 1,704 × 7\n  country     continent  year lifeExp      pop gdpPercap pop_mil\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.    8.43\n2 Afghanistan Asia       1957    30.3  9240934      821.    9.24\n3 Afghanistan Asia       1962    32.0 10267083      853.   10.3 \n4 Afghanistan Asia       1967    34.0 11537966      836.   11.5 \n5 Afghanistan Asia       1972    36.1 13079460      740.   13.1 \n6 Afghanistan Asia       1977    38.4 14880372      786.   14.9 \n# ℹ 1,698 more rows"
-  },
-  {
-    "objectID": "day4/index.html#challenge-3",
-    "href": "day4/index.html#challenge-3",
-    "title": "Reproducible data analysis",
-    "section": "Challenge",
-    "text": "Challenge\n\nThe gdpPercap column stands for Gross Domestic Product (GDP) per capita (per person)\nCalculate the total GDP using mutate()\n\nhint: You need to use both the pop and gdpPercap columns"
-  },
-  {
-    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize",
-    "href": "day4/index.html#calculate-summary-statistics-with-summarize",
-    "title": "Reproducible data analysis",
-    "section": "Calculate summary statistics with summarize()",
-    "text": "Calculate summary statistics with summarize()\n\nFor example, let’s calculate the overall mean population:\n\n\ngapminder %&gt;% summarize(mean_pop = mean(pop))\n\n# A tibble: 1 × 1\n   mean_pop\n      &lt;dbl&gt;\n1 29601212."
-  },
-  {
-    "objectID": "day4/index.html#calculate-summary-statistics-with-summarize-1",
-    "href": "day4/index.html#calculate-summary-statistics-with-summarize-1",
-    "title": "Reproducible data analysis",
-    "section": "Calculate summary statistics with summarize()",
-    "text": "Calculate summary statistics with summarize()\n\nAnother example: the total population over all the data:\n\n\ngapminder %&gt;% summarize(total_pop = sum(pop))\n\n# A tibble: 1 × 1\n    total_pop\n        &lt;dbl&gt;\n1 50440465801"
-  },
-  {
-    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group",
-    "href": "day4/index.html#use-group_by-to-do-calculations-per-group",
-    "title": "Reproducible data analysis",
-    "section": "Use group_by() to do calculations per group",
-    "text": "Use group_by() to do calculations per group\n\nHowever, it is often more useful to calculate such summary statistics for particular groups\nTo do this, first specify the groups with group_by():\n\n\ngapminder %&gt;% group_by(continent)\n\n\n\n# A tibble: 1,704 × 6\n# Groups:   continent [5]\n  country     continent  year lifeExp      pop gdpPercap\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 Afghanistan Asia       1952    28.8  8425333      779.\n2 Afghanistan Asia       1957    30.3  9240934      821.\n3 Afghanistan Asia       1962    32.0 10267083      853.\n4 Afghanistan Asia       1967    34.0 11537966      836.\n# ℹ 1,700 more rows"
-  },
-  {
-    "objectID": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
-    "href": "day4/index.html#use-group_by-to-do-calculations-per-group-1",
-    "title": "Reproducible data analysis",
-    "section": "Use group_by() to do calculations per group",
-    "text": "Use group_by() to do calculations per group\n\nNext, use summarize() to calculate the summary statistic:\n\n\ngapminder %&gt;%\n  group_by(continent) %&gt;%\n  summarize(mean_pop = mean(pop))\n\n# A tibble: 5 × 2\n  continent  mean_pop\n  &lt;chr&gt;         &lt;dbl&gt;\n1 Africa     9916003.\n2 Americas  24504795.\n3 Asia      77038722.\n4 Europe    17169765.\n5 Oceania    8874672."
-  },
-  {
-    "objectID": "day4/index.html#difference-between-mutate-and-summarize",
-    "href": "day4/index.html#difference-between-mutate-and-summarize",
-    "title": "Reproducible data analysis",
-    "section": "Difference between mutate() and summarize()",
-    "text": "Difference between mutate() and summarize()\n\nmutate() calculates a new column (or over-writes an existing one) and keeps the number of rows the same\nsummarize() calculates a new column and decreases the number of rows"
-  },
-  {
-    "objectID": "day4/index.html#summary",
-    "href": "day4/index.html#summary",
+    "objectID": "day5/index.html#summary",
+    "href": "day5/index.html#summary",
     "title": "Reproducible data analysis",
     "section": "Summary",
-    "text": "Summary\n\nSort data with arrange()\nNarrow down columns with select()\nFilter rows with filter()\nModify data with mutate()\nSummarize data with summarize()\nGroup data with group_by()\nUse the pipe (%&gt;%) to chain steps together"
-  },
-  {
-    "objectID": "day2/index.html#what-is-git",
-    "href": "day2/index.html#what-is-git",
-    "title": "Reproducible data analysis",
-    "section": "What is Git?",
-    "text": "What is Git?\n\nGit is version control software\nYou can think of it kind of like the “track comments” function in MS Word or Google Docs, but for code (plain text)"
-  },
-  {
-    "objectID": "day2/index.html#why-use-git",
-    "href": "day2/index.html#why-use-git",
-    "title": "Reproducible data analysis",
-    "section": "Why use Git?",
-    "text": "Why use Git?\n\nTo share code\n\nImportant for reproducibility. Other people can’t reproduce your analysis if they can’t access your code\n\nTo have a history of all the things your tried in your analysis\n\nYou can go back and see what you have changed. Especially important when something breaks.\n\nTo organize how you develop your code\n\nYou will make comments about all your changes to your code (“commits”), so this forces you to think about how you are writing your code"
-  },
-  {
-    "objectID": "day2/index.html#what-is-github",
-    "href": "day2/index.html#what-is-github",
-    "title": "Reproducible data analysis",
-    "section": "What is GitHub?",
-    "text": "What is GitHub?\n\nAn online tool for managing projects that use Git\nActs like a cloud backup tool for your code\nMakes it easy to share code with others"
-  },
-  {
-    "objectID": "day2/index.html#setup",
-    "href": "day2/index.html#setup",
-    "title": "Reproducible data analysis",
-    "section": "Setup",
-    "text": "Setup\n\nYou need to install git on your computer and set up an account on https://github.com"
-  },
-  {
-    "objectID": "day2/index.html#instructions-to-install-git",
-    "href": "day2/index.html#instructions-to-install-git",
-    "title": "Reproducible data analysis",
-    "section": "Instructions to install git",
-    "text": "Instructions to install git\n\nMac\n\nMay need to install Homebrew first\n\nWindows\nLinux"
-  },
-  {
-    "objectID": "day2/index.html#setup-github-account",
-    "href": "day2/index.html#setup-github-account",
-    "title": "Reproducible data analysis",
-    "section": "Setup GitHub account",
-    "text": "Setup GitHub account\n\nNavigate to https://github.com/ and follow the prompts"
-  },
-  {
-    "objectID": "day2/index.html#setup-github-authentication-pat",
-    "href": "day2/index.html#setup-github-authentication-pat",
-    "title": "Reproducible data analysis",
-    "section": "Setup GitHub authentication: PAT",
-    "text": "Setup GitHub authentication: PAT\nA PAT is a “Personal Access Token”. It is like an extra-secure password.\nThere is another method for authentication called SSH, but it’s a bit more complicated to set up. If you want to use SSH, see these instructions."
-  },
-  {
-    "objectID": "day2/index.html#create-pat-on-github",
-    "href": "day2/index.html#create-pat-on-github",
-    "title": "Reproducible data analysis",
-    "section": "Create PAT on GitHub",
-    "text": "Create PAT on GitHub\n\nGo to https://github.com/settings/tokens\n\nOr, from R, first install usethis with install.packages(\"usethis\"), then do\nusethis::create_github_token()\n\nLook over the scopes (permissions); “repo”, “user”, and “workflow” are recommended. Recommended scopes will be pre-selected if you used create_github_token().\nClick “Generate token”."
-  },
-  {
-    "objectID": "day2/index.html#save-your-pat",
-    "href": "day2/index.html#save-your-pat",
-    "title": "Reproducible data analysis",
-    "section": "Save your PAT",
-    "text": "Save your PAT\n\nCopy the generated PAT to your clipboard. DON’T CLOSE THE BROWSER WINDOW YET.\nInstall gitcreds in R with install.packages(\"gitcreds\")\nNext, run gitcreds::gitcreds_set().\nEnter the PAT that you copied from GitHub. Now you can close the browser window.\n\nDone!"
-  },
-  {
-    "objectID": "day2/index.html#a-few-more-notes-about-pat",
-    "href": "day2/index.html#a-few-more-notes-about-pat",
-    "title": "Reproducible data analysis",
-    "section": "A few more notes about PAT",
-    "text": "A few more notes about PAT\n\nYour PAT will expire (after 30 days by default).\nYou then need to re-create a new one on GitHub and enter it again with gitcreds::gitcreds_set().\nUsing an expiration date is recommended for security"
-  },
-  {
-    "objectID": "day2/index.html#troubleshooting",
-    "href": "day2/index.html#troubleshooting",
-    "title": "Reproducible data analysis",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nIf you get an error like Could not find system git, try the following:\nGo to Tools -&gt; Global Options, choose the git/svn tab , then you need to browse for the git executable - presumably in C:\\Program Files\\Git\\bin\\git.exe"
-  },
-  {
-    "objectID": "day2/index.html#introduce-yourself-to-git",
-    "href": "day2/index.html#introduce-yourself-to-git",
-    "title": "Reproducible data analysis",
-    "section": "Introduce yourself to git",
-    "text": "Introduce yourself to git\nYou need to let git know your GitHub username and email address:\ngit config --global user.name \"your_github_username\"\ngit config --global user.email \"your_email_adress\"\ngit config --global --list"
-  },
-  {
-    "objectID": "day2/index.html#change-some-default-settings",
-    "href": "day2/index.html#change-some-default-settings",
-    "title": "Reproducible data analysis",
-    "section": "Change some default settings",
-    "text": "Change some default settings\n\nGit can allow you to have multiple versions of your code at the same time.\nThese are called “branches”.\nTell git to use the name “main” for the main branch:\n\ngit config --global init.defaultBranch main"
-  },
-  {
-    "objectID": "day2/index.html#about-repos",
-    "href": "day2/index.html#about-repos",
-    "title": "Reproducible data analysis",
-    "section": "About repos",
-    "text": "About repos\n\nA ‘repo’ (short for repository) is a folder where you store all the code and other files needed for a project.\n\ngit tracks the content of a repo"
-  },
-  {
-    "objectID": "day2/index.html#remote-and-local-repos",
-    "href": "day2/index.html#remote-and-local-repos",
-    "title": "Reproducible data analysis",
-    "section": "Remote and local repos",
-    "text": "Remote and local repos\n\nA local repo is just the project on your own computer\nA remote repo is a copy of the repo online (on GitHub)\n\nSomewhat confusingly, the remote repo is typically referred to by the name origin"
-  },
-  {
-    "objectID": "day2/index.html#cloning",
-    "href": "day2/index.html#cloning",
-    "title": "Reproducible data analysis",
-    "section": "Cloning",
-    "text": "Cloning\nSometimes, you want to download a repo that doesn’t exist on your computer yet.\n\nCloning is copying an online repo to your computer"
-  },
-  {
-    "objectID": "day2/index.html#pushing-and-pulling",
-    "href": "day2/index.html#pushing-and-pulling",
-    "title": "Reproducible data analysis",
-    "section": "Pushing and pulling",
-    "text": "Pushing and pulling\nOnce you have the repos set up, you need to keep them in sync.\n\nYou push changes from your local repo to the remote\nYou pull changes from the remote repo to your local one"
-  },
-  {
-    "objectID": "day2/index.html#commits",
-    "href": "day2/index.html#commits",
-    "title": "Reproducible data analysis",
-    "section": "Commits",
-    "text": "Commits\n\nA commit is a single change made to a repo that you have stored in git’s history.\n\nThere are two steps to making a commit."
-  },
-  {
-    "objectID": "day2/index.html#staging-and-committing",
-    "href": "day2/index.html#staging-and-committing",
-    "title": "Reproducible data analysis",
-    "section": "Staging and committing",
-    "text": "Staging and committing\nA file that has been changed is not automatically added to git’s history.\n\nYou need to stage the file (or part of the file) that you want to add to a particular commit\nNext, you type a short message describing the change, the commit message\nFinally, you commit the change to log it in git’s history"
-  },
-  {
-    "objectID": "day2/index.html#the-.gitignore-file",
-    "href": "day2/index.html#the-.gitignore-file",
-    "title": "Reproducible data analysis",
-    "section": "The .gitignore file",
-    "text": "The .gitignore file\nIf there are any files you don’t want git to track, you can ignore them by listing them in a special file called .gitignore.\nIt is usually a good idea to ignore raw data files and output files. We only want to track code (in other words, the analysis itself)"
-  },
-  {
-    "objectID": "day2/index.html#how-this-works-in-practice",
-    "href": "day2/index.html#how-this-works-in-practice",
-    "title": "Reproducible data analysis",
-    "section": "How this works in practice",
-    "text": "How this works in practice\nWe will go through a typical git workflow together in class using RStudio.\nThis is explained in the “Intro to Git” markdown file, which you will copy to your computer when you clone the Day 2 repo."
+    "text": "Summary\n\nKeys are columns that we use to join dataframes\nMutating joins add columns to a dataframe\nFiltering joins filter the rows of a dataframe\n\nKnowing how to join data will greatly expand the kinds of data analysis you can do. Now you are not limited to a single dataframe, but have the ability to combine dataframes together as needed."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\n\n\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Joining data\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
   },
   {
     "objectID": "index.html#slides",
     "href": "index.html#slides",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\n\n\n\nDay 5 (Media Day): Data tidying, part II\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Joining data\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\n\n\n\nDay 8 (2024-07-18): Quarto, part II"
+  },
+  {
+    "objectID": "index.html#recordings",
+    "href": "index.html#recordings",
+    "title": "Reproducible Data Analysis",
+    "section": "Recordings",
+    "text": "Recordings\n(video recordings are not available for all lectures)\n\nDay 4: Tidyverse"
   },
   {
     "objectID": "index.html#materials",
     "href": "index.html#materials",
     "title": "Reproducible Data Analysis",
     "section": "Materials",
-    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio\nDay 4: Tidyverse, part I\nDay 6: ggplot2\nFinal Report Example"
+    "text": "Materials\n\nDay 2: Git and GitHub\nDay 3: R and RStudio\nDay 4: Tidyverse, part I\nDay 5: Joining data (R for Data Science)\nDay 6: ggplot2\nFinal Report Example"
   },
   {
     "objectID": "index.html#important-deadlines",
