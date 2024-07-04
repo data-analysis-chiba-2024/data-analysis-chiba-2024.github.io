@@ -8,7 +8,7 @@ execute:
   echo: true
 ---
 
-# Day 5: Joining Data
+# Joining Data
 ```{r}
 #| echo: false
 old <- options(pillar.print_min = 6)
