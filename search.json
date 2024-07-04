@@ -1495,7 +1495,7 @@
     "href": "day5/index.html#set-up",
     "title": "Reproducible data analysis",
     "section": "Set up",
-    "text": "Set up\n\nWe will use data in the nycflights13 package to demonstrate joins, so install that first (remember you only need to install a package once, so don’t include this in your code)\n\n\ninstall.packages(\"nycflights13\")"
+    "text": "Set up\n\nWe will continue to use the gapminder-analysis project in the data-analysis-course folder on your Desktop\n\nThis is actually a different dataset, so the name for the project isn’t ideal. Naming things is hard!\n\nCreate a new file in that project called joining-practice.R\n\nWe will save all the demonstration code in that script"
   },
   {
     "objectID": "day5/index.html#about-the-nycflights13-data",
