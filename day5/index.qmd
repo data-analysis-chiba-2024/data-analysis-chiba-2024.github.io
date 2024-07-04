@@ -8,7 +8,7 @@ execute:
   echo: true
 ---
 
-# Joining Data
+# Day 5: Joining Data
 ```{r}
 #| echo: false
 old <- options(pillar.print_min = 6)
@@ -319,7 +319,7 @@ flights2 |>
   left_join(airlines)
 ```
 
-## Challenge: join the planes data
+## Challenge: join the weather data
 
 Let's say we want to know more about the weather on the day of each flight. 
 
