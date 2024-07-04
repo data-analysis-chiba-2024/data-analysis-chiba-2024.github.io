@@ -1,0 +1,520 @@
+---
+format:
+  revealjs:
+    incremental: false
+    css: ../styles.css
+    theme: ../theme_medium.scss
+execute: 
+  echo: true
+---
+
+# Day 4: Joining Data
+```{r}
+#| echo: false
+old <- options(pillar.print_min = 6)
+```
+
+## Overview
+
+- So far, we have been working with **a single** dataframe
+
+- But sometimes, data comes to us as **multiple** dataframes
+  - This is also known as a "database"
+
+- We will learn how to **join** data across dataframes
+
+## Recommended Reading
+
+::: {.columns}
+::: {.column}
+Hadely Wickham, *R for Data Science (2e)*
+
+- [Chapter 19, "Joins"](https://r4ds.hadley.nz/joins)
+:::
+::: {.column}
+![](https://r4ds.hadley.nz/cover.jpg){fig-alt="Cover of R for Data Science 2e" height="550"}
+:::
+:::
+
+## Set up
+
+- We will use data in the `nycflights13` package to demonstrate joins, so install that first (remember you only need to install a package once, **so don't include this in your code**)
+
+```{r}
+#| eval: false
+install.packages("nycflights13")
+```
+
+---
+
+- We will continue to use the `gapminder-analysis` project in the `data-analysis-course` folder on your Desktop
+  - This is actually a *different* dataset, so the name for the project isn't ideal. Naming things is hard!
+
+- Create a new file in that project called `joining-practice.R`
+  - We will save all the demonstration code in that script
+
+---
+
+- Be sure to follow along! (don't just watch the video without running the code)
+
+---
+
+- The first thing to do is load the necessary packages:
+
+```{r}
+#| filename: "joining-practice.R"
+library(tidyverse)
+library(nycflights13)
+```
+
+## About the `nycflights13` data
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- The main dataframe in `nycflights13` is called `flights` and includes data about flights that **departed from New York** in **2013**
+:::
+
+::: {.column width="50%"}
+![](../images/nyflights.jpg)
+:::
+
+::::
+
+::: {.aside}
+<https://www.express.co.uk/travel/articles/1440362/us-holidays-jetblue-flights-travel-low-cost-budget-heathrow-gatwick>
+:::
+
+## About the `nycflights13` data
+
+- You can read the helpfile with `?flights`
+
+- You can view it by typing `flights`:
+
+```{r}
+#| class: small
+flights
+```
+
+## About the `nycflights13` data
+
+- The package also includes several other related dataframes:
+  - `weather`: hourly meterological data for each airport
+  - `planes`: construction information about each plane
+  - `airports`: airport names and locations
+  - `airlines`: translation between two letter carrier codes and airline names
+
+- We can read the helpfile for each one and view it in the same way as `flights` (for example, `?weather`)
+
+## About keys
+
+- Dataframes often include a special column called the **primary key**
+
+- The values of the **primary key** are unique to each row. In other words, **we can identify a row using the primary key**.
+
+- The primary key is often the first column in the data, but not always
+
+## About keys
+
+::: {.columns}
+::: {.column}
+- Let's look at an example. The primary key for `planes` is `tailnum`
+  - The "tail number" is a unique code on the tail of each airplane
+:::
+::: {.column}
+![](../images/tailnum.jpg)
+:::
+:::
+
+::: {.aside}
+<https://www.quora.com/Is-there-a-general-name-for-the-identifying-numbers-on-the-sides-of-airplanes>
+:::
+
+## About keys: `planes`
+
+```{r}
+#| class: medsmall
+planes
+```
+
+## About keys: `planes`
+
+Notice that the values of `tailnum` appear unique, while the values of other columns may be repeated.
+
+But we should actually check this...
+
+## Verifying the primary key
+
+We can verify that the primary is indeed unique by **counting** how many times each `tailnum` occurs in `planes`:
+
+```{r}
+planes |>
+  count(tailnum)
+```
+
+## Verifying the primary key
+
+What we are really concerned with, is whether any tail number occurs more than once. Let's check that with `filter`:
+
+```{r}
+planes |>
+  count(tailnum) |>
+  filter(n > 1)
+```
+
+. . .
+
+Good!
+
+## Verifying the primary key
+
+Another important thing to check is **missing values**. We can't identify a row if its identifier is missing!
+
+```{r}
+planes |>
+  filter(is.na(tailnum))
+```
+
+. . .
+
+Also good!
+
+## Primary keys of other dataframes
+
+- OK, so we know the primary key of `planes` is `tailnum`.
+
+- What about the other dataframes?
+
+## `airports`
+
+The primary key of `airports` is its three-letter airport code, which is named in the the dataframe `faa`:
+
+```{r}
+#| class: medsmall
+airports
+```
+
+## Challenge: Check the key
+
+But (like I mentioned before) it's a good idea to verify that `faa` is indeed a valid primary key! Can you do it?
+
+## Compound keys
+
+- Sometimes, no single column is provided as a key. Instead, **multiple** columns may be combined that uniquely identify each row.
+
+- For example, in the `weather` dataframe, the combination of `origin` and `time_hour` combined are unique.
+
+---
+
+```{r}
+#| class: small
+weather
+```
+
+---
+
+- This is a bit easier to see if we rearrange the columns:
+
+```{r}
+#| eval: false
+weather |>
+  relocate(time_hour, .after = 1)
+```
+
+
+```{r}
+#| class: small
+#| echo: false
+weather |>
+  relocate(time_hour, .after = 1)
+```
+
+## Verify the compound key
+
+- We can also verify a compound key, much like before.
+  - This time, we need to add `group_by()` before counting:
+
+```{r}
+weather |>
+  group_by(origin, time_hour) |>
+  count() |>
+  filter(n > 1)
+```
+
+. . .
+
+Good!
+
+## Keys are used to match dataframes
+
+- The reason we care about keys is that they can be used to **link dataframes**
+
+---
+
+- For example, look at some of the data in `flights`
+  - Notice the column `tailnum`?
+  - `tailnum` is **not unique** in `flights` (it is not a key in that dataframe), but it can be **linked** to the `planes` dataframe
+  - This allows us to find out more information about each plane in the `flights` data
+
+---
+
+::: {.columns}
+::: {.column}
+- In the context of `planes`, `tailnum` is the primary key
+- In the context of `flights`, `tailnum` is called a "foreign key" (it corresponds to a primary key in a **different** dataframe)
+:::
+::: {.column}
+![](../images/flights-planes.jpg)
+:::
+:::
+
+## Summary of keys in `nycflights13`
+
+![](https://r4ds.hadley.nz/diagrams/relational.png)
+
+Variables making up a **primary key** are colored grey, and are connected to their corresponding **foreign keys** with arrows. 
+
+## Summary of keys
+
+- A *primary key* in one dataframe is a *foreign key* in another dataframe
+
+- Also notice that a given column may have different names in different dataframes (compare `faa` of the `airports` dataframe to `origin` of the `flights` dataframe)
+
+## Types of joins
+
+- Now that we understand the theory behind joining (you need keys!), we can learn about joining functions. There are two main kinds:
+  - *Mutating* joins **add** new columns to a dataframe (like the `mutate()` function)
+  - *Filtering* joins **filter** the rows of a dataframe (like the `filter()` function)
+
+- We will start with mutating joins.
+
+## Make a smaller demo dataset
+
+- Mutating joins add columns to the right side, so they may be hard to see if your dataframe already has many columns.
+
+- Let's make a smaller one called `flights2` for demo purposes:
+
+---
+
+```{r}
+#| class: medium
+flights2 <- flights |> 
+  select(year, time_hour, origin, dest, tailnum, carrier)
+
+flights2
+```
+
+## `left_join()`
+
+- The most frequently used join
+  - **Adds new columns** to the dataframe you're joining to
+
+- For example, add the airline carrier name to the flights data:
+
+---
+
+```{r}
+#| class: medium
+flights2 |>
+  left_join(airlines)
+```
+
+## Challenge: join the planes data
+
+Let's say we want to know more about the weather on the day of each flight. 
+
+How can we join the weather data to the flight data?
+
+## Specifying the key
+
+- You may have noticed a message like this in the output:
+
+```
+Joining with `by = join_by(carrier)`
+```
+
+---
+
+- That is because we did not specify **how to join** the data (which keys are the primary and foreign keys), so **it guessed**.
+
+- By default, `left_join()` will join on column names that are in common between both dataframes.
+
+---
+
+- But, the default settings do not always work well
+
+- For example:
+
+```{r}
+#| eval: false
+flights2 |>
+  left_join(planes)
+```
+
+```{r}
+#| echo: false
+#| class: small
+flights2 |>
+  left_join(planes)
+```
+
+`NA` indicates that the data from `planes` are missing (could not be matched)... why are so many rows missing data??
+
+---
+
+- The problem is that `year` has a **different meaning** in `flights` and `planes`
+  - `planes`: `year` is the year the plane was built
+  - `flights`: `year` is the year of the flight
+
+- We can avoid this problem by **specifying how to join** the data with `join_by()`
+
+---
+
+```{r}
+#| eval: false
+flights2 |>
+  left_join(planes, join_by(tailnum))
+```
+
+```{r}
+#| echo: false
+#| class: small
+flights2 |>
+  left_join(planes, join_by(tailnum))
+```
+
+Notice that the output has `year.x` and `year.y`, indicating the `year` column that came from each dataframe
+
+---
+
+- Actually, `join_by(tailnum)` is short for `join_by(tailnum == tailnum)`
+  - In this case, we are joining by the same column name on the left and the right side (both dataframes)
+
+---
+
+```{r}
+#| eval: false
+flights2 |>
+  left_join(planes, join_by(tailnum == tailnum))
+```
+
+```{r}
+#| echo: false
+#| class: small
+flights2 |>
+  left_join(planes, join_by(tailnum == tailnum))
+```
+
+
+---
+
+- But it is useful to be able to specify **different** column names when joining.
+
+- For example, when we join the `airports` data
+
+---
+
+- Join by the **destination airport**:
+
+```{r}
+#| eval: false
+flights2 |>
+  left_join(airports, join_by(dest == faa))
+```
+
+```{r}
+#| echo: false
+#| class: small
+flights2 |>
+  left_join(airports, join_by(dest == faa))
+```
+
+---
+
+- Join by the **originating airport**:
+
+```{r}
+#| eval: false
+flights2 |>
+  left_join(airports, join_by(origin == faa))
+```
+
+```{r}
+#| echo: false
+#| class: small
+flights2 |>
+  left_join(airports, join_by(origin == faa))
+```
+
+## Other mutating joins
+
+`*_join(x, y)`
+
+- `left_join(x, y)`: keep all rows in `x`
+- `right_join(x, y)`: keep all rows in `y`
+- `inner_join(x, y)`: keep only rows in common between `x` and `y`
+- `full_join(x, y)`: keep all rows in both `x` and `y`
+
+We don't have time to cover them in detail, but please try them out!
+
+## Filtering joins
+
+- Filtering joins are different from mutating joins in that they *do not add new data*
+
+- Instead, we only them to **filter data**
+
+## `semi_join()`
+
+- `semi_join(x, y)`: Keep all rows in `x` that have a match in `y`
+
+---
+
+Use a semi-join to filter the airports dataset to show just the airports where the flights originated from (there are three airports in NYC):
+
+```{r}
+#| eval: false
+airports |> 
+  semi_join(flights2, join_by(faa == origin))
+```
+
+```{r}
+#| echo: false
+#| class: medium
+airports |> 
+  semi_join(flights2, join_by(faa == origin))
+```
+
+## `anti_join()`
+
+- `anti_join(x, y)`: Keep all rows in `x` that **don't** have a match in `y`
+
+- Useful to check for **implicit** missing data
+
+---
+
+Find rows that are missing from `airports` by looking for flights that don’t have a matching destination airport:
+
+```{r}
+#| eval: false
+flights2 |> 
+  anti_join(airports, join_by(dest == faa)) |> 
+  distinct(dest)
+```
+
+```{r}
+#| echo: false
+#| class: medium
+flights2 |> 
+  anti_join(airports, join_by(dest == faa)) |> 
+  distinct(dest)
+```
+
+## Summary
+
+- **Keys** are columns that we use to join dataframes
+
+- **Mutating joins** add columns to a dataframe
+
+- **Filtering joins** filter the rows of a dataframe
+
+Knowing how to join data will greatly expand the kinds of data analysis you can do. Now you are not limited to a single dataframe, but have the ability to **combine dataframes together as needed**.

@@ -25,17 +25,14 @@ toc: false
 
 - Day 8 (2024-07-18): Quarto, part II
 
-
-<!--
-
 ## Recordings
 
 (video recordings are not available for all lectures)
 
-- [Day 4: Tidyverse](https://youtu.be/ikzQwRJbh18)
+- [Day 4: Tidyverse](https://youtu.be/ikzQwRJbh18?si=tiv94i5X_LJF6uqr)
 
-- [Day 6: ggplot2](https://youtu.be/n06QEKese5U)
-
+<!--
+- [Day 5: Data tidying, part II](https://youtu.be/n06QEKese5U)
 -->
 
 ## Materials
