@@ -38,15 +38,6 @@ Hadely Wickham, *R for Data Science (2e)*
 
 ## Set up
 
-- We will use data in the `nycflights13` package to demonstrate joins, so install that first (remember you only need to install a package once, **so don't include this in your code**)
-
-```{r}
-#| eval: false
-install.packages("nycflights13")
-```
-
----
-
 - We will continue to use the `gapminder-analysis` project in the `data-analysis-course` folder on your Desktop
   - This is actually a *different* dataset, so the name for the project isn't ideal. Naming things is hard!
 
@@ -59,7 +50,16 @@ install.packages("nycflights13")
 
 ---
 
-- The first thing to do is load the necessary packages:
+- We will use data in the `nycflights13` package to demonstrate joins, so install that first (remember you only need to install a package once, **so don't include this in your code**)
+
+```{r}
+#| eval: false
+install.packages("nycflights13")
+```
+
+---
+
+- The first thing to do in our script is to load the necessary packages:
 
 ```{r}
 #| filename: "joining-practice.R"
