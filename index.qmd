@@ -29,9 +29,7 @@ toc: false
 
 - [Day 4: Tidyverse](https://youtu.be/ikzQwRJbh18?si=tiv94i5X_LJF6uqr)
 
-<!--
-- [Day 5: Data tidying, part II](https://youtu.be/n06QEKese5U)
--->
+- [Day 5: Joining data](https://youtu.be/NOfTnoEtCYk)
 
 ## Materials
 
