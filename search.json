@@ -1645,11 +1645,11 @@
     "text": "left_join()\n\nThe most frequently used join\n\nAdds new columns to the dataframe you’re joining to\n\nFor example, add the airline carrier name to the flights data:"
   },
   {
-    "objectID": "day5/index.html#challenge-join-the-planes-data",
-    "href": "day5/index.html#challenge-join-the-planes-data",
+    "objectID": "day5/index.html#challenge-join-the-weather-data",
+    "href": "day5/index.html#challenge-join-the-weather-data",
     "title": "Reproducible data analysis",
-    "section": "Challenge: join the planes data",
-    "text": "Challenge: join the planes data\nLet’s say we want to know more about the weather on the day of each flight.\nHow can we join the weather data to the flight data?"
+    "section": "Challenge: join the weather data",
+    "text": "Challenge: join the weather data\nLet’s say we want to know more about the weather on the day of each flight.\nHow can we join the weather data to the flight data?"
   },
   {
     "objectID": "day5/index.html#specifying-the-key",
