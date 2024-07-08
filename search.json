@@ -116,7 +116,7 @@
     "href": "day6/index.html#first-plot-2",
     "title": "Reproducible data analysis",
     "section": "First plot",
-    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
+    "text": "First plot\n\n\nggplot(\n  data = gapminder,\n  mapping = aes(\n    x = gdpPercap,\n    y = lifeExp)) +\n  geom_point()\n\n\n\n\n\n\n\n\nWhat does this plot tell us?"
   },
   {
     "objectID": "day6/index.html#challenge",
@@ -179,7 +179,7 @@
     "href": "day6/index.html#plotting-lines-1",
     "title": "Reproducible data analysis",
     "section": "Plotting lines",
-    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
+    "text": "Plotting lines\n\n\nggplot(\n  gapminder, # DATA\n  aes( # MAPPING\n    x = year,\n    y = lifeExp,\n    color = continent)) +\n  geom_line() # GEOMETRY\n\n\n\n\n\n\n\nThat looks a little odd. What is the problem?"
   },
   {
     "objectID": "day6/index.html#plotting-lines-2",
@@ -420,6 +420,55 @@
     "text": "Summary\n\n\nThink about what you want your graph to show\nAesthetic mapping: How to represent the data visually\nGeometry: What shape to use for the plot\nBuild your plot using layers\nBasic recipe: ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY"
   },
   {
+    "objectID": "day6/index.html#project-description",
+    "href": "day6/index.html#project-description",
+    "title": "Reproducible data analysis",
+    "section": "Project Description",
+    "text": "Project Description\n\nThe final project is to analyze a dataset, including at least two graphs\n\nUse Quarto to write the report (we will learn how to do this in the next two classes)"
+  },
+  {
+    "objectID": "day6/index.html#dataset",
+    "href": "day6/index.html#dataset",
+    "title": "Reproducible data analysis",
+    "section": "Dataset",
+    "text": "Dataset\n\nYou will choose a dataset from the Tidy Tuesday project to analyze\n\nTidy Tuesday releases a dataset once a week to practice data analysis\nPlease browse the Tidy Tuesday repo to choose a dataset"
+  },
+  {
+    "objectID": "day6/index.html#example-dataset",
+    "href": "day6/index.html#example-dataset",
+    "title": "Reproducible data analysis",
+    "section": "Example Dataset",
+    "text": "Example Dataset\n\nWorld’s Oldest People\nThe README file in the dataset explains how to load it into R"
+  },
+  {
+    "objectID": "day6/index.html#preparing-your-report",
+    "href": "day6/index.html#preparing-your-report",
+    "title": "Reproducible data analysis",
+    "section": "Preparing your report",
+    "text": "Preparing your report\n\nYou will use quarto to prepare your report\n\nWe will learn more about quarto next week, so you don’t need to worry about it for now.\n\nStart looking at the datasets so you can choose one to analyze.\nStart analyzing the dataset and practice visualizing the data"
+  },
+  {
+    "objectID": "day6/index.html#due-dates",
+    "href": "day6/index.html#due-dates",
+    "title": "Reproducible data analysis",
+    "section": "Due dates",
+    "text": "Due dates\n\nThe report (report.qmd) is due 2024-07-24 11:59PM"
+  },
+  {
+    "objectID": "day6/index.html#attend-the-targets-workshop-on-july-17",
+    "href": "day6/index.html#attend-the-targets-workshop-on-july-17",
+    "title": "Reproducible data analysis",
+    "section": "Attend the targets workshop on July 17",
+    "text": "Attend the targets workshop on July 17\n\nThe targets R package helps you define workflows to run your analysis\nThis is good for reproducibilty because you only need to run one R command to reproduce the entire analysis"
+  },
+  {
+    "objectID": "day6/index.html#workshop-details",
+    "href": "day6/index.html#workshop-details",
+    "title": "Reproducible data analysis",
+    "section": "Workshop details",
+    "text": "Workshop details\n\nJuly 17 1:30 PM ~ 4:30 PM\nNishi Chiba Campus Library (Academic Link Center) “Kiwami” seminar room"
+  },
+  {
     "objectID": "day7/index.html#what-is-quarto",
     "href": "day7/index.html#what-is-quarto",
     "title": "Reproducible data analysis",
@@ -607,76 +656,6 @@
     "title": "Reproducible data analysis",
     "section": "Summary",
     "text": "Summary\n\n\nQuarto allows you to insert your analysis results directly into reports\nQuarto can generate multiple output formats\nThe way of writing code and plain text is reversed compared to R scripts\nPlease try to use Quarto for your class reports!"
-  },
-  {
-    "objectID": "day7/index.html#project-description",
-    "href": "day7/index.html#project-description",
-    "title": "Reproducible data analysis",
-    "section": "Project Description",
-    "text": "Project Description\n\nThe final project is to analyze a dataset, including at least two graphs\n\nUse Quarto to write the report (by 11/21)\nPresent your analysis to the class (on 11/21)\n\nThere will be time in class next week to work on the report (but you are expected to work on it outside of class as well)"
-  },
-  {
-    "objectID": "day7/index.html#example-repo",
-    "href": "day7/index.html#example-repo",
-    "title": "Reproducible data analysis",
-    "section": "Example Repo",
-    "text": "Example Repo\n\nI have created an example report for you using the gapminder dataset: https://github.com/data-analysis-chiba-2024/gapminder-report\nYou can look at the .qmd file online, or clone the repo to your computer"
-  },
-  {
-    "objectID": "day7/index.html#dataset",
-    "href": "day7/index.html#dataset",
-    "title": "Reproducible data analysis",
-    "section": "Dataset",
-    "text": "Dataset\n\nYou will choose a dataset from the Tidy Tuesday project to analyze\n\nTidy Tuesday releases a dataset once a week to practice data analysis"
-  },
-  {
-    "objectID": "day7/index.html#dataset-1",
-    "href": "day7/index.html#dataset-1",
-    "title": "Reproducible data analysis",
-    "section": "Dataset",
-    "text": "Dataset\n\nI have already pre-selected 5 datasets for you\n\nWorld’s Oldest People\nOlympics\nChocolate ratings\nTransit cost\nStudent to teacher ratios"
-  },
-  {
-    "objectID": "day7/index.html#team-setup",
-    "href": "day7/index.html#team-setup",
-    "title": "Reproducible data analysis",
-    "section": "Team Setup",
-    "text": "Team Setup\n\nYou will work in teams of 4 people each\n\nI have already assigned everybody to teams\n\nPlease sit with members of your team and choose a dataset (you can choose a new team name if you want)"
-  },
-  {
-    "objectID": "day7/index.html#working-as-a-team",
-    "href": "day7/index.html#working-as-a-team",
-    "title": "Reproducible data analysis",
-    "section": "Working as a team",
-    "text": "Working as a team\n\nClone the project on GitHub by clicking on the link in Moodle\nBe sure to enter your team name correctly! (pay attention to lower and upper case)\nThis time, all team members have access to the same repository"
-  },
-  {
-    "objectID": "day7/index.html#editing-the-template",
-    "href": "day7/index.html#editing-the-template",
-    "title": "Reproducible data analysis",
-    "section": "Editing the template",
-    "text": "Editing the template\n\nThere is some text in the report.qmd file. Edit it to match your dataset and team members.\n\nDelete the lines about the other datasets\nDelete the questions and add your text"
-  },
-  {
-    "objectID": "day7/index.html#working-as-a-team-1",
-    "href": "day7/index.html#working-as-a-team-1",
-    "title": "Reproducible data analysis",
-    "section": "Working as a team",
-    "text": "Working as a team\n\nTo avoid merge conflicts (incompatible changes to the same file made by different people) make a copy of the final report file for each team member to work on.\n\nFor example, report-jn.Qmd\n\nShare your work by pushing and pulling\nWhen you are ready to submit the final report, one person should edit the final report file report.Qmd\nAlso submit the repo URL on Moodle as usual"
-  },
-  {
-    "objectID": "day7/index.html#due-dates",
-    "href": "day7/index.html#due-dates",
-    "title": "Reproducible data analysis",
-    "section": "Due dates",
-    "text": "Due dates\n\nThe report (report.qmd) is due 2023-11-20 11:59 PM\nThe presentation will be given in class on 2023-11-21"
-  },
-  {
-    "objectID": "day7/index.html#evaluation-sheets",
-    "href": "day7/index.html#evaluation-sheets",
-    "title": "Reproducible data analysis",
-    "section": "Evaluation Sheets",
-    "text": "Evaluation Sheets\n\nYou will evaluate (score) each other team’s presentation in class on 2023-11-21\n\nTurn in Form A (hardcopy) at the end of the class\n\nYou will evaluate the contributions of each of your team members after class (due by 2023-11-21 11:59 PM)\n\nTurn in Form B (digital) on Moodle"
   },
   {
     "objectID": "day2/index.html#what-is-git",
@@ -1509,7 +1488,7 @@
     "href": "day5/index.html#about-the-nycflights13-data-1",
     "title": "Reproducible data analysis",
     "section": "About the nycflights13 data",
-    "text": "About the nycflights13 data\n\nYou can read the helpfile with ?flights\nYou can view it by typing flights:\n\n\nflights\n\n# A tibble: 336,776 × 19\n   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay carrier flight tailnum origin dest  air_time distance  hour minute time_hour          \n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dttm&gt;             \n1  2013     1     1      517            515         2      830            819        11 UA        1545 N14228  EWR    IAH        227     1400     5     15 2013-01-01 05:00:00\n2  2013     1     1      533            529         4      850            830        20 UA        1714 N24211  LGA    IAH        227     1416     5     29 2013-01-01 05:00:00\n3  2013     1     1      542            540         2      923            850        33 AA        1141 N619AA  JFK    MIA        160     1089     5     40 2013-01-01 05:00:00\n4  2013     1     1      544            545        -1     1004           1022       -18 B6         725 N804JB  JFK    BQN        183     1576     5     45 2013-01-01 05:00:00\n5  2013     1     1      554            600        -6      812            837       -25 DL         461 N668DN  LGA    ATL        116      762     6      0 2013-01-01 06:00:00\n6  2013     1     1      554            558        -4      740            728        12 UA        1696 N39463  EWR    ORD        150      719     5     58 2013-01-01 05:00:00\n# ℹ 336,770 more rows"
+    "text": "About the nycflights13 data\n\nYou can read the helpfile with ?flights\nYou can view it by typing flights:\n\n\nflights\n\n# A tibble: 336,776 × 19\n   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time\n  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;\n1  2013     1     1      517            515         2      830            819\n2  2013     1     1      533            529         4      850            830\n3  2013     1     1      542            540         2      923            850\n4  2013     1     1      544            545        -1     1004           1022\n5  2013     1     1      554            600        -6      812            837\n6  2013     1     1      554            558        -4      740            728\n# ℹ 336,770 more rows\n# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,\n#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,\n#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;"
   },
   {
     "objectID": "day5/index.html#about-the-nycflights13-data-2",
@@ -1537,7 +1516,7 @@
     "href": "day5/index.html#about-keys-planes",
     "title": "Reproducible data analysis",
     "section": "About keys: planes",
-    "text": "About keys: planes\n\nplanes\n\n# A tibble: 3,322 × 9\n  tailnum  year type                    manufacturer     model     engines seats speed engine   \n  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt;            &lt;chr&gt;       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    \n1 N10156   2004 Fixed wing multi engine EMBRAER          EMB-145XR       2    55    NA Turbo-fan\n2 N102UW   1998 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n3 N103US   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n4 N104UW   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n5 N10575   2002 Fixed wing multi engine EMBRAER          EMB-145LR       2    55    NA Turbo-fan\n6 N105UW   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan\n# ℹ 3,316 more rows"
+    "text": "About keys: planes\n\nplanes\n\n# A tibble: 3,322 × 9\n  tailnum  year type               manufacturer model engines seats speed engine\n  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; \n1 N10156   2004 Fixed wing multi … EMBRAER      EMB-…       2    55    NA Turbo…\n2 N102UW   1998 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…\n3 N103US   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…\n4 N104UW   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…\n5 N10575   2002 Fixed wing multi … EMBRAER      EMB-…       2    55    NA Turbo…\n6 N105UW   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…\n# ℹ 3,316 more rows"
   },
   {
     "objectID": "day5/index.html#about-keys-planes-1",
@@ -1565,7 +1544,7 @@
     "href": "day5/index.html#verifying-the-primary-key-2",
     "title": "Reproducible data analysis",
     "section": "Verifying the primary key",
-    "text": "Verifying the primary key\nAnother important thing to check is missing values. We can’t identify a row if its identifier is missing!\n\nplanes |&gt;\n  filter(is.na(tailnum))\n\n# A tibble: 0 × 9\n# ℹ 9 variables: tailnum &lt;chr&gt;, year &lt;int&gt;, type &lt;chr&gt;, manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;\n\n\n\nAlso good!"
+    "text": "Verifying the primary key\nAnother important thing to check is missing values. We can’t identify a row if its identifier is missing!\n\nplanes |&gt;\n  filter(is.na(tailnum))\n\n# A tibble: 0 × 9\n# ℹ 9 variables: tailnum &lt;chr&gt;, year &lt;int&gt;, type &lt;chr&gt;, manufacturer &lt;chr&gt;,\n#   model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;\n\n\n\nAlso good!"
   },
   {
     "objectID": "day5/index.html#primary-keys-of-other-dataframes",
@@ -1579,7 +1558,7 @@
     "href": "day5/index.html#airports",
     "title": "Reproducible data analysis",
     "section": "airports",
-    "text": "airports\nThe primary key of airports is its three-letter airport code, which is named in the the dataframe faa:\n\nairports\n\n# A tibble: 1,458 × 8\n  faa   name                             lat   lon   alt    tz dst   tzone           \n  &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           \n1 04G   Lansdowne Airport               41.1 -80.6  1044    -5 A     America/New_York\n2 06A   Moton Field Municipal Airport   32.5 -85.7   264    -6 A     America/Chicago \n3 06C   Schaumburg Regional             42.0 -88.1   801    -6 A     America/Chicago \n4 06N   Randall Airport                 41.4 -74.4   523    -5 A     America/New_York\n5 09J   Jekyll Island Airport           31.1 -81.4    11    -5 A     America/New_York\n6 0A9   Elizabethton Municipal Airport  36.4 -82.2  1593    -5 A     America/New_York\n# ℹ 1,452 more rows"
+    "text": "airports\nThe primary key of airports is its three-letter airport code, which is named in the the dataframe faa:\n\nairports\n\n# A tibble: 1,458 × 8\n  faa   name                             lat   lon   alt    tz dst   tzone      \n  &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      \n1 04G   Lansdowne Airport               41.1 -80.6  1044    -5 A     America/Ne…\n2 06A   Moton Field Municipal Airport   32.5 -85.7   264    -6 A     America/Ch…\n3 06C   Schaumburg Regional             42.0 -88.1   801    -6 A     America/Ch…\n4 06N   Randall Airport                 41.4 -74.4   523    -5 A     America/Ne…\n5 09J   Jekyll Island Airport           31.1 -81.4    11    -5 A     America/Ne…\n6 0A9   Elizabethton Municipal Airport  36.4 -82.2  1593    -5 A     America/Ne…\n# ℹ 1,452 more rows"
   },
   {
     "objectID": "day5/index.html#challenge-check-the-key",
@@ -1712,7 +1691,7 @@
     "href": "index.html#recordings",
     "title": "Reproducible Data Analysis",
     "section": "Recordings",
-    "text": "Recordings\n(video recordings are not available for all lectures)\n\nDay 4: Tidyverse\nDay 5: Joining data"
+    "text": "Recordings\n(video recordings are not available for all lectures)\n\nDay 4: Tidyverse"
   },
   {
     "objectID": "index.html#materials",
