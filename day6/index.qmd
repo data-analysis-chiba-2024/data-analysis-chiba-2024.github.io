@@ -901,3 +901,7 @@ ggsave(plot = gapminder_asia_plot, file = "gapminder_asia.pdf")
 - July 17 1:30 PM ~ 4:30 PM
 
 - Nishi Chiba Campus Library (Academic Link Center) "Kiwami" seminar room
+
+- Materials
+  - [Video in Japanese](https://togotv.dbcls.jp/en/20220331.html)
+  - [Lesson in English](https://carpentries-incubator.github.io/targets-workshop/)
