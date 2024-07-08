@@ -55,7 +55,7 @@ toc: false
 
 - 2024-07-03 11:59PM: [Day 4 homework](https://github.com/data-analysis-chiba-2024/day04-tidy/blob/main/day04_homework.R) due
 
-- 2024-07-10 11:59PM: Day 5 homework due
+- 2024-07-10 11:59PM: [Day 5 homework](https://github.com/data-analysis-chiba-2024/day05-join/blob/main/day05_homework.R) due
 
 - 2024-07-24 11:59PM: Final paper due
 

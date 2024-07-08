@@ -855,3 +855,49 @@ ggsave(plot = gapminder_asia_plot, file = "gapminder_asia.pdf")
 - Basic recipe: `ggplot(INPUT-DATA, aes(MAPPING)) + GEOMETRY`
 
 :::
+
+# Final Project
+
+## Project Description
+
+- The final project is to **analyze a dataset**, including **at least two graphs**
+  - Use **Quarto** to write the report (we will learn how to do this in the next two classes)
+
+## Dataset
+
+- You will choose a dataset from the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) project to analyze
+  - Tidy Tuesday releases a dataset once a week to practice data analysis
+  - Please browse the [Tidy Tuesday](https://github.com/rfordatascience/tidytuesday) repo to choose a dataset
+
+## Example Dataset
+
+- [World's Oldest People](https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-05-30/readme.md#verified-oldest-people)
+
+- The `README` file in the dataset explains how to load it into R
+
+## Preparing your report
+
+- You will use quarto to prepare your report
+  - We will learn more about quarto next week, so you don't need to worry about it for now.
+  
+- Start looking at the datasets so you can **choose one to analyze**.
+
+- Start analyzing the dataset and practice visualizing the data
+
+## Due dates
+
+- The report (`report.qmd`) is due **2024-07-24 11:59PM**
+
+# Extra credit
+
+## Attend the `targets` workshop on July 17
+
+- The `targets` R package helps you define **workflows** to run your analysis
+
+- This is good for **reproducibilty** because you only need to run one R command to reproduce the entire analysis
+
+## Workshop details
+
+- July 17 1:30 PM ~ 4:30 PM
+
+- Nishi Chiba Campus Library (Academic Link Center) "Kiwami" seminar room
