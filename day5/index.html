@@ -8,9 +8,9 @@
 <link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.4.549">
 
-  <title>Reproducible data analysis – index</title>
+  <title>Reproducible data analysis</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -30,7 +30,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -221,7 +221,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -444,7 +445,7 @@
 <li>We will use data in the <code>nycflights13</code> package to demonstrate joins, so install that first (remember you only need to install a package once, <strong>so don’t include this in your code</strong>)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"nycflights13"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
@@ -457,8 +458,8 @@
 <div class="code-with-filename-file">
 <pre><strong>joining-practice.R</strong></pre>
 </div>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb2-2"><a></a><span class="fu">library</span>(nycflights13)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -484,21 +485,18 @@
 <li><p>You can view it by typing <code>flights</code>:</p></li>
 </ul>
 <div class="cell small">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>flights</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 19
-   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time
-  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;
-1  2013     1     1      517            515         2      830            819
-2  2013     1     1      533            529         4      850            830
-3  2013     1     1      542            540         2      923            850
-4  2013     1     1      544            545        -1     1004           1022
-5  2013     1     1      554            600        -6      812            837
-6  2013     1     1      554            558        -4      740            728
-# ℹ 336,770 more rows
-# ℹ 11 more variables: arr_delay &lt;dbl&gt;, carrier &lt;chr&gt;, flight &lt;int&gt;,
-#   tailnum &lt;chr&gt;, origin &lt;chr&gt;, dest &lt;chr&gt;, air_time &lt;dbl&gt;, distance &lt;dbl&gt;,
-#   hour &lt;dbl&gt;, minute &lt;dbl&gt;, time_hour &lt;dttm&gt;</code></pre>
+   year month   day dep_time sched_dep_time dep_delay arr_time sched_arr_time arr_delay carrier flight tailnum origin dest  air_time distance  hour minute time_hour          
+  &lt;int&gt; &lt;int&gt; &lt;int&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt;    &lt;int&gt;          &lt;int&gt;     &lt;dbl&gt; &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;chr&gt;    &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dttm&gt;             
+1  2013     1     1      517            515         2      830            819        11 UA        1545 N14228  EWR    IAH        227     1400     5     15 2013-01-01 05:00:00
+2  2013     1     1      533            529         4      850            830        20 UA        1714 N24211  LGA    IAH        227     1416     5     29 2013-01-01 05:00:00
+3  2013     1     1      542            540         2      923            850        33 AA        1141 N619AA  JFK    MIA        160     1089     5     40 2013-01-01 05:00:00
+4  2013     1     1      544            545        -1     1004           1022       -18 B6         725 N804JB  JFK    BQN        183     1576     5     45 2013-01-01 05:00:00
+5  2013     1     1      554            600        -6      812            837       -25 DL         461 N668DN  LGA    ATL        116      762     6      0 2013-01-01 06:00:00
+6  2013     1     1      554            558        -4      740            728        12 UA        1696 N39463  EWR    ORD        150      719     5     58 2013-01-01 05:00:00
+# ℹ 336,770 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -544,17 +542,17 @@
 <section id="about-keys-planes" class="slide level2">
 <h2>About keys: <code>planes</code></h2>
 <div class="cell medsmall">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>planes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>planes</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3,322 × 9
-  tailnum  year type               manufacturer model engines seats speed engine
-  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;        &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; 
-1 N10156   2004 Fixed wing multi … EMBRAER      EMB-…       2    55    NA Turbo…
-2 N102UW   1998 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…
-3 N103US   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…
-4 N104UW   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…
-5 N10575   2002 Fixed wing multi … EMBRAER      EMB-…       2    55    NA Turbo…
-6 N105UW   1999 Fixed wing multi … AIRBUS INDU… A320…       2   182    NA Turbo…
+  tailnum  year type                    manufacturer     model     engines seats speed engine   
+  &lt;chr&gt;   &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt;            &lt;chr&gt;       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    
+1 N10156   2004 Fixed wing multi engine EMBRAER          EMB-145XR       2    55    NA Turbo-fan
+2 N102UW   1998 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan
+3 N103US   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan
+4 N104UW   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan
+5 N10575   2002 Fixed wing multi engine EMBRAER          EMB-145LR       2    55    NA Turbo-fan
+6 N105UW   1999 Fixed wing multi engine AIRBUS INDUSTRIE A320-214        2   182    NA Turbo-fan
 # ℹ 3,316 more rows</code></pre>
 </div>
 </div>
@@ -568,8 +566,8 @@
 <h2>Verifying the primary key</h2>
 <p>We can verify that the primary is indeed unique by <strong>counting</strong> how many times each <code>tailnum</code> occurs in <code>planes</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>planes <span class="sc">|&gt;</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">count</span>(tailnum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>planes <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a></a>  <span class="fu">count</span>(tailnum)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3,322 × 2
   tailnum     n
@@ -588,9 +586,9 @@
 <h2>Verifying the primary key</h2>
 <p>What we are really concerned with, is whether any tail number occurs more than once. Let’s check that with <code>filter</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>planes <span class="sc">|&gt;</span></span>
-<span id="cb9-2"><a href="#cb9-2"></a>  <span class="fu">count</span>(tailnum) <span class="sc">|&gt;</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>planes <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a></a>  <span class="fu">count</span>(tailnum) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 2
 # ℹ 2 variables: tailnum &lt;chr&gt;, n &lt;int&gt;</code></pre>
@@ -604,12 +602,11 @@
 <h2>Verifying the primary key</h2>
 <p>Another important thing to check is <strong>missing values</strong>. We can’t identify a row if its identifier is missing!</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>planes <span class="sc">|&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a>planes <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 9
-# ℹ 9 variables: tailnum &lt;chr&gt;, year &lt;int&gt;, type &lt;chr&gt;, manufacturer &lt;chr&gt;,
-#   model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;</code></pre>
+# ℹ 9 variables: tailnum &lt;chr&gt;, year &lt;int&gt;, type &lt;chr&gt;, manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;</code></pre>
 </div>
 </div>
 <div class="fragment">
@@ -627,17 +624,17 @@
 <h2><code>airports</code></h2>
 <p>The primary key of <code>airports</code> is its three-letter airport code, which is named in the the dataframe <code>faa</code>:</p>
 <div class="cell medsmall">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>airports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a>airports</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1,458 × 8
-  faa   name                             lat   lon   alt    tz dst   tzone      
-  &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;      
-1 04G   Lansdowne Airport               41.1 -80.6  1044    -5 A     America/Ne…
-2 06A   Moton Field Municipal Airport   32.5 -85.7   264    -6 A     America/Ch…
-3 06C   Schaumburg Regional             42.0 -88.1   801    -6 A     America/Ch…
-4 06N   Randall Airport                 41.4 -74.4   523    -5 A     America/Ne…
-5 09J   Jekyll Island Airport           31.1 -81.4    11    -5 A     America/Ne…
-6 0A9   Elizabethton Municipal Airport  36.4 -82.2  1593    -5 A     America/Ne…
+  faa   name                             lat   lon   alt    tz dst   tzone           
+  &lt;chr&gt; &lt;chr&gt;                          &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           
+1 04G   Lansdowne Airport               41.1 -80.6  1044    -5 A     America/New_York
+2 06A   Moton Field Municipal Airport   32.5 -85.7   264    -6 A     America/Chicago 
+3 06C   Schaumburg Regional             42.0 -88.1   801    -6 A     America/Chicago 
+4 06N   Randall Airport                 41.4 -74.4   523    -5 A     America/New_York
+5 09J   Jekyll Island Airport           31.1 -81.4    11    -5 A     America/New_York
+6 0A9   Elizabethton Municipal Airport  36.4 -82.2  1593    -5 A     America/New_York
 # ℹ 1,452 more rows</code></pre>
 </div>
 </div>
@@ -656,20 +653,18 @@
 <section class="slide level2">
 
 <div class="cell small">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>weather</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>weather</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 26,115 × 15
-  origin  year month   day  hour  temp  dewp humid wind_dir wind_speed wind_gust
-  &lt;chr&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
-1 EWR     2013     1     1     1  39.0  26.1  59.4      270      10.4         NA
-2 EWR     2013     1     1     2  39.0  27.0  61.6      250       8.06        NA
-3 EWR     2013     1     1     3  39.0  28.0  64.4      240      11.5         NA
-4 EWR     2013     1     1     4  39.9  28.0  62.2      250      12.7         NA
-5 EWR     2013     1     1     5  39.0  28.0  64.4      260      12.7         NA
-6 EWR     2013     1     1     6  37.9  28.0  67.2      240      11.5         NA
-# ℹ 26,109 more rows
-# ℹ 4 more variables: precip &lt;dbl&gt;, pressure &lt;dbl&gt;, visib &lt;dbl&gt;,
-#   time_hour &lt;dttm&gt;</code></pre>
+  origin  year month   day  hour  temp  dewp humid wind_dir wind_speed wind_gust precip pressure visib time_hour          
+  &lt;chr&gt;  &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt; &lt;dttm&gt;             
+1 EWR     2013     1     1     1  39.0  26.1  59.4      270      10.4         NA      0    1012     10 2013-01-01 01:00:00
+2 EWR     2013     1     1     2  39.0  27.0  61.6      250       8.06        NA      0    1012.    10 2013-01-01 02:00:00
+3 EWR     2013     1     1     3  39.0  28.0  64.4      240      11.5         NA      0    1012.    10 2013-01-01 03:00:00
+4 EWR     2013     1     1     4  39.9  28.0  62.2      250      12.7         NA      0    1012.    10 2013-01-01 04:00:00
+5 EWR     2013     1     1     5  39.0  28.0  64.4      260      12.7         NA      0    1012.    10 2013-01-01 05:00:00
+6 EWR     2013     1     1     6  37.9  28.0  67.2      240      11.5         NA      0    1012.    10 2013-01-01 06:00:00
+# ℹ 26,109 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -679,23 +674,21 @@
 <li>This is a bit easier to see if we rearrange the columns:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>weather <span class="sc">|&gt;</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="fu">relocate</span>(time_hour, <span class="at">.after =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>weather <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">relocate</span>(time_hour, <span class="at">.after =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell small">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 26,115 × 15
-  origin time_hour            year month   day  hour  temp  dewp humid wind_dir
-  &lt;chr&gt;  &lt;dttm&gt;              &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-1 EWR    2013-01-01 01:00:00  2013     1     1     1  39.0  26.1  59.4      270
-2 EWR    2013-01-01 02:00:00  2013     1     1     2  39.0  27.0  61.6      250
-3 EWR    2013-01-01 03:00:00  2013     1     1     3  39.0  28.0  64.4      240
-4 EWR    2013-01-01 04:00:00  2013     1     1     4  39.9  28.0  62.2      250
-5 EWR    2013-01-01 05:00:00  2013     1     1     5  39.0  28.0  64.4      260
-6 EWR    2013-01-01 06:00:00  2013     1     1     6  37.9  28.0  67.2      240
-# ℹ 26,109 more rows
-# ℹ 5 more variables: wind_speed &lt;dbl&gt;, wind_gust &lt;dbl&gt;, precip &lt;dbl&gt;,
-#   pressure &lt;dbl&gt;, visib &lt;dbl&gt;</code></pre>
+  origin time_hour            year month   day  hour  temp  dewp humid wind_dir wind_speed wind_gust precip pressure visib
+  &lt;chr&gt;  &lt;dttm&gt;              &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
+1 EWR    2013-01-01 01:00:00  2013     1     1     1  39.0  26.1  59.4      270      10.4         NA      0    1012     10
+2 EWR    2013-01-01 02:00:00  2013     1     1     2  39.0  27.0  61.6      250       8.06        NA      0    1012.    10
+3 EWR    2013-01-01 03:00:00  2013     1     1     3  39.0  28.0  64.4      240      11.5         NA      0    1012.    10
+4 EWR    2013-01-01 04:00:00  2013     1     1     4  39.9  28.0  62.2      250      12.7         NA      0    1012.    10
+5 EWR    2013-01-01 05:00:00  2013     1     1     5  39.0  28.0  64.4      260      12.7         NA      0    1012.    10
+6 EWR    2013-01-01 06:00:00  2013     1     1     6  37.9  28.0  67.2      240      11.5         NA      0    1012.    10
+# ℹ 26,109 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -708,10 +701,10 @@
 </ul></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>weather <span class="sc">|&gt;</span></span>
-<span id="cb19-2"><a href="#cb19-2"></a>  <span class="fu">group_by</span>(origin, time_hour) <span class="sc">|&gt;</span></span>
-<span id="cb19-3"><a href="#cb19-3"></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
-<span id="cb19-4"><a href="#cb19-4"></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>weather <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a></a>  <span class="fu">group_by</span>(origin, time_hour) <span class="sc">|&gt;</span></span>
+<span id="cb19-3"><a></a>  <span class="fu">count</span>() <span class="sc">|&gt;</span></span>
+<span id="cb19-4"><a></a>  <span class="fu">filter</span>(n <span class="sc">&gt;</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 3
 # Groups:   origin, time_hour [0]
@@ -785,10 +778,10 @@
 <section class="slide level2">
 
 <div class="cell medium">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>flights2 <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
-<span id="cb21-2"><a href="#cb21-2"></a>  <span class="fu">select</span>(year, time_hour, origin, dest, tailnum, carrier)</span>
-<span id="cb21-3"><a href="#cb21-3"></a></span>
-<span id="cb21-4"><a href="#cb21-4"></a>flights2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>flights2 <span class="ot">&lt;-</span> flights <span class="sc">|&gt;</span> </span>
+<span id="cb21-2"><a></a>  <span class="fu">select</span>(year, time_hour, origin, dest, tailnum, carrier)</span>
+<span id="cb21-3"><a></a></span>
+<span id="cb21-4"><a></a>flights2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 6
    year time_hour           origin dest  tailnum carrier
@@ -816,8 +809,8 @@
 <section class="slide level2">
 
 <div class="cell medium">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>flights2 <span class="sc">|&gt;</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a>  <span class="fu">left_join</span>(airlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>flights2 <span class="sc">|&gt;</span></span>
+<span id="cb23-2"><a></a>  <span class="fu">left_join</span>(airlines)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 7
    year time_hour           origin dest  tailnum carrier name                  
@@ -858,23 +851,21 @@
 <li><p>For example:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>flights2 <span class="sc">|&gt;</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a>  <span class="fu">left_join</span>(planes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>flights2 <span class="sc">|&gt;</span></span>
+<span id="cb26-2"><a></a>  <span class="fu">left_join</span>(planes)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell small">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 13
-   year time_hour           origin dest  tailnum carrier type  manufacturer
-  &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;       
-1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      &lt;NA&gt;  &lt;NA&gt;        
-2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      &lt;NA&gt;  &lt;NA&gt;        
-3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      &lt;NA&gt;  &lt;NA&gt;        
-4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      &lt;NA&gt;  &lt;NA&gt;        
-5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      &lt;NA&gt;  &lt;NA&gt;        
-6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      &lt;NA&gt;  &lt;NA&gt;        
-# ℹ 336,770 more rows
-# ℹ 5 more variables: model &lt;chr&gt;, engines &lt;int&gt;, seats &lt;int&gt;, speed &lt;int&gt;,
-#   engine &lt;chr&gt;</code></pre>
+   year time_hour           origin dest  tailnum carrier type  manufacturer model engines seats speed engine
+  &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt;        &lt;chr&gt;   &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; 
+1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      &lt;NA&gt;  &lt;NA&gt;         &lt;NA&gt;       NA    NA    NA &lt;NA&gt;  
+2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      &lt;NA&gt;  &lt;NA&gt;         &lt;NA&gt;       NA    NA    NA &lt;NA&gt;  
+3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      &lt;NA&gt;  &lt;NA&gt;         &lt;NA&gt;       NA    NA    NA &lt;NA&gt;  
+4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      &lt;NA&gt;  &lt;NA&gt;         &lt;NA&gt;       NA    NA    NA &lt;NA&gt;  
+5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      &lt;NA&gt;  &lt;NA&gt;         &lt;NA&gt;       NA    NA    NA &lt;NA&gt;  
+6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      &lt;NA&gt;  &lt;NA&gt;         &lt;NA&gt;       NA    NA    NA &lt;NA&gt;  
+# ℹ 336,770 more rows</code></pre>
 </div>
 </div>
 <p><code>NA</code> indicates that the data from <code>planes</code> are missing (could not be matched)… why are so many rows missing data??</p>
@@ -893,23 +884,21 @@
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>flights2 <span class="sc">|&gt;</span></span>
-<span id="cb28-2"><a href="#cb28-2"></a>  <span class="fu">left_join</span>(planes, <span class="fu">join_by</span>(tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>flights2 <span class="sc">|&gt;</span></span>
+<span id="cb28-2"><a></a>  <span class="fu">left_join</span>(planes, <span class="fu">join_by</span>(tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell small">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 14
-  year.x time_hour           origin dest  tailnum carrier year.y type           
-   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;          
-1   2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA        1999 Fixed wing mul…
-2   2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA        1998 Fixed wing mul…
-3   2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA        1990 Fixed wing mul…
-4   2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6        2012 Fixed wing mul…
-5   2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL        1991 Fixed wing mul…
-6   2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA        2012 Fixed wing mul…
-# ℹ 336,770 more rows
-# ℹ 6 more variables: manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;,
-#   seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;</code></pre>
+  year.x time_hour           origin dest  tailnum carrier year.y type                    manufacturer model     engines seats speed engine   
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt;        &lt;chr&gt;       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    
+1   2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA        1999 Fixed wing multi engine BOEING       737-824         2   149    NA Turbo-fan
+2   2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA        1998 Fixed wing multi engine BOEING       737-824         2   149    NA Turbo-fan
+3   2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA        1990 Fixed wing multi engine BOEING       757-223         2   178    NA Turbo-fan
+4   2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6        2012 Fixed wing multi engine AIRBUS       A320-232        2   200    NA Turbo-fan
+5   2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL        1991 Fixed wing multi engine BOEING       757-232         2   178    NA Turbo-fan
+6   2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA        2012 Fixed wing multi engine BOEING       737-924ER       2   191    NA Turbo-fan
+# ℹ 336,770 more rows</code></pre>
 </div>
 </div>
 <p>Notice that the output has <code>year.x</code> and <code>year.y</code>, indicating the <code>year</code> column that came from each dataframe</p>
@@ -926,23 +915,21 @@
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>flights2 <span class="sc">|&gt;</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">left_join</span>(planes, <span class="fu">join_by</span>(tailnum <span class="sc">==</span> tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a>flights2 <span class="sc">|&gt;</span></span>
+<span id="cb30-2"><a></a>  <span class="fu">left_join</span>(planes, <span class="fu">join_by</span>(tailnum <span class="sc">==</span> tailnum))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell small">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 14
-  year.x time_hour           origin dest  tailnum carrier year.y type           
-   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;          
-1   2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA        1999 Fixed wing mul…
-2   2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA        1998 Fixed wing mul…
-3   2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA        1990 Fixed wing mul…
-4   2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6        2012 Fixed wing mul…
-5   2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL        1991 Fixed wing mul…
-6   2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA        2012 Fixed wing mul…
-# ℹ 336,770 more rows
-# ℹ 6 more variables: manufacturer &lt;chr&gt;, model &lt;chr&gt;, engines &lt;int&gt;,
-#   seats &lt;int&gt;, speed &lt;int&gt;, engine &lt;chr&gt;</code></pre>
+  year.x time_hour           origin dest  tailnum carrier year.y type                    manufacturer model     engines seats speed engine   
+   &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;    &lt;int&gt; &lt;chr&gt;                   &lt;chr&gt;        &lt;chr&gt;       &lt;int&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt;    
+1   2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA        1999 Fixed wing multi engine BOEING       737-824         2   149    NA Turbo-fan
+2   2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA        1998 Fixed wing multi engine BOEING       737-824         2   149    NA Turbo-fan
+3   2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA        1990 Fixed wing multi engine BOEING       757-223         2   178    NA Turbo-fan
+4   2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6        2012 Fixed wing multi engine AIRBUS       A320-232        2   200    NA Turbo-fan
+5   2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL        1991 Fixed wing multi engine BOEING       757-232         2   178    NA Turbo-fan
+6   2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA        2012 Fixed wing multi engine BOEING       737-924ER       2   191    NA Turbo-fan
+# ℹ 336,770 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -959,22 +946,21 @@
 <li>Join by the <strong>destination airport</strong>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>flights2 <span class="sc">|&gt;</span></span>
-<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">left_join</span>(airports, <span class="fu">join_by</span>(dest <span class="sc">==</span> faa))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a>flights2 <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a></a>  <span class="fu">left_join</span>(airports, <span class="fu">join_by</span>(dest <span class="sc">==</span> faa))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell small">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 13
-   year time_hour           origin dest  tailnum carrier name    lat   lon   alt
-  &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      Geor…  30.0 -95.3    97
-2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      Geor…  30.0 -95.3    97
-3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      Miam…  25.8 -80.3     8
-4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      &lt;NA&gt;   NA    NA      NA
-5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      Hart…  33.6 -84.4  1026
-6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      Chic…  42.0 -87.9   668
-# ℹ 336,770 more rows
-# ℹ 3 more variables: tz &lt;dbl&gt;, dst &lt;chr&gt;, tzone &lt;chr&gt;</code></pre>
+   year time_hour           origin dest  tailnum carrier name                              lat   lon   alt    tz dst   tzone           
+  &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;                           &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           
+1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      George Bush Intercontinental     30.0 -95.3    97    -6 A     America/Chicago 
+2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      George Bush Intercontinental     30.0 -95.3    97    -6 A     America/Chicago 
+3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      Miami Intl                       25.8 -80.3     8    -5 A     America/New_York
+4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      &lt;NA&gt;                             NA    NA      NA    NA &lt;NA&gt;  &lt;NA&gt;            
+5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      Hartsfield Jackson Atlanta Intl  33.6 -84.4  1026    -5 A     America/New_York
+6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      Chicago Ohare Intl               42.0 -87.9   668    -6 A     America/Chicago 
+# ℹ 336,770 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -984,22 +970,21 @@
 <li>Join by the <strong>originating airport</strong>:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>flights2 <span class="sc">|&gt;</span></span>
-<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">left_join</span>(airports, <span class="fu">join_by</span>(origin <span class="sc">==</span> faa))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>flights2 <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a></a>  <span class="fu">left_join</span>(airports, <span class="fu">join_by</span>(origin <span class="sc">==</span> faa))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell small">
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 336,776 × 13
-   year time_hour           origin dest  tailnum carrier name    lat   lon   alt
-  &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
-1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      Newa…  40.7 -74.2    18
-2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      La G…  40.8 -73.9    22
-3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      John…  40.6 -73.8    13
-4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      John…  40.6 -73.8    13
-5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      La G…  40.8 -73.9    22
-6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      Newa…  40.7 -74.2    18
-# ℹ 336,770 more rows
-# ℹ 3 more variables: tz &lt;dbl&gt;, dst &lt;chr&gt;, tzone &lt;chr&gt;</code></pre>
+   year time_hour           origin dest  tailnum carrier name                  lat   lon   alt    tz dst   tzone           
+  &lt;int&gt; &lt;dttm&gt;              &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;               &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;           
+1  2013 2013-01-01 05:00:00 EWR    IAH   N14228  UA      Newark Liberty Intl  40.7 -74.2    18    -5 A     America/New_York
+2  2013 2013-01-01 05:00:00 LGA    IAH   N24211  UA      La Guardia           40.8 -73.9    22    -5 A     America/New_York
+3  2013 2013-01-01 05:00:00 JFK    MIA   N619AA  AA      John F Kennedy Intl  40.6 -73.8    13    -5 A     America/New_York
+4  2013 2013-01-01 05:00:00 JFK    BQN   N804JB  B6      John F Kennedy Intl  40.6 -73.8    13    -5 A     America/New_York
+5  2013 2013-01-01 06:00:00 LGA    ATL   N668DN  DL      La Guardia           40.8 -73.9    22    -5 A     America/New_York
+6  2013 2013-01-01 05:00:00 EWR    ORD   N39463  UA      Newark Liberty Intl  40.7 -74.2    18    -5 A     America/New_York
+# ℹ 336,770 more rows</code></pre>
 </div>
 </div>
 </section>
@@ -1031,8 +1016,8 @@
 
 <p>Use a semi-join to filter the airports dataset to show just the airports where the flights originated from (there are three airports in NYC):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>airports <span class="sc">|&gt;</span> </span>
-<span id="cb36-2"><a href="#cb36-2"></a>  <span class="fu">semi_join</span>(flights2, <span class="fu">join_by</span>(faa <span class="sc">==</span> origin))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a>airports <span class="sc">|&gt;</span> </span>
+<span id="cb36-2"><a></a>  <span class="fu">semi_join</span>(flights2, <span class="fu">join_by</span>(faa <span class="sc">==</span> origin))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell medium">
 <div class="cell-output cell-output-stdout">
@@ -1056,9 +1041,9 @@
 
 <p>Find rows that are missing from <code>airports</code> by looking for flights that don’t have a matching destination airport:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>flights2 <span class="sc">|&gt;</span> </span>
-<span id="cb38-2"><a href="#cb38-2"></a>  <span class="fu">anti_join</span>(airports, <span class="fu">join_by</span>(dest <span class="sc">==</span> faa)) <span class="sc">|&gt;</span> </span>
-<span id="cb38-3"><a href="#cb38-3"></a>  <span class="fu">distinct</span>(dest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a>flights2 <span class="sc">|&gt;</span> </span>
+<span id="cb38-2"><a></a>  <span class="fu">anti_join</span>(airports, <span class="fu">join_by</span>(dest <span class="sc">==</span> faa)) <span class="sc">|&gt;</span> </span>
+<span id="cb38-3"><a></a>  <span class="fu">distinct</span>(dest)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell medium">
 <div class="cell-output cell-output-stdout">
@@ -1081,8 +1066,10 @@
 </ul>
 <p>Knowing how to join data will greatly expand the kinds of data analysis you can do. Now you are not limited to a single dataframe, but have the ability to <strong>combine dataframes together as needed</strong>.</p>
 
+<div class="quarto-auto-generated-content">
 <div class="footer footer-default">
 
+</div>
 </div>
 </section></section>
     </div>
@@ -1111,7 +1098,6 @@
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1410,10 +1396,9 @@
         // clear code selection
         e.clearSelection();
       });
-      function tippyHover(el, contentFn) {
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1423,8 +1408,17 @@
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
