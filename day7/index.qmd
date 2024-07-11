@@ -74,8 +74,8 @@ old <- options(pillar.print_min = 6)
 - Create a new Quarto file by clicking File > New File > Quarto Document…
 
 - In menu that appears, type `"Gapminder Analysis"` for the title and your name for the author
-
-- Leave format as HTML (as it says, we can change it at any time later)
+  - Leave format as HTML (as it says, we can change it at any time later)
+  - If "Use visual markdown editor" is checked, **uncheck** it
 
 - RStudio will create a file. Save it as `"gapminder-report.qmd"` (`.qmd` is the file extension for Quarto files)
 
