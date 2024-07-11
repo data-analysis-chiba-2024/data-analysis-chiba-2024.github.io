@@ -59,9 +59,9 @@ old <- options(pillar.print_min = 6)
 
 ## Installing Quarto
 
-- You should have already installed Quarto before class
+- Quarto comes installed with RStudio
 
-- If not, please go to <https://quarto.org/docs/get-started/> and install it now
+- Please update (re-install) RStudio if you haven't done so recently
 
 ## Reopen your project
 
