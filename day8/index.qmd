@@ -20,24 +20,18 @@ execute:
 
 - The report (`report.qmd`) is due **2024-07-24 11:59PM**
   - Push your final commit on GitHub by the deadline
-  - Submit **the Word document** to Moodle
+  - Submit **the Word document** on Moodle
 
 - The **evaluation form** is due **2024-07-31 11:59PM**
-  - Submit Excel sheet to Moodle
-
-## Check about sharing reports
-
-- Do you agree to share your github repo for your report so that the others can see your code? (in other words, to make the repo **public**)
-
-- If not, I will provide anonymized versions of each report so you can evaluate them
+  - Submit Excel sheet on Moodle
 
 ## Grading
 
 - Please see the **rubric** in the final report instructions to understand how the paper will be graded
 
 - You will also **evaluate** each other's final report using the rubric
-  - See the Excel file on Moodle
-  - I will post an announcement with links to each repo (or the anonymized reports)
+  - Download the Excel file from Moodle, fill it out, and submit it on Moodle
+  - I will post anonymized versions of each report and code to Moodle for you to evaluate
 
 ## How to fill out the evaluation form
 
