@@ -10,37 +10,42 @@ execute:
 
 # Day 8: Quarto, Part II
 
-## Announcements
-
-- **Grades** for all homework assignments are now posted to Moodle
-
-- Keys (answers) for all homework assignments are also posted
-  - You can compare your answer to the key
-
 ## Recap from Day 7
 
 - Quarto is a system for generating **reports** from **code**
 
 - By using Quarto, we can ensure our results are **reproducible** and derived directly from the data (and code)
 
-## Recap: Working as a team
-
-- To avoid **merge conflicts** (incompatible changes to the same file made by different people) **make a copy** of the final report file **for each team member** to work on.
-  - For example, `report-jn.Qmd`
-
-- Share your work by pushing and pulling
-
-- When you are ready to submit the final report, **one person** should edit the final report file `report.Qmd`
-
-- Also submit the repo URL on Moodle as usual
-
 ## Due dates
 
 - The report (`report.qmd`) is due **2024-07-24 11:59PM**
+  - Push your final commit on GitHub by the deadline
+  - Submit **the Word document** to Moodle
+
+- The **evaluation form** is due **2024-07-31 11:59PM**
+  - Submit Excel sheet to Moodle
+
+## Check about sharing reports
+
+- Do you agree to share your github repo for your report so that the others can see your code? (in other words, to make the repo **public**)
+
+- If not, I will provide anonymized versions of each report so you can evaluate them
 
 ## Grading
 
 - Please see the **rubric** in the final report instructions to understand how the paper will be graded
+
+- You will also **evaluate** each other's final report using the rubric
+  - See the Excel file on Moodle
+  - I will post an announcement with links to each repo (or the anonymized reports)
+
+## How to fill out the evaluation form
+
+- Read each report
+
+- Assign a score according to the rubric (1 - 4 points per category)
+
+- Submit the evaluation form (Excel sheet) via Moodle
 
 # Some tips for your report
 
@@ -90,6 +95,6 @@ ggplot(gapminder, aes(x = pop, y = lifeExp)) +
 
  <code>&lbrace;&lbrace;</code>`< pagebreak >`<code>&rbrace;&rbrace;</code>
 
-## Group Work
+## Final report
 
-- The rest of the class time is for group work. I will answer any questions you may have about the report.
+- The rest of the class time is to work on your final report. I will answer any questions you may have about the report.

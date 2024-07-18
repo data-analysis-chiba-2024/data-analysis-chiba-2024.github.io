@@ -19,7 +19,7 @@ toc: false
 
 - [Day 7 (2024-07-11): Writing documents with Quarto](day7/index.qmd)
 
-<!-- - [Day 8 (2024-07-18): Quarto, part II](day8/index.qmd) -->
+- [Day 8 (2024-07-18): Quarto, part II](day8/index.qmd)
 
 - Day 8 (2024-07-18): Quarto, part II
 
