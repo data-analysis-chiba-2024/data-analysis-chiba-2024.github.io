@@ -1677,14 +1677,14 @@
     "href": "index.html",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Joining data\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Joining data\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II"
   },
   {
     "objectID": "index.html#slides",
     "href": "index.html#slides",
     "title": "Reproducible Data Analysis",
     "section": "",
-    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Joining data\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II\nDay 8 (2024-07-18): Quarto, part II"
+    "text": "Day 1 (2024-06-06): Introduction: Why code? Why reproducibility?\nDay 2 (2024-06-13): Git and GitHub\nDay 3 (2024-06-20): Basic usage of R and RStudio\nDay 4 (Media Day): Data loading and tidying with tidyverse\nDay 5 (Media Day): Joining data\nDay 6 (2024-07-08): Data visualization with ggplot2\nDay 7 (2024-07-11): Writing documents with Quarto\nDay 8 (2024-07-18): Quarto, part II"
   },
   {
     "objectID": "index.html#recordings",
@@ -1733,21 +1733,14 @@
     "href": "day8/index.html#due-dates",
     "title": "Reproducible data analysis",
     "section": "Due dates",
-    "text": "Due dates\n\nThe report (report.qmd) is due 2024-07-24 11:59PM\n\nPush your final commit on GitHub by the deadline\nSubmit the Word document to Moodle\n\nThe evaluation form is due 2024-07-31 11:59PM\n\nSubmit Excel sheet to Moodle"
-  },
-  {
-    "objectID": "day8/index.html#check-about-sharing-reports",
-    "href": "day8/index.html#check-about-sharing-reports",
-    "title": "Reproducible data analysis",
-    "section": "Check about sharing reports",
-    "text": "Check about sharing reports\n\nDo you agree to share your github repo for your report so that the others can see your code? (in other words, to make the repo public)\nIf not, I will provide anonymized versions of each report so you can evaluate them"
+    "text": "Due dates\n\nThe report (report.qmd) is due 2024-07-24 11:59PM\n\nPush your final commit on GitHub by the deadline\nSubmit the Word document on Moodle\n\nThe evaluation form is due 2024-07-31 11:59PM\n\nSubmit Excel sheet on Moodle"
   },
   {
     "objectID": "day8/index.html#grading",
     "href": "day8/index.html#grading",
     "title": "Reproducible data analysis",
     "section": "Grading",
-    "text": "Grading\n\nPlease see the rubric in the final report instructions to understand how the paper will be graded\nYou will also evaluate each other’s final report using the rubric\n\nSee the Excel file on Moodle\nI will post an announcement with links to each repo (or the anonymized reports)"
+    "text": "Grading\n\nPlease see the rubric in the final report instructions to understand how the paper will be graded\nYou will also evaluate each other’s final report using the rubric\n\nDownload the Excel file from Moodle, fill it out, and submit it on Moodle\nI will post anonymized versions of each report and code to Moodle for you to evaluate"
   },
   {
     "objectID": "day8/index.html#how-to-fill-out-the-evaluation-form",
